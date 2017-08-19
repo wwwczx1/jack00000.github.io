@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CODE 2," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="学习目的：1.了解ListView（列表）的用法 2.定制listview的界面(自定义适配器) 3.提升ListView的运行效率4.ListView的点击事件 ListView（列表）的用法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556">
+<meta name="keywords" content="CODE 2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ListView&lt;CODE 2 chaper3&gt;">
+<meta property="og:url" content="http://yoursite.com/2017/07/20/ListView/index.html">
+<meta property="og:site_name" content="HEXO">
+<meta property="og:description" content="学习目的：1.了解ListView（列表）的用法 2.定制listview的界面(自定义适配器) 3.提升ListView的运行效率4.ListView的点击事件 ListView（列表）的用法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556">
+<meta property="og:image" content="http://i4.piimg.com/595109/3e87d1af99d7521b.png">
+<meta property="og:updated_time" content="2017-08-19T04:33:56.035Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ListView&lt;CODE 2 chaper3&gt;">
+<meta name="twitter:description" content="学习目的：1.了解ListView（列表）的用法 2.定制listview的界面(自定义适配器) 3.提升ListView的运行效率4.ListView的点击事件 ListView（列表）的用法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556">
+<meta name="twitter:image" content="http://i4.piimg.com/595109/3e87d1af99d7521b.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/20/ListView/"/>
+
+
+
+
+
+  <title>ListView<CODE 2 chaper3> | HEXO</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HEXO</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/ListView/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ListView<CODE 2 chaper3></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
+                2017-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><h3>学习目的：1.了解ListView（列表）的用法 2.定制listview的界面(自定义适配器) 3.提升ListView的运行效率<br>4.ListView的点击事件<p></p>
+<p></p><h3>ListView（列表）的用法</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">ListView需要大量数据  来源数据库 或自定义</div><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    private String[] data=&#123;&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;&#125;;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        ArraryAdapter&lt;String&gt;adapter = new ArraryAdapter(MainActivity.this, R.layout.fruit_item, data);//第一个参数 上下文  布局ID 数据名//ArraryAdapter数组适配器</div><div class="line">        ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">        listView.setAdapter(adapter);//启动适配器</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">```    </div><div class="line"></div><div class="line">&lt;h3&gt;定制listview的界面&lt;/h3&gt;</div><div class="line"></div><div class="line">&lt;img src=&apos;http://img.027cgb.cn/20170722/20177222181775731906.png&apos; /&gt;</div><div class="line"></div><div class="line">```Android</div><div class="line">如：列表每一项包含图片及文字</div><div class="line">详解每一步：</div><div class="line">1.两个布局activity_main 及fruit_item(简单，不赘述)</div><div class="line"></div><div class="line">2.fruit类（简单，不赘述）</div><div class="line">public class Fruit &#123;</div><div class="line"></div><div class="line">    private String name;</div><div class="line"></div><div class="line">    private int imageId;</div><div class="line"></div><div class="line">    public Fruit(String name, int imageId) &#123;</div><div class="line">        this.name = name;</div><div class="line">        this.imageId = imageId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public String getName() &#123;</div><div class="line">        return name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public int getImageId() &#123;</div><div class="line">        return imageId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">3.FruitAdaper类</div><div class="line">public class FruitAdapter extends ArrayAdapter&lt;Fruit&gt; &#123;//继承ArrayAdaper 从而使之能调用适配器需要的函数 //泛型为fruit类</div><div class="line"></div><div class="line">    private int resourceId;</div><div class="line"></div><div class="line">    public FruitAdapter(Context context, int textViewResourceId, List&lt;Fruit&gt; objects) &#123;//上下文 布局id 列表对象</div><div class="line">        super(context, textViewResourceId, objects);//调用父类构造函数   及FruitAdapter()等同于ArrayAdaper()</div><div class="line">        resourceId = textViewResourceId;//之所以另定义一个变量来获得textViewResourceId,是怕使用过程中将之改变</div><div class="line">    &#125;</div><div class="line">//  重写getView方法(获取到视图类对象的指针，并转换成CAdaptoneViewView   的指针)</div><div class="line">  public View getView(int position, View convertView, ViewGroup parent) &#123;/ /每个子项滚动到屏幕内都会被调用</div><div class="line">        Fruit fruit = getItem(position); // 获取当前项的Fruit实例</div><div class="line">        View view=layoutInflater.from(getContext()).inflate(resourceId,parent,false);//为子项加载我们传入的布局</div><div class="line">        ImageView fruitImage=(ImageView)view.findViewById(R.id.fruit_image);//ImageView内部类</div><div class="line">        TextView fruitName=(TextView)view.findViewById(R.id.fruit_name);//TextView内部类</div><div class="line">        fruitImage.setImageResouceId(fruit.getImageId());</div><div class="line">        fruitName.setText(fruit.getName());</div><div class="line">        return view;</div><div class="line">    &#125;</div></pre></td></tr></table></figure><p></p>
+<p><img src="http://i4.piimg.com/595109/3e87d1af99d7521b.png" alt="Markdown"></p>
+<p>4.MianActivity类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    private List&lt;Fruit&gt; fruitList = new ArrayList&lt;Fruit&gt;();//用ArrayList（）方法声明一个fruitList列表 指定泛型为Fruit</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        initFruits(); // 初始化水果数据</div><div class="line">        FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);//第一个参数 传入水果对象  布局ID 水果列表</div><div class="line">        ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">        listView.setAdapter(adapter);//启动适配器</div><div class="line">        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;//给listview设置监听器</div><div class="line">            @Override</div><div class="line">            public void onItemClick(AdapterView&lt;?&gt; parent, View view,</div><div class="line">                                    int position, long id) &#123;</div><div class="line">                Fruit fruit = fruitList.get(position);</div><div class="line">                Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();//设置逻辑</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private void initFruits() &#123;</div><div class="line">            for (int i = 0; i &lt; 2; i++) &#123;//循环两次是出于谨慎</div><div class="line">                Fruit apple = new Fruit(&quot;Apple&quot;, R.drawable.apple_pic);</div><div class="line">                fruitList.add(apple);</div><div class="line">                Fruit banana = new Fruit(&quot;Banana&quot;, R.drawable.banana_pic);</div><div class="line">                fruitList.add(banana);</div><div class="line">                Fruit orange = new Fruit(&quot;Orange&quot;, R.drawable.orange_pic);</div><div class="line">                fruitList.add(orange);</div><div class="line">                Fruit watermelon = new Fruit(&quot;Watermelon&quot;, R.drawable.watermelon_pic);</div><div class="line">                fruitList.add(watermelon);</div><div class="line">                Fruit pear = new Fruit(&quot;Pear&quot;, R.drawable.pear_pic);</div><div class="line">                fruitList.add(pear);</div><div class="line">                Fruit grape = new Fruit(&quot;Grape&quot;, R.drawable.grape_pic);</div><div class="line">                fruitList.add(grape);</div><div class="line">                Fruit pineapple = new Fruit(&quot;Pineapple&quot;, R.drawable.pineapple_pic);</div><div class="line">                fruitList.add(pineapple);</div><div class="line">                Fruit strawberry = new Fruit(&quot;Strawberry&quot;, R.drawable.strawberry_pic);</div><div class="line">                fruitList.add(strawberry);</div><div class="line">                Fruit cherry = new Fruit(&quot;Cherry&quot;, R.drawable.cherry_pic);</div><div class="line">                fruitList.add(cherry);</div><div class="line">                Fruit mango = new Fruit(&quot;Mango&quot;, R.drawable.mango_pic);</div><div class="line">                fruitList.add(mango);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure></p>
+<p></p><h3>3.ListView的优化</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">需要优化的点：1.getView每一次滑动都要将布局重载！（效率低）</div><div class="line">2.每次getView（）都会通过findViewById获取一次控件实例</div><div class="line">优化思路 使用convertView参数（布局缓存重用） 新建viewHolder集合类</div><div class="line">优化后代码：</div><div class="line">public View getView(int position, View convertView, ViewGroup parent) &#123;//每个子项滚动到屏幕内都会被调用</div><div class="line">       Fruit fruit = getItem(position); // 获取当前项的Fruit实例</div><div class="line">       View view;</div><div class="line">       ViewHolder viewHolder;</div><div class="line">       if (convertView == null) &#123;</div><div class="line">           view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);</div><div class="line">           viewHolder = new ViewHolder();</div><div class="line">           viewHolder.fruitImage = (ImageView) view.findViewById (R.id.fruit_image);</div><div class="line">           viewHolder.fruitName = (TextView) view.findViewById (R.id.fruit_name);</div><div class="line">           view.setTag(viewHolder); // 将ViewHolder存储在View中</div><div class="line">       &#125; else &#123;</div><div class="line">           view = convertView;</div><div class="line">           viewHolder = (ViewHolder) view.getTag(); // 重新获取ViewHolder</div><div class="line">       &#125;</div><div class="line">       viewHolder.fruitImage.setImageResource(fruit.getImageId());</div><div class="line">       viewHolder.fruitName.setText(fruit.getName());</div><div class="line">       return view;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   class ViewHolder &#123;</div><div class="line"></div><div class="line">       ImageView fruitImage;</div><div class="line"></div><div class="line">       TextView fruitName;</div><div class="line"></div><div class="line">   &#125;</div></pre></td></tr></table></figure><p></p>
+<p>   </p><h3>4.ListView的点击事件</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">简单，不赘述。</div><div class="line">   protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">           super.onCreate(savedInstanceState);</div><div class="line">           setContentView(R.layout.activity_main);</div><div class="line">           initFruits(); // 初始化水果数据</div><div class="line">           FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);//第一个参数 传入水果对象  布局ID 水果列表</div><div class="line">           ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">           listView.setAdapter(adapter);//启动适配器</div><div class="line">           listView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;//给listview设置监听器</div><div class="line">               @Override</div><div class="line">               public void onItemClick(AdapterView&lt;?&gt; parent, View view,</div><div class="line">                                       int position, long id) &#123;</div><div class="line">                   Fruit fruit = fruitList.get(position);</div><div class="line">                   Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();//设置逻辑</div><div class="line">               &#125;</div><div class="line">           &#125;);</div><div class="line">       &#125;</div></pre></td></tr></table></figure><p></p>
+</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CODE-2/" rel="tag"># CODE 2</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/20/ActivityText/" rel="next" title="ActivityText<CODE 2 chaper2>">
+                <i class="fa fa-chevron-left"></i> ActivityText<CODE 2 chaper2>
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/21/RecycleView/" rel="prev" title="RecycleView<CODE 2 chaper3>">
+                RecycleView<CODE 2 chaper3> <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  <div class="comments" id="comments">
+      
+        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+        <script src='/lib/Valine.min.js'></script>
+        <script>
+            new Valine({
+                av: AV,
+                el: '.comments' ,
+                app_id: '',
+                app_key: '',
+                placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+            });
+        </script>
+      
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg"
+               alt="DEMO" />
+          <p class="site-author-name" itemprop="name">DEMO</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">88</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">学习目的：1.了解ListView（列表）的用法 2.定制listview的界面(自定义适配器) 3.提升ListView的运行效率4.ListView的点击事件
+ListView（列表）的用法123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566ListView需要大量数据  来源数据库 或自定义public class MainActivity extends AppCompatActivity {    private String[] data={"a","b","c","b","c","b","c","b","c","b","c","b","c"};    @Override    protected void onCreate(Bundle savedInstanceState) {        super.onCreate(savedInstanceState);        setContentView(R.layout.activity_main);        ArraryAdapter<String>adapter = new ArraryAdapter(MainActivity.this, R.layout.fruit_item, data);//第一个参数 上下文  布局ID 数据名//ArraryAdapter数组适配器        ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id        listView.setAdapter(adapter);//启动适配器      }    }```    <h3>定制listview的界面</h3><img src='http://img.027cgb.cn/20170722/20177222181775731906.png' />```Android如：列表每一项包含图片及文字详解每一步：1.两个布局activity_main 及fruit_item(简单，不赘述)2.fruit类（简单，不赘述）public class Fruit {    private String name;    private int imageId;    public Fruit(String name, int imageId) {        this.name = name;        this.imageId = imageId;    }    public String getName() {        return name;    }    public int getImageId() {        return imageId;    }}3.FruitAdaper类public class FruitAdapter extends ArrayAdapter<Fruit> {//继承ArrayAdaper 从而使之能调用适配器需要的函数 //泛型为fruit类    private int resourceId;    public FruitAdapter(Context context, int textViewResourceId, List<Fruit> objects) {//上下文 布局id 列表对象        super(context, textViewResourceId, objects);//调用父类构造函数   及FruitAdapter()等同于ArrayAdaper()        resourceId = textViewResourceId;//之所以另定义一个变量来获得textViewResourceId,是怕使用过程中将之改变    }//  重写getView方法(获取到视图类对象的指针，并转换成CAdaptoneViewView   的指针)  public View getView(int position, View convertView, ViewGroup parent) {/ /每个子项滚动到屏幕内都会被调用        Fruit fruit = getItem(position); // 获取当前项的Fruit实例        View view=layoutInflater.from(getContext()).inflate(resourceId,parent,false);//为子项加载我们传入的布局        ImageView fruitImage=(ImageView)view.findViewById(R.id.fruit_image);//ImageView内部类        TextView fruitName=(TextView)view.findViewById(R.id.fruit_name);//TextView内部类        fruitImage.setImageResouceId(fruit.getImageId());        fruitName.setText(fruit.getName());        return view;    }
+
+4.MianActivity类12345678910111213141516171819202122232425262728293031323334353637383940414243444546public class MainActivity extends AppCompatActivity {    private List<Fruit> fruitList = new ArrayList<Fruit>();//用ArrayList（）方法声明一个fruitList列表 指定泛型为Fruit    @Override    protected void onCreate(Bundle savedInstanceState) {        super.onCreate(savedInstanceState);        setContentView(R.layout.activity_main);        initFruits(); // 初始化水果数据        FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);//第一个参数 传入水果对象  布局ID 水果列表        ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id        listView.setAdapter(adapter);//启动适配器        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {//给listview设置监听器            @Override            public void onItemClick(AdapterView<?> parent, View view,                                    int position, long id) {                Fruit fruit = fruitList.get(position);                Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();//设置逻辑            }        });    }    private void initFruits() {            for (int i = 0; i < 2; i++) {//循环两次是出于谨慎                Fruit apple = new Fruit("Apple", R.drawable.apple_pic);                fruitList.add(apple);                Fruit banana = new Fruit("Banana", R.drawable.banana_pic);                fruitList.add(banana);                Fruit orange = new Fruit("Orange", R.drawable.orange_pic);                fruitList.add(orange);                Fruit watermelon = new Fruit("Watermelon", R.drawable.watermelon_pic);                fruitList.add(watermelon);                Fruit pear = new Fruit("Pear", R.drawable.pear_pic);                fruitList.add(pear);                Fruit grape = new Fruit("Grape", R.drawable.grape_pic);                fruitList.add(grape);                Fruit pineapple = new Fruit("Pineapple", R.drawable.pineapple_pic);                fruitList.add(pineapple);                Fruit strawberry = new Fruit("Strawberry", R.drawable.strawberry_pic);                fruitList.add(strawberry);                Fruit cherry = new Fruit("Cherry", R.drawable.cherry_pic);                fruitList.add(cherry);                Fruit mango = new Fruit("Mango", R.drawable.mango_pic);                fruitList.add(mango);            }        }
+3.ListView的优化123456789101112131415161718192021222324252627282930需要优化的点：1.getView每一次滑动都要将布局重载！（效率低）2.每次getView（）都会通过findViewById获取一次控件实例优化思路 使用convertView参数（布局缓存重用） 新建viewHolder集合类优化后代码：public View getView(int position, View convertView, ViewGroup parent) {//每个子项滚动到屏幕内都会被调用       Fruit fruit = getItem(position); // 获取当前项的Fruit实例       View view;       ViewHolder viewHolder;       if (convertView == null) {           view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);           viewHolder = new ViewHolder();           viewHolder.fruitImage = (ImageView) view.findViewById (R.id.fruit_image);           viewHolder.fruitName = (TextView) view.findViewById (R.id.fruit_name);           view.setTag(viewHolder); // 将ViewHolder存储在View中       } else {           view = convertView;           viewHolder = (ViewHolder) view.getTag(); // 重新获取ViewHolder       }       viewHolder.fruitImage.setImageResource(fruit.getImageId());       viewHolder.fruitName.setText(fruit.getName());       return view;   }   class ViewHolder {       ImageView fruitImage;       TextView fruitName;   }
+   4.ListView的点击事件1234567891011121314151617简单，不赘述。   protected void onCreate(Bundle savedInstanceState) {           super.onCreate(savedInstanceState);           setContentView(R.layout.activity_main);           initFruits(); // 初始化水果数据           FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);//第一个参数 传入水果对象  布局ID 水果列表           ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id           listView.setAdapter(adapter);//启动适配器           listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {//给listview设置监听器               @Override               public void onItemClick(AdapterView<?> parent, View view,                                       int position, long id) {                   Fruit fruit = fruitList.get(position);                   Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();//设置逻辑               }           });       }
+</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">ListView（列表）的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">3.ListView的优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">4.ListView的点击事件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">DEMO</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    Theme &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Muse
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine@1.1.4/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+    new Valine({
+        av: AV,
+        el: '#vcomments' ,
+        verify: ,
+        notify: ,
+        app_id: 'rqCVLAi3yssRIvgyg5Q4xfMx-gzGzoHsz',
+        app_key: 'Wxk9SHRcaooywkVnB8Tb4taB',
+        placeholder: ''
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

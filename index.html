@@ -1,0 +1,2284 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="HEXO">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="HEXO">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HEXO">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>HEXO</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HEXO</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/网络爬虫1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/19/网络爬虫1/" itemprop="url">网络爬虫</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T12:33:56+08:00">
+                2017-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h2>依赖BeautifulSoup Python</h2><p></p>
+<p></p><h3>主文件spider_main.py</h3><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="comment"># 主程序,负责根url，以及启动爬虫</span></div><div class="line"><span class="keyword">from</span> baike_spider <span class="keyword">import</span> html_downloder</div><div class="line"><span class="keyword">from</span> baike_spider <span class="keyword">import</span> html_output</div><div class="line"><span class="keyword">from</span> baike_spider <span class="keyword">import</span> html_parser</div><div class="line"><span class="keyword">from</span> baike_spider <span class="keyword">import</span> url_manager</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SpilderMain</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="comment"># 初始化所需要的对象,包括url管理器，网页下载器，网页解析器，输出器</span></div><div class="line">        <span class="comment"># 来提供给craw（）使用</span></div><div class="line">        <span class="comment"># 来提供给craw（）使用</span></div><div class="line">        self.urls = url_manager.UrlManager()</div><div class="line">        self.downloader = html_downloder.HtmlDownloader()</div><div class="line">        self.parser = html_parser.HtmlParser()</div><div class="line">        self.outputer = html_output.HtmlOutputer()</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">craw</span><span class="params">(self, url)</span>:</span></div><div class="line">        count = <span class="number">1</span>   <span class="comment"># url计数</span></div><div class="line">        <span class="comment"># 添加根url</span></div><div class="line">        self.urls.add_new_url(url)</div><div class="line">        <span class="comment"># 开始解析</span></div><div class="line">        <span class="keyword">while</span> self.urls.has_new_url():</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                <span class="comment"># 获取url</span></div><div class="line">                new_url = self.urls.get_new_url()</div><div class="line">                print(<span class="string">"第%d个url：%s"</span> % (count, new_url))</div><div class="line">                <span class="comment"># 将url对应的页面进行下载</span></div><div class="line">                html_cont = self.downloader.download(new_url)</div><div class="line">                <span class="comment"># 对下载下来的页面进行解析,将解析出来的数据进行保存</span></div><div class="line">                new_urls, new_data = self.parser.parse(new_url, html_cont)</div><div class="line">                <span class="comment"># 将解析出来的urls添加到url_manager</span></div><div class="line">                self.urls.add_new_urls(new_urls)</div><div class="line">                <span class="comment"># 将数据进行收集</span></div><div class="line">                self.outputer.collect_data(new_data)</div><div class="line"></div><div class="line">                <span class="keyword">if</span> count == <span class="number">15</span>:</div><div class="line">                    <span class="keyword">break</span></div><div class="line">                count += <span class="number">1</span></div><div class="line">            <span class="keyword">except</span>:</div><div class="line">                print(<span class="string">"爬取失败"</span>)</div><div class="line"></div><div class="line">        self.outputer.output_html()</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    root_url = <span class="string">"http://baike.baidu.com/view/21087.htm"</span></div><div class="line">    obj_spider = SpilderMain()</div><div class="line">    <span class="comment"># 启动爬虫</span></div><div class="line">    obj_spider.craw(root_url)</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>网页下载器html_downloder.py</h3><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="comment"># 页面下载器</span></div><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HtmlDownloader</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">download</span><span class="params">(self, url)</span>:</span></div><div class="line">        <span class="keyword">if</span> url <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line">        response = urllib.request.urlopen(url)</div><div class="line">        <span class="keyword">if</span> response.getcode() != <span class="number">200</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line">        <span class="keyword">return</span> response.read()</div><div class="line"><span class="comment">#页面下载器</span></div></pre></td></tr></table></figure><p></p>
+<p></p><h3>网页解析器html_parser.py </h3><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="comment"># 网页解析器</span></div><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="keyword">import</span> urllib.parse</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HtmlParser</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="comment"># 对html_cont的内容进行解析</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, page_url, html_cont)</span>:</span></div><div class="line">        <span class="keyword">if</span> page_url <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> html_cont <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">            <span class="keyword">return</span></div><div class="line">        soup = BeautifulSoup(html_cont, <span class="string">'html.parser'</span>, from_encoding=<span class="string">'utf-8'</span>)</div><div class="line">        new_urls = self._get_new_urls(page_url, soup)</div><div class="line">        new_data = self._get_new_data(page_url, soup)</div><div class="line">        <span class="keyword">return</span> new_urls, new_data</div><div class="line"></div><div class="line">    <span class="comment"># 获取页面上所有的url</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_get_new_urls</span><span class="params">(self, page_url, soup)</span>:</span></div><div class="line">        new_urls = set()</div><div class="line">        <span class="comment"># 根据分析，链接的格式是：/view/12334.htm</span></div><div class="line">        links = soup.find_all(<span class="string">'a'</span>, href=re.compile(<span class="string">r"/view/\d+\.htm"</span>))</div><div class="line">        <span class="keyword">for</span> link <span class="keyword">in</span> links:</div><div class="line">            new_url = link[<span class="string">'href'</span>]</div><div class="line">            <span class="comment"># url格式需要进行拼接，加上  http://baike.baidu.com</span></div><div class="line">            new_full_url = urllib.parse.urljoin(page_url, new_url)</div><div class="line">            new_urls.add(new_full_url)</div><div class="line">        <span class="keyword">return</span> new_urls</div><div class="line"></div><div class="line">    <span class="comment"># 获取每一页面的数据，包括标题以及简介</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_get_new_data</span><span class="params">(self, page_url, soup)</span>:</span></div><div class="line">        <span class="comment"># 以一个词典数据类型保存数据</span></div><div class="line">        res_data = &#123;&#125;</div><div class="line">        <span class="comment"># 保存url</span></div><div class="line">        res_data[<span class="string">'url'</span>] = page_url</div><div class="line">        <span class="comment"># 下面是标题的格式</span></div><div class="line">        <span class="comment"># &lt;dd class="lemmaWgt-lemmaTitle-title"&gt; &lt;h1&gt;Python&lt;/h1&gt;</span></div><div class="line">        title_node = soup.find(<span class="string">'dd'</span>, class_=<span class="string">"lemmaWgt-lemmaTitle-title"</span>).find(<span class="string">'h1'</span>)</div><div class="line">        res_data[<span class="string">'title'</span>] = title_node.get_text()</div><div class="line">        <span class="comment"># 开始获取简介的内容</span></div><div class="line">        <span class="comment"># &lt;div class="lemma-summary" label-module="lemmaSummary"&gt;</span></div><div class="line">        summary_node = soup.find(<span class="string">'div'</span>, class_=<span class="string">"lemma-summary"</span>)</div><div class="line">        res_data[<span class="string">'summary'</span>] = summary_node.get_text()</div><div class="line">        <span class="keyword">return</span> res_data</div><div class="line">Contact GitHub API Training Shop Blog About</div><div class="line">© <span class="number">2017</span> GitHub, Inc. Terms Privacy Security Status He</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>URL管理器url_manager.py</h3><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="comment"># url管理器</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">UrlManager</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.new_urls = set()</div><div class="line">        self.old_urls = set()</div><div class="line"></div><div class="line">    <span class="comment"># 添加url</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_new_url</span><span class="params">(self, url)</span>:</span></div><div class="line">        <span class="keyword">if</span> url <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">            <span class="keyword">return</span></div><div class="line">        <span class="comment"># 当url既不在新的列表中也不在旧的列表中时，则将其添加到新的url——set()集合中</span></div><div class="line">        <span class="keyword">if</span> url <span class="keyword">not</span> <span class="keyword">in</span> self.new_urls <span class="keyword">and</span> url <span class="keyword">not</span> <span class="keyword">in</span> self.old_urls:</div><div class="line">            self.new_urls.add(url)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_new_urls</span><span class="params">(self, urls)</span>:</span></div><div class="line">        <span class="keyword">if</span> urls <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> len(urls) == <span class="number">0</span>:</div><div class="line">            <span class="keyword">return</span></div><div class="line">        <span class="keyword">for</span> url <span class="keyword">in</span> urls:</div><div class="line">            self.add_new_url(url)</div><div class="line"></div><div class="line">    <span class="comment"># 判断是否还有待爬取的url</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">has_new_url</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> len(self.new_urls) != <span class="number">0</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_new_url</span><span class="params">(self)</span>:</span></div><div class="line">        new_url = self.new_urls.pop()</div><div class="line">        self.old_urls.add(new_url)</div><div class="line">        <span class="keyword">return</span> new_url</div><div class="line">Contact GitHub API Training Shop Blog About</div><div class="line">© <span class="number">2017</span> GitHub, Inc. Terms Privacy Security</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>定义路径输出结果</h3><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="comment"># 最后的结果输出</span></div><div class="line"><span class="comment"># 提供两个功能，一个事收集数据，另一个是输出数据</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HtmlOutputer</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="comment"># 收集数据需要一个列表list进行维护</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.datas= []</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">collect_data</span><span class="params">(self, data)</span>:</span></div><div class="line">        <span class="keyword">if</span> data <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">            <span class="keyword">return</span></div><div class="line">        self.datas.append(data)</div><div class="line"></div><div class="line">    <span class="comment"># 输出一个html文档</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">output_html</span><span class="params">(self)</span>:</span></div><div class="line">        fileout = open(<span class="string">"output.html"</span>, <span class="string">"w"</span>, encoding=<span class="string">'utf-8'</span>)</div><div class="line">        fileout.write(<span class="string">"&lt;html&gt;"</span>)</div><div class="line">        fileout.write(<span class="string">"&lt;head&gt;"</span>)</div><div class="line">        fileout.write(<span class="string">"&lt;meta charset=\'utf-8\'&gt;"</span>)</div><div class="line">        fileout.write(<span class="string">"&lt;/head&gt;"</span>)</div><div class="line">        fileout.write(<span class="string">"&lt;body&gt;"</span>)</div><div class="line">        fileout.write(<span class="string">"&lt;table&gt;"</span>)</div><div class="line">        <span class="keyword">for</span> data <span class="keyword">in</span> self.datas:</div><div class="line">            fileout.write(<span class="string">"&lt;tr&gt;"</span>)</div><div class="line">            fileout.write(<span class="string">"&lt;td&gt;%s&lt;/td&gt;"</span> % data[<span class="string">'url'</span>])</div><div class="line">            fileout.write(<span class="string">"&lt;td&gt;%s&lt;/td&gt;"</span> % data[<span class="string">'title'</span>])</div><div class="line">            fileout.write(<span class="string">"&lt;td&gt;%s&lt;/td&gt;"</span> % data[<span class="string">'summary'</span>])</div><div class="line">            fileout.write(<span class="string">"&lt;/tr&gt;"</span>)</div><div class="line">        fileout.write(<span class="string">"&lt;/table&gt;"</span>)</div><div class="line">        fileout.write(<span class="string">"&lt;/body&gt;"</span>)</div><div class="line">        fileout.write(<span class="string">"&lt;/html&gt;"</span>)</div><div class="line">        fileout.close()</div></pre></td></tr></table></figure><p></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/棋盘覆盖/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/19/棋盘覆盖/" itemprop="url">象棋棋盘</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T12:33:56+08:00">
+                2017-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div></pre></td><td class="code"><pre><div class="line">#include &lt;graphics.h&gt;			// 绘图库头文件，绘图语句需要</div><div class="line">#include &lt;conio.h&gt;				// 控制台输入输出头文件，getch()语句需要</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	initgraph(<span class="number">500</span>, <span class="number">550</span>);		<span class="comment">// 初始化640x480的绘图屏幕</span></div><div class="line">	setbkcolor(RGB(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>));</div><div class="line">	<span class="comment">//加载图片</span></div><div class="line">	clearcliprgn();</div><div class="line"></div><div class="line"></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">50</span>; i &lt;= <span class="number">450</span>; i = i + <span class="number">50</span>)</div><div class="line">	&#123;</div><div class="line">		setlinecolor(RGB(<span class="number">200</span>, <span class="number">0</span>, <span class="number">0</span>));</div><div class="line">		line(i, <span class="number">50</span>, i, <span class="number">250</span>);</div><div class="line">		line(i, <span class="number">300</span>, i, <span class="number">500</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">50</span>; i &lt;= <span class="number">500</span>; i = i + <span class="number">50</span>)</div><div class="line">	&#123;</div><div class="line">		setlinecolor(RGB(<span class="number">200</span>, <span class="number">0</span>, <span class="number">0</span>));</div><div class="line">		line(<span class="number">50</span>, i, <span class="number">450</span>, i);</div><div class="line"></div><div class="line">	&#125;</div><div class="line">	<span class="comment">//将 士</span></div><div class="line">	line(<span class="number">200</span>, <span class="number">50</span>, <span class="number">300</span>, <span class="number">150</span>);</div><div class="line">	line(<span class="number">200</span>, <span class="number">150</span>, <span class="number">300</span>, <span class="number">50</span>);</div><div class="line">	line(<span class="number">200</span>, <span class="number">500</span>, <span class="number">300</span>, <span class="number">400</span>);</div><div class="line">	line(<span class="number">200</span>, <span class="number">400</span>, <span class="number">300</span>, <span class="number">500</span>);</div><div class="line"></div><div class="line">	line(<span class="number">50</span>, <span class="number">250</span>, <span class="number">50</span>, <span class="number">300</span>);</div><div class="line">	line(<span class="number">450</span>, <span class="number">250</span>, <span class="number">450</span>, <span class="number">300</span>);</div><div class="line">	<span class="comment">//图片</span></div><div class="line"></div><div class="line">	IMAGE img;	<span class="comment">// 定义 IMAGE 对象</span></div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BRS.GIF"</span>);	<span class="comment">// 读取图片黑车到 img 对象中</span></div><div class="line">	putimage(<span class="number">30</span>, <span class="number">30</span>, &amp;img);	<span class="comment">// 在坐标 (0, 0) 位置显示 IMAGE 对象</span></div><div class="line"></div><div class="line">	IMAGE img2;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BA.GIF"</span>);<span class="comment">//黑士</span></div><div class="line">	putimage(<span class="number">180</span>, <span class="number">30</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img3;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BB.GIF"</span>);<span class="comment">//黑象</span></div><div class="line">	putimage(<span class="number">130</span>, <span class="number">30</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img4;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BKS.GIF"</span>);<span class="comment">//黑将</span></div><div class="line">	putimage(<span class="number">230</span>, <span class="number">30</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img5;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BNS.GIF"</span>);<span class="comment">//黑马</span></div><div class="line">	putimage(<span class="number">80</span>, <span class="number">30</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img6;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BAS.GIF"</span>);<span class="comment">//黑士</span></div><div class="line">	putimage(<span class="number">280</span>, <span class="number">30</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img7;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BBS.GIF"</span>);<span class="comment">//黑象</span></div><div class="line">	putimage(<span class="number">330</span>, <span class="number">30</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img8;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BNS.GIF"</span>);<span class="comment">//黑马</span></div><div class="line">	putimage(<span class="number">380</span>, <span class="number">30</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img9;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BR.GIF"</span>);<span class="comment">//黑车</span></div><div class="line">	putimage(<span class="number">430</span>, <span class="number">30</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img10;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BP.GIF"</span>);<span class="comment">//黑卒</span></div><div class="line">	putimage(<span class="number">30</span>, <span class="number">180</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img11;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BP1.GIF"</span>);<span class="comment">//黑卒</span></div><div class="line">	putimage(<span class="number">130</span>, <span class="number">180</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img12;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BP2.GIF"</span>);<span class="comment">//黑卒</span></div><div class="line">	putimage(<span class="number">230</span>, <span class="number">180</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img13;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BP3.GIF"</span>);<span class="comment">//黑卒</span></div><div class="line">	putimage(<span class="number">330</span>, <span class="number">180</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img14;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BP4.GIF"</span>);<span class="comment">//黑卒</span></div><div class="line">	putimage(<span class="number">430</span>, <span class="number">180</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img15;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BC.GIF"</span>);<span class="comment">//黑炮</span></div><div class="line">	putimage(<span class="number">80</span>, <span class="number">130</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img16;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\BCS.GIF"</span>);<span class="comment">//黑炮</span></div><div class="line">	putimage(<span class="number">380</span>, <span class="number">130</span>, &amp;img);</div><div class="line"></div><div class="line">	<span class="comment">//红方</span></div><div class="line">	IMAGE img17;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RK.GIF"</span>);<span class="comment">//红帅</span></div><div class="line">	putimage(<span class="number">230</span>, <span class="number">480</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img18;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RA.GIF"</span>);<span class="comment">//红士</span></div><div class="line">	putimage(<span class="number">180</span>, <span class="number">480</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img19;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RAS.GIF"</span>);<span class="comment">//红士</span></div><div class="line">	putimage(<span class="number">280</span>,<span class="number">480</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img20;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RB.GIF"</span>);<span class="comment">//红相</span></div><div class="line">	putimage(<span class="number">130</span>, <span class="number">480</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img21;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RBS.GIF"</span>);<span class="comment">//红相</span></div><div class="line">	putimage(<span class="number">330</span>, <span class="number">480</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img22;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RN.GIF"</span>);<span class="comment">//红马</span></div><div class="line">	putimage(<span class="number">380</span>, <span class="number">480</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img23;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RNS.GIF"</span>);<span class="comment">//红马</span></div><div class="line">	putimage(<span class="number">80</span>, <span class="number">480</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img24;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RR.GIF"</span>);<span class="comment">//红车</span></div><div class="line">	putimage(<span class="number">30</span>, <span class="number">480</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img25;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RR.GIF"</span>);<span class="comment">//红车</span></div><div class="line">	putimage(<span class="number">30</span>, <span class="number">480</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img26;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RR.GIF"</span>);<span class="comment">//红车</span></div><div class="line">	putimage(<span class="number">30</span>, <span class="number">480</span>, &amp;img);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">	IMAGE img36;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RRS.GIF"</span>);<span class="comment">//红车</span></div><div class="line">	putimage(<span class="number">430</span>, <span class="number">480</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img27;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RPS.GIF"</span>);<span class="comment">//红卒</span></div><div class="line">	putimage(<span class="number">30</span>, <span class="number">330</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img28;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RPS1.GIF"</span>);<span class="comment">//红卒</span></div><div class="line">	putimage(<span class="number">130</span>, <span class="number">330</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img29;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RPS2.GIF"</span>);<span class="comment">//红卒</span></div><div class="line">	putimage(<span class="number">230</span>, <span class="number">330</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img30;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RPS3.GIF"</span>);<span class="comment">//红卒</span></div><div class="line">	putimage(<span class="number">330</span>, <span class="number">330</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img31;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RPS4.GIF"</span>);<span class="comment">//红卒</span></div><div class="line">	putimage(<span class="number">430</span>, <span class="number">330</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img32;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RC.GIF"</span>);<span class="comment">//红车</span></div><div class="line">	putimage(<span class="number">80</span>, <span class="number">380</span>, &amp;img);</div><div class="line"></div><div class="line">	IMAGE img33;</div><div class="line">	loadimage(&amp;img, <span class="string">"C:\\IMAGES_S\\POLISH\\RCS.GIF"</span>);<span class="comment">//红车</span></div><div class="line">	putimage(<span class="number">380</span>, <span class="number">380</span>, &amp;img);</div><div class="line"></div><div class="line"></div><div class="line">	_getch();					<span class="comment">// 按任意键</span></div><div class="line">	closegraph();				<span class="comment">// 关闭绘图屏幕</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://img.027cgb.cn/20170608/2017687661941398100.png"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/图灵机器人/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/19/图灵机器人/" itemprop="url">wechar robot</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T12:33:56+08:00">
+                2017-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>python的安装   pip的安装</li>
+<li><a href="https://github.com/jack00000/wxBot" target="_blank" rel="external">下载weBot源码</a></li>
+<li><a href="http://www.tuling123.com/" target="_blank" rel="external">注册图灵账号</a>并创建机器人获得apikey</li>
+<li>然后开始搞事情</li>
+</ul>
+<p></p><h3>1.python的安装   pip的安装</h3><p></p>
+<ul>
+<li>别忘啦配置路径</li>
+<li><p><a href="http://jingyan.baidu.com/article/7908e85c78c743af491ad261.html" target="_blank" rel="external">python安装</a></p>
+</li>
+<li><p>重点说pip（为安装一些依赖库而生）这个坑<br><a href="https://pypi.python.org/packages/11/b6/abcb525026a4be042b486df43905d6893fb04f05aac21c32c638e939e447/pip-9.0.1.tar.gz#md5=35f01da33009719497f01a4ba69d63c9" target="_blank" rel="external">python官网</a><br>下载文件如图<br><img src="http://i1.piimg.com/4851/6a72a24d2f40147e.png"></p>
+</li>
+<li>打开cmd 直接输入python 结果如下，则python已搞定<br><img src="http://i1.piimg.com/4851/5172b9207690a331.png"><h3>注意</h3></li>
+<li>需要将pip的路径配给系统变量Path</li>
+<li>需要将python安装目录下的Scripts文件路径陪给系统变量Path<br><img src="http://i1.piimg.com/4851/58561b78d3c51c7a.png"></li>
+<li>配置好的pip，运行如下：<br><img src="http://i1.piimg.com/1949/0429ebde5aa05efe.png"></li>
+</ul>
+<p></p><h3>注册图灵账号并获得apikey</h3><br><img src="http://i1.piimg.com/1949/4b90c4f0985c26ab.png"><p></p>
+<p></p><h3>搞事情</h3><br>详情见wxbot的<a href="https://github.com/jack00000/wxBot/blob/master/README.md" target="_blank" rel="external">readme.md</a><p></p>
+<ul>
+<li>在bot.py所在目录下新建conf.ini配置文件<br><img src="http://i1.piimg.com/1949/09ce78b2a6116127.png"></li>
+<li>里面的内容<br><img src="http://i1.piimg.com/1949/7f62ddce1c252787.png"></li>
+<li>运行bot.py(用cmd打开bot.py文件所在目录)<br><img src="http://i1.piimg.com/1949/1da7e1f71ed132f2.png"></li>
+<li>用手机微信扫描二维码登录 扫描后如下：<br><img src="http://i1.piimg.com/1949/5362a69d1dde4dd8.png"></li>
+<li>到这步就成功啦  要注意的是 群聊@你的备注 机器人不回复，将你的备注改成你的用户名就行拉</li>
+<li>效果如图<br><img src="http://i1.piimg.com/1949/96437616c466c3f2.jpg"></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/动手写网页1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/19/动手写网页1/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T12:33:56+08:00">
+                2017-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>菜鸟练网页</title>
+<style media="screen">
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+body{
+  background-image: url('http://p1.bqimg.com/567571/1487e5929ef40176.jpg');
+}
+#myInput {
+  background-image: url('https://static.runoob.com/images/mix/searchicon.png'); /* 搜索按钮 */
+  background-position: 10px 12px; /* 定位搜索按钮 */
+  background-repeat: no-repeat; /* 不重复图片 */
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  /* 表格添加边框 */
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  /* 表头及鼠标移动过 tr 时添加背景 */
+  background-color: #f1f1f1;
+}
+</style>
+<body>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="搜索...">
+
+  <form>
+    <input type="text" name="search" placeholder="Search..">
+  </form>
+</body>
+<script type="text/javascript">
+function myFunction() {
+  // 声明变量
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // 循环表格每一行，查找匹配项
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+</script>
+</html>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/动手写网页/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/19/动手写网页/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T12:33:56+08:00">
+                2017-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title> 我的第一个网页</title>
+<body>
+<img src="http://p1.bqimg.com/567571/3bd3389e3b00ad3a.png" width="100%" height="100%">
+<video src="videofile.ogg" autoplay poster="posterimage.jpg">
+
+</video>
+</body>
+</html>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/wechar robot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/19/wechar robot/" itemprop="url">wechar robot</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T12:33:56+08:00">
+                2017-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>python的安装   pip的安装</li>
+<li><a href="https://github.com/jack00000/wxBot" target="_blank" rel="external">下载weBot源码</a></li>
+<li><a href="http://www.tuling123.com/" target="_blank" rel="external">注册图灵账号</a>并创建机器人获得apikey</li>
+<li>然后开始搞事情</li>
+</ul>
+<p></p><h3>1.python的安装   pip的安装</h3><p></p>
+<ul>
+<li>别忘啦配置路径</li>
+<li><p><a href="http://jingyan.baidu.com/article/7908e85c78c743af491ad261.html" target="_blank" rel="external">python安装</a></p>
+</li>
+<li><p>重点说pip（为安装一些依赖库而生）这个坑<br><a href="https://pypi.python.org/packages/11/b6/abcb525026a4be042b486df43905d6893fb04f05aac21c32c638e939e447/pip-9.0.1.tar.gz#md5=35f01da33009719497f01a4ba69d63c9" target="_blank" rel="external">python官网</a><br>下载文件如图<br><img src="http://i1.piimg.com/4851/6a72a24d2f40147e.png"></p>
+</li>
+<li>打开cmd 直接输入python 结果如下，则python已搞定<br><img src="http://i1.piimg.com/4851/5172b9207690a331.png"><h3>注意</h3></li>
+<li>需要将pip的路径配给系统变量Path</li>
+<li>需要将python安装目录下的Scripts文件路径陪给系统变量Path<br><img src="http://i1.piimg.com/4851/58561b78d3c51c7a.png"></li>
+<li>配置好的pip，运行如下：<br><img src="http://i1.piimg.com/1949/0429ebde5aa05efe.png"></li>
+</ul>
+<p></p><h3>注册图灵账号并获得apikey</h3><br><img src="http://i1.piimg.com/1949/4b90c4f0985c26ab.png"><p></p>
+<p></p><h3>搞事情</h3><br>详情见wxbot的<a href="https://github.com/jack00000/wxBot/blob/master/README.md" target="_blank" rel="external">readme.md</a><p></p>
+<ul>
+<li>在bot.py所在目录下新建conf.ini配置文件<br><img src="http://i1.piimg.com/1949/09ce78b2a6116127.png"></li>
+<li>里面的内容<br><img src="http://i1.piimg.com/1949/7f62ddce1c252787.png"></li>
+<li>运行bot.py(用cmd打开bot.py文件所在目录)<br><img src="http://i1.piimg.com/1949/1da7e1f71ed132f2.png"></li>
+<li>用手机微信扫描二维码登录 扫描后如下：<br><img src="http://i1.piimg.com/1949/5362a69d1dde4dd8.png"></li>
+<li>到这步就成功啦  要注意的是 群聊@你的备注 机器人不回复，将你的备注改成你的用户名就行拉</li>
+<li>效果如图<br><img src="http://i1.piimg.com/1949/96437616c466c3f2.jpg"></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/Unity3d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/19/Unity3d/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T12:33:56+08:00">
+                2017-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/PAT知识点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/19/PAT知识点/" itemprop="url">PAT知识点</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T12:33:56+08:00">
+                2017-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>vector<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">vecotr&lt;int&gt;  // 声明向量容器 TM就是指针组 大小不确定</div><div class="line">vector&lt;int&gt; v(n);//见乙级1065</div><div class="line">vector&lt;int&gt;::iterator//定义向量迭代器</div><div class="line">vector&lt;int&gt;::iterator result=find(v.begin(),v.end(),table[v[i]]);// 见1065</div><div class="line">v.push_back(v[i]);//在v的末尾增加一个值为v[i]的元素</div><div class="line">举个例子</div><div class="line"></div><div class="line">for(vector&lt;int&gt;::iterator it=v.begin();it!=v.end();it++)</div><div class="line">     cout&lt;&lt;*it&lt;&lt;endl;</div><div class="line">就把里面的内容都输出了</div></pre></td></tr></table></figure></p>
+<p>函数algorithm<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">以很好的平均效率排序	sort()</div><div class="line">sort(doge.begin(),doge.end());//见1065</div><div class="line">排序，并维持相同元素的原有顺序	stable_sort()</div><div class="line">将序列的前一部分排好序	partial_sort()</div><div class="line">复制的同时将序列的前一部分排好序	partial_sort_copy()</div><div class="line">在序列中找出某个值的第一次出现的位置	find()</div><div class="line">find(v.begin(),v.end(),table[v[i]]);//table[v[i]]为要找的元素    见乙级1065</div></pre></td></tr></table></figure></p>
+<p>qsort<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">qsort（即，quicksort）主要根据你给的比较条件给一个快速排序，主要是通过指针移动实现排序功能。排序之后的结果仍然放在原来数组中。</div><div class="line"></div><div class="line">参数意义如下:</div><div class="line"></div><div class="line">第一个参数 base 是 需要排序的目标数组名（或者也可以理解成开始排序的地址，因为可以写&amp;s[i]这样的表达式）</div><div class="line"></div><div class="line">第二个参数 num 是 参与排序的目标数组元素个数</div><div class="line"></div><div class="line">第三个参数 width 是单个元素的大小（或者目标数组中每一个元素长度），推荐使用sizeof(s[0]）这样的表达式</div><div class="line"></div><div class="line">第四个参数 compare 就是让很多人觉得非常困惑的比较函数啦</div><div class="line">int compare(const void *a_t, const void *b_t)&#123;</div><div class="line">    int *a = (int *)a_t, *b = (int *)b_t;</div><div class="line">    if(a[3] != b[3])&#123;</div><div class="line">        return a[3] - b[3]; //type升序</div><div class="line">    &#125;</div><div class="line">    else if(a[1] + a[2] != b[1] + b[2])&#123;</div><div class="line">        return (b[1] + b[2]) - (a[1] + a[2]); //总分降序</div><div class="line">    &#125;</div><div class="line">    else if(a[1] != b[1])&#123;</div><div class="line">        return b[1] - a[1]; //德分降序</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        return a[0] - b[0]; //学号升序</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int main()&#123;</div><div class="line">qsort(&amp;sTable[0], n, sizeof(sTable[0]), compare);//数组名 元素个数 单个元素大小 比较函数</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/JAVA实验题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/19/JAVA实验题/" itemprop="url">JAVA实验题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T12:33:55+08:00">
+                2017-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>01<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span> </span>&#123;</div><div class="line">    System.out.println(<span class="string">"    J    A    V     V   A	"</span>);</div><div class="line">		System.out.println(<span class="string">"    J   A A    V   V   A A"</span>);</div><div class="line">		System.out.println(<span class="string">"J   J  AAAAA    V V   AAAAA"</span>);</div><div class="line">		System.out.println(<span class="string">" JJ   A     A    V   A     A"</span>);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>02<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span> </span>&#123;</div><div class="line">       <span class="keyword">float</span> pai;</div><div class="line">		pai=<span class="number">4</span>*(<span class="number">1</span>-<span class="number">1</span>/<span class="number">3</span>+<span class="number">1</span>/<span class="number">5</span>-<span class="number">1</span>/<span class="number">7</span>+<span class="number">1</span>/<span class="number">9</span>-<span class="number">1</span>/<span class="number">11</span>+<span class="number">1</span>/<span class="number">13</span>);</div><div class="line">		System.out.println(<span class="string">"pai="</span>+pai);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>03<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span>*<span class="title">B</span></span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span>  <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    <span class="keyword">double</span> a[<span class="number">3</span>][<span class="number">3</span>],b[<span class="number">3</span>][<span class="number">3</span>];</div><div class="line">    <span class="keyword">double</span> [][] A=&#123;&#123;a[<span class="number">0</span>][<span class="number">0</span>],a[<span class="number">0</span>][<span class="number">1</span>],a[<span class="number">0</span>][<span class="number">2</span>]&#125;</div><div class="line">                   &#123;a[<span class="number">1</span>][<span class="number">0</span>],a[<span class="number">1</span>][<span class="number">1</span>],a[<span class="number">1</span>][<span class="number">2</span>]&#125;</div><div class="line">                   &#123;a[<span class="number">2</span>][<span class="number">0</span>],a[<span class="number">2</span>][<span class="number">1</span>],a[<span class="number">2</span>][<span class="number">2</span>]&#125;&#125;</div><div class="line">    <span class="keyword">double</span> [][] B=&#123;&#123;b[<span class="number">0</span>][<span class="number">0</span>],b[<span class="number">0</span>][<span class="number">1</span>],b[<span class="number">0</span>][<span class="number">2</span>]&#125;</div><div class="line">                   &#123;b[<span class="number">1</span>][<span class="number">0</span>],b[<span class="number">1</span>][<span class="number">1</span>],b[<span class="number">1</span>][<span class="number">2</span>]&#125;</div><div class="line">                   &#123;b[<span class="number">2</span>][<span class="number">0</span>],b[<span class="number">2</span>][<span class="number">1</span>],b[<span class="number">2</span>][<span class="number">2</span>]&#125;&#125;</div><div class="line">    <span class="keyword">double</span> [][] C=&#123;&#123;c[<span class="number">0</span>][<span class="number">0</span>],c[<span class="number">0</span>][<span class="number">1</span>],c[<span class="number">0</span>][<span class="number">2</span>]&#125;</div><div class="line">                   &#123;c[<span class="number">1</span>][<span class="number">0</span>],c[<span class="number">1</span>][<span class="number">1</span>],c[<span class="number">1</span>][<span class="number">2</span>]&#125;</div><div class="line">                   &#123;c[<span class="number">2</span>][<span class="number">0</span>],c[<span class="number">2</span>][<span class="number">1</span>],c[<span class="number">2</span>][<span class="number">2</span>]&#125;&#125;</div><div class="line">                   <span class="comment">//输入               </span></div><div class="line">       Scanner in=<span class="keyword">new</span> Scanner(System in);</div><div class="line">       a[<span class="number">3</span>][<span class="number">3</span>]=scanner.nextLine();</div><div class="line">       b[<span class="number">3</span>][<span class="number">3</span>]=scanner.nextLine();</div><div class="line">       <span class="comment">//计算</span></div><div class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</div><div class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++)&#123;</div><div class="line">        <span class="keyword">double</span> m+=a[i][j]*b[j][i]</div><div class="line">       &#125;</div><div class="line"></div><div class="line">     &#125;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>04 矩阵相乘算法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayMult</span> </span>&#123;  </div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </div><div class="line">        <span class="keyword">int</span>[][] a = &#123;&#123;<span class="number">1</span>,<span class="number">2</span>&#125;,&#123;<span class="number">3</span>,<span class="number">4</span>&#125;,&#123;<span class="number">5</span>,<span class="number">6</span>&#125;&#125;;  </div><div class="line">        <span class="keyword">int</span>[][] b = &#123;&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;&#125;;  </div><div class="line">        <span class="comment">//m表示数组a的行数，n表示数组b的列数，s表示数组a的列数和数组b的行数  </span></div><div class="line">        <span class="keyword">int</span> m = a.length, n = b[<span class="number">0</span>].length, s1 = a[<span class="number">0</span>].length, s2 = b.length;  </div><div class="line">        <span class="comment">//判断两个数组是否能够相乘求积  </span></div><div class="line">        <span class="keyword">if</span>(s1 != s2) &#123;  </div><div class="line">            System.out.println(<span class="string">"数组不能相乘，数组a的列数不等于数组b的行数"</span>);  </div><div class="line">            <span class="keyword">return</span>;  </div><div class="line">        &#125;  </div><div class="line">        <span class="comment">//动态创建数组c用来保存结果  </span></div><div class="line">        <span class="keyword">int</span>[][] c = <span class="keyword">new</span> <span class="keyword">int</span>[m][n];  </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;m; i++)   <span class="comment">//i表示数组c的每一行  </span></div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;n; j++) &#123;  <span class="comment">//j表示数组c的每一列  </span></div><div class="line">                <span class="keyword">int</span> temp = <span class="number">0</span>;  </div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>; k&lt;s1; k++) <span class="comment">//k表示数组a的列号和数组b的行号  </span></div><div class="line">                    temp+=a[i][k]*b[k][j];  </div><div class="line">                c[i][j] = temp;  </div><div class="line">            &#125;  </div><div class="line">        print(a);  </div><div class="line">        print(b);  </div><div class="line">        print(c);  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span>[][] c)</span> </span>&#123;  </div><div class="line">        <span class="keyword">int</span> m = c.length;  </div><div class="line">        <span class="keyword">int</span> n = c[<span class="number">0</span>].length;  </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;m; i++) &#123;  </div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;n; j++) &#123;  </div><div class="line">                <span class="keyword">if</span>(c[i][j]&lt;<span class="number">10</span>)  </div><div class="line">                    System.out.print(<span class="string">" "</span>);  </div><div class="line">                System.out.print(c[i][j] + <span class="string">" "</span>);  </div><div class="line">            &#125;  </div><div class="line">        System.out.println();  </div><div class="line">        &#125;  </div><div class="line">        System.out.println(<span class="string">"--------------------------------------"</span>);  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>06<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FingNearstPoints</span></span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    <span class="comment">//输入</span></div><div class="line">    Scanner input=<span class="keyword">new</span> Scanner(System in);</div><div class="line">    System.out.println(<span class="string">"Enter the number of points:"</span>);</div><div class="line">    <span class="keyword">int</span> numberOfPoints=intput.nextLine();</div><div class="line">    <span class="comment">//</span></div><div class="line">    <span class="keyword">double</span>[][] points=<span class="keyword">new</span> <span class="keyword">double</span>[numberOfPoints][<span class="number">2</span>];</div><div class="line">    System.out.println(<span class="string">"Enter"</span>+numberOfPoints+<span class="string">"points"</span>);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;points.length;i++)&#123;</div><div class="line">      points[i][<span class="number">0</span>]=input.nextDouble();</div><div class="line">      points[i][<span class="number">1</span>]=input.nextDouble();</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> p1=<span class="number">0</span>,p2=<span class="number">1</span>;</div><div class="line">    <span class="keyword">double</span> shortDistance=distance(points[p1][<span class="number">0</span>],points[p1][<span class="number">1</span>],points[p2][<span class="number">0</span>],points[p2][<span class="number">1</span>]);</div><div class="line"></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;points.length;i++)&#123;</div><div class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;points.length;j++)&#123;</div><div class="line">        <span class="keyword">double</span> distance=distance(points[i][<span class="number">0</span>],points[i][<span class="number">10</span>],points[j][<span class="number">0</span>],points[j][<span class="number">10</span>]);</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(shortDistance&gt;distance)&#123;</div><div class="line">          p1=i;p2=j;</div><div class="line">          shortDistance=distance;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    System.out.println(<span class="string">"The two points are"</span>+<span class="string">"("</span>+points[p1][<span class="number">0</span>]+<span class="string">","</span>+points[p1][<span class="number">1</span>]+<span class="string">")and("</span>+points[p2][<span class="number">0</span>]+<span class="string">","</span>+points[p2][<span class="number">1</span>]+<span class="string">")"</span>);</div><div class="line"></div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">distance</span> <span class="params">(<span class="keyword">double</span> x1,<span class="keyword">double</span> y1,<span class="keyword">double</span> x2,<span class="keyword">double</span> y2)</span></span></div><div class="line"><span class="function">  </span>&#123;</div><div class="line">    <span class="keyword">return</span> Math.sqrt(x2-x1)*(x2-x1)+(y2-y1)*(y2-y1);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>03  日历 时钟</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div><div class="line">274</div><div class="line">275</div><div class="line">276</div><div class="line">277</div><div class="line">278</div><div class="line">279</div><div class="line">280</div><div class="line">281</div><div class="line">282</div><div class="line">283</div><div class="line">284</div><div class="line">285</div><div class="line">286</div><div class="line">287</div><div class="line">288</div><div class="line">289</div><div class="line">290</div><div class="line">291</div><div class="line">292</div><div class="line">293</div><div class="line">294</div><div class="line">295</div><div class="line">296</div><div class="line">297</div><div class="line">298</div><div class="line">299</div><div class="line">300</div><div class="line">301</div><div class="line">302</div><div class="line">303</div><div class="line">304</div><div class="line">305</div><div class="line">306</div><div class="line">307</div><div class="line">308</div><div class="line">309</div><div class="line">310</div><div class="line">311</div><div class="line">312</div><div class="line">313</div><div class="line">314</div><div class="line">315</div><div class="line">316</div><div class="line">317</div><div class="line">318</div><div class="line">319</div><div class="line">320</div><div class="line">321</div><div class="line">322</div><div class="line">323</div><div class="line">324</div><div class="line">325</div><div class="line">326</div><div class="line">327</div><div class="line">328</div><div class="line">329</div><div class="line">330</div><div class="line">331</div><div class="line">332</div><div class="line">333</div><div class="line">334</div><div class="line">335</div><div class="line">336</div><div class="line">337</div><div class="line">338</div><div class="line">339</div><div class="line">340</div><div class="line">341</div><div class="line">342</div><div class="line">343</div><div class="line">344</div><div class="line">345</div><div class="line">346</div><div class="line">347</div><div class="line">348</div><div class="line">349</div><div class="line">350</div><div class="line">351</div><div class="line">352</div><div class="line">353</div><div class="line">354</div><div class="line">355</div><div class="line">356</div><div class="line">357</div><div class="line">358</div><div class="line">359</div><div class="line">360</div><div class="line">361</div><div class="line">362</div><div class="line">363</div><div class="line">364</div><div class="line">365</div><div class="line">366</div><div class="line">367</div><div class="line">368</div><div class="line">369</div><div class="line">370</div><div class="line">371</div><div class="line">372</div><div class="line">373</div><div class="line">374</div><div class="line">375</div><div class="line">376</div><div class="line">377</div><div class="line">378</div><div class="line">379</div><div class="line">380</div><div class="line">381</div><div class="line">382</div><div class="line">383</div><div class="line">384</div><div class="line">385</div><div class="line">386</div><div class="line">387</div><div class="line">388</div><div class="line">389</div><div class="line">390</div><div class="line">391</div><div class="line">392</div><div class="line">393</div><div class="line">394</div><div class="line">395</div><div class="line">396</div><div class="line">397</div><div class="line">398</div><div class="line">399</div><div class="line">400</div><div class="line">401</div><div class="line">402</div><div class="line">403</div><div class="line">404</div><div class="line">405</div><div class="line">406</div><div class="line">407</div><div class="line">408</div><div class="line">409</div><div class="line">410</div><div class="line">411</div><div class="line">412</div><div class="line">413</div><div class="line">414</div><div class="line">415</div><div class="line">416</div><div class="line">417</div><div class="line">418</div><div class="line">419</div><div class="line">420</div><div class="line">421</div><div class="line">422</div><div class="line">423</div><div class="line">424</div><div class="line">425</div><div class="line">426</div><div class="line">427</div><div class="line">428</div><div class="line">429</div><div class="line">430</div><div class="line">431</div><div class="line">432</div><div class="line">433</div><div class="line">434</div><div class="line">435</div><div class="line">436</div><div class="line">437</div><div class="line">438</div><div class="line">439</div><div class="line">440</div><div class="line">441</div><div class="line">442</div><div class="line">443</div><div class="line">444</div><div class="line">445</div><div class="line">446</div><div class="line">447</div><div class="line">448</div><div class="line">449</div><div class="line">450</div><div class="line">451</div><div class="line">452</div><div class="line">453</div><div class="line">454</div><div class="line">455</div><div class="line">456</div><div class="line">457</div><div class="line">458</div><div class="line">459</div><div class="line">460</div><div class="line">461</div><div class="line">462</div><div class="line">463</div><div class="line">464</div><div class="line">465</div><div class="line">466</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> textchess;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">import</span> java.awt.BorderLayout;</div><div class="line"><span class="keyword">import</span> java.awt.Color;</div><div class="line"><span class="keyword">import</span> java.awt.Graphics;</div><div class="line"><span class="keyword">import</span> java.util.Date;</div><div class="line">  <span class="keyword">import</span> java.awt.event.*;</div><div class="line"><span class="keyword">import</span> javax.swing.*;</div><div class="line"><span class="keyword">import</span> javax.swing.border.TitledBorder;</div><div class="line"> <span class="keyword">import</span> java.util.*;</div><div class="line"><span class="keyword">import</span> javax.swing.JPanel;  </div><div class="line"><span class="keyword">import</span> javax.swing.JTextField;  </div><div class="line"><span class="keyword">import</span> java.awt.GridLayout;</div><div class="line"><span class="keyword">import</span> javax.swing.JFrame;  </div><div class="line"><span class="keyword">import</span> javax.swing.JLabel;</div><div class="line"><span class="keyword">import</span> javax.swing.SwingUtilities;</div><div class="line"><span class="keyword">import</span> javax.swing.UIManager;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">JFrame</span></span></div><div class="line"><span class="class"></span>&#123;</div><div class="line"> <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</div><div class="line"><span class="comment">//测试</span></div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">()</span></span></div><div class="line"><span class="function"> </span>&#123;</div><div class="line">  Clock clock =<span class="keyword">new</span> Clock();</div><div class="line">  Calender cal = <span class="keyword">new</span> Calender();</div><div class="line">  <span class="meta">@SuppressWarnings</span>(<span class="string">"unused"</span>)</div><div class="line">  JPanel jp2 = <span class="keyword">new</span> JPanel();</div><div class="line"></div><div class="line">  setLocationRelativeTo(<span class="keyword">null</span>);</div><div class="line">  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</div><div class="line">  setSize(<span class="number">560</span>,<span class="number">300</span>);</div><div class="line">  setVisible(<span class="keyword">true</span>);</div><div class="line">  <span class="keyword">this</span>.setContentPane(clock);</div><div class="line"></div><div class="line"></div><div class="line">  <span class="keyword">this</span>.getContentPane().add(cal,BorderLayout.WEST);</div><div class="line">  setResizable(<span class="keyword">false</span>);</div><div class="line"> &#125;</div><div class="line"><span class="comment">////////////////////////////////////</span></div><div class="line"> <span class="comment">//画时钟</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DrawClock</span> <span class="keyword">extends</span> <span class="title">JPanel</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span></div><div class="line"><span class="class"> </span>&#123;  </div><div class="line"></div><div class="line"></div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</div><div class="line">  Thread newThread;  <span class="comment">//线程</span></div><div class="line"></div><div class="line">     <span class="keyword">public</span> <span class="keyword">int</span> RADIUS = <span class="number">80</span>;    <span class="comment">//时钟的半径</span></div><div class="line">    <span class="comment">//设置时钟位置</span></div><div class="line">     <span class="keyword">public</span> <span class="keyword">int</span> centerX = <span class="number">150</span>;         <span class="comment">//设置时钟x轴</span></div><div class="line">     <span class="keyword">public</span> <span class="keyword">int</span> centerY = <span class="number">120</span>;         <span class="comment">//设置时钟y轴</span></div><div class="line"></div><div class="line">     <span class="keyword">public</span> <span class="keyword">int</span> hr, min, sec;   <span class="comment">//小时，分钟，秒</span></div><div class="line">     <span class="keyword">public</span> <span class="keyword">int</span>[] xPoint = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>]; <span class="comment">//指针的4个坐标   </span></div><div class="line">     <span class="keyword">public</span> <span class="keyword">int</span>[] yPoint = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];  </div><div class="line">     <span class="keyword">public</span> <span class="keyword">double</span> hrAlpha, minAlpha, secAlpha, theta;  </div><div class="line"></div><div class="line">     <span class="keyword">private</span> JTextField timeZone;  </div><div class="line">        <span class="comment">//启动时钟</span></div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></div><div class="line"><span class="function">     </span>&#123;  </div><div class="line">         newThread = <span class="keyword">new</span> Thread(<span class="keyword">this</span>);  </div><div class="line">         newThread.start();  <span class="comment">//启动线程</span></div><div class="line">     &#125;  </div><div class="line">        <span class="comment">//终止线程</span></div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stop</span><span class="params">()</span></span></div><div class="line"><span class="function">     </span>&#123;  </div><div class="line">         newThread = <span class="keyword">null</span>;  </div><div class="line">     &#125;  </div><div class="line"></div><div class="line"></div><div class="line">     <span class="meta">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paint</span><span class="params">(Graphics g)</span></span></div><div class="line"><span class="function">     </span>&#123;  </div><div class="line">         <span class="keyword">super</span>.paint(g);  </div><div class="line"></div><div class="line"></div><div class="line">         <span class="comment">//画出时钟刻度   </span></div><div class="line">         <span class="keyword">double</span> minuteAlpha  = Math.PI/<span class="number">30.0</span>;  </div><div class="line">         <span class="keyword">int</span> count = <span class="number">0</span>;        </div><div class="line">         <span class="keyword">for</span>(<span class="keyword">double</span> alpha=<span class="number">0</span>; alpha&lt;<span class="number">2.0</span>*Math.PI; alpha+=minuteAlpha)</div><div class="line">         &#123;  </div><div class="line">             <span class="keyword">int</span> tX = (<span class="keyword">int</span>)(centerX+RADIUS*<span class="number">0.9</span>*Math.sin(alpha));  </div><div class="line">             <span class="keyword">int</span> tY = (<span class="keyword">int</span>)(centerY-RADIUS*<span class="number">0.9</span>*Math.cos(alpha));  </div><div class="line">             <span class="keyword">if</span>(count%<span class="number">5</span> == <span class="number">0</span>)</div><div class="line">             &#123;  </div><div class="line">                 g.setColor(Color.CYAN);  </div><div class="line">                 g.fill3DRect(tX, tY, <span class="number">3</span>, <span class="number">3</span>, <span class="keyword">false</span>);  </div><div class="line">                 <span class="keyword">if</span>(count%<span class="number">3</span>==<span class="number">0</span>)</div><div class="line">                 &#123;</div><div class="line">                  <span class="keyword">int</span> m = count /<span class="number">15</span>;</div><div class="line">                  <span class="keyword">switch</span>(m)&#123;</div><div class="line">                  <span class="keyword">case</span>  <span class="number">1</span>: g.drawString(<span class="string">"3"</span>, centerX+RADIUS-<span class="number">18</span>, centerY+<span class="number">5</span>);<span class="keyword">break</span>;</div><div class="line">                  <span class="keyword">case</span>  <span class="number">2</span>: g.drawString(<span class="string">"6"</span>, centerX-<span class="number">3</span>, centerY+RADIUS-<span class="number">10</span>);<span class="keyword">break</span>;</div><div class="line">                  <span class="keyword">case</span>  <span class="number">3</span>: g.drawString(<span class="string">"9"</span>, centerX-RADIUS+<span class="number">11</span>,centerY+<span class="number">6</span>);<span class="keyword">break</span>;</div><div class="line">                  <span class="keyword">default</span>: g.drawString(<span class="string">"12"</span>, centerX-<span class="number">5</span>, centerY-RADIUS+<span class="number">22</span>);                 </div><div class="line">                  &#125;</div><div class="line"></div><div class="line">                 &#125;</div><div class="line">             &#125;</div><div class="line">             <span class="keyword">else</span></div><div class="line">             &#123;  </div><div class="line">                 g.setColor(Color.DARK_GRAY);  </div><div class="line">                 g.fill3DRect(tX, tY, <span class="number">2</span>, <span class="number">2</span>, <span class="keyword">false</span>);  </div><div class="line">             &#125;  </div><div class="line">             count++;  </div><div class="line">         &#125;  </div><div class="line"></div><div class="line">         <span class="comment">//画出时钟时针   </span></div><div class="line">         g.setColor(Color.gray);   <span class="comment">// 定义颜色</span></div><div class="line">         drawPointer(g, centerX+<span class="number">2</span>, centerY+<span class="number">2</span>, (<span class="keyword">int</span>)(RADIUS*<span class="number">0.75</span>), hrAlpha);  </div><div class="line">         g.setColor(Color.CYAN);   <span class="comment">//   定义颜色</span></div><div class="line">         drawPointer(g, centerX, centerY, (<span class="keyword">int</span>)(RADIUS*<span class="number">0.75</span>), hrAlpha);  </div><div class="line"></div><div class="line"></div><div class="line">         <span class="comment">//画出分针   </span></div><div class="line">         g.setColor(Color.gray);  <span class="comment">// 定义颜色</span></div><div class="line">         drawPointer(g, centerX+<span class="number">2</span>, centerY+<span class="number">2</span>, (<span class="keyword">int</span>)(RADIUS*<span class="number">0.83</span>), minAlpha);  </div><div class="line">         g.setColor(Color.CYAN);  <span class="comment">// 定义颜色</span></div><div class="line">         drawPointer(g, centerX, centerY, (<span class="keyword">int</span>)(RADIUS*<span class="number">0.83</span>), minAlpha);  </div><div class="line"></div><div class="line"></div><div class="line">         <span class="comment">//画出秒针   </span></div><div class="line">         g.setColor(Color.DARK_GRAY);   <span class="comment">//定义颜色</span></div><div class="line">         g.drawLine( centerX,centerY,  </div><div class="line">                 (<span class="keyword">int</span>)(centerX+(<span class="keyword">int</span>)(RADIUS*<span class="number">0.79</span>)*Math.sin(secAlpha)),  </div><div class="line">                 (<span class="keyword">int</span>)(centerY-(<span class="keyword">int</span>)(RADIUS*<span class="number">0.79</span>)*Math.cos(secAlpha))  </div><div class="line">         );  </div><div class="line">            setBorder(<span class="keyword">new</span> TitledBorder(<span class="string">"时间"</span>));</div><div class="line">            setBackground(Color.white); <span class="comment">// 定义颜色</span></div><div class="line"></div><div class="line">            g.drawRect(<span class="number">85</span>, <span class="number">210</span>, <span class="number">130</span>, <span class="number">20</span>);  </div><div class="line">            g.setColor(Color.WHITE);</div><div class="line">            g.setColor(Color.DARK_GRAY);  </div><div class="line"></div><div class="line">            Date timeNow = <span class="keyword">new</span> Date();</div><div class="line">            g.drawString(timeNow.toLocaleString(), <span class="number">100</span>,<span class="number">225</span>);  </div><div class="line">     &#125;  </div><div class="line"></div><div class="line"></div><div class="line">     <span class="function"><span class="keyword">public</span> Date <span class="title">getDate</span><span class="params">()</span></span></div><div class="line"><span class="function">     </span>&#123;  </div><div class="line">         Date timeNow = <span class="keyword">new</span> Date();  </div><div class="line">         <span class="keyword">return</span> timeNow;  </div><div class="line">     &#125;  </div><div class="line"></div><div class="line">     <span class="comment">// 刷新图层</span></div><div class="line"></div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(Graphics g)</span></span></div><div class="line"><span class="function">     </span>&#123;  </div><div class="line">         paint(g);  </div><div class="line">     &#125;  </div><div class="line"></div><div class="line"></div><div class="line">      <span class="comment">// 画出一个帧的图像</span></div><div class="line"></div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;  </div><div class="line">         <span class="keyword">while</span>(newThread != <span class="keyword">null</span>)</div><div class="line">         &#123;  </div><div class="line">             repaint();  </div><div class="line">             <span class="keyword">try</span></div><div class="line">             &#123;  </div><div class="line">                 Thread.sleep(<span class="number">800</span>);  </div><div class="line">             &#125; <span class="keyword">catch</span>(InterruptedException E) &#123;&#125;  </div><div class="line"></div><div class="line">             Date timeNow = <span class="keyword">new</span> Date();</div><div class="line"></div><div class="line">             <span class="meta">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</div><div class="line">    <span class="keyword">int</span> hours  = timeNow.getHours();      <span class="comment">//这里不知道为什么会画横线的</span></div><div class="line"></div><div class="line">             <span class="meta">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</div><div class="line">    <span class="keyword">int</span> minutes = timeNow.getMinutes();   <span class="comment">//这里不知道为什么会画横线的</span></div><div class="line"></div><div class="line">             <span class="meta">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</div><div class="line">    <span class="keyword">int</span> seconds = timeNow.getSeconds();   <span class="comment">//这里不知道为什么会画横线的</span></div><div class="line">             hr  = hours;  </div><div class="line">             min = minutes;  </div><div class="line">             sec = seconds;  </div><div class="line"></div><div class="line">             theta = Math.PI/<span class="number">6.0</span>/<span class="number">20.0</span>;  </div><div class="line"></div><div class="line">             hrAlpha  = (<span class="keyword">double</span>)(hr*<span class="number">3600</span> + min*<span class="number">60</span> + sec)  </div><div class="line">                 /(<span class="number">12.0</span>*<span class="number">3600.0</span>)*<span class="number">2.0</span>*Math.PI;  </div><div class="line">             minAlpha = (<span class="keyword">double</span>)(min*<span class="number">60</span> + sec)/<span class="number">3600.0</span>*<span class="number">2.0</span>*Math.PI;  </div><div class="line">             secAlpha = (<span class="keyword">double</span>)sec/<span class="number">60.0</span> * <span class="number">2.0</span>*Math.PI;  </div><div class="line"></div><div class="line">         &#125;         </div><div class="line">     &#125;  </div><div class="line"></div><div class="line"></div><div class="line">     <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">drawPointer</span><span class="params">(Graphics g, <span class="keyword">int</span> x, <span class="keyword">int</span> y,   </span></span></div><div class="line"><span class="function"><span class="params">             <span class="keyword">int</span> len, <span class="keyword">double</span> theta)</span></span></div><div class="line"><span class="function">     </span>&#123;  </div><div class="line"></div><div class="line">         xPoint[<span class="number">0</span>] = (<span class="keyword">int</span>)(x+len*<span class="number">0.3</span>*Math.sin(theta-Math.PI));  </div><div class="line">         yPoint[<span class="number">0</span>] = (<span class="keyword">int</span>)(y-len*<span class="number">0.3</span>*Math.cos(theta-Math.PI));  </div><div class="line">         xPoint[<span class="number">1</span>] = (<span class="keyword">int</span>)(xPoint[<span class="number">0</span>]+len*<span class="number">0.3</span>*Math.sin  </div><div class="line">                 (theta-(<span class="keyword">double</span>)(<span class="number">10.0</span>/<span class="number">180</span>)*Math.PI));  </div><div class="line">         yPoint[<span class="number">1</span>] = (<span class="keyword">int</span>)(yPoint[<span class="number">0</span>]-len*<span class="number">0.3</span>*Math.cos  </div><div class="line">                 (theta-(<span class="keyword">double</span>)(<span class="number">10.0</span>/<span class="number">180</span>)*Math.PI));  </div><div class="line">         xPoint[<span class="number">2</span>] = (<span class="keyword">int</span>)(xPoint[<span class="number">0</span>]+len * Math.sin(theta));  </div><div class="line">         yPoint[<span class="number">2</span>] = (<span class="keyword">int</span>)(yPoint[<span class="number">0</span>]-len * Math.cos(theta));  </div><div class="line">         xPoint[<span class="number">3</span>] = (<span class="keyword">int</span>)(xPoint[<span class="number">0</span>]+len*<span class="number">0.3</span>*Math.sin  </div><div class="line">                 (theta+(<span class="keyword">double</span>)(<span class="number">10.0</span>/<span class="number">180</span>)*Math.PI));  </div><div class="line">         yPoint[<span class="number">3</span>] = (<span class="keyword">int</span>)(yPoint[<span class="number">0</span>]-len*<span class="number">0.3</span>*Math.cos  </div><div class="line">                 (theta+(<span class="keyword">double</span>)(<span class="number">10.0</span>/<span class="number">180</span>)*Math.PI));  </div><div class="line"></div><div class="line">         g.fillPolygon(xPoint, yPoint, <span class="number">4</span>);         </div><div class="line">     &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> JTextField <span class="title">getTimeZone</span><span class="params">()</span> </span>&#123;</div><div class="line">   <span class="keyword">return</span> timeZone;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTimeZone</span><span class="params">(JTextField timeZone)</span> </span>&#123;</div><div class="line">   <span class="keyword">this</span>.timeZone = timeZone;</div><div class="line">  &#125;  </div><div class="line"></div><div class="line"></div><div class="line"> &#125;  </div><div class="line"><span class="comment">//////////////////////////////////</span></div><div class="line"> <span class="comment">//时钟</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Clock</span> <span class="keyword">extends</span> <span class="title">JPanel</span></span></div><div class="line"><span class="class"> </span>&#123;    </div><div class="line"></div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</div><div class="line">  <span class="keyword">private</span> UIManager.LookAndFeelInfo looks[];</div><div class="line">  <span class="keyword">private</span> DrawClock clock ;</div><div class="line"></div><div class="line">     <span class="meta">@SuppressWarnings</span>(<span class="string">"unused"</span>)</div><div class="line">  <span class="keyword">private</span> JPanel pane_clock ;</div><div class="line">  JPanel pane_cal;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Clock</span><span class="params">()</span></span></div><div class="line"><span class="function">  </span>&#123;</div><div class="line">     <span class="keyword">super</span>();</div><div class="line"></div><div class="line">     looks = UIManager.getInstalledLookAndFeels();</div><div class="line">     changeTheLookAndFeel(<span class="number">2</span>);</div><div class="line"></div><div class="line"></div><div class="line">       clock = <span class="keyword">new</span> DrawClock();</div><div class="line">          clock.start();</div><div class="line"></div><div class="line">         <span class="keyword">this</span>.setBackground(Color.GRAY);  </div><div class="line">         <span class="keyword">this</span>.setLayout(<span class="keyword">new</span> BorderLayout());       </div><div class="line">         <span class="keyword">this</span>.setOpaque(<span class="keyword">false</span>);  </div><div class="line"></div><div class="line">       <span class="keyword">this</span>.add(clock);</div><div class="line">       <span class="keyword">this</span>.setBorder(<span class="keyword">new</span> TitledBorder(<span class="string">"时间日期"</span>));</div><div class="line"></div><div class="line">       setSize( <span class="number">300</span>, <span class="number">300</span> );  </div><div class="line">       setVisible( <span class="keyword">true</span> );  </div><div class="line">    &#125;</div><div class="line"></div><div class="line">     <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">changeTheLookAndFeel</span><span class="params">(<span class="keyword">int</span> i)</span></span></div><div class="line"><span class="function">     </span>&#123;</div><div class="line">      <span class="keyword">try</span></div><div class="line">      &#123;</div><div class="line">       UIManager.setLookAndFeel(looks[i].getClassName());</div><div class="line">       SwingUtilities.updateComponentTreeUI(<span class="keyword">this</span>);</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">catch</span>(Exception exception)</div><div class="line">      &#123;</div><div class="line">       exception.printStackTrace();</div><div class="line">      &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">  &#125;</div><div class="line"> &#125;   </div><div class="line"><span class="comment">///////////////////////////////////</span></div><div class="line">               <span class="comment">//设计日历</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calender</span> <span class="keyword">extends</span> <span class="title">JPanel</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></div><div class="line"><span class="class"> </span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</div><div class="line">  <span class="keyword">public</span>  <span class="keyword">final</span> String HOUR_OF_DAY = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">  <span class="comment">//定义</span></div><div class="line">  <span class="meta">@SuppressWarnings</span>(<span class="string">"rawtypes"</span>)</div><div class="line">  JComboBox Month = <span class="keyword">new</span> JComboBox();</div><div class="line">  <span class="meta">@SuppressWarnings</span>(<span class="string">"rawtypes"</span>)</div><div class="line">  JComboBox Year = <span class="keyword">new</span> JComboBox();</div><div class="line">  JLabel Year_l = <span class="keyword">new</span> JLabel(<span class="string">"年"</span>);</div><div class="line">  JLabel Month_l = <span class="keyword">new</span> JLabel(<span class="string">"月"</span>);  </div><div class="line">  Date now_date = <span class="keyword">new</span> Date();</div><div class="line">  JLabel[] Label_day = <span class="keyword">new</span> JLabel[<span class="number">49</span>];  </div><div class="line">  <span class="meta">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</div><div class="line">  <span class="keyword">int</span> now_year = now_date.getYear() + <span class="number">1900</span>;</div><div class="line">  <span class="meta">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</div><div class="line">  <span class="keyword">int</span> now_month = now_date.getMonth();</div><div class="line">  <span class="keyword">boolean</span> bool = <span class="keyword">false</span>;</div><div class="line">  String year_int = <span class="keyword">null</span>;</div><div class="line">  <span class="keyword">int</span> month_int;</div><div class="line">  JPanel pane_ym = <span class="keyword">new</span> JPanel();</div><div class="line">  JPanel pane_day = <span class="keyword">new</span> JPanel();</div><div class="line"></div><div class="line">  <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Calender</span><span class="params">()</span></span></div><div class="line"><span class="function">  </span>&#123;</div><div class="line">   <span class="keyword">super</span>();</div><div class="line">   <span class="comment">//设定年月</span></div><div class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = now_year - <span class="number">10</span>; i &lt;= now_year + <span class="number">20</span>; i++)</div><div class="line">   &#123;</div><div class="line">    Year.addItem(i + <span class="string">""</span>);</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">13</span>; i++)</div><div class="line">   &#123;</div><div class="line">    Month.addItem(i + <span class="string">""</span>);</div><div class="line">   &#125;</div><div class="line">   Year.setSelectedIndex(<span class="number">10</span>);</div><div class="line">   pane_ym.add(<span class="keyword">new</span>  JLabel(<span class="string">"        "</span>));</div><div class="line">   pane_ym.add(Year);</div><div class="line">   pane_ym.add(Year_l);</div><div class="line">   Month.setSelectedIndex(now_month);  </div><div class="line">   pane_ym.add(Month);</div><div class="line">   pane_ym.add(Month_l);</div><div class="line">   pane_ym.add(<span class="keyword">new</span>  JLabel(<span class="string">"        "</span>));</div><div class="line"></div><div class="line">   Month.addActionListener(<span class="keyword">this</span>);</div><div class="line">   Year.addActionListener(<span class="keyword">this</span>);</div><div class="line"></div><div class="line"></div><div class="line">   <span class="comment">//初始化日期并绘制</span></div><div class="line">   pane_day.setLayout(<span class="keyword">new</span> GridLayout(<span class="number">7</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">10</span>));</div><div class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">49</span>; i++) &#123;</div><div class="line">    Label_day[i] = <span class="keyword">new</span> JLabel(<span class="string">" "</span>);</div><div class="line">    pane_day.add(Label_day[i]);</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">this</span>.setDay();</div><div class="line">   <span class="keyword">this</span>.setLayout(<span class="keyword">new</span> BorderLayout());</div><div class="line">      <span class="keyword">this</span>.add(pane_day, BorderLayout.CENTER);</div><div class="line">   <span class="keyword">this</span>.add(pane_ym, BorderLayout.NORTH);</div><div class="line">   <span class="keyword">this</span>.setSize(<span class="number">100</span>,<span class="number">200</span>);</div><div class="line">   <span class="keyword">this</span>.setBorder(<span class="keyword">new</span> TitledBorder(<span class="string">"日历"</span>));</div><div class="line">   setSize(<span class="number">300</span>,<span class="number">300</span>);</div><div class="line"></div><div class="line">  &#125;</div><div class="line">  <span class="meta">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</div><div class="line">  <span class="function"><span class="keyword">void</span> <span class="title">setDay</span><span class="params">()</span></span></div><div class="line"><span class="function">  </span>&#123;</div><div class="line">   <span class="keyword">if</span> (bool)</div><div class="line">   &#123;</div><div class="line">    year_int = now_year + <span class="string">""</span>;</div><div class="line">    month_int = now_month;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">else</span></div><div class="line">   &#123;</div><div class="line">    year_int = Year.getSelectedItem().toString();</div><div class="line">    month_int = Month.getSelectedIndex();</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="keyword">int</span> year_sel = Integer.parseInt(year_int) - <span class="number">1900</span>; <span class="comment">//获得年份值</span></div><div class="line">   <span class="comment">//@SuppressWarnings("deprecation")</span></div><div class="line">   Date dt = <span class="keyword">new</span> Date(year_sel, month_int, <span class="number">1</span>); <span class="comment">//构造一个日期</span></div><div class="line">   GregorianCalendar cal = <span class="keyword">new</span> GregorianCalendar(); <span class="comment">//创建一个Calendar实例</span></div><div class="line">   cal.setTime(dt);</div><div class="line">   String week[] = &#123; <span class="string">"日"</span>, <span class="string">"一"</span>,<span class="string">"二"</span>, <span class="string">"三"</span>, <span class="string">"四"</span>, <span class="string">"五"</span>, <span class="string">"六"</span> &#125;;</div><div class="line"></div><div class="line">   <span class="keyword">int</span> day = <span class="number">0</span>;</div><div class="line">   <span class="keyword">int</span> day_week = <span class="number">0</span>;</div><div class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; i++) &#123;</div><div class="line">    Label_day[i].setText(week[i]);</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="comment">//月份</span></div><div class="line">   <span class="keyword">if</span> (month_int == <span class="number">0</span>||month_int == <span class="number">2</span> ||month_int == <span class="number">4</span> ||</div><div class="line">     month_int == <span class="number">6</span> ||</div><div class="line">     month_int == <span class="number">9</span> ||month_int == <span class="number">11</span>)</div><div class="line">   &#123;</div><div class="line">    day = <span class="number">31</span>;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">else</span> <span class="keyword">if</span> (month_int == <span class="number">3</span> ||month_int == <span class="number">5</span> || month_int == <span class="number">7</span>||</div><div class="line">     month_int == <span class="number">8</span> ||month_int == <span class="number">10</span>|| month_int == <span class="number">1</span>)</div><div class="line">   &#123;</div><div class="line">    day = <span class="number">30</span>;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">else</span></div><div class="line">   &#123;</div><div class="line">    <span class="keyword">if</span> (cal.isLeapYear(year_sel))</div><div class="line">    &#123;</div><div class="line">     day = <span class="number">29</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">     day = <span class="number">28</span>;</div><div class="line">    &#125;</div><div class="line">   &#125;</div><div class="line">   day_week = <span class="number">7</span> + dt.getDay();</div><div class="line">   <span class="keyword">int</span> count = <span class="number">1</span>;</div><div class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = day_week; i &lt; day_week + day; count++, i++)</div><div class="line">   &#123;</div><div class="line">    <span class="keyword">if</span> (i % <span class="number">7</span> == <span class="number">0</span> ||i == <span class="number">13</span>||i == <span class="number">20</span>||i == <span class="number">27</span>||</div><div class="line">      i == <span class="number">48</span> ||i == <span class="number">34</span> ||i == <span class="number">41</span>)</div><div class="line">    &#123;</div><div class="line">     <span class="keyword">if</span> (i == day_week + now_date.getDate() - <span class="number">1</span>)</div><div class="line">     &#123;</div><div class="line">      Label_day[i].setForeground(Color.blue);</div><div class="line">      Label_day[i].setText(count + <span class="string">""</span>);</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">else</span></div><div class="line">     &#123;</div><div class="line">      Label_day[i].setForeground(Color.red);</div><div class="line">      Label_day[i].setText(count + <span class="string">""</span>);</div><div class="line">     &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">     <span class="keyword">if</span> (i == day_week + now_date.getDate() - <span class="number">1</span>)</div><div class="line">     &#123;</div><div class="line">      Label_day[i].setForeground(Color.blue);</div><div class="line"></div><div class="line">      Label_day[i].setText(count + <span class="string">""</span>);</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">else</span></div><div class="line">     &#123;</div><div class="line">      Label_day[i].setForeground(Color.black);</div><div class="line">      Label_day[i].setText(count + <span class="string">""</span>);</div><div class="line">     &#125;</div><div class="line">    &#125;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">if</span> (day_week == <span class="number">0</span>)</div><div class="line">   &#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = day; i &lt; <span class="number">49</span>; i++)</div><div class="line">    &#123;</div><div class="line">     Label_day[i].setText(<span class="string">" "</span>);</div><div class="line">    &#125;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">else</span></div><div class="line">   &#123;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">7</span>; i &lt; day_week; i++)</div><div class="line">    &#123;</div><div class="line">     Label_day[i].setText(<span class="string">" "</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = day_week + day; i &lt; <span class="number">49</span>; i++)</div><div class="line">    &#123;</div><div class="line">     Label_day[i].setText(<span class="string">"  "</span>);</div><div class="line">    &#125;</div><div class="line">   &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</div><div class="line">   <span class="keyword">if</span> (e.getSource() == Year || e.getSource() == Month) &#123;</div><div class="line">    bool = <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">this</span>.setDay();</div><div class="line">   &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line"> &#125;</div><div class="line"><span class="comment">//////////////////////////////////</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">try</span></div><div class="line">&#123;</div><div class="line">   Test frame = <span class="keyword">new</span> Test();</div><div class="line">   frame.setTitle(<span class="string">"日历"</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">catch</span> (Exception e)&#123;</div><div class="line"> System.out.print(<span class="string">"run error!"</span>);    </div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://img.027cgb.cn/20170608/201768531287945569.png"></p>
+<p>4 棋盘覆盖<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> textchess;</div><div class="line"><span class="keyword">import</span> java.awt.BorderLayout;</div><div class="line"><span class="keyword">import</span> java.awt.Color;</div><div class="line"><span class="keyword">import</span> java.awt.Dimension;</div><div class="line"><span class="keyword">import</span> java.awt.FlowLayout;</div><div class="line"><span class="keyword">import</span> java.awt.Font;</div><div class="line"><span class="keyword">import</span> java.awt.GridLayout;</div><div class="line"><span class="keyword">import</span> java.awt.Toolkit;</div><div class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</div><div class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</div><div class="line"><span class="keyword">import</span> java.util.Random;</div><div class="line"><span class="keyword">import</span> javax.print.attribute.standard.JobHoldUntil;</div><div class="line"><span class="keyword">import</span> javax.swing.ImageIcon;</div><div class="line"><span class="keyword">import</span> javax.swing.JButton;</div><div class="line"><span class="keyword">import</span> javax.swing.JFrame;</div><div class="line"><span class="keyword">import</span> javax.swing.JLabel;</div><div class="line"><span class="keyword">import</span> javax.swing.JPanel;</div><div class="line"><span class="keyword">import</span> javax.swing.JTextArea;</div><div class="line"><span class="keyword">import</span> javax.swing.JTextField;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">chessBoard</span> <span class="keyword">extends</span> <span class="title">JFrame</span> </span>&#123;</div><div class="line"> <span class="keyword">private</span> <span class="keyword">int</span> tr, tc, dr, dc, size;<span class="comment">//定义各成员变量</span></div><div class="line"> <span class="keyword">int</span> tile = <span class="number">1</span>;</div><div class="line"> <span class="keyword">float</span> red,green,blue;</div><div class="line"> JPanel centerPanel;</div><div class="line"> JPanel southPanel;</div><div class="line"> JButton[][] button;</div><div class="line"> JTextField TrText, TcText, DrText, DcText, SizeText;</div><div class="line"> JLabel TrLabel, TcLabel, DrLabel, DcLabel, SizeLabel;</div><div class="line"> JButton OKButton;</div><div class="line"> JButton CancelButton;</div><div class="line"> JPanel panel = <span class="keyword">new</span> JPanel();</div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="title">chessBoard</span><span class="params">()</span> </span>&#123;</div><div class="line">  <span class="keyword">super</span>();</div><div class="line">  setTitle(<span class="string">"棋盘覆盖"</span>);</div><div class="line"></div><div class="line">  <span class="keyword">this</span>.setResizable(<span class="keyword">false</span>);</div><div class="line">  centerPanel = <span class="keyword">new</span> JPanel();</div><div class="line">  southPanel = <span class="keyword">new</span> JPanel();</div><div class="line">  OKButton = <span class="keyword">new</span> JButton(<span class="string">"确定或开始"</span>);</div><div class="line">  OKButton.addActionListener(<span class="keyword">new</span> OKButtonAction());</div><div class="line">  CancelButton = <span class="keyword">new</span> JButton(<span class="string">"取消或清除"</span>);</div><div class="line">  CancelButton.addActionListener(<span class="keyword">new</span> OKButtonAction());</div><div class="line">  setBounds(<span class="number">300</span>, -<span class="number">10</span>, <span class="number">900</span>, <span class="number">900</span>);<span class="comment">//设置窗口大小与位置</span></div><div class="line">  TrText = <span class="keyword">new</span> JTextField(<span class="string">"0"</span>,<span class="number">2</span>);<span class="comment">//定义各组件</span></div><div class="line">  TcText = <span class="keyword">new</span> JTextField(<span class="string">"0"</span>,<span class="number">2</span>);</div><div class="line">  DrText = <span class="keyword">new</span> JTextField(<span class="string">"0"</span>,<span class="number">2</span>);</div><div class="line">  DcText = <span class="keyword">new</span> JTextField(<span class="string">"0"</span>,<span class="number">2</span>);</div><div class="line">  SizeText = <span class="keyword">new</span> JTextField(<span class="string">"4"</span>,<span class="number">2</span>);</div><div class="line">  TrLabel = <span class="keyword">new</span> JLabel(<span class="string">"起始方格坐标x:   "</span>);</div><div class="line">  TcLabel = <span class="keyword">new</span> JLabel(<span class="string">"起始方格坐标y:    "</span>);</div><div class="line">  DrLabel = <span class="keyword">new</span> JLabel(<span class="string">"特殊方格坐标x:   "</span>);</div><div class="line">  DcLabel = <span class="keyword">new</span> JLabel(<span class="string">"特殊方格坐标y:   "</span>);</div><div class="line">  SizeLabel = <span class="keyword">new</span> JLabel(<span class="string">"棋盘规模size:   "</span>);</div><div class="line">  TrText.setEnabled(<span class="keyword">false</span>);</div><div class="line">  TcText.setEnabled(<span class="keyword">false</span>);</div><div class="line">  <span class="keyword">int</span> tR = Integer.parseInt(TrText.getText());</div><div class="line">  <span class="keyword">int</span> tC = Integer.parseInt(TcText.getText());</div><div class="line">  <span class="keyword">int</span> dR = Integer.parseInt(DrText.getText());</div><div class="line">  <span class="keyword">int</span> dC = Integer.parseInt(DcText.getText());</div><div class="line">  <span class="keyword">int</span> Size = <span class="number">1</span>;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;Integer.parseInt(SizeText.getText());i++)</div><div class="line">   Size*=<span class="number">2</span>;</div><div class="line">  tr = tR;</div><div class="line">  tc = tC;</div><div class="line">  dr = dR;</div><div class="line">  dc = dC;</div><div class="line">  size = Size;</div><div class="line">  southPanel.add(CancelButton);<span class="comment">//添加各组件到窗体</span></div><div class="line">  southPanel.add(TrLabel);</div><div class="line">  southPanel.add(TrText);</div><div class="line">  southPanel.add(TcLabel);</div><div class="line">  southPanel.add(TcText);</div><div class="line">  southPanel.add(DrLabel);</div><div class="line">  southPanel.add(DrText);</div><div class="line">  southPanel.add(DcLabel);</div><div class="line">  southPanel.add(DcText);</div><div class="line">  southPanel.add(SizeLabel);</div><div class="line">  southPanel.add(SizeText);</div><div class="line">  southPanel.add(OKButton);</div><div class="line"></div><div class="line">  getContentPane().add(southPanel, BorderLayout.NORTH);</div><div class="line">  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</div><div class="line"> &#125;</div><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">gridLayout</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">gridLayout</span><span class="params">()</span> </span>&#123;</div><div class="line">   centerPanel.setLayout(<span class="keyword">new</span> GridLayout(<span class="number">0</span>, size));</div><div class="line">   button = <span class="keyword">new</span> JButton[size][size];</div><div class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; size; j++) &#123;</div><div class="line">     button[i][j] = <span class="keyword">new</span> JButton();</div><div class="line">     <span class="keyword">if</span> (i == dr &amp;&amp; j == dc) &#123;</div><div class="line">      button[i][j].setBackground(Color.BLUE);</div><div class="line">      button[i][j].setText(<span class="string">"&lt;html&gt;&lt;font size='3' color='white'&gt;棋盘覆盖&lt;br&gt;Done By Java!&lt;/font&gt;&lt;/html&gt;"</span>);</div><div class="line">      button[i][j].setEnabled(<span class="keyword">false</span>);</div><div class="line">     &#125;</div><div class="line">     centerPanel.add(button[i][j]);</div><div class="line">    &#125;</div><div class="line">   &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span></div><div class="line"><span class="function">  </span>&#123;</div><div class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">1000</span>;j++);</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ChessBoard</span><span class="params">(<span class="keyword">int</span> tr, <span class="keyword">int</span> tc, <span class="keyword">int</span> dr, <span class="keyword">int</span> dc, <span class="keyword">int</span> size)</span> </span>&#123;<span class="comment">//算法实现</span></div><div class="line">   <span class="keyword">if</span> (size == <span class="number">1</span>) <span class="comment">// 棋盘方格大小为1,说明递归到最里层</span></div><div class="line">    <span class="keyword">return</span>;</div><div class="line">   <span class="keyword">int</span> t = tile++;<span class="comment">// 每次递增1</span></div><div class="line">   Random rd =  <span class="keyword">new</span> Random();</div><div class="line">   red=rd.nextFloat();</div><div class="line">   green=rd.nextFloat();</div><div class="line">   blue=rd.nextFloat();</div><div class="line">   Color col = <span class="keyword">new</span> Color(red,green,blue);</div><div class="line">   sleep();</div><div class="line">   <span class="keyword">int</span> s = size / <span class="number">2</span>; <span class="comment">// 棋盘中间的行、列号(相等的)</span></div><div class="line">   <span class="comment">// 检查特殊方块是否在左上角子棋盘中</span></div><div class="line">   <span class="keyword">if</span> (dr &lt; tr + s &amp;&amp; dc &lt; tc + s) <span class="comment">// 在</span></div><div class="line">    ChessBoard(tr, tc, dr, dc, s);</div><div class="line">   <span class="keyword">else</span> <span class="comment">// 不在，将该子棋盘右下角的方块视为特殊方块</span></div><div class="line">   &#123;</div><div class="line">    button[tr + s - <span class="number">1</span>][tc + s - <span class="number">1</span>].setBackground(col);</div><div class="line">    button[tr + s - <span class="number">1</span>][tc + s - <span class="number">1</span>].setEnabled(<span class="keyword">false</span>);</div><div class="line">    button[tr + s - <span class="number">1</span>][tc + s - <span class="number">1</span>].setText(<span class="string">"&lt;html&gt;&lt;Font size='4',color='white'&gt;"</span>+t+<span class="string">"&lt;/Font&gt;&lt;/html&gt;"</span>);</div><div class="line">    ChessBoard(tr, tc, tr + s - <span class="number">1</span>, tc + s - <span class="number">1</span>, s);</div><div class="line">    sleep();</div><div class="line">   &#125;</div><div class="line">   <span class="comment">// 检查特殊方块是否在右上角子棋盘中</span></div><div class="line">   <span class="keyword">if</span> (dr &lt; tr + s &amp;&amp; dc &gt;= tc + s) <span class="comment">// 在</span></div><div class="line">    ChessBoard(tr, tc + s, dr, dc, s);</div><div class="line">   <span class="keyword">else</span> <span class="comment">// 不在，将该子棋盘左下角的方块视为特殊方块</span></div><div class="line">   &#123;</div><div class="line">    button[tr + s - <span class="number">1</span>][tc + s].setBackground(col);</div><div class="line">    button[tr + s - <span class="number">1</span>][tc + s].setEnabled(<span class="keyword">false</span>);</div><div class="line">    button[tr + s - <span class="number">1</span>][tc + s ].setText(<span class="string">"&lt;html&gt;&lt;Font size='4',color='white'&gt;"</span>+t+<span class="string">"&lt;/Font&gt;&lt;/html&gt;"</span>);</div><div class="line">    ChessBoard(tr, tc + s, tr + s - <span class="number">1</span>, tc + s, s);</div><div class="line">    sleep();</div><div class="line">   &#125;</div><div class="line">   <span class="comment">// 检查特殊方块是否在左下角子棋盘中</span></div><div class="line">   <span class="keyword">if</span> (dr &gt;= tr + s &amp;&amp; dc &lt; tc + s) <span class="comment">// 在</span></div><div class="line">    ChessBoard(tr + s, tc, dr, dc, s);</div><div class="line">   <span class="keyword">else</span> <span class="comment">// 不在，将该子棋盘右上角的方块视为特殊方块</span></div><div class="line">   &#123;</div><div class="line">    button[tr + s][tc + s - <span class="number">1</span>].setBackground(col);</div><div class="line">    button[tr + s][tc + s - <span class="number">1</span>].setEnabled(<span class="keyword">false</span>);</div><div class="line">    button[tr + s ][tc + s - <span class="number">1</span>].setText(<span class="string">"&lt;html&gt;&lt;Font size='4',color='white'&gt;"</span>+t+<span class="string">"&lt;/Font&gt;&lt;/html&gt;"</span>);</div><div class="line">    ChessBoard(tr + s, tc, tr + s, tc + s - <span class="number">1</span>, s);</div><div class="line">    sleep();</div><div class="line">   &#125;</div><div class="line">   <span class="comment">// 检查特殊方块是否在右下角子棋盘中</span></div><div class="line">   <span class="keyword">if</span> (dr &gt;= tr + s &amp;&amp; dc &gt;= tc + s) <span class="comment">// 在</span></div><div class="line">    ChessBoard(tr + s, tc + s, dr, dc, s);</div><div class="line">   <span class="keyword">else</span> <span class="comment">// 不在，将该子棋盘左上角的方块视为特殊方块</span></div><div class="line">   &#123;</div><div class="line">    button[tr + s][tc + s].setBackground(col);</div><div class="line">    button[tr + s][tc + s].setEnabled(<span class="keyword">false</span>);</div><div class="line">    button[tr + s ][tc + s ].setText(<span class="string">"&lt;html&gt;&lt;Font size='4',color='white'&gt;"</span>+t+<span class="string">"&lt;/Font&gt;&lt;/html&gt;"</span>);</div><div class="line">    ChessBoard(tr + s, tc + s, tr + s, tc + s, s);</div><div class="line">    sleep();</div><div class="line">   &#125;</div><div class="line">  &#125;</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OKButtonAction</span> <span class="keyword">implements</span> <span class="title">ActionListener</span> </span>&#123;<span class="comment">//点下一个按钮时的事件响应</span></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</div><div class="line">   <span class="comment">// TODO Auto-generated method stub</span></div><div class="line">   JButton whichButton = (JButton) e.getSource();<span class="comment">//获取点击的事件，即是点下了哪个按钮</span></div><div class="line">   String whichName = whichButton.getActionCommand();</div><div class="line">   <span class="keyword">if</span>(whichName.equals(<span class="string">"确定或开始"</span>)) &#123;</div><div class="line">    getContentPane().add(centerPanel, BorderLayout.CENTER);</div><div class="line">    <span class="keyword">int</span> tR = Integer.parseInt(TrText.getText());</div><div class="line">    <span class="keyword">int</span> tC = Integer.parseInt(TcText.getText());</div><div class="line">    <span class="keyword">int</span> dR = Integer.parseInt(DrText.getText());</div><div class="line">    <span class="keyword">int</span> dC = Integer.parseInt(DcText.getText());</div><div class="line">    <span class="keyword">int</span> Size = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;Integer.parseInt(SizeText.getText());i++)</div><div class="line">     Size*=<span class="number">2</span>;</div><div class="line">    tr = tR;</div><div class="line">    tc = tC;</div><div class="line">    dr = dR;</div><div class="line">    dc = dC;</div><div class="line">    size = Size;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">     gridLayout grid = <span class="keyword">new</span> gridLayout();</div><div class="line">     grid.ChessBoard(tr, tc, dr, dc, size);</div><div class="line">     centerPanel.updateUI();</div><div class="line">    &#125; <span class="keyword">catch</span> (Exception EX) &#123;</div><div class="line">     EX.printStackTrace();</div><div class="line">    &#125;</div><div class="line">    panel.removeAll();</div><div class="line">    OKButton.setEnabled(<span class="keyword">false</span>);</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">if</span> (whichName.equals(<span class="string">"取消或清除"</span>)) &#123;<span class="comment">//当你点下一个提示按钮时的事件响应</span></div><div class="line">    JLabel label = <span class="keyword">new</span> JLabel();</div><div class="line">    label.setHorizontalAlignment(JLabel.CENTER);</div><div class="line">    label.setText(<span class="string">"&lt;html&gt;&lt;Font size='+8',color='red'&gt;&lt;center&gt;&lt;b&gt;&lt;br&gt;    您取消了操作或是   &lt;br&gt;&lt;Font size='+8',color='blue'&gt;&lt;center&gt;您清除了前一个棋盘……"</span> +</div><div class="line">      <span class="string">"&lt;br&gt;&lt;Font size='+8',color='green'&gt;&lt;center&gt;下面是关于题目的介绍&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;  &lt;/b&gt;&lt;/Font&gt;&lt;/html&gt;"</span>);</div><div class="line"><span class="comment">//    JLabel l = new JLabel("题目要求");</span></div><div class="line">    JTextArea area = <span class="keyword">new</span> JTextArea(<span class="string">"在一个2k x 2k ( 即：2^k x 2^k )个方格组成的棋盘中，恰有一个方格与其他方格不同，"</span> +</div><div class="line">      <span class="string">"称该方格为一特殊方格，且称该棋盘为一特殊棋盘。在棋盘覆盖问题中，要用4种不同形态的L型骨牌覆盖给定的特殊棋盘上除特殊方格以外的所有方格，"</span> +</div><div class="line">      <span class="string">"且任何2个L型骨牌不得重叠覆盖。"</span>,<span class="number">7</span>,<span class="number">60</span>);</div><div class="line">    area.setLineWrap(<span class="keyword">true</span>);</div><div class="line">    area.setBackground(Color.blue);</div><div class="line">    area.setForeground(Color.white);</div><div class="line">    area.setFont (<span class="keyword">new</span> Font(<span class="string">"SansSerif"</span>, Font.PLAIN, <span class="number">14</span>));</div><div class="line">    area.setEditable(<span class="keyword">false</span>);</div><div class="line"><span class="comment">//    FlowLayout layout =  new FlowLayout();</span></div><div class="line"><span class="comment">//    layout.addLayoutComponent(arg0, arg1)</span></div><div class="line">    panel.add(label,centerPanel );</div><div class="line"><span class="comment">//    panel.add(l,southPanel);</span></div><div class="line"></div><div class="line">    panel.add(area,southPanel);</div><div class="line">    getContentPane().add(panel, BorderLayout.CENTER);</div><div class="line">    panel.updateUI();</div><div class="line">    tile=<span class="number">1</span>;</div><div class="line">    centerPanel.removeAll();</div><div class="line">    OKButton.setEnabled(<span class="keyword">true</span>);</div><div class="line">   &#125;</div><div class="line">  &#125;</div><div class="line"> &#125;</div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;<span class="comment">//主函数方法实现</span></div><div class="line">  chessBoard chess = <span class="keyword">new</span> chessBoard();</div><div class="line">  chess.setVisible(<span class="keyword">true</span>);</div><div class="line">  Runtime run = Runtime.getRuntime();</div><div class="line">  run.gc();<span class="comment">//手动清除数据垃圾</span></div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://img.027cgb.cn/20170608/201768422407433177.png"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/19/hello-world/" itemprop="url">Hello World</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T12:08:12+08:00">
+                2017-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg"
+               alt="DEMO" />
+          <p class="site-author-name" itemprop="name">DEMO</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">88</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">DEMO</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    Theme &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Muse
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine@1.1.4/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+    new Valine({
+        av: AV,
+        el: '#vcomments' ,
+        verify: ,
+        notify: ,
+        app_id: 'rqCVLAi3yssRIvgyg5Q4xfMx-gzGzoHsz',
+        app_key: 'Wxk9SHRcaooywkVnB8Tb4taB',
+        placeholder: ''
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CODE 2," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="学习目的：1.完整版下载示例 （@verride表示重写方法  无则是新建方法） 添加依赖1compile &apos;com.squareup.okhttp3:okhttp:3.4.1&apos; 定义一个回调接口（对下载过程中的各种状态进行监听和回调）DownloadListenter12345678910111213public interface DownloadListener &amp;#123;    void">
+<meta name="keywords" content="CODE 2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="servicebesttest&lt;CODE 2 chaper10&gt;">
+<meta property="og:url" content="http://yoursite.com/2017/08/04/Servicebestpractice/index.html">
+<meta property="og:site_name" content="HEXO">
+<meta property="og:description" content="学习目的：1.完整版下载示例 （@verride表示重写方法  无则是新建方法） 添加依赖1compile &apos;com.squareup.okhttp3:okhttp:3.4.1&apos; 定义一个回调接口（对下载过程中的各种状态进行监听和回调）DownloadListenter12345678910111213public interface DownloadListener &amp;#123;    void">
+<meta property="og:updated_time" content="2017-08-19T04:33:56.289Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="servicebesttest&lt;CODE 2 chaper10&gt;">
+<meta name="twitter:description" content="学习目的：1.完整版下载示例 （@verride表示重写方法  无则是新建方法） 添加依赖1compile &apos;com.squareup.okhttp3:okhttp:3.4.1&apos; 定义一个回调接口（对下载过程中的各种状态进行监听和回调）DownloadListenter12345678910111213public interface DownloadListener &amp;#123;    void">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/04/Servicebestpractice/"/>
+
+
+
+
+
+  <title>servicebesttest<CODE 2 chaper10> | HEXO</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HEXO</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/04/Servicebestpractice/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">servicebesttest<CODE 2 chaper10></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-04T20:13:10+08:00">
+                2017-08-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><h3>学习目的：1.完整版下载示例 （@verride表示重写方法  无则是新建方法）<p></p>
+<p>添加依赖<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.squareup.okhttp3:okhttp:3.4.1'</span></div></pre></td></tr></table></figure></p>
+<p>定义一个回调接口（对下载过程中的各种状态进行监听和回调）<br>DownloadListenter<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">DownloadListener</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onProgress</span><span class="params">(<span class="keyword">int</span> progress)</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onFailed</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onPaused</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onCanceled</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>AsynsTask实现下载功能<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//三个参数 传入数据 进度显示数据单位 反馈执行结果数据类型</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DownloadTask</span> <span class="keyword">extends</span> <span class="title">AsyncTask</span>&lt;<span class="title">String</span>, <span class="title">Integer</span>, <span class="title">Integer</span>&gt; </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TYPE_SUCCESS = <span class="number">0</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TYPE_FAILED = <span class="number">1</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TYPE_PAUSED = <span class="number">2</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TYPE_CANCELED = <span class="number">3</span>;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="keyword">private</span> DownloadListener listener;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> isCanceled = <span class="keyword">false</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> isPaused = <span class="keyword">false</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> lastProgress;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DownloadTask</span><span class="params">(DownloadListener listener)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.listener = listener;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//下载逻辑</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> Integer <span class="title">doInBackground</span><span class="params">(String... params)</span> </span>&#123;</div><div class="line">        InputStream is = <span class="keyword">null</span>;</div><div class="line">        RandomAccessFile savedFile = <span class="keyword">null</span>;</div><div class="line">        File file = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">long</span> downloadedLength = <span class="number">0</span>; <span class="comment">// 记录已下载的文件长度</span></div><div class="line">            String downloadUrl = params[<span class="number">0</span>];</div><div class="line">            String fileName = downloadUrl.substring(downloadUrl.lastIndexOf(<span class="string">"/"</span>));</div><div class="line">            String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();</div><div class="line">            file = <span class="keyword">new</span> File(directory + fileName);</div><div class="line">            <span class="keyword">if</span> (file.exists()) &#123;</div><div class="line">                downloadedLength = file.length();</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">long</span> contentLength = getContentLength(downloadUrl);</div><div class="line">            <span class="keyword">if</span> (contentLength == <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">return</span> TYPE_FAILED;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (contentLength == downloadedLength) &#123;</div><div class="line">                <span class="comment">// 已下载字节和文件总字节相等，说明已经下载完成了</span></div><div class="line">                <span class="keyword">return</span> TYPE_SUCCESS;</div><div class="line">            &#125;</div><div class="line">            OkHttpClient client = <span class="keyword">new</span> OkHttpClient();</div><div class="line">            Request request = <span class="keyword">new</span> Request.Builder()</div><div class="line">                    <span class="comment">// 断点下载，指定从哪个字节开始下载</span></div><div class="line">                    .addHeader(<span class="string">"RANGE"</span>, <span class="string">"bytes="</span> + downloadedLength + <span class="string">"-"</span>)</div><div class="line">                    .url(downloadUrl)</div><div class="line">                    .build();</div><div class="line">            Response response = client.newCall(request).execute();</div><div class="line">            <span class="keyword">if</span> (response != <span class="keyword">null</span>) &#123;</div><div class="line">                is = response.body().byteStream();</div><div class="line">                savedFile = <span class="keyword">new</span> RandomAccessFile(file, <span class="string">"rw"</span>);</div><div class="line">                savedFile.seek(downloadedLength); <span class="comment">// 跳过已下载的字节</span></div><div class="line">                <span class="keyword">byte</span>[] b = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</div><div class="line">                <span class="keyword">int</span> total = <span class="number">0</span>;</div><div class="line">                <span class="keyword">int</span> len;</div><div class="line">                <span class="keyword">while</span> ((len = is.read(b)) != -<span class="number">1</span>) &#123;</div><div class="line">                    <span class="keyword">if</span> (isCanceled) &#123;</div><div class="line">                        <span class="keyword">return</span> TYPE_CANCELED;</div><div class="line">                    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(isPaused) &#123;</div><div class="line">                        <span class="keyword">return</span> TYPE_PAUSED;</div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                        total += len;</div><div class="line">                        savedFile.write(b, <span class="number">0</span>, len);</div><div class="line">                        <span class="comment">// 计算已下载的百分比</span></div><div class="line">                        <span class="keyword">int</span> progress = (<span class="keyword">int</span>) ((total + downloadedLength) * <span class="number">100</span> / contentLength);</div><div class="line">                        publishProgress(progress);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                response.body().close();</div><div class="line">                <span class="keyword">return</span> TYPE_SUCCESS;</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; <span class="keyword">finally</span> &#123;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="keyword">if</span> (is != <span class="keyword">null</span>) &#123;</div><div class="line">                    is.close();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span> (savedFile != <span class="keyword">null</span>) &#123;</div><div class="line">                    savedFile.close();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span> (isCanceled &amp;&amp; file != <span class="keyword">null</span>) &#123;</div><div class="line">                    file.delete();</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> TYPE_FAILED;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//界面显示当前下载进度</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onProgressUpdate</span><span class="params">(Integer... values)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> progress = values[<span class="number">0</span>];</div><div class="line">        <span class="keyword">if</span> (progress &gt; lastProgress) &#123;</div><div class="line">            listener.onProgress(progress);</div><div class="line">            lastProgress = progress;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//通知最终下载结果</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPostExecute</span><span class="params">(Integer status)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (status) &#123;</div><div class="line">            <span class="keyword">case</span> TYPE_SUCCESS:</div><div class="line">                listener.onSuccess();</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> TYPE_FAILED:</div><div class="line">                listener.onFailed();</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> TYPE_PAUSED:</div><div class="line">                listener.onPaused();</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> TYPE_CANCELED:</div><div class="line">                listener.onCanceled();</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pauseDownload</span><span class="params">()</span> </span>&#123;</div><div class="line">        isPaused = <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cancelDownload</span><span class="params">()</span> </span>&#123;</div><div class="line">        isCanceled = <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//获取下载文件总长度</span></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">long</span> <span class="title">getContentLength</span><span class="params">(String downloadUrl)</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">        OkHttpClient client = <span class="keyword">new</span> OkHttpClient();</div><div class="line">        Request request = <span class="keyword">new</span> Request.Builder()</div><div class="line">                .url(downloadUrl)</div><div class="line">                .build();</div><div class="line">        Response response = client.newCall(request).execute();</div><div class="line">        <span class="keyword">if</span> (response != <span class="keyword">null</span> &amp;&amp; response.isSuccessful()) &#123;</div><div class="line">            <span class="keyword">long</span> contentLength = response.body().contentLength();</div><div class="line">            response.close();</div><div class="line">            <span class="keyword">return</span> contentLength;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>创建下载服务DownloadService（重写5个方法） DownloadBinder内部类（重写3个方法）两个类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DownloadService</span> <span class="keyword">extends</span> <span class="title">Service</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> DownloadTask downloadTask;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String downloadUrl;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> DownloadListener listener = <span class="keyword">new</span> DownloadListener() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onProgress</span><span class="params">(<span class="keyword">int</span> progress)</span> </span>&#123;</div><div class="line">            getNotificationManager().notify(<span class="number">1</span>, getNotification(<span class="string">"Downloading..."</span>, progress));</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">()</span> </span>&#123;</div><div class="line">            downloadTask = <span class="keyword">null</span>;</div><div class="line">            <span class="comment">// 下载成功时将前台服务通知关闭，并创建一个下载成功的通知</span></div><div class="line">            stopForeground(<span class="keyword">true</span>);</div><div class="line">            getNotificationManager().notify(<span class="number">1</span>, getNotification(<span class="string">"Download Success"</span>, -<span class="number">1</span>));</div><div class="line">            Toast.makeText(DownloadService.<span class="keyword">this</span>, <span class="string">"Download Success"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailed</span><span class="params">()</span> </span>&#123;</div><div class="line">            downloadTask = <span class="keyword">null</span>;</div><div class="line">            <span class="comment">// 下载失败时将前台服务通知关闭，并创建一个下载失败的通知</span></div><div class="line">            stopForeground(<span class="keyword">true</span>);</div><div class="line">            getNotificationManager().notify(<span class="number">1</span>, getNotification(<span class="string">"Download Failed"</span>, -<span class="number">1</span>));</div><div class="line">            Toast.makeText(DownloadService.<span class="keyword">this</span>, <span class="string">"Download Failed"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPaused</span><span class="params">()</span> </span>&#123;</div><div class="line">            downloadTask = <span class="keyword">null</span>;</div><div class="line">            Toast.makeText(DownloadService.<span class="keyword">this</span>, <span class="string">"Paused"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCanceled</span><span class="params">()</span> </span>&#123;</div><div class="line">            downloadTask = <span class="keyword">null</span>;</div><div class="line">            stopForeground(<span class="keyword">true</span>);</div><div class="line">            Toast.makeText(DownloadService.<span class="keyword">this</span>, <span class="string">"Canceled"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> DownloadBinder mBinder = <span class="keyword">new</span> DownloadBinder();</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> IBinder <span class="title">onBind</span><span class="params">(Intent intent)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> mBinder;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">DownloadBinder</span> <span class="keyword">extends</span> <span class="title">Binder</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startDownload</span><span class="params">(String url)</span> </span>&#123;</div><div class="line">            <span class="keyword">if</span> (downloadTask == <span class="keyword">null</span>) &#123;</div><div class="line">                downloadUrl = url;</div><div class="line">                downloadTask = <span class="keyword">new</span> DownloadTask(listener);</div><div class="line">                downloadTask.execute(downloadUrl);</div><div class="line">                startForeground(<span class="number">1</span>, getNotification(<span class="string">"Downloading..."</span>, <span class="number">0</span>));</div><div class="line">                Toast.makeText(DownloadService.<span class="keyword">this</span>, <span class="string">"Downloading..."</span>, Toast.LENGTH_SHORT).show();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pauseDownload</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">if</span> (downloadTask != <span class="keyword">null</span>) &#123;</div><div class="line">                downloadTask.pauseDownload();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cancelDownload</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">if</span> (downloadTask != <span class="keyword">null</span>) &#123;</div><div class="line">                downloadTask.cancelDownload();</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">if</span> (downloadUrl != <span class="keyword">null</span>) &#123;</div><div class="line">                    <span class="comment">// 取消下载时需将文件删除，并将通知关闭</span></div><div class="line">                    String fileName = downloadUrl.substring(downloadUrl.lastIndexOf(<span class="string">"/"</span>));</div><div class="line">                    String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();</div><div class="line">                    File file = <span class="keyword">new</span> File(directory + fileName);</div><div class="line">                    <span class="keyword">if</span> (file.exists()) &#123;</div><div class="line">                        file.delete();</div><div class="line">                    &#125;</div><div class="line">                    getNotificationManager().cancel(<span class="number">1</span>);</div><div class="line">                    stopForeground(<span class="keyword">true</span>);</div><div class="line">                    Toast.makeText(DownloadService.<span class="keyword">this</span>, <span class="string">"Canceled"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> NotificationManager <span class="title">getNotificationManager</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> Notification <span class="title">getNotification</span><span class="params">(String title, <span class="keyword">int</span> progress)</span> </span>&#123;</div><div class="line">        Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>, MainActivity.class);</div><div class="line">        PendingIntent pi = PendingIntent.getActivity(<span class="keyword">this</span>, <span class="number">0</span>, intent, <span class="number">0</span>);</div><div class="line">        NotificationCompat.Builder builder = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>);</div><div class="line">        builder.setSmallIcon(R.mipmap.ic_launcher);</div><div class="line">        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));</div><div class="line">        builder.setContentIntent(pi);</div><div class="line">        builder.setContentTitle(title);</div><div class="line">        <span class="keyword">if</span> (progress &gt;= <span class="number">0</span>) &#123;</div><div class="line">            <span class="comment">// 当progress大于或等于0时才需显示下载进度</span></div><div class="line">            builder.setContentText(progress + <span class="string">"%"</span>);</div><div class="line">            builder.setProgress(<span class="number">100</span>, progress, <span class="keyword">false</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> builder.build();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>MainActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> DownloadService.DownloadBinder downloadBinder;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ServiceConnection connection = <span class="keyword">new</span> ServiceConnection() &#123;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onServiceDisconnected</span><span class="params">(ComponentName name)</span> </span>&#123;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onServiceConnected</span><span class="params">(ComponentName name, IBinder service)</span> </span>&#123;</div><div class="line">            downloadBinder = (DownloadService.DownloadBinder) service;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        Button startDownload = (Button) findViewById(R.id.start_download);</div><div class="line">        Button pauseDownload = (Button) findViewById(R.id.pause_download);</div><div class="line">        Button cancelDownload = (Button) findViewById(R.id.cancel_download);</div><div class="line">        startDownload.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">        pauseDownload.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">        cancelDownload.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">        Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>, DownloadService.class);</div><div class="line">        startService(intent); <span class="comment">// 启动服务</span></div><div class="line">        bindService(intent, connection, BIND_AUTO_CREATE); <span class="comment">// 绑定服务</span></div><div class="line">        <span class="keyword">if</span> (ContextCompat.checkSelfPermission(MainActivity.<span class="keyword">this</span>, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">            ActivityCompat.requestPermissions(MainActivity.<span class="keyword">this</span>, <span class="keyword">new</span> String[]&#123; Manifest.permission. WRITE_EXTERNAL_STORAGE &#125;, <span class="number">1</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (downloadBinder == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">            <span class="keyword">case</span> R.id.start_download:</div><div class="line">                String url = <span class="string">"https://raw.githubusercontent.com/guolindev/eclipse/master/eclipse-inst-win64.exe"</span>;</div><div class="line">                downloadBinder.startDownload(url);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> R.id.pause_download:</div><div class="line">                downloadBinder.pauseDownload();</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> R.id.cancel_download:</div><div class="line">                downloadBinder.cancelDownload();</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode, String[] permissions, <span class="keyword">int</span>[] grantResults)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">            <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span> &amp;&amp; grantResults[<span class="number">0</span>] != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">                    Toast.makeText(<span class="keyword">this</span>, <span class="string">"拒绝权限将无法使用程序"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                    finish();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        unbindService(connection);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>权限声明</p>
+<pre><code class="java">
+&lt;service
+    android:name=<span class="string">".DownloadService"</span>
+    android:enabled=<span class="string">"true"</span>
+    android:exported=<span class="string">"true"</span> /&gt;
+</code></pre>
+</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CODE-2/" rel="tag"># CODE 2</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/02/Androidthreadtest/" rel="next" title="androidthreadtest<CODE 2 chaper9>">
+                <i class="fa fa-chevron-left"></i> androidthreadtest<CODE 2 chaper9>
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/04/Servicetest/" rel="prev" title="servicetest<CODE 2 chaper10>">
+                servicetest<CODE 2 chaper10> <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  <div class="comments" id="comments">
+      
+        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+        <script src='/lib/Valine.min.js'></script>
+        <script>
+            new Valine({
+                av: AV,
+                el: '.comments' ,
+                app_id: '',
+                app_key: '',
+                placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+            });
+        </script>
+      
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg"
+               alt="DEMO" />
+          <p class="site-author-name" itemprop="name">DEMO</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">88</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">学习目的：1.完整版下载示例 （@verride表示重写方法  无则是新建方法）
+添加依赖1compile 'com.squareup.okhttp3:okhttp:3.4.1'
+定义一个回调接口（对下载过程中的各种状态进行监听和回调）DownloadListenter12345678910111213public interface DownloadListener {    void onProgress(int progress);    void onSuccess();    void onFailed();    void onPaused();    void onCanceled();}
+AsynsTask实现下载功能123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142//三个参数 传入数据 进度显示数据单位 反馈执行结果数据类型public class DownloadTask extends AsyncTask<String, Integer, Integer> {    public static final int TYPE_SUCCESS = 0;    public static final int TYPE_FAILED = 1;    public static final int TYPE_PAUSED = 2;    public static final int TYPE_CANCELED = 3;    private DownloadListener listener;    private boolean isCanceled = false;    private boolean isPaused = false;    private int lastProgress;    public DownloadTask(DownloadListener listener) {        this.listener = listener;    }    //下载逻辑    @Override    protected Integer doInBackground(String... params) {        InputStream is = null;        RandomAccessFile savedFile = null;        File file = null;        try {            long downloadedLength = 0; // 记录已下载的文件长度            String downloadUrl = params[0];            String fileName = downloadUrl.substring(downloadUrl.lastIndexOf("/"));            String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();            file = new File(directory + fileName);            if (file.exists()) {                downloadedLength = file.length();            }            long contentLength = getContentLength(downloadUrl);            if (contentLength == 0) {                return TYPE_FAILED;            } else if (contentLength == downloadedLength) {                // 已下载字节和文件总字节相等，说明已经下载完成了                return TYPE_SUCCESS;            }            OkHttpClient client = new OkHttpClient();            Request request = new Request.Builder()                    // 断点下载，指定从哪个字节开始下载                    .addHeader("RANGE", "bytes=" + downloadedLength + "-")                    .url(downloadUrl)                    .build();            Response response = client.newCall(request).execute();            if (response != null) {                is = response.body().byteStream();                savedFile = new RandomAccessFile(file, "rw");                savedFile.seek(downloadedLength); // 跳过已下载的字节                byte[] b = new byte[1024];                int total = 0;                int len;                while ((len = is.read(b)) != -1) {                    if (isCanceled) {                        return TYPE_CANCELED;                    } else if(isPaused) {                        return TYPE_PAUSED;                    } else {                        total += len;                        savedFile.write(b, 0, len);                        // 计算已下载的百分比                        int progress = (int) ((total + downloadedLength) * 100 / contentLength);                        publishProgress(progress);                    }                }                response.body().close();                return TYPE_SUCCESS;            }        } catch (Exception e) {            e.printStackTrace();        } finally {            try {                if (is != null) {                    is.close();                }                if (savedFile != null) {                    savedFile.close();                }                if (isCanceled && file != null) {                    file.delete();                }            } catch (Exception e) {                e.printStackTrace();            }        }        return TYPE_FAILED;    }    //界面显示当前下载进度    @Override    protected void onProgressUpdate(Integer... values) {        int progress = values[0];        if (progress > lastProgress) {            listener.onProgress(progress);            lastProgress = progress;        }    }    //通知最终下载结果    @Override    protected void onPostExecute(Integer status) {        switch (status) {            case TYPE_SUCCESS:                listener.onSuccess();                break;            case TYPE_FAILED:                listener.onFailed();                break;            case TYPE_PAUSED:                listener.onPaused();                break;            case TYPE_CANCELED:                listener.onCanceled();            default:                break;        }    }    public void pauseDownload() {        isPaused = true;    }    public void cancelDownload() {        isCanceled = true;    }    //获取下载文件总长度    private long getContentLength(String downloadUrl) throws IOException {        OkHttpClient client = new OkHttpClient();        Request request = new Request.Builder()                .url(downloadUrl)                .build();        Response response = client.newCall(request).execute();        if (response != null && response.isSuccessful()) {            long contentLength = response.body().contentLength();            response.close();            return contentLength;        }        return 0;    }
+创建下载服务DownloadService（重写5个方法） DownloadBinder内部类（重写3个方法）两个类123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112public class DownloadService extends Service {    private DownloadTask downloadTask;    private String downloadUrl;    private DownloadListener listener = new DownloadListener() {        @Override        public void onProgress(int progress) {            getNotificationManager().notify(1, getNotification("Downloading...", progress));        }        @Override        public void onSuccess() {            downloadTask = null;            // 下载成功时将前台服务通知关闭，并创建一个下载成功的通知            stopForeground(true);            getNotificationManager().notify(1, getNotification("Download Success", -1));            Toast.makeText(DownloadService.this, "Download Success", Toast.LENGTH_SHORT).show();        }        @Override        public void onFailed() {            downloadTask = null;            // 下载失败时将前台服务通知关闭，并创建一个下载失败的通知            stopForeground(true);            getNotificationManager().notify(1, getNotification("Download Failed", -1));            Toast.makeText(DownloadService.this, "Download Failed", Toast.LENGTH_SHORT).show();        }        @Override        public void onPaused() {            downloadTask = null;            Toast.makeText(DownloadService.this, "Paused", Toast.LENGTH_SHORT).show();        }        @Override        public void onCanceled() {            downloadTask = null;            stopForeground(true);            Toast.makeText(DownloadService.this, "Canceled", Toast.LENGTH_SHORT).show();        }    };    private DownloadBinder mBinder = new DownloadBinder();    @Override    public IBinder onBind(Intent intent) {        return mBinder;    }    class DownloadBinder extends Binder {        public void startDownload(String url) {            if (downloadTask == null) {                downloadUrl = url;                downloadTask = new DownloadTask(listener);                downloadTask.execute(downloadUrl);                startForeground(1, getNotification("Downloading...", 0));                Toast.makeText(DownloadService.this, "Downloading...", Toast.LENGTH_SHORT).show();            }        }        public void pauseDownload() {            if (downloadTask != null) {                downloadTask.pauseDownload();            }        }        public void cancelDownload() {            if (downloadTask != null) {                downloadTask.cancelDownload();            } else {                if (downloadUrl != null) {                    // 取消下载时需将文件删除，并将通知关闭                    String fileName = downloadUrl.substring(downloadUrl.lastIndexOf("/"));                    String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();                    File file = new File(directory + fileName);                    if (file.exists()) {                        file.delete();                    }                    getNotificationManager().cancel(1);                    stopForeground(true);                    Toast.makeText(DownloadService.this, "Canceled", Toast.LENGTH_SHORT).show();                }            }        }    }    private NotificationManager getNotificationManager() {        return (NotificationManager) getSystemService(NOTIFICATION_SERVICE);    }    private Notification getNotification(String title, int progress) {        Intent intent = new Intent(this, MainActivity.class);        PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);        builder.setSmallIcon(R.mipmap.ic_launcher);        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));        builder.setContentIntent(pi);        builder.setContentTitle(title);        if (progress >= 0) {            // 当progress大于或等于0时才需显示下载进度            builder.setContentText(progress + "%");            builder.setProgress(100, progress, false);        }        return builder.build();    }}
+MainActivity12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576public class MainActivity extends AppCompatActivity implements View.OnClickListener{    private DownloadService.DownloadBinder downloadBinder;    private ServiceConnection connection = new ServiceConnection() {        @Override        public void onServiceDisconnected(ComponentName name) {        }        @Override        public void onServiceConnected(ComponentName name, IBinder service) {            downloadBinder = (DownloadService.DownloadBinder) service;        }    };    @Override    protected void onCreate(Bundle savedInstanceState) {        super.onCreate(savedInstanceState);        setContentView(R.layout.activity_main);        Button startDownload = (Button) findViewById(R.id.start_download);        Button pauseDownload = (Button) findViewById(R.id.pause_download);        Button cancelDownload = (Button) findViewById(R.id.cancel_download);        startDownload.setOnClickListener(this);        pauseDownload.setOnClickListener(this);        cancelDownload.setOnClickListener(this);        Intent intent = new Intent(this, DownloadService.class);        startService(intent); // 启动服务        bindService(intent, connection, BIND_AUTO_CREATE); // 绑定服务        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {            ActivityCompat.requestPermissions(MainActivity.this, new String[]{ Manifest.permission. WRITE_EXTERNAL_STORAGE }, 1);        }    }    @Override    public void onClick(View v) {        if (downloadBinder == null) {            return;        }        switch (v.getId()) {            case R.id.start_download:                String url = "https://raw.githubusercontent.com/guolindev/eclipse/master/eclipse-inst-win64.exe";                downloadBinder.startDownload(url);                break;            case R.id.pause_download:                downloadBinder.pauseDownload();                break;            case R.id.cancel_download:                downloadBinder.cancelDownload();                break;            default:                break;        }    }    @Override    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {        switch (requestCode) {            case 1:                if (grantResults.length > 0 && grantResults[0] != PackageManager.PERMISSION_GRANTED) {                    Toast.makeText(this, "拒绝权限将无法使用程序", Toast.LENGTH_SHORT).show();                    finish();                }                break;            default:        }    }    @Override    protected void onDestroy() {        super.onDestroy();        unbindService(connection);    }}
+权限声明
+
+<service
+    android:name=".DownloadService"
+    android:enabled="true"
+    android:exported="true" />
+
+</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">DEMO</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    Theme &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Muse
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine@1.1.4/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+    new Valine({
+        av: AV,
+        el: '#vcomments' ,
+        verify: ,
+        notify: ,
+        app_id: 'rqCVLAi3yssRIvgyg5Q4xfMx-gzGzoHsz',
+        app_key: 'Wxk9SHRcaooywkVnB8Tb4taB',
+        placeholder: ''
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
