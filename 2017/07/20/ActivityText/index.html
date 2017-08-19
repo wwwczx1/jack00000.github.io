@@ -205,7 +205,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -215,7 +215,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -225,7 +225,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -248,7 +248,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            Search
           </a>
         </li>
       
@@ -333,7 +333,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
                 2017-07-20
@@ -462,8 +462,8 @@ public class SecondActivity extends BaseActivity {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/20/logcat及log/" rel="next" title="logcat及log<CODE 2 chaper2>">
-                <i class="fa fa-chevron-left"></i> logcat及log<CODE 2 chaper2>
+              <a href="/2017/07/20/ListView/" rel="next" title="ListView<CODE 2 chaper3>">
+                <i class="fa fa-chevron-left"></i> ListView<CODE 2 chaper3>
               </a>
             
           </div>
@@ -472,8 +472,8 @@ public class SecondActivity extends BaseActivity {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/20/ListView/" rel="prev" title="ListView<CODE 2 chaper3>">
-                ListView<CODE 2 chaper3> <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/20/build.gradle文件详解/" rel="prev" title="build.gradle文件详解<CODE 2 chaper2>">
+                build.gradle文件详解<CODE 2 chaper2> <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -503,21 +503,21 @@ public class SecondActivity extends BaseActivity {
 
           
 
-  <div class="comments" id="comments">
-      
-        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-        <script src='/lib/Valine.min.js'></script>
-        <script>
-            new Valine({
-                av: AV,
-                el: '.comments' ,
-                app_id: '',
-                app_key: '',
-                placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
-            });
-        </script>
-      
-  </div>
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='/lib/Valine.min.js'></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments' ,
+            verify: true,
+            app_id: '',
+            app_key: '',
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+        });
+    </script>
+    
 
 
         </div>
@@ -541,10 +541,10 @@ public class SecondActivity extends BaseActivity {
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -565,7 +565,7 @@ public class SecondActivity extends BaseActivity {
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">88</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -578,7 +578,7 @@ public class SecondActivity extends BaseActivity {
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -646,7 +646,7 @@ public class SecondActivity extends BaseActivity {
 
 
   <div class="powered-by">
-    Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
   </div>
 
   <span class="post-meta-divider">|</span>
@@ -699,8 +699,6 @@ public class SecondActivity extends BaseActivity {
   
 
 
-  
-
 
 
 
@@ -731,9 +729,6 @@ public class SecondActivity extends BaseActivity {
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
   
   <script type="text/javascript" src="/lib/three/three.min.js"></script>
@@ -818,7 +813,7 @@ public class SecondActivity extends BaseActivity {
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "";
+    var search_path = "search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -1087,7 +1082,7 @@ public class SecondActivity extends BaseActivity {
             }
           }
 
-          if ('auto' === 'auto') {
+          if ('auto' === 'manual') {
             input.addEventListener('input', inputEventFunction);
           } else {
             $('.search-icon').click(inputEventFunction);

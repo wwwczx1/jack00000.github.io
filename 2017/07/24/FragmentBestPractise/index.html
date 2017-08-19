@@ -201,7 +201,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -211,7 +211,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -221,7 +221,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -244,7 +244,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            Search
           </a>
         </li>
       
@@ -329,7 +329,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-24T20:13:10+08:00">
                 2017-07-24
@@ -413,8 +413,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/24/BroadcastBestPractise/" rel="next" title="BroadcastBestPractise<CODE 2 chaper5>">
-                <i class="fa fa-chevron-left"></i> BroadcastBestPractise<CODE 2 chaper5>
+              <a href="/2017/07/23/FragmentText/" rel="next" title="FragmentText<CODE 2 chaper4>">
+                <i class="fa fa-chevron-left"></i> FragmentText<CODE 2 chaper4>
               </a>
             
           </div>
@@ -423,8 +423,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/25/BroadCastTest/" rel="prev" title="BroadCastTest<CODE 2 chaper5>">
-                BroadCastTest<CODE 2 chaper5> <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/24/BroadcastBestPractise/" rel="prev" title="BroadcastBestPractise<CODE 2 chaper5>">
+                BroadcastBestPractise<CODE 2 chaper5> <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -454,21 +454,21 @@
 
           
 
-  <div class="comments" id="comments">
-      
-        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-        <script src='/lib/Valine.min.js'></script>
-        <script>
-            new Valine({
-                av: AV,
-                el: '.comments' ,
-                app_id: '',
-                app_key: '',
-                placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
-            });
-        </script>
-      
-  </div>
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='/lib/Valine.min.js'></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments' ,
+            verify: true,
+            app_id: '',
+            app_key: '',
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+        });
+    </script>
+    
 
 
         </div>
@@ -492,10 +492,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -516,7 +516,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">88</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -529,7 +529,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -597,7 +597,7 @@
 
 
   <div class="powered-by">
-    Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
   </div>
 
   <span class="post-meta-divider">|</span>
@@ -650,8 +650,6 @@
   
 
 
-  
-
 
 
 
@@ -682,9 +680,6 @@
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
   
   <script type="text/javascript" src="/lib/three/three.min.js"></script>
@@ -769,7 +764,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "";
+    var search_path = "search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -1038,7 +1033,7 @@
             }
           }
 
-          if ('auto' === 'auto') {
+          if ('auto' === 'manual') {
             input.addEventListener('input', inputEventFunction);
           } else {
             $('.search-icon').click(inputEventFunction);
