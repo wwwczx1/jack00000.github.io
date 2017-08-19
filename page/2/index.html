@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -239,7 +239,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Search
+            Suche
           </a>
         </li>
       
@@ -326,7 +326,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-17T20:13:10+08:00">
                 2017-08-17
@@ -456,7 +456,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-17T20:13:10+08:00">
                 2017-08-17
@@ -582,7 +582,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-16T20:13:10+08:00">
                 2017-08-16
@@ -673,131 +673,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/1.CODE 2 chaper13/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/15/1.CODE 2 chaper13/" itemprop="url">高级技巧<CODE 2 chaper13></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T20:13:10+08:00">
-                2017-08-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的：1.定制自己的日志工具 2.调试android程序<p></p>
-<p>新建LogUitl类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LogUitl</span></span>&#123;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VERBOSE=<span class="number">1</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEBUG=<span class="number">2</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> INFO=<span class="number">3</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WARN=<span class="number">4</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VERROR=<span class="number">5</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> NOTHING=<span class="number">1</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> level=VERBOSE;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">v</span><span class="params">(String tag,String msg)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(level&lt;=VERBOSE)&#123;</div><div class="line">      Log.v(tag,msg);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">d</span><span class="params">(String tag,String msg)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(level&lt;=DEBUG)&#123;</div><div class="line">      Log.d(tag,msg);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">i</span> <span class="params">(String tag,String msg)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(level&lt;=INFO)&#123;</div><div class="line">      Log.i(tag,msg);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">w</span><span class="params">(String tag,String msg)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(level&lt;=WARN)&#123;</div><div class="line">      Log.w(tag,msg);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">e</span><span class="params">(String tag,String msg)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(level&lt;=ERROR)&#123;</div><div class="line">      Log.e(tag,msg);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>使用 如打印WARN级别的日志<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LogUitl.w(<span class="string">"TAG"</span>,<span class="string">"warn log"</span>);</div></pre></td></tr></table></figure></p>
-<p>2.调试android程序</p>
-<p>3.创建定时任务  Alarm机制<br>如：设置一个任务10s后执行<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">long</span> triggerAtTime=SystemClock.elapsedRealtime()+<span class="number">10</span>*<span class="number">1000</span>;</div><div class="line">manager.set(AlarmManager.ELAPSED_REALLTIME_WAKEUP,triggerAtTime,pendingIntent);</div></pre></td></tr></table></figure></p>
-<p>ELAPSED_REALLTIME_WAKEUP四种模式的其中一种</p>
-</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/CODE 2 chaper13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -827,7 +702,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T20:13:10+08:00">
                 2017-08-15
@@ -924,6 +799,131 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/1.CODE 2 chaper13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/15/1.CODE 2 chaper13/" itemprop="url">高级技巧<CODE 2 chaper13></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T20:13:10+08:00">
+                2017-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：1.定制自己的日志工具 2.调试android程序<p></p>
+<p>新建LogUitl类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LogUitl</span></span>&#123;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VERBOSE=<span class="number">1</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEBUG=<span class="number">2</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> INFO=<span class="number">3</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WARN=<span class="number">4</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VERROR=<span class="number">5</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> NOTHING=<span class="number">1</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> level=VERBOSE;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">v</span><span class="params">(String tag,String msg)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(level&lt;=VERBOSE)&#123;</div><div class="line">      Log.v(tag,msg);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">d</span><span class="params">(String tag,String msg)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(level&lt;=DEBUG)&#123;</div><div class="line">      Log.d(tag,msg);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">i</span> <span class="params">(String tag,String msg)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(level&lt;=INFO)&#123;</div><div class="line">      Log.i(tag,msg);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">w</span><span class="params">(String tag,String msg)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(level&lt;=WARN)&#123;</div><div class="line">      Log.w(tag,msg);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">e</span><span class="params">(String tag,String msg)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(level&lt;=ERROR)&#123;</div><div class="line">      Log.e(tag,msg);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用 如打印WARN级别的日志<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LogUitl.w(<span class="string">"TAG"</span>,<span class="string">"warn log"</span>);</div></pre></td></tr></table></figure></p>
+<p>2.调试android程序</p>
+<p>3.创建定时任务  Alarm机制<br>如：设置一个任务10s后执行<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">long</span> triggerAtTime=SystemClock.elapsedRealtime()+<span class="number">10</span>*<span class="number">1000</span>;</div><div class="line">manager.set(AlarmManager.ELAPSED_REALLTIME_WAKEUP,triggerAtTime,pendingIntent);</div></pre></td></tr></table></figure></p>
+<p>ELAPSED_REALLTIME_WAKEUP四种模式的其中一种</p>
+</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/Coolweather4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -953,7 +953,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T20:13:10+08:00">
                 2017-08-15
@@ -1098,7 +1098,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-14T20:13:10+08:00">
                 2017-08-14
@@ -1226,7 +1226,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-14T20:13:10+08:00">
                 2017-08-14
@@ -1349,7 +1349,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-13T20:13:10+08:00">
                 2017-08-13
@@ -1459,7 +1459,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/Materialtest5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/Materialtest6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="DEMO">
@@ -1478,7 +1478,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/11/Materialtest5/" itemprop="url">materialtest5(最佳UI体验)<CODE 2 chaper12></a></h1>
+                <a class="post-title-link" href="/2017/08/11/Materialtest6/" itemprop="url">materialtest6(最佳UI体验)<CODE 2 chaper12></a></h1>
         
 
         <div class="post-meta">
@@ -1488,7 +1488,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T20:13:10+08:00">
                 2017-08-11
@@ -1530,32 +1530,12 @@
       
         
           
-            <p></p><h3>学习目的：3.可折叠的标题栏(界面编写)<p></p>
-<p>3.可折叠的标题栏（借助CollapsingToolbarLayout基于Toolbar的布局）</p>
-<p>CollapsingToolbarLayout被限定作为AppBarLayout的子布局来使用</p>
-<p>首先实现标题栏<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.CoordinatorLayout</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span>//定义命名空间</span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">android.support.design.widget.CoordinatorLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>套入  AppBarLayout<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;android.support.design.widget.CoordinatorLayout</div><div class="line">    xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    xmlns:app=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">    android:layout_width=<span class="string">"match_parent"</span></div><div class="line">    android:layout_height=<span class="string">"match_parent"</span></div><div class="line">    android:fitsSystemWindows=<span class="string">"true"</span>&gt;</div><div class="line"></div><div class="line">    &lt;android.support.design.widget.AppBarLayout</div><div class="line">        android:id=<span class="string">"@+id/appBar"</span></div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"250dp"</span></div><div class="line">        android:fitsSystemWindows=<span class="string">"true"</span>&gt;</div><div class="line">         &lt;/android.support.design.widget.AppBarLayout&gt;</div><div class="line"></div><div class="line">        &lt;/android.support.design.widget.CoordinatorLayout&gt;</div></pre></td></tr></table></figure></p>
-<p>再套入CollapsingToolbarLayout<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.CoordinatorLayout</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">android.support.design.widget.AppBarLayout</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/appBar"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"250dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">android.support.design.widget.CollapsingToolbarLayout</span></span></div><div class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/collapsing_toolbar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:theme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:contentScrim</span>=<span class="string">"?attr/colorPrimary"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:layout_scrollFlags</span>=<span class="string">"scroll|exitUntilCollapsed"</span>&gt;</span></div><div class="line"></div><div class="line">             <span class="tag">&lt;/<span class="name">android.support.design.widget.CollapsingToolbarLayout</span>&gt;</span></div><div class="line">          <span class="tag">&lt;/<span class="name">android.support.design.widget.AppBarLayout</span>&gt;</span></div><div class="line"></div><div class="line">         <span class="tag">&lt;/<span class="name">android.support.design.widget.CoordinatorLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>在CollapsingToolbarLayout定义标题栏的内容<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.CoordinatorLayout</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">android.support.design.widget.AppBarLayout</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/appBar"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"250dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">android.support.design.widget.CollapsingToolbarLayout</span></span></div><div class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/collapsing_toolbar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:theme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:contentScrim</span>=<span class="string">"?attr/colorPrimary"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:layout_scrollFlags</span>=<span class="string">"scroll|exitUntilCollapsed"</span>&gt;</span></div><div class="line"></div><div class="line">            <span class="tag">&lt;<span class="name">ImageView</span></span></div><div class="line"><span class="tag">               <span class="attr">android:id</span>=<span class="string">"@+id/fruit_image_view"</span></span></div><div class="line"><span class="tag">               <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">               <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">               <span class="attr">android:scaleType</span>=<span class="string">"centerCrop"</span>//指定折叠模式</span></div><div class="line"><span class="tag">               <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">               <span class="attr">app:layout_collapseMode</span>=<span class="string">"parallax"</span> /&gt;</span>//在折叠过程中产生错位偏移</div><div class="line"></div><div class="line">           <span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span></div><div class="line"><span class="tag">               <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></span></div><div class="line"><span class="tag">               <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">               <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></span></div><div class="line"><span class="tag">               <span class="attr">app:layout_collapseMode</span>=<span class="string">"pin"</span> /&gt;</span></div><div class="line"></div><div class="line">             <span class="tag">&lt;/<span class="name">android.support.design.widget.CollapsingToolbarLayout</span>&gt;</span></div><div class="line">          <span class="tag">&lt;/<span class="name">android.support.design.widget.AppBarLayout</span>&gt;</span></div><div class="line"></div><div class="line">         <span class="tag">&lt;/<span class="name">android.support.design.widget.CoordinatorLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>水果的标题栏界面完成 编写水果内容详情(NestedScrollView滚动)只能放一个字布局<br>activity_fruit.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.CoordinatorLayout</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">android.support.design.widget.AppBarLayout</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/appBar"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"250dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">android.support.design.widget.AppBarLayout</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">android.support.v4.widget.NestedScrollView</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">app:layout_behavior</span>=<span class="string">"@string/appbar_scrolling_view_behavior"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">android.support.v4.widget.NestedScrollView</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;/<span class="name">android.support.design.widget.CoordinatorLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>套入布局<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.v4.widget.NestedScrollView</span></span></div><div class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag"><span class="attr">app:layout_behavior</span>=<span class="string">"@string/appbar_scrolling_view_behavior"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span></div><div class="line"><span class="tag">           <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></span></div><div class="line"><span class="tag">           <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">           <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</span></div><div class="line"></div><div class="line">           <span class="tag">&lt;<span class="name">android.support.v7.widget.CardView</span></span></div><div class="line"><span class="tag">               <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">               <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">               <span class="attr">android:layout_marginBottom</span>=<span class="string">"15dp"</span></span></div><div class="line"><span class="tag">               <span class="attr">android:layout_marginLeft</span>=<span class="string">"15dp"</span></span></div><div class="line"><span class="tag">               <span class="attr">android:layout_marginRight</span>=<span class="string">"15dp"</span></span></div><div class="line"><span class="tag">               <span class="attr">android:layout_marginTop</span>=<span class="string">"35dp"</span></span></div><div class="line"><span class="tag">               <span class="attr">app:cardCornerRadius</span>=<span class="string">"4dp"</span>&gt;</span></div><div class="line"></div><div class="line">               <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line"><span class="tag">                   <span class="attr">android:id</span>=<span class="string">"@+id/fruit_content_text"</span></span></div><div class="line"><span class="tag">                   <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">                   <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">                   <span class="attr">android:layout_margin</span>=<span class="string">"10dp"</span> /&gt;</span></div><div class="line">           <span class="tag">&lt;/<span class="name">android.support.v7.widget.CardView</span>&gt;</span></div><div class="line">       <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">android.support.v4.widget.NestedScrollView</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>添加悬浮按钮</p>
-<pre><code class="xml"><span class="tag">&lt;<span class="name">android.support.design.widget.CoordinatorLayout</span></span>
-<span class="tag">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span>
-<span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span>
-<span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span>
-<span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span>
-<span class="tag">    <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span>
-
-    <span class="tag">&lt;<span class="name">android.support.design.widget.FloatingActionButton</span></span>
-<span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span>
-<span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span>
-<span class="tag">            <span class="attr">android:layout_margin</span>=<span class="string">"16dp"</span></span>
-<span class="tag">            <span class="attr">android:src</span>=<span class="string">"@drawable/ic_comment"</span></span>
-<span class="tag">            <span class="attr">app:layout_anchor</span>=<span class="string">"@id/appBar"</span></span>
-<span class="tag">            <span class="attr">app:layout_anchorGravity</span>=<span class="string">"bottom|end"</span> /&gt;</span>  
-            <span class="tag">&lt;/<span class="name">android.support.v4.widget.NestedScrollView</span>&gt;</span>
-</code></pre>
+            <p></p><h3>学习目的：3.可折叠的标题栏(逻辑编写) 4.充分利用系统状态栏空间（上拉时背景图与状态栏融合）<br>FruitActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String FRUIT_NAME = <span class="string">"fruit_name"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String FRUIT_IMAGE_ID = <span class="string">"fruit_image_id"</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_fruit);</div><div class="line">        Intent intent = getIntent();</div><div class="line">        String fruitName = intent.getStringExtra(FRUIT_NAME);</div><div class="line">        <span class="keyword">int</span> fruitImageId = intent.getIntExtra(FRUIT_IMAGE_ID, <span class="number">0</span>);</div><div class="line">        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);</div><div class="line">        CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);</div><div class="line">        ImageView fruitImageView = (ImageView) findViewById(R.id.fruit_image_view);</div><div class="line">        TextView fruitContentText = (TextView) findViewById(R.id.fruit_content_text);</div><div class="line">        setSupportActionBar(toolbar);</div><div class="line">        ActionBar actionBar = getSupportActionBar();</div><div class="line">        <span class="keyword">if</span> (actionBar != <span class="keyword">null</span>) &#123;</div><div class="line">            actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">        collapsingToolbar.setTitle(fruitName);</div><div class="line">        Glide.with(<span class="keyword">this</span>).load(fruitImageId).into(fruitImageView);</div><div class="line">        String fruitContent = generateFruitContent(fruitName);</div><div class="line">        fruitContentText.setText(fruitContent);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">generateFruitContent</span><span class="params">(String fruitName)</span> </span>&#123;</div><div class="line">        StringBuilder fruitContent = <span class="keyword">new</span> StringBuilder();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">500</span>; i++) &#123;</div><div class="line">            fruitContent.append(fruitName);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> fruitContent.toString();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onOptionsItemSelected</span><span class="params">(MenuItem item)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (item.getItemId()) &#123;</div><div class="line">            <span class="keyword">case</span> android.R.id.home:</div><div class="line">                finish();</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.onOptionsItemSelected(item);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p>FruitAdapter<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitAdapter</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">Adapter</span>&lt;<span class="title">FruitAdapter</span>.<span class="title">ViewHolder</span>&gt;</span>&#123;</div><div class="line"></div><div class="line">  <span class="comment">//...</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> ViewHolder <span class="title">onCreateViewHolder</span><span class="params">(ViewGroup parent, <span class="keyword">int</span> viewType)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (mContext == <span class="keyword">null</span>) &#123;</div><div class="line">            mContext = parent.getContext();</div><div class="line">        &#125;</div><div class="line">        View view = LayoutInflater.from(mContext).inflate(R.layout.fruit_item, parent, <span class="keyword">false</span>);</div><div class="line">        <span class="keyword">final</span> ViewHolder holder = <span class="keyword">new</span> ViewHolder(view);</div><div class="line">        holder.cardView.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                <span class="keyword">int</span> position = holder.getAdapterPosition();</div><div class="line">                Fruit fruit = mFruitList.get(position);</div><div class="line">                Intent intent = <span class="keyword">new</span> Intent(mContext, FruitActivity.class);</div><div class="line">                intent.putExtra(FruitActivity.FRUIT_NAME, fruit.getName());</div><div class="line">                intent.putExtra(FruitActivity.FRUIT_IMAGE_ID, fruit.getImageId());</div><div class="line">                mContext.startActivity(intent);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">return</span> holder;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://i2.bvimg.com/595109/9969140c788f23de.png" alt="Markdown"><br><img src="http://i2.bvimg.com/595109/979fb8917ee7e4f0.png" alt="Markdown"><br><img src="http://i2.bvimg.com/595109/694b5a2a6b82b311.png" alt="Markdown"><br><img src="http://i2.bvimg.com/595109/429607e5ed515c13.png" alt="Markdown"></p>
+<p>充分利用系统状态栏空间（上拉时背景图与状态栏融合）<br>activity_fruit<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.CoordinatorLayout</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span>//上拉时背景图与状态栏融合 还需设置主题透明</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">android.support.design.widget.AppBarLayout</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/appBar"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"250dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span>//上拉时背景图与状态栏融合 还需设置主题透明</div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">android.support.design.widget.CollapsingToolbarLayout</span></span></div><div class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/collapsing_toolbar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:theme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>//上拉时背景图与状态栏融合 还需设置主题透明</span></div><div class="line"><span class="tag">            <span class="attr">app:contentScrim</span>=<span class="string">"?attr/colorPrimary"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:layout_scrollFlags</span>=<span class="string">"scroll|exitUntilCollapsed"</span>&gt;</span></div><div class="line"></div><div class="line">            <span class="tag">&lt;<span class="name">ImageView</span></span></div><div class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/fruit_image_view"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:scaleType</span>=<span class="string">"centerCrop"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">                <span class="attr">app:layout_collapseMode</span>=<span class="string">"parallax"</span> /&gt;</span></div><div class="line"></div><div class="line">          //...</div><div class="line"><span class="tag">&lt;/<span class="name">android.support.design.widget.CoordinatorLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>还需设置主题透明 创建New-&gt;Directory-&gt;values-v21-&gt;New-&gt;Values resource file-&gt;style.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- Base application theme. --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="xml">        <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/colorPrimary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/colorPrimaryDark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>@color/colorAccent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"FruitActivityTheme"</span> <span class="attr">parent</span>=<span class="string">"AppTheme"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>AndroidMaifest.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span></span></div><div class="line"><span class="tag">            <span class="attr">android:name</span>=<span class="string">".FruitActivity"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:theme</span>=<span class="string">"@style/FruitActivityTheme"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div></pre></td></tr></table></figure></p>
 </h3>
           
         
@@ -1643,7 +1623,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">88</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1656,7 +1636,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -1708,7 +1688,7 @@
 
 
   <div class="powered-by">
-    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+    Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
   </div>
 
   <span class="post-meta-divider">|</span>
