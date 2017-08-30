@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Accueil
+            Home
           </a>
         </li>
       
@@ -239,7 +239,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            recherche
+            Search
           </a>
         </li>
       
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/BroadcastBestPractise/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/FragmentBestPractise/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="DEMO">
@@ -316,7 +316,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/24/BroadcastBestPractise/" itemprop="url">BroadcastBestPractise<CODE 2 chaper5></a></h1>
+                <a class="post-title-link" href="/2017/07/24/FragmentBestPractise/" itemprop="url">FragmentBestPractise<CODE 2 chaper4></a></h1>
         
 
         <div class="post-meta">
@@ -326,7 +326,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-24T20:13:10+08:00">
                 2017-07-24
@@ -347,9 +347,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/24/BroadcastBestPractise/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/24/FragmentBestPractise/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/24/BroadcastBestPractise/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/24/FragmentBestPractise/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -379,12 +379,20 @@
       
         
           
-            <p></p><h3>学习目的：实现登陆成功后强制下线功能(关闭所有活动，返回登陆界面)</h3><br><img src="http://i4.piimg.com/595109/e480b1dea9d6959b.png" alt="Markdown"><br>1.新建ActivityCollector类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ActivityCollector</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;Activity&gt; activities = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addActivity</span><span class="params">(Activity activity)</span> </span>&#123;</div><div class="line">        activities.add(activity);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">removeActivity</span><span class="params">(Activity activity)</span> </span>&#123;</div><div class="line">        activities.remove(activity);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">finishAll</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span> (Activity activity : activities) &#123;</div><div class="line">            <span class="keyword">if</span> (!activity.isFinishing()) &#123;</div><div class="line">                activity.finish();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p>2.创建BaseActivity类作为所有活动的父类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ForceOfflineReceiver receiver;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        ActivityCollector.addActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        ActivityCollector.removeActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>3.新建LoginActivity类及其布局(登陆的处理)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span> <span class="keyword">extends</span> <span class="title">BaseActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> EditText accountEdit;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> EditText passwordEdit;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Button login;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_login);</div><div class="line">        accountEdit = (EditText) findViewById(R.id.account);</div><div class="line">        passwordEdit = (EditText) findViewById(R.id.password);</div><div class="line">        login = (Button) findViewById(R.id.login);</div><div class="line">        login.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                String account = accountEdit.getText().toString();</div><div class="line">                String password = passwordEdit.getText().toString();</div><div class="line">                <span class="comment">// 如果账号是admin且密码是123456，就认为登录成功</span></div><div class="line">                <span class="keyword">if</span> (account.equals(<span class="string">"admin"</span>) &amp;&amp; password.equals(<span class="string">"123456"</span>)) &#123;</div><div class="line">                    Intent intent = <span class="keyword">new</span> Intent(LoginActivity.<span class="keyword">this</span>, MainActivity.class);</div><div class="line">                    startActivity(intent);</div><div class="line">                    finish();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Toast.makeText(LoginActivity.<span class="keyword">this</span>, <span class="string">"account or password is invalid"</span>,</div><div class="line">                            Toast.LENGTH_SHORT).show();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p></p><h3>4.修改MainACTIVITY类及其布局</h3><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">BaseActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        Button forceOffline = (Button) findViewById(R.id.force_offline);</div><div class="line">        forceOffline.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                Intent intent = <span class="keyword">new</span> Intent(<span class="string">"com.example.broadcastbestpractice.FORCE_OFFLINE"</span>);</div><div class="line">                sendBroadcast(intent);<span class="comment">//发送com.example.broadcastbestpractice.FORCE_OFFLINE广播 表示强制下线</span></div><div class="line">                <span class="comment">//需要创建广播接收器</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p>在BaseActivity类注册广播接收器<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ForceOfflineReceiver receiver;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        ActivityCollector.addActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onResume();</div><div class="line">        IntentFilter intentFilter = <span class="keyword">new</span> IntentFilter();</div><div class="line">        intentFilter.addAction(<span class="string">"com.example.broadcastbestpractice.FORCE_OFFLINE"</span>);</div><div class="line">        receiver = <span class="keyword">new</span> ForceOfflineReceiver();</div><div class="line">        registerReceiver(receiver, intentFilter);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onPause();</div><div class="line">        <span class="keyword">if</span> (receiver != <span class="keyword">null</span>) &#123;</div><div class="line">            unregisterReceiver(receiver);</div><div class="line">            receiver = <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        ActivityCollector.removeActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">ForceOfflineReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(<span class="keyword">final</span> Context context, Intent intent)</span> </span>&#123;</div><div class="line">            AlertDialog.Builder builder = <span class="keyword">new</span> AlertDialog.Builder(context);<span class="comment">//创建一个对话框</span></div><div class="line">            builder.setTitle(<span class="string">"Warning"</span>);</div><div class="line">            builder.setMessage(<span class="string">"You are forced to be offline. Please try to login again."</span>);</div><div class="line">            builder.setCancelable(<span class="keyword">false</span>);</div><div class="line">            <span class="comment">//注册确定按钮</span></div><div class="line">            builder.setPositiveButton(<span class="string">"OK"</span>, <span class="keyword">new</span> DialogInterface.OnClickListener() &#123;<span class="comment">//给ok按钮设置点击事件</span></div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(DialogInterface dialog, <span class="keyword">int</span> which)</span> </span>&#123;</div><div class="line">                    ActivityCollector.finishAll(); <span class="comment">// 销毁所有活动</span></div><div class="line">                    Intent intent = <span class="keyword">new</span> Intent(context, LoginActivity.class);</div><div class="line">                    context.startActivity(intent); <span class="comment">// 重新启动LoginActivity</span></div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">            builder.show();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>将LoginActivity作为主界面<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line">&lt;activity android:name=<span class="string">".LoginActivity"</span>&gt;</div><div class="line">            &lt;intent-filter&gt;</div><div class="line">                &lt;action android:name=<span class="string">"android.intent.action.MAIN"</span> /&gt;</div><div class="line">                &lt;category android:name=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</div><div class="line">            &lt;/intent-filter&gt;</div><div class="line">        &lt;/activity&gt;</div><div class="line">```    </div><div class="line"></div><div class="line">完工!</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">chaper6 实现记住密码功能</div><div class="line">```java</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span> <span class="keyword">extends</span> <span class="title">BaseActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> SharedPreferences pref;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> SharedPreferences.Editor editor;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> EditText accountEdit;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> EditText passwordEdit;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Button login;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> CheckBox rememberPass;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_login);</div><div class="line">        pref = PreferenceManager.getDefaultSharedPreferences(<span class="keyword">this</span>);</div><div class="line">        accountEdit = (EditText) findViewById(R.id.account);</div><div class="line">        passwordEdit = (EditText) findViewById(R.id.password);</div><div class="line">        rememberPass = (CheckBox) findViewById(R.id.remember_pass);</div><div class="line">        login = (Button) findViewById(R.id.login);</div><div class="line">        <span class="keyword">boolean</span> isRemember = pref.getBoolean(<span class="string">"remember_password"</span>, <span class="keyword">false</span>);</div><div class="line">        <span class="keyword">if</span> (isRemember) &#123;</div><div class="line">            <span class="comment">// 将账号和密码都设置到文本框中</span></div><div class="line">            String account = pref.getString(<span class="string">"account"</span>, <span class="string">""</span>);</div><div class="line">            String password = pref.getString(<span class="string">"password"</span>, <span class="string">""</span>);</div><div class="line">            accountEdit.setText(account);</div><div class="line">            passwordEdit.setText(password);</div><div class="line">            rememberPass.setChecked(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">        login.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                String account = accountEdit.getText().toString();</div><div class="line">                String password = passwordEdit.getText().toString();</div><div class="line">                <span class="comment">// 如果账号是admin且密码是123456，就认为登录成功</span></div><div class="line">                <span class="keyword">if</span> (account.equals(<span class="string">"admin"</span>) &amp;&amp; password.equals(<span class="string">"123456"</span>)) &#123;</div><div class="line">                    editor = pref.edit();</div><div class="line">                    <span class="keyword">if</span> (rememberPass.isChecked()) &#123; <span class="comment">// 检查复选框是否被选中</span></div><div class="line">                        editor.putBoolean(<span class="string">"remember_password"</span>, <span class="keyword">true</span>);</div><div class="line">                        editor.putString(<span class="string">"account"</span>, account);</div><div class="line">                        editor.putString(<span class="string">"password"</span>, password);</div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                        editor.clear();</div><div class="line">                    &#125;</div><div class="line">                    editor.apply();</div><div class="line">                    Intent intent = <span class="keyword">new</span> Intent(LoginActivity.<span class="keyword">this</span>, MainActivity.class);</div><div class="line">                    startActivity(intent);</div><div class="line">                    finish();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Toast.makeText(LoginActivity.<span class="keyword">this</span>, <span class="string">"account or password is invalid"</span>,</div><div class="line">                            Toast.LENGTH_SHORT).show();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+            <p></p><h3>学习目的：制作简易版新闻应用</h3><br><img src="http://i4.piimg.com/595109/afe937df13c4e6f6.png" alt="Markdown"><br>1.为RecycleView添加依赖<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:recyclerview-v7:24.2.1'</span></div></pre></td></tr></table></figure><p></p>
+<p>2.新建News类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">News</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String title;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String content;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getTitle</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> title;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTitle</span><span class="params">(String title)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.title = title;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> content;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContent</span><span class="params">(String content)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.content = content;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3.新建布局news_content_frag<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">&lt;RelativeLayout xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    android:layout_width=<span class="string">"match_parent"</span></div><div class="line">    android:layout_height=<span class="string">"match_parent"</span>&gt;</div><div class="line"></div><div class="line">    &lt;LinearLayout</div><div class="line">        android:id=<span class="string">"@+id/visibility_layout"</span></div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"match_parent"</span></div><div class="line">        android:orientation=<span class="string">"vertical"</span></div><div class="line">        android:visibility=<span class="string">"invisible"</span> &gt;</div><div class="line"></div><div class="line">        &lt;TextView</div><div class="line">            android:id=<span class="string">"@+id/news_title"</span></div><div class="line">            android:layout_width=<span class="string">"match_parent"</span></div><div class="line">            android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">            android:gravity=<span class="string">"center"</span></div><div class="line">            android:padding=<span class="string">"10dp"</span></div><div class="line">            android:textSize=<span class="string">"20sp"</span> /&gt;</div><div class="line"></div><div class="line">        &lt;View<span class="comment">//分割线</span></div><div class="line">            android:layout_width=<span class="string">"match_parent"</span></div><div class="line">            android:layout_height=<span class="string">"1dp"</span></div><div class="line">            android:background=<span class="string">"#000"</span> /&gt;</div><div class="line"></div><div class="line">        &lt;TextView</div><div class="line">            android:id=<span class="string">"@+id/news_content"</span></div><div class="line">            android:layout_width=<span class="string">"match_parent"</span></div><div class="line">            android:layout_height=<span class="string">"0dp"</span></div><div class="line">            android:layout_weight=<span class="string">"1"</span></div><div class="line">            android:padding=<span class="string">"15dp"</span></div><div class="line">            android:textSize=<span class="string">"18sp"</span> /&gt;</div><div class="line"></div><div class="line">    &lt;/LinearLayout&gt;</div><div class="line"></div><div class="line">    &lt;View</div><div class="line">        android:layout_width=<span class="string">"1dp"</span></div><div class="line">        android:layout_height=<span class="string">"match_parent"</span></div><div class="line">        android:layout_alignParentLeft=<span class="string">"true"</span></div><div class="line">        android:background=<span class="string">"#000"</span> /&gt;</div><div class="line"></div><div class="line">&lt;/RelativeLayout&gt;</div></pre></td></tr></table></figure></p>
+<p>4.新建NewsContentFragment //加载布局 套路<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NewsContentFragment</span> <span class="keyword">extends</span> <span class="title">Fragment</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> View view;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container,</span></span></div><div class="line"><span class="function"><span class="params">                             Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        view = inflater.inflate(R.layout.news_content_frag, container, <span class="keyword">false</span>);<span class="comment">//R.layout  布局文件</span></div><div class="line">        <span class="keyword">return</span> view;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">refresh</span><span class="params">(String newsTitle, String newsContent)</span> </span>&#123;</div><div class="line">        View visibilityLayout = view.findViewById(R.id.visibility_layout);<span class="comment">//R.id   布局文件中的子布局 如LinerLayout</span></div><div class="line">        visibilityLayout.setVisibility(View.VISIBLE);</div><div class="line">        TextView newsTitleText = (TextView) view.findViewById (R.id.news_title);</div><div class="line">        TextView newsContentText = (TextView) view.findViewById(R.id.news_content);</div><div class="line">        newsTitleText.setText(newsTitle); <span class="comment">// 刷新新闻的标题</span></div><div class="line">        newsContentText.setText(newsContent); <span class="comment">// 刷新新闻的内容</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>5.新建newsContentAcyivity及其布局文件news_content</p>
+<ul>
+<li><p>news_content</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;fragment</div><div class="line">        android:id=<span class="string">"@+id/news_content_fragment"</span></div><div class="line">        android:name=<span class="string">"com.example.fragmentbestpractice.NewsContentFragment"</span></div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"match_parent"</span></div><div class="line">        /&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>NewsContentActivity类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NewsContentActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">actionStart</span><span class="params">(Context context, String newsTitle, String newsContent)</span> </span>&#123;<span class="comment">//启动活动的最佳写法</span></div><div class="line">        Intent intent = <span class="keyword">new</span> Intent(context, NewsContentActivity.class);</div><div class="line">        intent.putExtra(<span class="string">"news_title"</span>, newsTitle);</div><div class="line">        intent.putExtra(<span class="string">"news_content"</span>, newsContent);</div><div class="line">        context.startActivity(intent);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.news_content);</div><div class="line">        String newsTitle = getIntent().getStringExtra(<span class="string">"news_title"</span>); <span class="comment">// 获取传入的新闻标题</span></div><div class="line">        String newsContent = getIntent().getStringExtra(<span class="string">"news_content"</span>); <span class="comment">// 获取传入的新闻内容</span></div><div class="line">        NewsContentFragment newsContentFragment = (NewsContentFragment)getSupportFragmentManager().findFragmentById(R.id.news_content_fragment);</div><div class="line">        newsContentFragment.refresh(newsTitle, newsContent); <span class="comment">// 刷新NewsContentFragment界面</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line">```        </div><div class="line"></div><div class="line"></div><div class="line">&lt;h3&gt;6.新建layout-sw600dp文件夹 新建activity_main文件&lt;/h3&gt;</div><div class="line">- 双页</div><div class="line">```java</div><div class="line">&lt;fragment</div><div class="line">       android:id=<span class="string">"@+id/news_title_fragment"</span></div><div class="line">       android:name=<span class="string">"com.example.fragmentbestpractice.NewsTitleFragment"</span></div><div class="line">       android:layout_width=<span class="string">"0dp"</span></div><div class="line">       android:layout_height=<span class="string">"match_parent"</span></div><div class="line">       android:layout_weight=<span class="string">"1"</span> /&gt;</div><div class="line"></div><div class="line">   &lt;FrameLayout</div><div class="line">       android:id=<span class="string">"@+id/news_content_layout"</span></div><div class="line">       android:layout_width=<span class="string">"0dp"</span></div><div class="line">       android:layout_height=<span class="string">"match_parent"</span></div><div class="line">       android:layout_weight=<span class="string">"3"</span> &gt;</div><div class="line"></div><div class="line">       &lt;fragment</div><div class="line">           android:id=<span class="string">"@+id/news_content_fragment"</span></div><div class="line">           android:name=<span class="string">"com.example.fragmentbestpractice.NewsContentFragment"</span></div><div class="line">           android:layout_width=<span class="string">"match_parent"</span></div><div class="line">           android:layout_height=<span class="string">"match_parent"</span> /&gt;</div><div class="line">   &lt;/FrameLayout&gt;</div><div class="line">```   </div><div class="line"></div><div class="line">&lt;h3&gt;7.在NewsTitleFragment类中新建RecyclerView的适配器内部类NewsAdaper&lt;/h3&gt;</div><div class="line">- 适配器代码千篇一律，只是参数有变化</div><div class="line">```java</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NewsAdapter</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">Adapter</span>&lt;<span class="title">NewsAdapter</span>.<span class="title">ViewHolder</span>&gt; </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">private</span> List&lt;News&gt; mNewsList;</div><div class="line"></div><div class="line">        <span class="class"><span class="keyword">class</span> <span class="title">ViewHolder</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">ViewHolder</span> </span>&#123;</div><div class="line"></div><div class="line">            TextView newsTitleText;</div><div class="line"></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="title">ViewHolder</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">                <span class="keyword">super</span>(view);</div><div class="line">                newsTitleText = (TextView) view.findViewById(R.id.news_title);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">NewsAdapter</span><span class="params">(List&lt;News&gt; newsList)</span> </span>&#123;</div><div class="line">            mNewsList = newsList;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> ViewHolder <span class="title">onCreateViewHolder</span><span class="params">(ViewGroup parent, <span class="keyword">int</span> viewType)</span> </span>&#123;</div><div class="line">            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.news_item, parent, <span class="keyword">false</span>);</div><div class="line">            <span class="keyword">final</span> ViewHolder holder = <span class="keyword">new</span> ViewHolder(view);</div><div class="line">            view.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                    News news = mNewsList.get(holder.getAdapterPosition());</div><div class="line">                    <span class="keyword">if</span> (isTwoPane) &#123;</div><div class="line">                        NewsContentFragment newsContentFragment = (NewsContentFragment)</div><div class="line">                                getFragmentManager().findFragmentById(R.id.news_content_fragment);</div><div class="line">                        newsContentFragment.refresh(news.getTitle(), news.getContent());</div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                        NewsContentActivity.actionStart(getActivity(), news.getTitle(), news.getContent());</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">            <span class="keyword">return</span> holder;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBindViewHolder</span><span class="params">(ViewHolder holder, <span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">            News news = mNewsList.get(position);</div><div class="line">            holder.newsTitleText.setText(news.getTitle());</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getItemCount</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">return</span> mNewsList.size();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p></p><h3>8.NewsTitleFragment类</h3><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NewsTitleFragment</span> <span class="keyword">extends</span> <span class="title">Fragment</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> isTwoPane;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container,</span></span></div><div class="line"><span class="function"><span class="params">                             Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        View view = inflater.inflate(R.layout.news_title_frag, container, <span class="keyword">false</span>);</div><div class="line">        RecyclerView newsTitleRecyclerView = (RecyclerView) view.findViewById(R.id.news_title_recycler_view);</div><div class="line">        LinearLayoutManager layoutManager = <span class="keyword">new</span> LinearLayoutManager(getActivity());</div><div class="line">        newsTitleRecyclerView.setLayoutManager(layoutManager);</div><div class="line">        NewsAdapter adapter = <span class="keyword">new</span> NewsAdapter(getNews());</div><div class="line">        newsTitleRecyclerView.setAdapter(adapter);</div><div class="line">        <span class="keyword">return</span> view;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onActivityCreated</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onActivityCreated(savedInstanceState);</div><div class="line">        <span class="keyword">if</span> (getActivity().findViewById(R.id.news_content_layout) != <span class="keyword">null</span>) &#123;</div><div class="line">            isTwoPane = <span class="keyword">true</span>; <span class="comment">// 可以找到news_content_layout布局时，为双页模式</span></div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            isTwoPane = <span class="keyword">false</span>; <span class="comment">// 找不到news_content_layout布局时，为单页模式</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> List&lt;News&gt; <span class="title">getNews</span><span class="params">()</span> </span>&#123;</div><div class="line">        List&lt;News&gt; newsList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">50</span>; i++) &#123;</div><div class="line">            News news = <span class="keyword">new</span> News();</div><div class="line">            news.setTitle(<span class="string">"This is news title "</span> + i);</div><div class="line">            news.setContent(getRandomLengthContent(<span class="string">"This is news content "</span> + i + <span class="string">". "</span>));</div><div class="line">            newsList.add(news);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> newsList;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getRandomLengthContent</span><span class="params">(String content)</span> </span>&#123;<span class="comment">//设置随机信息</span></div><div class="line">        Random random = <span class="keyword">new</span> Random();</div><div class="line">        <span class="keyword">int</span> length = random.nextInt(<span class="number">20</span>) + <span class="number">1</span>;</div><div class="line">        StringBuilder builder = <span class="keyword">new</span> StringBuilder();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</div><div class="line">            builder.append(content);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> builder.toString();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
 
           
         
@@ -462,7 +470,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-23T20:13:10+08:00">
                 2017-07-23
@@ -629,7 +637,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-22T20:13:10+08:00">
                 2017-07-22
@@ -806,7 +814,7 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T20:13:10+08:00">
                 2017-07-21
@@ -914,138 +922,6 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/build.gradle文件详解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/20/build.gradle文件详解/" itemprop="url">build.gradle文件详解<CODE 2 chaper2></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posté le</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
-                2017-07-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/20/build.gradle文件详解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/20/build.gradle文件详解/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>build.gradle(项目目录下)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()//代码托管仓库，声明后可引用jcenter上的开源项目</div><div class="line">    &#125;</div><div class="line">    dependencies &#123;</div><div class="line">        classpath &apos;com.android.tools.build:gradle:2.2.0&apos;//“依赖”文件使用classpath声明一个gradle插件  声明的原因：让gradle知道构建的是Android java 还是</div><div class="line">c++                                                     //com.android.tools.build:gradle:2.2.0说明构建的是android项目</div><div class="line">        // NOTE: Do not place your application dependencies here; they belong</div><div class="line">        // in the individual module build.gradle files</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">allprojects &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()//代码托管仓库，声明后可引用jcenter上的开源项目</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">task clean(type: Delete) &#123;</div><div class="line">    delete rootProject.buildDir</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p></p><h3>build.gradle(项目目录下)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;com.android.application&apos;//应用一个插件 两个值可选  应用程序模块 （可直接运行）   com.android.library库模块（作为代码库依附别的库运行）</div><div class="line"></div><div class="line">android &#123;</div><div class="line">    compileSdkVersion 24  //编译所用sdk版本</div><div class="line">    buildToolsVersion &quot;24.0.2&quot;//构建工具版本</div><div class="line">    defaultConfig &#123;//细节配置</div><div class="line">        applicationId &quot;com.example.helloworld&quot;//项目包名</div><div class="line">        minSdkVersion 15//最低sdk版本</div><div class="line">        targetSdkVersion 24//充分测试的sdk版本</div><div class="line">        versionCode 1//项目版本号</div><div class="line">        versionName &quot;1.0&quot;//项目版本名</div><div class="line">    &#125;</div><div class="line">    buildTypes &#123;//生成安装文件的相关配置</div><div class="line">        release &#123;//release指定生产正式版安装文件的配置    debug闭包指定生成测试版安装文件的配置</div><div class="line">            minifyEnabled false//指定是否对项目的代码进行混淆</div><div class="line">            proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;//proguardFiles指定混淆的规则文件  //proguard-android.txt通用混淆规则  //proguard-rules.pro自定义混淆规则</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">dependencies &#123;//指定项目的所有依赖文件</div><div class="line">    compile fileTree(include: [&apos;*.jar&apos;], dir: &apos;libs&apos;)//本地依赖声明</div><div class="line">    compile &apos;com.android.support:appcompat-v7:24.2.1&apos;//远程依赖声明</div><div class="line">    testCompile &apos;junit:junit:4.12&apos;//声明测试用例库</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/ListView/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1075,7 +951,7 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
                 2017-07-20
@@ -1182,6 +1058,270 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/build.gradle文件详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/20/build.gradle文件详解/" itemprop="url">build.gradle文件详解<CODE 2 chaper2></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
+                2017-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/20/build.gradle文件详解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/20/build.gradle文件详解/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>build.gradle(项目目录下)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()//代码托管仓库，声明后可引用jcenter上的开源项目</div><div class="line">    &#125;</div><div class="line">    dependencies &#123;</div><div class="line">        classpath &apos;com.android.tools.build:gradle:2.2.0&apos;//“依赖”文件使用classpath声明一个gradle插件  声明的原因：让gradle知道构建的是Android java 还是</div><div class="line">c++                                                     //com.android.tools.build:gradle:2.2.0说明构建的是android项目</div><div class="line">        // NOTE: Do not place your application dependencies here; they belong</div><div class="line">        // in the individual module build.gradle files</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">allprojects &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()//代码托管仓库，声明后可引用jcenter上的开源项目</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">task clean(type: Delete) &#123;</div><div class="line">    delete rootProject.buildDir</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>build.gradle(项目目录下)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;com.android.application&apos;//应用一个插件 两个值可选  应用程序模块 （可直接运行）   com.android.library库模块（作为代码库依附别的库运行）</div><div class="line"></div><div class="line">android &#123;</div><div class="line">    compileSdkVersion 24  //编译所用sdk版本</div><div class="line">    buildToolsVersion &quot;24.0.2&quot;//构建工具版本</div><div class="line">    defaultConfig &#123;//细节配置</div><div class="line">        applicationId &quot;com.example.helloworld&quot;//项目包名</div><div class="line">        minSdkVersion 15//最低sdk版本</div><div class="line">        targetSdkVersion 24//充分测试的sdk版本</div><div class="line">        versionCode 1//项目版本号</div><div class="line">        versionName &quot;1.0&quot;//项目版本名</div><div class="line">    &#125;</div><div class="line">    buildTypes &#123;//生成安装文件的相关配置</div><div class="line">        release &#123;//release指定生产正式版安装文件的配置    debug闭包指定生成测试版安装文件的配置</div><div class="line">            minifyEnabled false//指定是否对项目的代码进行混淆</div><div class="line">            proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;//proguardFiles指定混淆的规则文件  //proguard-android.txt通用混淆规则  //proguard-rules.pro自定义混淆规则</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">dependencies &#123;//指定项目的所有依赖文件</div><div class="line">    compile fileTree(include: [&apos;*.jar&apos;], dir: &apos;libs&apos;)//本地依赖声明</div><div class="line">    compile &apos;com.android.support:appcompat-v7:24.2.1&apos;//远程依赖声明</div><div class="line">    testCompile &apos;junit:junit:4.12&apos;//声明测试用例库</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/logcat及log/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/20/logcat及log/" itemprop="url">logcat及log<CODE 2 chaper2></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
+                2017-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/20/logcat及log/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/20/logcat及log/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>log</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">log.v()//verbose 琐碎日志</div><div class="line">log.d()//debug调试信息</div><div class="line">log.i()//比较重要的数据 用户数据</div><div class="line">log.w()//warn</div><div class="line">log.e()//error</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>logcat and 过滤器</h3><br><img src="http://img.027cgb.cn/20170721/20177216711775731906.png"><br><img src="http://img.027cgb.cn/20170721/20177217341775731906.png"><p></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/ActivityText/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1211,7 +1351,7 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
                 2017-07-20
@@ -1371,7 +1511,7 @@ public class SecondActivity extends BaseActivity {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/logcat及log/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/配置变量时  系统 用户变量的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="DEMO">
@@ -1390,7 +1530,7 @@ public class SecondActivity extends BaseActivity {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/20/logcat及log/" itemprop="url">logcat及log<CODE 2 chaper2></a></h1>
+                <a class="post-title-link" href="/2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="url">配置变量时  系统 用户变量的区别</a></h1>
         
 
         <div class="post-meta">
@@ -1400,10 +1540,10 @@ public class SecondActivity extends BaseActivity {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
-                2017-07-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T20:13:10+08:00">
+                2017-06-18
               </time>
             
 
@@ -1421,9 +1561,9 @@ public class SecondActivity extends BaseActivity {
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/20/logcat及log/#comments" itemprop="discussionUrl">
+                <a href="/2017/06/18/配置变量时  系统 用户变量的区别/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/20/logcat及log/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1453,8 +1593,9 @@ public class SecondActivity extends BaseActivity {
       
         
           
-            <p></p><h3>log</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">log.v()//verbose 琐碎日志</div><div class="line">log.d()//debug调试信息</div><div class="line">log.i()//比较重要的数据 用户数据</div><div class="line">log.w()//warn</div><div class="line">log.e()//error</div></pre></td></tr></table></figure><p></p>
-<p></p><h3>logcat and 过滤器</h3><br><img src="http://img.027cgb.cn/20170721/20177216711775731906.png"><br><img src="http://img.027cgb.cn/20170721/20177217341775731906.png"><p></p>
+            <p>我们在Java运行环境或Android开发环境时，经常要配置环境变量，如图所示，<br><img src="http://d1.freep.cn/3tb_170617122931qa32585966.png"></p>
+<p>这里有administrator的用户变量(U)，和系统变量（S），<br>那麽，它们之间有什么区别呢？<br>简单的说，一个是当前用户使用，你用其它用户登陆，这个环境变量就不起作用了。<br>系统变量，是对所有用户都可使用的。<br>简单的说：<br>系统变量：不管以哪个用户名登陆到计算机都能使用；<br>用户变量：只能以设置变量时的用户名登陆才能使用。</p>
+<p>如果我们在自己的电脑上运行程序，用户只有一个，看不出系统变量和用户变量的区别，但是，<br>如果一台电脑有多个用户，就能看出用户变量和系统变量的区别了~~<br>PS：我们在配置的时候，一般都是配置系统变量（S），</p>
 
           
         
@@ -1532,7 +1673,7 @@ public class SecondActivity extends BaseActivity {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T20:13:10+08:00">
                 2017-06-18
@@ -1630,139 +1771,6 @@ public class SecondActivity extends BaseActivity {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/配置变量时  系统 用户变量的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="url">配置变量时  系统 用户变量的区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posté le</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T20:13:10+08:00">
-                2017-06-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/06/18/配置变量时  系统 用户变量的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>我们在Java运行环境或Android开发环境时，经常要配置环境变量，如图所示，<br><img src="http://d1.freep.cn/3tb_170617122931qa32585966.png"></p>
-<p>这里有administrator的用户变量(U)，和系统变量（S），<br>那麽，它们之间有什么区别呢？<br>简单的说，一个是当前用户使用，你用其它用户登陆，这个环境变量就不起作用了。<br>系统变量，是对所有用户都可使用的。<br>简单的说：<br>系统变量：不管以哪个用户名登陆到计算机都能使用；<br>用户变量：只能以设置变量时的用户名登陆才能使用。</p>
-<p>如果我们在自己的电脑上运行程序，用户只有一个，看不出系统变量和用户变量的区别，但是，<br>如果一台电脑有多个用户，就能看出用户变量和系统变量的区别了~~<br>PS：我们在配置的时候，一般都是配置系统变量（S），</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1777,7 +1785,6 @@ public class SecondActivity extends BaseActivity {
 
 
           
-
 
         </div>
         
@@ -1815,7 +1822,7 @@ public class SecondActivity extends BaseActivity {
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">90</span>
-                <span class="site-state-item-name">articles</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1943,7 +1950,7 @@ public class SecondActivity extends BaseActivity {
   <span class="post-meta-divider">|</span>
 
   <div class="theme-info">
-    Thème &mdash;
+    Theme &mdash;
     <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
       NexT.Muse
     </a>
