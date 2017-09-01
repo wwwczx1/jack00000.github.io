@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Accueil
           </a>
         </li>
       
@@ -239,7 +239,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Search
+            recherche
           </a>
         </li>
       
@@ -297,6 +297,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/PAT知识点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/19/PAT知识点/" itemprop="url">PAT知识点</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T12:33:56+08:00">
+                2017-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/19/PAT知识点/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/19/PAT知识点/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>vector<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">vecotr&lt;int&gt;  // 声明向量容器 TM就是指针组 大小不确定</div><div class="line">vector&lt;int&gt; v(n);//见乙级1065</div><div class="line">vector&lt;int&gt;::iterator//定义向量迭代器</div><div class="line">vector&lt;int&gt;::iterator result=find(v.begin(),v.end(),table[v[i]]);// 见1065</div><div class="line">v.push_back(v[i]);//在v的末尾增加一个值为v[i]的元素</div><div class="line">举个例子</div><div class="line"></div><div class="line">for(vector&lt;int&gt;::iterator it=v.begin();it!=v.end();it++)</div><div class="line">     cout&lt;&lt;*it&lt;&lt;endl;</div><div class="line">就把里面的内容都输出了</div></pre></td></tr></table></figure></p>
+<p>函数algorithm<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">以很好的平均效率排序	sort()</div><div class="line">sort(doge.begin(),doge.end());//见1065</div><div class="line">排序，并维持相同元素的原有顺序	stable_sort()</div><div class="line">将序列的前一部分排好序	partial_sort()</div><div class="line">复制的同时将序列的前一部分排好序	partial_sort_copy()</div><div class="line">在序列中找出某个值的第一次出现的位置	find()</div><div class="line">find(v.begin(),v.end(),table[v[i]]);//table[v[i]]为要找的元素    见乙级1065</div></pre></td></tr></table></figure></p>
+<p>qsort<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">qsort（即，quicksort）主要根据你给的比较条件给一个快速排序，主要是通过指针移动实现排序功能。排序之后的结果仍然放在原来数组中。</div><div class="line"></div><div class="line">参数意义如下:</div><div class="line"></div><div class="line">第一个参数 base 是 需要排序的目标数组名（或者也可以理解成开始排序的地址，因为可以写&amp;s[i]这样的表达式）</div><div class="line"></div><div class="line">第二个参数 num 是 参与排序的目标数组元素个数</div><div class="line"></div><div class="line">第三个参数 width 是单个元素的大小（或者目标数组中每一个元素长度），推荐使用sizeof(s[0]）这样的表达式</div><div class="line"></div><div class="line">第四个参数 compare 就是让很多人觉得非常困惑的比较函数啦</div><div class="line">int compare(const void *a_t, const void *b_t)&#123;</div><div class="line">    int *a = (int *)a_t, *b = (int *)b_t;</div><div class="line">    if(a[3] != b[3])&#123;</div><div class="line">        return a[3] - b[3]; //type升序</div><div class="line">    &#125;</div><div class="line">    else if(a[1] + a[2] != b[1] + b[2])&#123;</div><div class="line">        return (b[1] + b[2]) - (a[1] + a[2]); //总分降序</div><div class="line">    &#125;</div><div class="line">    else if(a[1] != b[1])&#123;</div><div class="line">        return b[1] - a[1]; //德分降序</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        return a[0] - b[0]; //学号升序</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int main()&#123;</div><div class="line">qsort(&amp;sTable[0], n, sizeof(sTable[0]), compare);//数组名 元素个数 单个元素大小 比较函数</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/JAVA实验题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -326,7 +459,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T12:33:55+08:00">
                 2017-08-19
@@ -466,7 +599,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T12:33:55+08:00">
                 2017-08-19
@@ -576,143 +709,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/Coolweather6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/17/Coolweather6/" itemprop="url">coolweather6<CODE 2 chaper14></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-17T20:13:10+08:00">
-                2017-08-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/17/Coolweather6/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/17/Coolweather6/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的：1.获取必应每日一图<p></p>
-<p>1.获取必应每日一图</p>
-<p>每日一图接口：<a href="http://guolin.tech/api/bing_pic" target="_blank" rel="external">http://guolin.tech/api/bing_pic</a></p>
-<p>服务器返回<a href="http://cn.bing.com/az/hprichbg/rb/AlaskaLynx_ROW9337883641_1920x1080.jpg每日一图背景" target="_blank" rel="external">http://cn.bing.com/az/hprichbg/rb/AlaskaLynx_ROW9337883641_1920x1080.jpg每日一图背景</a></p>
-<p>使用Glide加载即可</p>
-<p>修改activity_weather<br>```xml</p>
-<framelayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/colorPrimary"><br><br>    <imageview android:id="@+id/bing_pic_img" android:layout_width="match_parent" android:layout_height="match_parent" android:scaletype="centerCrop"><br><br><br>      //…3qe<br></imageview></framelayout>
-</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/Coolweather5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -742,7 +738,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-17T20:13:10+08:00">
                 2017-08-17
@@ -854,6 +850,143 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/Coolweather6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/17/Coolweather6/" itemprop="url">coolweather6<CODE 2 chaper14></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-17T20:13:10+08:00">
+                2017-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/17/Coolweather6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/17/Coolweather6/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：1.获取必应每日一图<p></p>
+<p>1.获取必应每日一图</p>
+<p>每日一图接口：<a href="http://guolin.tech/api/bing_pic" target="_blank" rel="external">http://guolin.tech/api/bing_pic</a></p>
+<p>服务器返回<a href="http://cn.bing.com/az/hprichbg/rb/AlaskaLynx_ROW9337883641_1920x1080.jpg每日一图背景" target="_blank" rel="external">http://cn.bing.com/az/hprichbg/rb/AlaskaLynx_ROW9337883641_1920x1080.jpg每日一图背景</a></p>
+<p>使用Glide加载即可</p>
+<p>修改activity_weather<br>```xml</p>
+<framelayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/colorPrimary"><br><br>    <imageview android:id="@+id/bing_pic_img" android:layout_width="match_parent" android:layout_height="match_parent" android:scaletype="centerCrop"><br><br><br>      //…3qe<br></imageview></framelayout>
+</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/16/简易版小恐龙/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -883,7 +1016,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-16T20:13:10+08:00">
                 2017-08-16
@@ -1014,7 +1147,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T20:13:10+08:00">
                 2017-08-15
@@ -1121,143 +1254,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/CODE 2 chaper13/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/15/CODE 2 chaper13/" itemprop="url">高级技巧<CODE 2 chaper13></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T20:13:10+08:00">
-                2017-08-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/15/CODE 2 chaper13/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/15/CODE 2 chaper13/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的：1.全局获取Context技巧（活动本身就是一个context对象）2. 使用INtent传递对象（serializable与Parcclablc方式）<br>创建MyApplication类继承Application<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> clss MyApplication extends Application&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> Context context;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span></span>&#123;</div><div class="line">    context=getApplicationContext();</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Context <span class="title">getContext</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> context;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p>修改AndroidMaifest.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">application</span></span></div><div class="line"><span class="tag">        <span class="attr">android:name</span>=<span class="string">"com.example.networktest.MyApplication"</span>//添加一行就行   路径一定要正确</span></div><div class="line"><span class="tag">        <span class="attr">android:allowBackup</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:icon</span>=<span class="string">"@mipmap/ic_launcher"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:supportsRtl</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:theme</span>=<span class="string">"@style/AppTheme"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line"><span class="tag">            <span class="attr">android:name</span>=<span class="string">"com.baidu.lbsapi.API_KEY"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:value</span>=<span class="string">"i6VD2fHKM3msMfZtIOXAhFSzDiYGFIwL"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".MainActivity"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">service</span> <span class="attr">android:name</span>=<span class="string">"com.baidu.location.f"</span> <span class="attr">android:enabled</span>=<span class="string">"true"</span> <span class="attr">android:process</span>=<span class="string">":remote"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">service</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>使用INtent传递对象（serializable与Parcclablc方式）</p>
-<p>serializable 序列化（方法：让类实现serializable接口）<br>如：定义person类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">person</span> <span class="keyword">implements</span> <span class="title">Serializable</span></span>&#123;</div><div class="line">  <span class="keyword">private</span> String name;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">int</span> age;</div><div class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> name;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">this</span>.name=name;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> age;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">this</span>.age=age;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>FristActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Person person=<span class="keyword">new</span> person();</div><div class="line">person.setName();</div><div class="line">person.setAge();</div><div class="line">Intent intent=<span class="keyword">new</span> Intent(FristActivity.<span class="keyword">this</span>,SecondActivity.class);</div><div class="line">intent.putExtra(Person_data,person);</div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure></p>
-<p>在SecondActivity获取这个对象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Person person=(Person)getIntent().getSerializableExtra(<span class="string">"Person_data"</span>);</div></pre></td></tr></table></figure></p>
-<p>Parcclablc方式 (将一个完整的对象进行分解)</p>
-</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/Coolweather4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1287,7 +1283,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T20:13:10+08:00">
                 2017-08-15
@@ -1414,7 +1410,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/Coolweather2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/CODE 2 chaper13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="DEMO">
@@ -1433,7 +1429,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/14/Coolweather2/" itemprop="url">coolweather2<CODE 2 chaper14></a></h1>
+                <a class="post-title-link" href="/2017/08/15/CODE 2 chaper13/" itemprop="url">高级技巧<CODE 2 chaper13></a></h1>
         
 
         <div class="post-meta">
@@ -1443,10 +1439,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-14T20:13:10+08:00">
-                2017-08-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T20:13:10+08:00">
+                2017-08-15
               </time>
             
 
@@ -1464,9 +1460,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/14/Coolweather2/#comments" itemprop="discussionUrl">
+                <a href="/2017/08/15/CODE 2 chaper13/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/14/Coolweather2/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/08/15/CODE 2 chaper13/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1496,10 +1492,13 @@
       
         
           
-            <p></p><h3>学习目的：1.遍历全国省市县数据（获取json数据 处理返回的json数据）<p></p>
-<p>1.遍历全国省市县数据</p>
-<p>在Util包新建HttpUtil类 获取json数据<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> okhttp3.OkHttpClient;</div><div class="line"><span class="keyword">import</span> okhttp3.Request;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpUtil</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sendOkHttpRequest</span><span class="params">(String address, okhttp3.Callback callback)</span> </span>&#123;</div><div class="line">        OkHttpClient client = <span class="keyword">new</span> OkHttpClient();</div><div class="line">        Request request = <span class="keyword">new</span> Request.Builder().url(address).build();</div><div class="line">        client.newCall(request).enqueue(callback);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>再新建Utility类处理返回的json数据<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> android.text.TextUtils;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.coolweather.android.db.City;</div><div class="line"><span class="keyword">import</span> com.coolweather.android.db.County;</div><div class="line"><span class="keyword">import</span> com.coolweather.android.db.Province;</div><div class="line"><span class="keyword">import</span> com.coolweather.android.gson.Weather;</div><div class="line"><span class="keyword">import</span> com.google.gson.Gson;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.json.JSONArray;</div><div class="line"><span class="keyword">import</span> org.json.JSONException;</div><div class="line"><span class="keyword">import</span> org.json.JSONObject;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Utility</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 解析和处理服务器返回的省级数据</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">handleProvinceResponse</span><span class="params">(String response)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (!TextUtils.isEmpty(response)) &#123;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                JSONArray allProvinces = <span class="keyword">new</span> JSONArray(response);</div><div class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; allProvinces.length(); i++) &#123;</div><div class="line">                    JSONObject provinceObject = allProvinces.getJSONObject(i);</div><div class="line">                    Province province = <span class="keyword">new</span> Province();</div><div class="line">                    province.setProvinceName(provinceObject.getString(<span class="string">"name"</span>));</div><div class="line">                    province.setProvinceCode(provinceObject.getInt(<span class="string">"id"</span>));</div><div class="line">                    province.save();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125; <span class="keyword">catch</span> (JSONException e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 解析和处理服务器返回的市级数据</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">handleCityResponse</span><span class="params">(String response, <span class="keyword">int</span> provinceId)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (!TextUtils.isEmpty(response)) &#123;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                JSONArray allCities = <span class="keyword">new</span> JSONArray(response);</div><div class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; allCities.length(); i++) &#123;</div><div class="line">                    JSONObject cityObject = allCities.getJSONObject(i);</div><div class="line">                    City city = <span class="keyword">new</span> City();</div><div class="line">                    city.setCityName(cityObject.getString(<span class="string">"name"</span>));</div><div class="line">                    city.setCityCode(cityObject.getInt(<span class="string">"id"</span>));</div><div class="line">                    city.setProvinceId(provinceId);</div><div class="line">                    city.save();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125; <span class="keyword">catch</span> (JSONException e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 解析和处理服务器返回的县级数据</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">handleCountyResponse</span><span class="params">(String response, <span class="keyword">int</span> cityId)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (!TextUtils.isEmpty(response)) &#123;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                JSONArray allCounties = <span class="keyword">new</span> JSONArray(response);</div><div class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; allCounties.length(); i++) &#123;</div><div class="line">                    JSONObject countyObject = allCounties.getJSONObject(i);</div><div class="line">                    County county = <span class="keyword">new</span> County();</div><div class="line">                    county.setCountyName(countyObject.getString(<span class="string">"name"</span>));</div><div class="line">                    county.setWeatherId(countyObject.getString(<span class="string">"weather_id"</span>));</div><div class="line">                    county.setCityId(cityId);</div><div class="line">                    county.save();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125; <span class="keyword">catch</span> (JSONException e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 将返回的JSON数据解析成Weather实体类</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Weather <span class="title">handleWeatherResponse</span><span class="params">(String response)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            JSONObject jsonObject = <span class="keyword">new</span> JSONObject(response);</div><div class="line">            JSONArray jsonArray = jsonObject.getJSONArray(<span class="string">"HeWeather"</span>);</div><div class="line">            String weatherContent = jsonArray.getJSONObject(<span class="number">0</span>).toString();</div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Gson().fromJson(weatherContent, Weather.class);</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+            <p></p><h3>学习目的：1.全局获取Context技巧（活动本身就是一个context对象）2. 使用INtent传递对象（serializable与Parcclablc方式）<br>创建MyApplication类继承Application<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> clss MyApplication extends Application&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> Context context;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span></span>&#123;</div><div class="line">    context=getApplicationContext();</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Context <span class="title">getContext</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> context;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p>修改AndroidMaifest.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">application</span></span></div><div class="line"><span class="tag">        <span class="attr">android:name</span>=<span class="string">"com.example.networktest.MyApplication"</span>//添加一行就行   路径一定要正确</span></div><div class="line"><span class="tag">        <span class="attr">android:allowBackup</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:icon</span>=<span class="string">"@mipmap/ic_launcher"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:supportsRtl</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:theme</span>=<span class="string">"@style/AppTheme"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line"><span class="tag">            <span class="attr">android:name</span>=<span class="string">"com.baidu.lbsapi.API_KEY"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:value</span>=<span class="string">"i6VD2fHKM3msMfZtIOXAhFSzDiYGFIwL"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".MainActivity"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">service</span> <span class="attr">android:name</span>=<span class="string">"com.baidu.location.f"</span> <span class="attr">android:enabled</span>=<span class="string">"true"</span> <span class="attr">android:process</span>=<span class="string">":remote"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">service</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>使用INtent传递对象（serializable与Parcclablc方式）</p>
+<p>serializable 序列化（方法：让类实现serializable接口）<br>如：定义person类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">person</span> <span class="keyword">implements</span> <span class="title">Serializable</span></span>&#123;</div><div class="line">  <span class="keyword">private</span> String name;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">int</span> age;</div><div class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> name;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">this</span>.name=name;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> age;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">this</span>.age=age;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>FristActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Person person=<span class="keyword">new</span> person();</div><div class="line">person.setName();</div><div class="line">person.setAge();</div><div class="line">Intent intent=<span class="keyword">new</span> Intent(FristActivity.<span class="keyword">this</span>,SecondActivity.class);</div><div class="line">intent.putExtra(Person_data,person);</div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure></p>
+<p>在SecondActivity获取这个对象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Person person=(Person)getIntent().getSerializableExtra(<span class="string">"Person_data"</span>);</div></pre></td></tr></table></figure></p>
+<p>Parcclablc方式 (将一个完整的对象进行分解)</p>
 </h3>
           
         
@@ -1577,7 +1576,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-14T20:13:10+08:00">
                 2017-08-14
@@ -1678,7 +1677,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1724,8 +1723,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">90</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">91</span>
+                <span class="site-state-item-name">articles</span>
               </a>
             </div>
           
@@ -1853,7 +1852,7 @@
   <span class="post-meta-divider">|</span>
 
   <div class="theme-info">
-    Theme &mdash;
+    Thème &mdash;
     <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
       NexT.Muse
     </a>

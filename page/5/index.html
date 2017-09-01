@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Accueil
           </a>
         </li>
       
@@ -239,7 +239,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Search
+            recherche
           </a>
         </li>
       
@@ -297,6 +297,273 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Playvideotest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/31/Playvideotest/" itemprop="url">playvideotest<CODE 2 chaper8></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
+                2017-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/31/Playvideotest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/31/Playvideotest/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的:1.播放视频 暂停视频 停止视频(videoView类的使用)</h3><br>权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span> /&gt;</div></pre></td></tr></table></figure><p></p>
+<p>MainActivity类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> VideoView videoView;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        videoView = (VideoView) findViewById(R.id.video_view);</div><div class="line">        Button play = (Button) findViewById(R.id.play);</div><div class="line">        Button pause = (Button) findViewById(R.id.pause);</div><div class="line">        Button replay = (Button) findViewById(R.id.replay);</div><div class="line">        play.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">        pause.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">        replay.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">        <span class="keyword">if</span> (ContextCompat.checkSelfPermission(MainActivity.<span class="keyword">this</span>, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">            ActivityCompat.requestPermissions(MainActivity.<span class="keyword">this</span>, <span class="keyword">new</span> String[]&#123; Manifest.permission. WRITE_EXTERNAL_STORAGE &#125;, <span class="number">1</span>);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            initVideoPath(); <span class="comment">// 初始化MediaPlayer</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initVideoPath</span><span class="params">()</span> </span>&#123;</div><div class="line">        File file = <span class="keyword">new</span> File(Environment.getExternalStorageDirectory(), <span class="string">"movie.mp4"</span>);</div><div class="line">        videoView.setVideoPath(file.getPath()); <span class="comment">// 指定视频文件的路径</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode, String[] permissions, <span class="keyword">int</span>[] grantResults)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">            <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span> &amp;&amp; grantResults[<span class="number">0</span>] == PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">                    initVideoPath();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Toast.makeText(<span class="keyword">this</span>, <span class="string">"拒绝权限将无法使用程序"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                    finish();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">            <span class="keyword">case</span> R.id.play:</div><div class="line">                <span class="keyword">if</span> (!videoView.isPlaying()) &#123;</div><div class="line">                    videoView.start(); <span class="comment">// 开始播放</span></div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> R.id.pause:</div><div class="line">                <span class="keyword">if</span> (videoView.isPlaying()) &#123;</div><div class="line">                    videoView.pause(); <span class="comment">// 暂停播放</span></div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> R.id.replay:</div><div class="line">                <span class="keyword">if</span> (videoView.isPlaying()) &#123;</div><div class="line">                    videoView.resume(); <span class="comment">// 重新播放</span></div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        <span class="keyword">if</span> (videoView != <span class="keyword">null</span>) &#123;</div><div class="line">            videoView.suspend();</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/30/Contactstest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/30/Contactstest/" itemprop="url">contactstest<CODE 2 chaper7></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T13:10:00+08:00">
+                2017-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/30/Contactstest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/30/Contactstest/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3>学习目的:1.读取系统联系人</h3>
+
+
+<p>1.读取系统联系人<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.READ_CONTACTS"</span> /&gt;<span class="comment">//权限</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    ArrayAdapter&lt;String&gt; adapter;</div><div class="line"></div><div class="line">    List&lt;String&gt; contactsList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        ListView contactsView = (ListView) findViewById(R.id.contacts_view);</div><div class="line">        adapter = <span class="keyword">new</span> ArrayAdapter&lt;String&gt;(<span class="keyword">this</span>, android.R.layout. simple_list_item_1, contactsList);</div><div class="line">        contactsView.setAdapter(adapter);</div><div class="line">        <span class="keyword">if</span> (ContextCompat.checkSelfPermission(<span class="keyword">this</span>, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">            ActivityCompat.requestPermissions(<span class="keyword">this</span>, <span class="keyword">new</span> String[]&#123; Manifest.permission.READ_CONTACTS &#125;, <span class="number">1</span>);<span class="comment">//申请权限</span></div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            readContacts();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">readContacts</span><span class="params">()</span> </span>&#123;</div><div class="line">        Cursor cursor = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="comment">// 查询联系人数据</span></div><div class="line">            cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">            <span class="keyword">if</span> (cursor != <span class="keyword">null</span>) &#123;</div><div class="line">                <span class="keyword">while</span> (cursor.moveToNext()) &#123;</div><div class="line">                    <span class="comment">// 获取联系人姓名</span></div><div class="line">                    String displayName = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));</div><div class="line">                    <span class="comment">// 获取联系人手机号</span></div><div class="line">                    String number = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));</div><div class="line">                     <span class="comment">//ContactsContract.CommonDataKinds.Phone类提供的常量就是uri.parse()解析出来的结果</span></div><div class="line">                    contactsList.add(displayName + <span class="string">"\n"</span> + number);</div><div class="line">                &#125;</div><div class="line">                adapter.notifyDataSetChanged();</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; <span class="keyword">finally</span> &#123;</div><div class="line">            <span class="keyword">if</span> (cursor != <span class="keyword">null</span>) &#123;</div><div class="line">                cursor.close();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode, String[] permissions, <span class="keyword">int</span>[] grantResults)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">            <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span> &amp;&amp; grantResults[<span class="number">0</span>] == PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">                    readContacts();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Toast.makeText(<span class="keyword">this</span>, <span class="string">"You denied the permission"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/30/Runtimepermissiontest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -326,7 +593,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T13:10:00+08:00">
                 2017-07-30
@@ -458,7 +725,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T13:10:00+08:00">
                 2017-07-30
@@ -567,7 +834,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/30/Contactstest/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/29/DataBestTest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="DEMO">
@@ -586,7 +853,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/30/Contactstest/" itemprop="url">contactstest<CODE 2 chaper7></a></h1>
+                <a class="post-title-link" href="/2017/07/29/DataBestTest/" itemprop="url">DataBestTest<CODE 2 chaper5></a></h1>
         
 
         <div class="post-meta">
@@ -596,10 +863,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T13:10:00+08:00">
-                2017-07-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-29T20:13:10+08:00">
+                2017-07-29
               </time>
             
 
@@ -617,9 +884,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/30/Contactstest/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/29/DataBestTest/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/30/Contactstest/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/29/DataBestTest/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -649,12 +916,40 @@
       
         
           
-            <h3>学习目的:1.读取系统联系人</h3>
-
-
-<p>1.读取系统联系人<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.READ_CONTACTS"</span> /&gt;<span class="comment">//权限</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    ArrayAdapter&lt;String&gt; adapter;</div><div class="line"></div><div class="line">    List&lt;String&gt; contactsList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        ListView contactsView = (ListView) findViewById(R.id.contacts_view);</div><div class="line">        adapter = <span class="keyword">new</span> ArrayAdapter&lt;String&gt;(<span class="keyword">this</span>, android.R.layout. simple_list_item_1, contactsList);</div><div class="line">        contactsView.setAdapter(adapter);</div><div class="line">        <span class="keyword">if</span> (ContextCompat.checkSelfPermission(<span class="keyword">this</span>, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">            ActivityCompat.requestPermissions(<span class="keyword">this</span>, <span class="keyword">new</span> String[]&#123; Manifest.permission.READ_CONTACTS &#125;, <span class="number">1</span>);<span class="comment">//申请权限</span></div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            readContacts();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">readContacts</span><span class="params">()</span> </span>&#123;</div><div class="line">        Cursor cursor = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="comment">// 查询联系人数据</span></div><div class="line">            cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">            <span class="keyword">if</span> (cursor != <span class="keyword">null</span>) &#123;</div><div class="line">                <span class="keyword">while</span> (cursor.moveToNext()) &#123;</div><div class="line">                    <span class="comment">// 获取联系人姓名</span></div><div class="line">                    String displayName = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));</div><div class="line">                    <span class="comment">// 获取联系人手机号</span></div><div class="line">                    String number = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));</div><div class="line">                     <span class="comment">//ContactsContract.CommonDataKinds.Phone类提供的常量就是uri.parse()解析出来的结果</span></div><div class="line">                    contactsList.add(displayName + <span class="string">"\n"</span> + number);</div><div class="line">                &#125;</div><div class="line">                adapter.notifyDataSetChanged();</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; <span class="keyword">finally</span> &#123;</div><div class="line">            <span class="keyword">if</span> (cursor != <span class="keyword">null</span>) &#123;</div><div class="line">                cursor.close();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode, String[] permissions, <span class="keyword">int</span>[] grantResults)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">            <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span> &amp;&amp; grantResults[<span class="number">0</span>] == PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">                    readContacts();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Toast.makeText(<span class="keyword">this</span>, <span class="string">"You denied the permission"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+            <p></p><h3>学习目的：1.创建数据库 2.升级数据库 3.对数据库的四种操作 4.使用SQL操作数据库 5.使用LitePal操作数据库<p></p>
+<p>1.创建名为BookStore.db数据库</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//MyDatabaseHelper</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyDatabaseHelper</span> <span class="keyword">extends</span> <span class="title">SQLiteOpenHelper</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CREATE_BOOK = <span class="string">"create table Book ("</span></div><div class="line">            + <span class="string">"id integer primary key autoincrement, "</span></div><div class="line">            + <span class="string">"author text, "</span></div><div class="line">            + <span class="string">"price real, "</span></div><div class="line">            + <span class="string">"pages integer, "</span></div><div class="line">            + <span class="string">"name text)"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Context mContext;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyDatabaseHelper</span><span class="params">(Context context, String name,</span></span></div><div class="line"><span class="function"><span class="params">                            SQLiteDatabase.CursorFactory factory, <span class="keyword">int</span> version)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, name, factory, version);</div><div class="line">        mContext = context;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(SQLiteDatabase db)</span> </span>&#123;</div><div class="line">        db.execSQL(CREATE_BOOK);</div><div class="line"></div><div class="line">        Toast.makeText(mContext, <span class="string">"Create succeeded"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUpgrade</span><span class="params">(SQLiteDatabase db, <span class="keyword">int</span> oldVersion, <span class="keyword">int</span> newVersion)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//MainActivity</span></div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">private</span> MyDatabaseHelper dbHelper;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">            <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">            setContentView(R.layout.activity_main);</div><div class="line">            dbHelper = <span class="keyword">new</span> MyDatabaseHelper(<span class="keyword">this</span>, <span class="string">"BookStore.db"</span>, <span class="keyword">null</span>, <span class="number">2</span>);</div><div class="line">            Button createDatabase = (Button) findViewById(R.id.create_database);</div><div class="line">            createDatabase.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                    dbHelper.getWritableDatabase();</div><div class="line">                &#125;</div><div class="line">            &#125;);    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>2.升级数据库(给它加东西) onUpgrade()<br>建表Category<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CREATE_CATEGORY = <span class="string">"create table Category ("</span></div><div class="line">            + <span class="string">"id integer primary key autoincrement, "</span></div><div class="line">            + <span class="string">"category_name text, "</span></div><div class="line">            + <span class="string">"category_code integer)"</span>;</div><div class="line"></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(SQLiteDatabase db)</span> </span>&#123;</div><div class="line">                db.execSQL(CREATE_BOOK);</div><div class="line">                db.execSQL(CREATE_CATEGORY);</div><div class="line">                Toast.makeText(mContext, <span class="string">"Create succeeded"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">            &#125;</div></pre></td></tr></table></figure></p>
+<p>onUpgrade()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUpgrade</span><span class="params">(SQLiteDatabase db, <span class="keyword">int</span> oldVersion, <span class="keyword">int</span> newVersion)</span> </span>&#123;</div><div class="line">       db.execSQL(<span class="string">"drop table if exists Book"</span>);</div><div class="line">       db.execSQL(<span class="string">"drop table if exists Category"</span>);</div><div class="line">       onCreate(db);</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
+<p>MianActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        dbHelper = <span class="keyword">new</span> MyDatabaseHelper(<span class="keyword">this</span>, <span class="string">"BookStore.db"</span>, <span class="keyword">null</span>, <span class="number">2</span>);<span class="comment">//将数据库版本号指定为2</span></div><div class="line">        Button createDatabase = (Button) findViewById(R.id.create_database);</div><div class="line">        createDatabase.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                dbHelper.getWritableDatabase();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
+<p>3.对数据库的四种操作</p>
+<ul>
+<li>Create添加 insert（）方法</li>
+<li>Retrieve查询 Updata（）方法</li>
+<li>Updata更新</li>
+<li>Delete删除</li>
+</ul>
+<p>1.Create添加 insert（）方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">Button addData = (Button) findViewById(R.id.add_data);</div><div class="line">       addData.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">               SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">               ContentValues values = <span class="keyword">new</span> ContentValues();<span class="comment">//提供put（）方法</span></div><div class="line">               <span class="comment">// 开始组装第一条数据</span></div><div class="line">               values.put(<span class="string">"name"</span>, <span class="string">"The Da Vinci Code"</span>);</div><div class="line">               values.put(<span class="string">"author"</span>, <span class="string">"Dan Brown"</span>);</div><div class="line">               values.put(<span class="string">"pages"</span>, <span class="number">454</span>);</div><div class="line">               values.put(<span class="string">"price"</span>, <span class="number">16.96</span>);</div><div class="line">               db.insert(<span class="string">"Book"</span>, <span class="keyword">null</span>, values); <span class="comment">// 插入第一条数据  表名 给空的列赋值null ContentValues对象（提供put（）方法）</span></div><div class="line">               values.clear();</div><div class="line">               <span class="comment">// 开始组装第二条数据</span></div><div class="line">               values.put(<span class="string">"name"</span>, <span class="string">"The Lost Symbol"</span>);</div><div class="line">               values.put(<span class="string">"author"</span>, <span class="string">"Dan Brown"</span>);</div><div class="line">               values.put(<span class="string">"pages"</span>, <span class="number">510</span>);</div><div class="line">               values.put(<span class="string">"price"</span>, <span class="number">19.95</span>);</div><div class="line">               db.insert(<span class="string">"Book"</span>, <span class="keyword">null</span>, values); <span class="comment">// 插入第二条数据</span></div><div class="line">           &#125;</div><div class="line">       &#125;);</div></pre></td></tr></table></figure></p>
+<p>2.Updata更新 Updata（）方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Button updateData = (Button) findViewById(R.id.update_data);</div><div class="line">        updateData.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                ContentValues values = <span class="keyword">new</span> ContentValues();</div><div class="line">                values.put(<span class="string">"price"</span>, <span class="number">10.99</span>);</div><div class="line">                db.update(<span class="string">"Book"</span>, values, <span class="string">"name = ?"</span>, <span class="keyword">new</span> String[] &#123; <span class="string">"The Da Vinci Code"</span> &#125;);<span class="comment">//更新name =The Da Vinci Code的这一行</span></div><div class="line">                <span class="comment">//将名字为he Da Vinci Code的price改为10.99</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
+<p>3.Delete删除<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Button deleteButton = (Button) findViewById(R.id.delete_data);</div><div class="line">        deleteButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                db.delete(<span class="string">"Book"</span>, <span class="string">"pages &gt; ?"</span>, <span class="keyword">new</span> String[] &#123; <span class="string">"500"</span> &#125;);<span class="comment">//删除页数超过500页的的boo表中的数据</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
+<p>4.Retrieve查询 query（）方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">Button queryButton = (Button) findViewById(R.id.query_data);</div><div class="line">        queryButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                <span class="comment">// 查询Book表中所有的数据</span></div><div class="line">                Cursor cursor = db.query(<span class="string">"Book"</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);<span class="comment">//调用getColumnIndex方法</span></div><div class="line">                <span class="keyword">if</span> (cursor.moveToFirst()) &#123;</div><div class="line">                    <span class="keyword">do</span> &#123;</div><div class="line">                        <span class="comment">// 遍历Cursor对象，取出数据并打印</span></div><div class="line">                        String name = cursor.getString(cursor.getColumnIndex(<span class="string">"name"</span>));</div><div class="line">                        String author = cursor.getString(cursor.getColumnIndex(<span class="string">"author"</span>));</div><div class="line">                        <span class="keyword">int</span> pages = cursor.getInt(cursor.getColumnIndex(<span class="string">"pages"</span>));</div><div class="line">                        <span class="keyword">double</span> price = cursor.getDouble(cursor.getColumnIndex(<span class="string">"price"</span>));</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book name is "</span> + name);</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book author is "</span> + author);</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book pages is "</span> + pages);</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book price is "</span> + price);</div><div class="line">                    &#125; <span class="keyword">while</span> (cursor.moveToNext());</div><div class="line">                &#125;</div><div class="line">                cursor.close();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
+<p>使用SQL操作数据库</p>
+<ul>
+<li><p>添加数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">db.execSQL(<span class="string">"insret into Book (name,author,pages,price)values(?,?,?,?)"</span>,<span class="keyword">new</span> String[]&#123;<span class="string">"The Da Vinci Code"</span>,<span class="string">"Dan Brown "</span>,<span class="string">"545"</span>,<span class="string">"16.96"</span>&#125;);</div><div class="line">db.execSQL(<span class="string">"insret into Book (name,author,pages,price)values(?,?,?,?)"</span>,<span class="keyword">new</span> String[]&#123;<span class="string">"The Lost Symbol"</span>,<span class="string">"Dan Brown "</span>,<span class="string">"545"</span>,<span class="string">"16.96"</span>&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>更新数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.execSQL(<span class="string">"updata Book set price=? where name=?"</span>,<span class="keyword">new</span> String[]&#123;<span class="string">"10.99"</span>,<span class="string">"The Da Vinci Code"</span>&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>删除数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.execSQL(<span class="string">"delete from Book where pages&gt;?,new String[]&#123;"</span><span class="number">500</span><span class="string">"&#125;"</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>查询数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.rawQuery(<span class="string">"select * from Book"</span>,<span class="keyword">null</span>);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>5.使用LitePal操作数据库</p>
+</h3>
           
         
       
@@ -731,7 +1026,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-29T20:13:10+08:00">
                 2017-07-29
@@ -873,325 +1168,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/29/DataBestTest/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/29/DataBestTest/" itemprop="url">DataBestTest<CODE 2 chaper5></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-29T20:13:10+08:00">
-                2017-07-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/29/DataBestTest/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/29/DataBestTest/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的：1.创建数据库 2.升级数据库 3.对数据库的四种操作 4.使用SQL操作数据库 5.使用LitePal操作数据库<p></p>
-<p>1.创建名为BookStore.db数据库</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//MyDatabaseHelper</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyDatabaseHelper</span> <span class="keyword">extends</span> <span class="title">SQLiteOpenHelper</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CREATE_BOOK = <span class="string">"create table Book ("</span></div><div class="line">            + <span class="string">"id integer primary key autoincrement, "</span></div><div class="line">            + <span class="string">"author text, "</span></div><div class="line">            + <span class="string">"price real, "</span></div><div class="line">            + <span class="string">"pages integer, "</span></div><div class="line">            + <span class="string">"name text)"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Context mContext;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyDatabaseHelper</span><span class="params">(Context context, String name,</span></span></div><div class="line"><span class="function"><span class="params">                            SQLiteDatabase.CursorFactory factory, <span class="keyword">int</span> version)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, name, factory, version);</div><div class="line">        mContext = context;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(SQLiteDatabase db)</span> </span>&#123;</div><div class="line">        db.execSQL(CREATE_BOOK);</div><div class="line"></div><div class="line">        Toast.makeText(mContext, <span class="string">"Create succeeded"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUpgrade</span><span class="params">(SQLiteDatabase db, <span class="keyword">int</span> oldVersion, <span class="keyword">int</span> newVersion)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//MainActivity</span></div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">private</span> MyDatabaseHelper dbHelper;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">            <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">            setContentView(R.layout.activity_main);</div><div class="line">            dbHelper = <span class="keyword">new</span> MyDatabaseHelper(<span class="keyword">this</span>, <span class="string">"BookStore.db"</span>, <span class="keyword">null</span>, <span class="number">2</span>);</div><div class="line">            Button createDatabase = (Button) findViewById(R.id.create_database);</div><div class="line">            createDatabase.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                    dbHelper.getWritableDatabase();</div><div class="line">                &#125;</div><div class="line">            &#125;);    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>2.升级数据库(给它加东西) onUpgrade()<br>建表Category<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CREATE_CATEGORY = <span class="string">"create table Category ("</span></div><div class="line">            + <span class="string">"id integer primary key autoincrement, "</span></div><div class="line">            + <span class="string">"category_name text, "</span></div><div class="line">            + <span class="string">"category_code integer)"</span>;</div><div class="line"></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(SQLiteDatabase db)</span> </span>&#123;</div><div class="line">                db.execSQL(CREATE_BOOK);</div><div class="line">                db.execSQL(CREATE_CATEGORY);</div><div class="line">                Toast.makeText(mContext, <span class="string">"Create succeeded"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">            &#125;</div></pre></td></tr></table></figure></p>
-<p>onUpgrade()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUpgrade</span><span class="params">(SQLiteDatabase db, <span class="keyword">int</span> oldVersion, <span class="keyword">int</span> newVersion)</span> </span>&#123;</div><div class="line">       db.execSQL(<span class="string">"drop table if exists Book"</span>);</div><div class="line">       db.execSQL(<span class="string">"drop table if exists Category"</span>);</div><div class="line">       onCreate(db);</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
-<p>MianActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        dbHelper = <span class="keyword">new</span> MyDatabaseHelper(<span class="keyword">this</span>, <span class="string">"BookStore.db"</span>, <span class="keyword">null</span>, <span class="number">2</span>);<span class="comment">//将数据库版本号指定为2</span></div><div class="line">        Button createDatabase = (Button) findViewById(R.id.create_database);</div><div class="line">        createDatabase.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                dbHelper.getWritableDatabase();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
-<p>3.对数据库的四种操作</p>
-<ul>
-<li>Create添加 insert（）方法</li>
-<li>Retrieve查询 Updata（）方法</li>
-<li>Updata更新</li>
-<li>Delete删除</li>
-</ul>
-<p>1.Create添加 insert（）方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">Button addData = (Button) findViewById(R.id.add_data);</div><div class="line">       addData.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">               SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">               ContentValues values = <span class="keyword">new</span> ContentValues();<span class="comment">//提供put（）方法</span></div><div class="line">               <span class="comment">// 开始组装第一条数据</span></div><div class="line">               values.put(<span class="string">"name"</span>, <span class="string">"The Da Vinci Code"</span>);</div><div class="line">               values.put(<span class="string">"author"</span>, <span class="string">"Dan Brown"</span>);</div><div class="line">               values.put(<span class="string">"pages"</span>, <span class="number">454</span>);</div><div class="line">               values.put(<span class="string">"price"</span>, <span class="number">16.96</span>);</div><div class="line">               db.insert(<span class="string">"Book"</span>, <span class="keyword">null</span>, values); <span class="comment">// 插入第一条数据  表名 给空的列赋值null ContentValues对象（提供put（）方法）</span></div><div class="line">               values.clear();</div><div class="line">               <span class="comment">// 开始组装第二条数据</span></div><div class="line">               values.put(<span class="string">"name"</span>, <span class="string">"The Lost Symbol"</span>);</div><div class="line">               values.put(<span class="string">"author"</span>, <span class="string">"Dan Brown"</span>);</div><div class="line">               values.put(<span class="string">"pages"</span>, <span class="number">510</span>);</div><div class="line">               values.put(<span class="string">"price"</span>, <span class="number">19.95</span>);</div><div class="line">               db.insert(<span class="string">"Book"</span>, <span class="keyword">null</span>, values); <span class="comment">// 插入第二条数据</span></div><div class="line">           &#125;</div><div class="line">       &#125;);</div></pre></td></tr></table></figure></p>
-<p>2.Updata更新 Updata（）方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Button updateData = (Button) findViewById(R.id.update_data);</div><div class="line">        updateData.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                ContentValues values = <span class="keyword">new</span> ContentValues();</div><div class="line">                values.put(<span class="string">"price"</span>, <span class="number">10.99</span>);</div><div class="line">                db.update(<span class="string">"Book"</span>, values, <span class="string">"name = ?"</span>, <span class="keyword">new</span> String[] &#123; <span class="string">"The Da Vinci Code"</span> &#125;);<span class="comment">//更新name =The Da Vinci Code的这一行</span></div><div class="line">                <span class="comment">//将名字为he Da Vinci Code的price改为10.99</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
-<p>3.Delete删除<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Button deleteButton = (Button) findViewById(R.id.delete_data);</div><div class="line">        deleteButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                db.delete(<span class="string">"Book"</span>, <span class="string">"pages &gt; ?"</span>, <span class="keyword">new</span> String[] &#123; <span class="string">"500"</span> &#125;);<span class="comment">//删除页数超过500页的的boo表中的数据</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
-<p>4.Retrieve查询 query（）方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">Button queryButton = (Button) findViewById(R.id.query_data);</div><div class="line">        queryButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                <span class="comment">// 查询Book表中所有的数据</span></div><div class="line">                Cursor cursor = db.query(<span class="string">"Book"</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);<span class="comment">//调用getColumnIndex方法</span></div><div class="line">                <span class="keyword">if</span> (cursor.moveToFirst()) &#123;</div><div class="line">                    <span class="keyword">do</span> &#123;</div><div class="line">                        <span class="comment">// 遍历Cursor对象，取出数据并打印</span></div><div class="line">                        String name = cursor.getString(cursor.getColumnIndex(<span class="string">"name"</span>));</div><div class="line">                        String author = cursor.getString(cursor.getColumnIndex(<span class="string">"author"</span>));</div><div class="line">                        <span class="keyword">int</span> pages = cursor.getInt(cursor.getColumnIndex(<span class="string">"pages"</span>));</div><div class="line">                        <span class="keyword">double</span> price = cursor.getDouble(cursor.getColumnIndex(<span class="string">"price"</span>));</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book name is "</span> + name);</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book author is "</span> + author);</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book pages is "</span> + pages);</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book price is "</span> + price);</div><div class="line">                    &#125; <span class="keyword">while</span> (cursor.moveToNext());</div><div class="line">                &#125;</div><div class="line">                cursor.close();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
-<p>使用SQL操作数据库</p>
-<ul>
-<li><p>添加数据</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">db.execSQL(<span class="string">"insret into Book (name,author,pages,price)values(?,?,?,?)"</span>,<span class="keyword">new</span> String[]&#123;<span class="string">"The Da Vinci Code"</span>,<span class="string">"Dan Brown "</span>,<span class="string">"545"</span>,<span class="string">"16.96"</span>&#125;);</div><div class="line">db.execSQL(<span class="string">"insret into Book (name,author,pages,price)values(?,?,?,?)"</span>,<span class="keyword">new</span> String[]&#123;<span class="string">"The Lost Symbol"</span>,<span class="string">"Dan Brown "</span>,<span class="string">"545"</span>,<span class="string">"16.96"</span>&#125;);</div></pre></td></tr></table></figure>
-</li>
-<li><p>更新数据</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.execSQL(<span class="string">"updata Book set price=? where name=?"</span>,<span class="keyword">new</span> String[]&#123;<span class="string">"10.99"</span>,<span class="string">"The Da Vinci Code"</span>&#125;);</div></pre></td></tr></table></figure>
-</li>
-<li><p>删除数据</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.execSQL(<span class="string">"delete from Book where pages&gt;?,new String[]&#123;"</span><span class="number">500</span><span class="string">"&#125;"</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p>查询数据</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.rawQuery(<span class="string">"select * from Book"</span>,<span class="keyword">null</span>);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>5.使用LitePal操作数据库</p>
-</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/28/Filepersistencetests/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/28/Filepersistencetests/" itemprop="url">Filepersistencetest<CODE 2 chaper6></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-28T20:13:10+08:00">
-                2017-07-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/28/Filepersistencetests/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/28/Filepersistencetests/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3>学习目的：文件存储</h3>
-
-<ul>
-<li><p>将数据保存到文件</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">(String inputText)</span> </span>&#123;</div><div class="line">       FileOutputStream out = <span class="keyword">null</span>;</div><div class="line">       BufferedWriter writer = <span class="keyword">null</span>;</div><div class="line">       <span class="keyword">try</span> &#123;</div><div class="line">           out = openFileOutput(<span class="string">"data"</span>, Context.MODE_PRIVATE);<span class="comment">//MODE_PRIVATE指定同一文件名将被覆盖 openFileOutput（）获得FileOutputSteame对象 再借助它构建OutputStreamWriter对象 再使用OutputStreamWriter构建BufferedWriter对象</span></div><div class="line">           writer = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(out));<span class="comment">//</span></div><div class="line">           writer.write(inputText);</div><div class="line">       &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">           e.printStackTrace();</div><div class="line">       &#125; <span class="keyword">finally</span> &#123;</div><div class="line">           <span class="keyword">try</span> &#123;</div><div class="line">               <span class="keyword">if</span> (writer != <span class="keyword">null</span>) &#123;</div><div class="line">                   writer.close();</div><div class="line">               &#125;</div><div class="line">           &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">               e.printStackTrace();</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">```   </div><div class="line"></div><div class="line">- 范例</div><div class="line">```java</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> EditText edit;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        edit = (EditText) findViewById(R.id.edit);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        String inputText = edit.getText().toString();</div><div class="line">        save(inputText);<span class="comment">//掉用自定义方法 存储输入字符</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">```    </div><div class="line"></div><div class="line">- 从文件中读取数据</div><div class="line">```java</div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">load</span><span class="params">()</span> </span>&#123;</div><div class="line">        FileInputStream in = <span class="keyword">null</span>;</div><div class="line">        BufferedReader reader = <span class="keyword">null</span>;</div><div class="line">        StringBuilder content = <span class="keyword">new</span> StringBuilder();</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            in = openFileInput(<span class="string">"data"</span>);<span class="comment">//获取FileInputStream对象data</span></div><div class="line">            reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in));构建InputStreamReader对象reader</div><div class="line">            String line = <span class="string">""</span>;</div><div class="line">            <span class="keyword">while</span> ((line = reader.readLine()) != <span class="keyword">null</span>) &#123;</div><div class="line">                content.append(line);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; <span class="keyword">finally</span> &#123;</div><div class="line">            <span class="keyword">if</span> (reader != <span class="keyword">null</span>) &#123;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    reader.close();</div><div class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">                    e.printStackTrace();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> content.toString();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>范例</p>
-<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>{
-
-  <span class="keyword">private</span> EditText edit;
-
-  <span class="meta">@Override</span>
-  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>{
-      <span class="keyword">super</span>.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_main);
-      edit = (EditText) findViewById(R.id.edit);
-      String inputText = load();
-      <span class="keyword">if</span> (!TextUtils.isEmpty(inputText)) {
-          edit.setText(inputText);
-          edit.setSelection(inputText.length());
-          Toast.makeText(<span class="keyword">this</span>, <span class="string">"Restoring succeeded"</span>, Toast.LENGTH_SHORT).show();
-      }
-  }
-</code></pre>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/28/sharedpreferencestest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1221,7 +1197,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-28T20:13:10+08:00">
                 2017-07-28
@@ -1350,6 +1326,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/28/Filepersistencetests/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/28/Filepersistencetests/" itemprop="url">Filepersistencetest<CODE 2 chaper6></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-28T20:13:10+08:00">
+                2017-07-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/28/Filepersistencetests/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/28/Filepersistencetests/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3>学习目的：文件存储</h3>
+
+<ul>
+<li><p>将数据保存到文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">(String inputText)</span> </span>&#123;</div><div class="line">       FileOutputStream out = <span class="keyword">null</span>;</div><div class="line">       BufferedWriter writer = <span class="keyword">null</span>;</div><div class="line">       <span class="keyword">try</span> &#123;</div><div class="line">           out = openFileOutput(<span class="string">"data"</span>, Context.MODE_PRIVATE);<span class="comment">//MODE_PRIVATE指定同一文件名将被覆盖 openFileOutput（）获得FileOutputSteame对象 再借助它构建OutputStreamWriter对象 再使用OutputStreamWriter构建BufferedWriter对象</span></div><div class="line">           writer = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(out));<span class="comment">//</span></div><div class="line">           writer.write(inputText);</div><div class="line">       &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">           e.printStackTrace();</div><div class="line">       &#125; <span class="keyword">finally</span> &#123;</div><div class="line">           <span class="keyword">try</span> &#123;</div><div class="line">               <span class="keyword">if</span> (writer != <span class="keyword">null</span>) &#123;</div><div class="line">                   writer.close();</div><div class="line">               &#125;</div><div class="line">           &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">               e.printStackTrace();</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">```   </div><div class="line"></div><div class="line">- 范例</div><div class="line">```java</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> EditText edit;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        edit = (EditText) findViewById(R.id.edit);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        String inputText = edit.getText().toString();</div><div class="line">        save(inputText);<span class="comment">//掉用自定义方法 存储输入字符</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">```    </div><div class="line"></div><div class="line">- 从文件中读取数据</div><div class="line">```java</div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">load</span><span class="params">()</span> </span>&#123;</div><div class="line">        FileInputStream in = <span class="keyword">null</span>;</div><div class="line">        BufferedReader reader = <span class="keyword">null</span>;</div><div class="line">        StringBuilder content = <span class="keyword">new</span> StringBuilder();</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            in = openFileInput(<span class="string">"data"</span>);<span class="comment">//获取FileInputStream对象data</span></div><div class="line">            reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in));构建InputStreamReader对象reader</div><div class="line">            String line = <span class="string">""</span>;</div><div class="line">            <span class="keyword">while</span> ((line = reader.readLine()) != <span class="keyword">null</span>) &#123;</div><div class="line">                content.append(line);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; <span class="keyword">finally</span> &#123;</div><div class="line">            <span class="keyword">if</span> (reader != <span class="keyword">null</span>) &#123;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    reader.close();</div><div class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">                    e.printStackTrace();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> content.toString();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>范例</p>
+<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>{
+
+  <span class="keyword">private</span> EditText edit;
+
+  <span class="meta">@Override</span>
+  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>{
+      <span class="keyword">super</span>.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_main);
+      edit = (EditText) findViewById(R.id.edit);
+      String inputText = load();
+      <span class="keyword">if</span> (!TextUtils.isEmpty(inputText)) {
+          edit.setText(inputText);
+          edit.setSelection(inputText.length());
+          Toast.makeText(<span class="keyword">this</span>, <span class="string">"Restoring succeeded"</span>, Toast.LENGTH_SHORT).show();
+      }
+  }
+</code></pre>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/27/ActivityLifeCycleText/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1379,7 +1511,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-27T20:13:11+08:00">
                 2017-07-27
@@ -1510,7 +1642,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-25T20:13:10+08:00">
                 2017-07-25
@@ -1617,147 +1749,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/BroadcastBestPractise/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/24/BroadcastBestPractise/" itemprop="url">BroadcastBestPractise<CODE 2 chaper5></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-24T20:13:10+08:00">
-                2017-07-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/24/BroadcastBestPractise/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/24/BroadcastBestPractise/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的：实现登陆成功后强制下线功能(关闭所有活动，返回登陆界面)</h3><br><img src="http://i4.piimg.com/595109/e480b1dea9d6959b.png" alt="Markdown"><br>1.新建ActivityCollector类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ActivityCollector</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;Activity&gt; activities = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addActivity</span><span class="params">(Activity activity)</span> </span>&#123;</div><div class="line">        activities.add(activity);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">removeActivity</span><span class="params">(Activity activity)</span> </span>&#123;</div><div class="line">        activities.remove(activity);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">finishAll</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span> (Activity activity : activities) &#123;</div><div class="line">            <span class="keyword">if</span> (!activity.isFinishing()) &#123;</div><div class="line">                activity.finish();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p>2.创建BaseActivity类作为所有活动的父类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ForceOfflineReceiver receiver;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        ActivityCollector.addActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        ActivityCollector.removeActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>3.新建LoginActivity类及其布局(登陆的处理)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span> <span class="keyword">extends</span> <span class="title">BaseActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> EditText accountEdit;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> EditText passwordEdit;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Button login;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_login);</div><div class="line">        accountEdit = (EditText) findViewById(R.id.account);</div><div class="line">        passwordEdit = (EditText) findViewById(R.id.password);</div><div class="line">        login = (Button) findViewById(R.id.login);</div><div class="line">        login.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                String account = accountEdit.getText().toString();</div><div class="line">                String password = passwordEdit.getText().toString();</div><div class="line">                <span class="comment">// 如果账号是admin且密码是123456，就认为登录成功</span></div><div class="line">                <span class="keyword">if</span> (account.equals(<span class="string">"admin"</span>) &amp;&amp; password.equals(<span class="string">"123456"</span>)) &#123;</div><div class="line">                    Intent intent = <span class="keyword">new</span> Intent(LoginActivity.<span class="keyword">this</span>, MainActivity.class);</div><div class="line">                    startActivity(intent);</div><div class="line">                    finish();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Toast.makeText(LoginActivity.<span class="keyword">this</span>, <span class="string">"account or password is invalid"</span>,</div><div class="line">                            Toast.LENGTH_SHORT).show();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p></p><h3>4.修改MainACTIVITY类及其布局</h3><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">BaseActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        Button forceOffline = (Button) findViewById(R.id.force_offline);</div><div class="line">        forceOffline.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                Intent intent = <span class="keyword">new</span> Intent(<span class="string">"com.example.broadcastbestpractice.FORCE_OFFLINE"</span>);</div><div class="line">                sendBroadcast(intent);<span class="comment">//发送com.example.broadcastbestpractice.FORCE_OFFLINE广播 表示强制下线</span></div><div class="line">                <span class="comment">//需要创建广播接收器</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p>在BaseActivity类注册广播接收器<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ForceOfflineReceiver receiver;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        ActivityCollector.addActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onResume();</div><div class="line">        IntentFilter intentFilter = <span class="keyword">new</span> IntentFilter();</div><div class="line">        intentFilter.addAction(<span class="string">"com.example.broadcastbestpractice.FORCE_OFFLINE"</span>);</div><div class="line">        receiver = <span class="keyword">new</span> ForceOfflineReceiver();</div><div class="line">        registerReceiver(receiver, intentFilter);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onPause();</div><div class="line">        <span class="keyword">if</span> (receiver != <span class="keyword">null</span>) &#123;</div><div class="line">            unregisterReceiver(receiver);</div><div class="line">            receiver = <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        ActivityCollector.removeActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">ForceOfflineReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(<span class="keyword">final</span> Context context, Intent intent)</span> </span>&#123;</div><div class="line">            AlertDialog.Builder builder = <span class="keyword">new</span> AlertDialog.Builder(context);<span class="comment">//创建一个对话框</span></div><div class="line">            builder.setTitle(<span class="string">"Warning"</span>);</div><div class="line">            builder.setMessage(<span class="string">"You are forced to be offline. Please try to login again."</span>);</div><div class="line">            builder.setCancelable(<span class="keyword">false</span>);</div><div class="line">            <span class="comment">//注册确定按钮</span></div><div class="line">            builder.setPositiveButton(<span class="string">"OK"</span>, <span class="keyword">new</span> DialogInterface.OnClickListener() &#123;<span class="comment">//给ok按钮设置点击事件</span></div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(DialogInterface dialog, <span class="keyword">int</span> which)</span> </span>&#123;</div><div class="line">                    ActivityCollector.finishAll(); <span class="comment">// 销毁所有活动</span></div><div class="line">                    Intent intent = <span class="keyword">new</span> Intent(context, LoginActivity.class);</div><div class="line">                    context.startActivity(intent); <span class="comment">// 重新启动LoginActivity</span></div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">            builder.show();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>将LoginActivity作为主界面<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line">&lt;activity android:name=<span class="string">".LoginActivity"</span>&gt;</div><div class="line">            &lt;intent-filter&gt;</div><div class="line">                &lt;action android:name=<span class="string">"android.intent.action.MAIN"</span> /&gt;</div><div class="line">                &lt;category android:name=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</div><div class="line">            &lt;/intent-filter&gt;</div><div class="line">        &lt;/activity&gt;</div><div class="line">```    </div><div class="line"></div><div class="line">完工!</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">chaper6 实现记住密码功能</div><div class="line">```java</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span> <span class="keyword">extends</span> <span class="title">BaseActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> SharedPreferences pref;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> SharedPreferences.Editor editor;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> EditText accountEdit;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> EditText passwordEdit;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Button login;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> CheckBox rememberPass;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_login);</div><div class="line">        pref = PreferenceManager.getDefaultSharedPreferences(<span class="keyword">this</span>);</div><div class="line">        accountEdit = (EditText) findViewById(R.id.account);</div><div class="line">        passwordEdit = (EditText) findViewById(R.id.password);</div><div class="line">        rememberPass = (CheckBox) findViewById(R.id.remember_pass);</div><div class="line">        login = (Button) findViewById(R.id.login);</div><div class="line">        <span class="keyword">boolean</span> isRemember = pref.getBoolean(<span class="string">"remember_password"</span>, <span class="keyword">false</span>);</div><div class="line">        <span class="keyword">if</span> (isRemember) &#123;</div><div class="line">            <span class="comment">// 将账号和密码都设置到文本框中</span></div><div class="line">            String account = pref.getString(<span class="string">"account"</span>, <span class="string">""</span>);</div><div class="line">            String password = pref.getString(<span class="string">"password"</span>, <span class="string">""</span>);</div><div class="line">            accountEdit.setText(account);</div><div class="line">            passwordEdit.setText(password);</div><div class="line">            rememberPass.setChecked(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">        login.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                String account = accountEdit.getText().toString();</div><div class="line">                String password = passwordEdit.getText().toString();</div><div class="line">                <span class="comment">// 如果账号是admin且密码是123456，就认为登录成功</span></div><div class="line">                <span class="keyword">if</span> (account.equals(<span class="string">"admin"</span>) &amp;&amp; password.equals(<span class="string">"123456"</span>)) &#123;</div><div class="line">                    editor = pref.edit();</div><div class="line">                    <span class="keyword">if</span> (rememberPass.isChecked()) &#123; <span class="comment">// 检查复选框是否被选中</span></div><div class="line">                        editor.putBoolean(<span class="string">"remember_password"</span>, <span class="keyword">true</span>);</div><div class="line">                        editor.putString(<span class="string">"account"</span>, account);</div><div class="line">                        editor.putString(<span class="string">"password"</span>, password);</div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                        editor.clear();</div><div class="line">                    &#125;</div><div class="line">                    editor.apply();</div><div class="line">                    Intent intent = <span class="keyword">new</span> Intent(LoginActivity.<span class="keyword">this</span>, MainActivity.class);</div><div class="line">                    startActivity(intent);</div><div class="line">                    finish();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Toast.makeText(LoginActivity.<span class="keyword">this</span>, <span class="string">"account or password is invalid"</span>,</div><div class="line">                            Toast.LENGTH_SHORT).show();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1803,8 +1799,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">90</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">91</span>
+                <span class="site-state-item-name">articles</span>
               </a>
             </div>
           
@@ -1932,7 +1928,7 @@
   <span class="post-meta-divider">|</span>
 
   <div class="theme-info">
-    Theme &mdash;
+    Thème &mdash;
     <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
       NexT.Muse
     </a>
