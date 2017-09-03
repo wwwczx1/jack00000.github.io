@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/配置变量时  系统 用户变量的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/ANdriod sdk 更新问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="DEMO">
@@ -316,7 +316,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="url">配置变量时  系统 用户变量的区别</a></h1>
+                <a class="post-title-link" href="/2017/06/18/ANdriod sdk 更新问题/" itemprop="url">Andriod sdk 更新问题</a></h1>
         
 
         <div class="post-meta">
@@ -347,9 +347,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/18/配置变量时  系统 用户变量的区别/#comments" itemprop="discussionUrl">
+                <a href="/2017/06/18/ANdriod sdk 更新问题/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/06/18/ANdriod sdk 更新问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -379,9 +379,16 @@
       
         
           
-            <p>我们在Java运行环境或Android开发环境时，经常要配置环境变量，如图所示，<br><img src="http://d1.freep.cn/3tb_170617122931qa32585966.png"></p>
-<p>这里有administrator的用户变量(U)，和系统变量（S），<br>那麽，它们之间有什么区别呢？<br>简单的说，一个是当前用户使用，你用其它用户登陆，这个环境变量就不起作用了。<br>系统变量，是对所有用户都可使用的。<br>简单的说：<br>系统变量：不管以哪个用户名登陆到计算机都能使用；<br>用户变量：只能以设置变量时的用户名登陆才能使用。</p>
-<p>如果我们在自己的电脑上运行程序，用户只有一个，看不出系统变量和用户变量的区别，但是，<br>如果一台电脑有多个用户，就能看出用户变量和系统变量的区别了~~<br>PS：我们在配置的时候，一般都是配置系统变量（S），</p>
+            <h3>问题描述</h3>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">使用SDK Manager更新时出现问题</div><div class="line">Failed to fetch URL https:<span class="comment">//dl-ssl.google.com/android/repository/repository-6.xml, reason: Connection to https://dl-ssl.google.com refused</span></div><div class="line">Failed to fetch URL http:<span class="comment">//dl-ssl.google.com/android/repository/addons_list-1.xml, reason: Connection to http://dl-ssl.google.com refused</span></div><div class="line">Failed to fetch URL https:<span class="comment">//dl-ssl.google.com/android/repository/addons_list-1.xml, reason: hostname in certificate didn't match: &lt;dl-ssl.google.com&gt; != &lt;www.google.com&gt;</span></div><div class="line">更新ADT时无法解析https:<span class="comment">//dl-ssl.google.com/android/eclipse</span></div></pre></td></tr></table></figure>
+<h3>解决办法</h3>
+
+<p>由于某些众所周知又无法理解的原因，我们大陆使用Google的服务会出现种种问题，譬如Android开发也会出现阻碍。不过首先要说明的是一般情况下使用SDK Manager更新或者更新Eclipse的ADT插件是没有问题的，我以前也能正常更新，但是昨天不知道节点抽什么风，压根无法连接服务器，出现了上边的种种问题，下面说一下如果网络抽风的话应该如何解决问题。</p>
+<p>第一种方法一劳永逸，直接配置VPN，但是现在想找个速度快又稳定还免费的VPN实在不易，尤其是更新SDK，以几kb/s的速度一个文件需要400多分钟，所以也就放弃了VPN。</p>
+<p>另一种方法是使用http协议而不是https协议，因为https协议进行了加密处理，大陆因为无法审查，直接封死，而http协议则进行过滤处理，如果不访问乱七八糟的东西，更新个SDK还是没问题的。<br>在SDK Manager下Tools-&gt;Options打开了SDK Manager的Settings，选中“Force https://… sources to be fetched using <a href="http://…”，强制使用http协议。" target="_blank" rel="external">http://…”，强制使用http协议。</a><br>而在更新ADT插件的时候则使用网址<a href="http://dl-ssl.google.com/android/eclipse，而不是https://dl-ssl.google.com/android/eclipse，这个在官方开发文档里也有介绍。" target="_blank" rel="external">http://dl-ssl.google.com/android/eclipse，而不是https://dl-ssl.google.com/android/eclipse，这个在官方开发文档里也有介绍。</a><br>但是昨天的情况就是使用http协议也无法访问。</p>
+<p><img src="http://d1.freep.cn/3tb_170617121117nuh3585966.png"></p>
+<p>再说一个比较麻烦的方法，就是直接打开<br><a href="https://dl-ssl.google.com/android/repository/addons_list.xml" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/addons_list.xml</a><br><a href="https://dl-ssl.google.com/android/repository/repository.xml" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/repository.xml</a><br><a href="https://dl-ssl.google.com/android/repository/addon.xml" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/addon.xml</a><br>这几个文件，找到你要下载的文件名，直接用迅雷下载，ADT可以直接在官网下载ADT包进行安装。具体方法自己搜索。</p>
 
           
         
