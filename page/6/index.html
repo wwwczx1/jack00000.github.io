@@ -297,6 +297,286 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/27/ActivityLifeCycleText/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/27/ActivityLifeCycleText/" itemprop="url">ActivityLifeCycleText chaper2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-27T20:13:11+08:00">
+                2017-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/27/ActivityLifeCycleText/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/27/ActivityLifeCycleText/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：了解活动的运行周期</h3><br><img src="http://i2.tiimg.com/595109/448c485a3eacd4c6.png" alt="Markdown"><p></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/25/BroadCastTest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/25/BroadCastTest/" itemprop="url">BroadCastTest<CODE 2 chaper5></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-25T20:13:10+08:00">
+                2017-07-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/25/BroadCastTest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/25/BroadCastTest/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3>学习目的：1.了解标准广播 有序广播区别(简单，不赘述) 2.接收系统广播 3,发送自定义广播 4.使用本地广播</h3>
+
+<p></p><h3>2.接收系统广播<h3><br>1.动态注册监听网络变化<p></p>
+<ul>
+<li>需要声明权限</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    package=&quot;com.example.broadcasttest&quot;&gt;</div><div class="line"></div><div class="line">    &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>新建NetworkChangeReceiver类      <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line"></div><div class="line">   <span class="keyword">private</span> IntentFilter intentFilter;</div><div class="line">   <span class="keyword">private</span> NetworkChangeReceiver networkChangeReceiver;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        intentFilter = <span class="keyword">new</span> IntentFilter();</div><div class="line">        intentFilter.addAction(<span class="string">"android.net.conn.CONNECTIVITY_CHANGE"</span>);<span class="comment">//当网络发生变化  系统发出值/为android.net.conn.CONNECTIVITY_CHANGE的广播  要监听什么广播就加什么action</span></div><div class="line">        networkChangeReceiver = <span class="keyword">new</span> NetworkChangeReceiver();<span class="comment">//新建NetworkChangeReceiver实例</span></div><div class="line">        registerReceiver(networkChangeReceiver, intentFilter);<span class="comment">//对其进行注册</span></div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        unregisterReceiver(networkChangeReceiver);<span class="comment">//动态注册的的广播接收器一定要取消注册</span></div><div class="line">          &#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NetworkChangeReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line"></div><div class="line">       <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">           Toast.makeText(content,<span class="string">"network changes"</span>,Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p></p><h3>优化（告诉用户有网还是没网）</h3><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NetworkChangeReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">            ConnectivityManager connectionManager = (ConnectivityManager)</div><div class="line">                    getSystemService(Context.CONNECTIVITY_SERVICE);<span class="comment">//ConnectivityManager 系统服务类 专门管理网络getSystemService获得NetworkInfo实例</span></div><div class="line">            NetworkInfo networkInfo = connectionManager.getActiveNetworkInfo();<span class="comment">//</span></div><div class="line">            <span class="keyword">if</span> (networkInfo != <span class="keyword">null</span> &amp;&amp; networkInfo.isAvailable()) &#123;</div><div class="line">                Toast.makeText(context, <span class="string">"network is available"</span>,</div><div class="line">                        Toast.LENGTH_SHORT).show();</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                Toast.makeText(context, <span class="string">"network is unavailable"</span>,</div><div class="line">                        Toast.LENGTH_SHORT).show();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure><p></p>
+<p>2.静态注册监听网路变化<br>直接NEW-other-BoardCastReceriver<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BoardCompelteReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">        Toast.makeText(context, <span class="string">"Board Complete"</span>, Toast.LENGTH_SHORT).show();</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>添加权限(部分自动生成)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;</div><div class="line">    &lt;uses-permission android:name=&quot;android.permission.RECEIVE_BOOT_COMPLETED&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;receiver</div><div class="line">            android:name=&quot;.BootCompleteReceiver&quot;</div><div class="line">            android:enabled=&quot;true&quot;</div><div class="line">            android:exported=&quot;true&quot;&gt;</div><div class="line">            &lt;intent-filter&gt;</div><div class="line">                &lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot; /&gt;//系统启动时会发android.intent.action.BOOT_COMPLETED值得广播</div><div class="line">            &lt;/intent-filter&gt;</div><div class="line">        &lt;/receiver&gt;</div></pre></td></tr></table></figure></p>
+<p></p><h3>3,发送自定义广播</h3><br>1.发送标准广播<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyBroadcastReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">        Toast.makeText(context, <span class="string">"received in MyBroadcastReceiver"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        abortBroadcast();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">添加权限</div><div class="line">```text</div><div class="line">&lt;receiver</div><div class="line">            android:name=<span class="string">".MyBroadcastReceiver"</span></div><div class="line">            android:enabled=<span class="string">"true"</span></div><div class="line">            android:exported=<span class="string">"true"</span>&gt;</div><div class="line">            &lt;intent-filter android:priority=<span class="string">"100"</span>&gt;</div><div class="line">                &lt;action android:name=<span class="string">"com.example.broadcasttest.MY_BROADCAST"</span>/&gt;</div><div class="line">            &lt;/intent-filter&gt;</div><div class="line">        &lt;/receiver&gt;</div><div class="line"></div><div class="line">```     </div><div class="line">按钮启动</div><div class="line">```java</div><div class="line">Button button = (Button) findViewById(R.id.button);</div><div class="line">      button.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">          <span class="meta">@Override</span></div><div class="line">          <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">              Intent intent = <span class="keyword">new</span> Intent(<span class="string">"com.example.broadcasttest.MY_BROADCAST"</span>);</div><div class="line">              sendBroadcast(intent);</div><div class="line">          &#125;</div><div class="line">      &#125;);   </div><div class="line"></div><div class="line">&lt;h3&gt;2.发送有序广播&lt;/h3&gt;</div><div class="line">改一行代码</div><div class="line">```java</div><div class="line">sendOrderedBroadcast(intent,<span class="keyword">null</span>);<span class="comment">//这时广播接收器有先后顺序</span></div></pre></td></tr></table></figure><p></p>
+<p>如何定义先后顺序<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;receiver</div><div class="line">           android:name=<span class="string">".MyBroadcastReceiver"</span></div><div class="line">           android:enabled=<span class="string">"true"</span></div><div class="line">           android:exported=<span class="string">"true"</span>&gt;</div><div class="line">           &lt;intent-filter android:priority=<span class="string">"100"</span>&gt;<span class="comment">//100优先级最高</span></div><div class="line">               &lt;action android:name=<span class="string">"com.example.broadcasttest.MY_BROADCAST"</span>/&gt;</div><div class="line">           &lt;/intent-filter&gt;</div></pre></td></tr></table></figure></p>
+<p>是否允许继续传递<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function">ublic <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">        Toast.makeText(context, <span class="string">"received in MyBroadcastReceiver"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        abortBroadcast();<span class="comment">//表示截断</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p></p><h3>4.使用本地广播</h3><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">ublic <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> IntentFilter intentFilter;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> LocalReceiver localReceiver;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> LocalBroadcastManager localBroadcastManager;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line"></div><div class="line">        localBroadcastManager = LocalBroadcastManager.getInstance(<span class="keyword">this</span>); <span class="comment">// 获取实例</span></div><div class="line">        Button button = (Button) findViewById(R.id.button);</div><div class="line">        button.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                Intent intent = <span class="keyword">new</span> Intent(<span class="string">"com.example.broadcasttest.LOCAL_BROADCAST"</span>);</div><div class="line">                localBroadcastManager.sendBroadcast(intent); <span class="comment">// 发送本地广播</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        intentFilter = <span class="keyword">new</span> IntentFilter();</div><div class="line">        intentFilter.addAction(<span class="string">"com.example.broadcasttest.LOCAL_BROADCAST"</span>);<span class="comment">//当网络发生变化  系统发出值/为android.net.conn.CONNECTIVITY_CHANGE的广播  要监听什么广播就加什么action</span></div><div class="line">        localReceiver = <span class="keyword">new</span> LocalReceiver();<span class="comment">//新建NetworkChangeReceiver实例</span></div><div class="line">        localBroadcastManager.registerReceiver(localReceiver, intentFilter); <span class="comment">// 注册本地广播监听器</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line"></div><div class="line">        localBroadcastManager.unregisterReceiver(localReceiver);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">LocalReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">            Toast.makeText(context, <span class="string">"received local broadcast"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>本地广播的优势</h3><br>不用担心机密数据泄露<br>其他程序将广播发送到我们程序内部<br>比全局广播更高效<p></p>
+</h3></h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/BroadcastBestPractise/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1058,142 +1338,6 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/ListView/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/20/ListView/" itemprop="url">ListView<CODE 2 chaper3></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
-                2017-07-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/20/ListView/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/20/ListView/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的：1.了解ListView（列表）的用法 2.定制listview的界面(自定义适配器) 3.提升ListView的运行效率<br>4.ListView的点击事件<p></p>
-<p></p><h3>ListView（列表）的用法</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">ListView需要大量数据  来源数据库 或自定义</div><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    private String[] data=&#123;&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;&#125;;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        ArraryAdapter&lt;String&gt;adapter = new ArraryAdapter(MainActivity.this, R.layout.fruit_item, data);//第一个参数 上下文  布局ID 数据名//ArraryAdapter数组适配器</div><div class="line">        ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">        listView.setAdapter(adapter);//启动适配器</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">```    </div><div class="line"></div><div class="line">&lt;h3&gt;定制listview的界面&lt;/h3&gt;</div><div class="line"></div><div class="line">&lt;img src=&apos;http://img.027cgb.cn/20170722/20177222181775731906.png&apos; /&gt;</div><div class="line"></div><div class="line">```Android</div><div class="line">如：列表每一项包含图片及文字</div><div class="line">详解每一步：</div><div class="line">1.两个布局activity_main 及fruit_item(简单，不赘述)</div><div class="line"></div><div class="line">2.fruit类（简单，不赘述）</div><div class="line">public class Fruit &#123;</div><div class="line"></div><div class="line">    private String name;</div><div class="line"></div><div class="line">    private int imageId;</div><div class="line"></div><div class="line">    public Fruit(String name, int imageId) &#123;</div><div class="line">        this.name = name;</div><div class="line">        this.imageId = imageId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public String getName() &#123;</div><div class="line">        return name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public int getImageId() &#123;</div><div class="line">        return imageId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">3.FruitAdaper类</div><div class="line">public class FruitAdapter extends ArrayAdapter&lt;Fruit&gt; &#123;//继承ArrayAdaper 从而使之能调用适配器需要的函数 //泛型为fruit类</div><div class="line"></div><div class="line">    private int resourceId;</div><div class="line"></div><div class="line">    public FruitAdapter(Context context, int textViewResourceId, List&lt;Fruit&gt; objects) &#123;//上下文 布局id 列表对象</div><div class="line">        super(context, textViewResourceId, objects);//调用父类构造函数   及FruitAdapter()等同于ArrayAdaper()</div><div class="line">        resourceId = textViewResourceId;//之所以另定义一个变量来获得textViewResourceId,是怕使用过程中将之改变</div><div class="line">    &#125;</div><div class="line">//  重写getView方法(获取到视图类对象的指针，并转换成CAdaptoneViewView   的指针)</div><div class="line">  public View getView(int position, View convertView, ViewGroup parent) &#123;/ /每个子项滚动到屏幕内都会被调用</div><div class="line">        Fruit fruit = getItem(position); // 获取当前项的Fruit实例</div><div class="line">        View view=layoutInflater.from(getContext()).inflate(resourceId,parent,false);//为子项加载我们传入的布局</div><div class="line">        ImageView fruitImage=(ImageView)view.findViewById(R.id.fruit_image);//ImageView内部类</div><div class="line">        TextView fruitName=(TextView)view.findViewById(R.id.fruit_name);//TextView内部类</div><div class="line">        fruitImage.setImageResouceId(fruit.getImageId());</div><div class="line">        fruitName.setText(fruit.getName());</div><div class="line">        return view;</div><div class="line">    &#125;</div></pre></td></tr></table></figure><p></p>
-<p><img src="http://i4.piimg.com/595109/3e87d1af99d7521b.png" alt="Markdown"></p>
-<p>4.MianActivity类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    private List&lt;Fruit&gt; fruitList = new ArrayList&lt;Fruit&gt;();//用ArrayList（）方法声明一个fruitList列表 指定泛型为Fruit</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        initFruits(); // 初始化水果数据</div><div class="line">        FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);//第一个参数 传入水果对象  布局ID 水果列表</div><div class="line">        ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">        listView.setAdapter(adapter);//启动适配器</div><div class="line">        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;//给listview设置监听器</div><div class="line">            @Override</div><div class="line">            public void onItemClick(AdapterView&lt;?&gt; parent, View view,</div><div class="line">                                    int position, long id) &#123;</div><div class="line">                Fruit fruit = fruitList.get(position);</div><div class="line">                Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();//设置逻辑</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private void initFruits() &#123;</div><div class="line">            for (int i = 0; i &lt; 2; i++) &#123;//循环两次是出于谨慎</div><div class="line">                Fruit apple = new Fruit(&quot;Apple&quot;, R.drawable.apple_pic);</div><div class="line">                fruitList.add(apple);</div><div class="line">                Fruit banana = new Fruit(&quot;Banana&quot;, R.drawable.banana_pic);</div><div class="line">                fruitList.add(banana);</div><div class="line">                Fruit orange = new Fruit(&quot;Orange&quot;, R.drawable.orange_pic);</div><div class="line">                fruitList.add(orange);</div><div class="line">                Fruit watermelon = new Fruit(&quot;Watermelon&quot;, R.drawable.watermelon_pic);</div><div class="line">                fruitList.add(watermelon);</div><div class="line">                Fruit pear = new Fruit(&quot;Pear&quot;, R.drawable.pear_pic);</div><div class="line">                fruitList.add(pear);</div><div class="line">                Fruit grape = new Fruit(&quot;Grape&quot;, R.drawable.grape_pic);</div><div class="line">                fruitList.add(grape);</div><div class="line">                Fruit pineapple = new Fruit(&quot;Pineapple&quot;, R.drawable.pineapple_pic);</div><div class="line">                fruitList.add(pineapple);</div><div class="line">                Fruit strawberry = new Fruit(&quot;Strawberry&quot;, R.drawable.strawberry_pic);</div><div class="line">                fruitList.add(strawberry);</div><div class="line">                Fruit cherry = new Fruit(&quot;Cherry&quot;, R.drawable.cherry_pic);</div><div class="line">                fruitList.add(cherry);</div><div class="line">                Fruit mango = new Fruit(&quot;Mango&quot;, R.drawable.mango_pic);</div><div class="line">                fruitList.add(mango);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure></p>
-<p></p><h3>3.ListView的优化</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">需要优化的点：1.getView每一次滑动都要将布局重载！（效率低）</div><div class="line">2.每次getView（）都会通过findViewById获取一次控件实例</div><div class="line">优化思路 使用convertView参数（布局缓存重用） 新建viewHolder集合类</div><div class="line">优化后代码：</div><div class="line">public View getView(int position, View convertView, ViewGroup parent) &#123;//每个子项滚动到屏幕内都会被调用</div><div class="line">       Fruit fruit = getItem(position); // 获取当前项的Fruit实例</div><div class="line">       View view;</div><div class="line">       ViewHolder viewHolder;</div><div class="line">       if (convertView == null) &#123;</div><div class="line">           view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);</div><div class="line">           viewHolder = new ViewHolder();</div><div class="line">           viewHolder.fruitImage = (ImageView) view.findViewById (R.id.fruit_image);</div><div class="line">           viewHolder.fruitName = (TextView) view.findViewById (R.id.fruit_name);</div><div class="line">           view.setTag(viewHolder); // 将ViewHolder存储在View中</div><div class="line">       &#125; else &#123;</div><div class="line">           view = convertView;</div><div class="line">           viewHolder = (ViewHolder) view.getTag(); // 重新获取ViewHolder</div><div class="line">       &#125;</div><div class="line">       viewHolder.fruitImage.setImageResource(fruit.getImageId());</div><div class="line">       viewHolder.fruitName.setText(fruit.getName());</div><div class="line">       return view;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   class ViewHolder &#123;</div><div class="line"></div><div class="line">       ImageView fruitImage;</div><div class="line"></div><div class="line">       TextView fruitName;</div><div class="line"></div><div class="line">   &#125;</div></pre></td></tr></table></figure><p></p>
-<p>   </p><h3>4.ListView的点击事件</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">简单，不赘述。</div><div class="line">   protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">           super.onCreate(savedInstanceState);</div><div class="line">           setContentView(R.layout.activity_main);</div><div class="line">           initFruits(); // 初始化水果数据</div><div class="line">           FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);//第一个参数 传入水果对象  布局ID 水果列表</div><div class="line">           ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">           listView.setAdapter(adapter);//启动适配器</div><div class="line">           listView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;//给listview设置监听器</div><div class="line">               @Override</div><div class="line">               public void onItemClick(AdapterView&lt;?&gt; parent, View view,</div><div class="line">                                       int position, long id) &#123;</div><div class="line">                   Fruit fruit = fruitList.get(position);</div><div class="line">                   Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();//设置逻辑</div><div class="line">               &#125;</div><div class="line">           &#125;);</div><div class="line">       &#125;</div></pre></td></tr></table></figure><p></p>
-</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/build.gradle文件详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1326,7 +1470,7 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/logcat及log/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/ListView/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="DEMO">
@@ -1345,7 +1489,7 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/20/logcat及log/" itemprop="url">logcat及log<CODE 2 chaper2></a></h1>
+                <a class="post-title-link" href="/2017/07/20/ListView/" itemprop="url">ListView<CODE 2 chaper3></a></h1>
         
 
         <div class="post-meta">
@@ -1376,9 +1520,9 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/20/logcat及log/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/20/ListView/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/20/logcat及log/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/20/ListView/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1408,9 +1552,13 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
       
         
           
-            <p></p><h3>log</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">log.v()//verbose 琐碎日志</div><div class="line">log.d()//debug调试信息</div><div class="line">log.i()//比较重要的数据 用户数据</div><div class="line">log.w()//warn</div><div class="line">log.e()//error</div></pre></td></tr></table></figure><p></p>
-<p></p><h3>logcat and 过滤器</h3><br><img src="http://img.027cgb.cn/20170721/20177216711775731906.png"><br><img src="http://img.027cgb.cn/20170721/20177217341775731906.png"><p></p>
-
+            <p></p><h3>学习目的：1.了解ListView（列表）的用法 2.定制listview的界面(自定义适配器) 3.提升ListView的运行效率<br>4.ListView的点击事件<p></p>
+<p></p><h3>ListView（列表）的用法</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">ListView需要大量数据  来源数据库 或自定义</div><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    private String[] data=&#123;&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;&#125;;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        ArraryAdapter&lt;String&gt;adapter = new ArraryAdapter(MainActivity.this, R.layout.fruit_item, data);//第一个参数 上下文  布局ID 数据名//ArraryAdapter数组适配器</div><div class="line">        ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">        listView.setAdapter(adapter);//启动适配器</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">```    </div><div class="line"></div><div class="line">&lt;h3&gt;定制listview的界面&lt;/h3&gt;</div><div class="line"></div><div class="line">&lt;img src=&apos;http://img.027cgb.cn/20170722/20177222181775731906.png&apos; /&gt;</div><div class="line"></div><div class="line">```Android</div><div class="line">如：列表每一项包含图片及文字</div><div class="line">详解每一步：</div><div class="line">1.两个布局activity_main 及fruit_item(简单，不赘述)</div><div class="line"></div><div class="line">2.fruit类（简单，不赘述）</div><div class="line">public class Fruit &#123;</div><div class="line"></div><div class="line">    private String name;</div><div class="line"></div><div class="line">    private int imageId;</div><div class="line"></div><div class="line">    public Fruit(String name, int imageId) &#123;</div><div class="line">        this.name = name;</div><div class="line">        this.imageId = imageId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public String getName() &#123;</div><div class="line">        return name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public int getImageId() &#123;</div><div class="line">        return imageId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">3.FruitAdaper类</div><div class="line">public class FruitAdapter extends ArrayAdapter&lt;Fruit&gt; &#123;//继承ArrayAdaper 从而使之能调用适配器需要的函数 //泛型为fruit类</div><div class="line"></div><div class="line">    private int resourceId;</div><div class="line"></div><div class="line">    public FruitAdapter(Context context, int textViewResourceId, List&lt;Fruit&gt; objects) &#123;//上下文 布局id 列表对象</div><div class="line">        super(context, textViewResourceId, objects);//调用父类构造函数   及FruitAdapter()等同于ArrayAdaper()</div><div class="line">        resourceId = textViewResourceId;//之所以另定义一个变量来获得textViewResourceId,是怕使用过程中将之改变</div><div class="line">    &#125;</div><div class="line">//  重写getView方法(获取到视图类对象的指针，并转换成CAdaptoneViewView   的指针)</div><div class="line">  public View getView(int position, View convertView, ViewGroup parent) &#123;/ /每个子项滚动到屏幕内都会被调用</div><div class="line">        Fruit fruit = getItem(position); // 获取当前项的Fruit实例</div><div class="line">        View view=layoutInflater.from(getContext()).inflate(resourceId,parent,false);//为子项加载我们传入的布局</div><div class="line">        ImageView fruitImage=(ImageView)view.findViewById(R.id.fruit_image);//ImageView内部类</div><div class="line">        TextView fruitName=(TextView)view.findViewById(R.id.fruit_name);//TextView内部类</div><div class="line">        fruitImage.setImageResouceId(fruit.getImageId());</div><div class="line">        fruitName.setText(fruit.getName());</div><div class="line">        return view;</div><div class="line">    &#125;</div></pre></td></tr></table></figure><p></p>
+<p><img src="http://i4.piimg.com/595109/3e87d1af99d7521b.png" alt="Markdown"></p>
+<p>4.MianActivity类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    private List&lt;Fruit&gt; fruitList = new ArrayList&lt;Fruit&gt;();//用ArrayList（）方法声明一个fruitList列表 指定泛型为Fruit</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        initFruits(); // 初始化水果数据</div><div class="line">        FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);//第一个参数 传入水果对象  布局ID 水果列表</div><div class="line">        ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">        listView.setAdapter(adapter);//启动适配器</div><div class="line">        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;//给listview设置监听器</div><div class="line">            @Override</div><div class="line">            public void onItemClick(AdapterView&lt;?&gt; parent, View view,</div><div class="line">                                    int position, long id) &#123;</div><div class="line">                Fruit fruit = fruitList.get(position);</div><div class="line">                Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();//设置逻辑</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private void initFruits() &#123;</div><div class="line">            for (int i = 0; i &lt; 2; i++) &#123;//循环两次是出于谨慎</div><div class="line">                Fruit apple = new Fruit(&quot;Apple&quot;, R.drawable.apple_pic);</div><div class="line">                fruitList.add(apple);</div><div class="line">                Fruit banana = new Fruit(&quot;Banana&quot;, R.drawable.banana_pic);</div><div class="line">                fruitList.add(banana);</div><div class="line">                Fruit orange = new Fruit(&quot;Orange&quot;, R.drawable.orange_pic);</div><div class="line">                fruitList.add(orange);</div><div class="line">                Fruit watermelon = new Fruit(&quot;Watermelon&quot;, R.drawable.watermelon_pic);</div><div class="line">                fruitList.add(watermelon);</div><div class="line">                Fruit pear = new Fruit(&quot;Pear&quot;, R.drawable.pear_pic);</div><div class="line">                fruitList.add(pear);</div><div class="line">                Fruit grape = new Fruit(&quot;Grape&quot;, R.drawable.grape_pic);</div><div class="line">                fruitList.add(grape);</div><div class="line">                Fruit pineapple = new Fruit(&quot;Pineapple&quot;, R.drawable.pineapple_pic);</div><div class="line">                fruitList.add(pineapple);</div><div class="line">                Fruit strawberry = new Fruit(&quot;Strawberry&quot;, R.drawable.strawberry_pic);</div><div class="line">                fruitList.add(strawberry);</div><div class="line">                Fruit cherry = new Fruit(&quot;Cherry&quot;, R.drawable.cherry_pic);</div><div class="line">                fruitList.add(cherry);</div><div class="line">                Fruit mango = new Fruit(&quot;Mango&quot;, R.drawable.mango_pic);</div><div class="line">                fruitList.add(mango);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure></p>
+<p></p><h3>3.ListView的优化</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">需要优化的点：1.getView每一次滑动都要将布局重载！（效率低）</div><div class="line">2.每次getView（）都会通过findViewById获取一次控件实例</div><div class="line">优化思路 使用convertView参数（布局缓存重用） 新建viewHolder集合类</div><div class="line">优化后代码：</div><div class="line">public View getView(int position, View convertView, ViewGroup parent) &#123;//每个子项滚动到屏幕内都会被调用</div><div class="line">       Fruit fruit = getItem(position); // 获取当前项的Fruit实例</div><div class="line">       View view;</div><div class="line">       ViewHolder viewHolder;</div><div class="line">       if (convertView == null) &#123;</div><div class="line">           view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);</div><div class="line">           viewHolder = new ViewHolder();</div><div class="line">           viewHolder.fruitImage = (ImageView) view.findViewById (R.id.fruit_image);</div><div class="line">           viewHolder.fruitName = (TextView) view.findViewById (R.id.fruit_name);</div><div class="line">           view.setTag(viewHolder); // 将ViewHolder存储在View中</div><div class="line">       &#125; else &#123;</div><div class="line">           view = convertView;</div><div class="line">           viewHolder = (ViewHolder) view.getTag(); // 重新获取ViewHolder</div><div class="line">       &#125;</div><div class="line">       viewHolder.fruitImage.setImageResource(fruit.getImageId());</div><div class="line">       viewHolder.fruitName.setText(fruit.getName());</div><div class="line">       return view;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   class ViewHolder &#123;</div><div class="line"></div><div class="line">       ImageView fruitImage;</div><div class="line"></div><div class="line">       TextView fruitName;</div><div class="line"></div><div class="line">   &#125;</div></pre></td></tr></table></figure><p></p>
+<p>   </p><h3>4.ListView的点击事件</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">简单，不赘述。</div><div class="line">   protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">           super.onCreate(savedInstanceState);</div><div class="line">           setContentView(R.layout.activity_main);</div><div class="line">           initFruits(); // 初始化水果数据</div><div class="line">           FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);//第一个参数 传入水果对象  布局ID 水果列表</div><div class="line">           ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">           listView.setAdapter(adapter);//启动适配器</div><div class="line">           listView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;//给listview设置监听器</div><div class="line">               @Override</div><div class="line">               public void onItemClick(AdapterView&lt;?&gt; parent, View view,</div><div class="line">                                       int position, long id) &#123;</div><div class="line">                   Fruit fruit = fruitList.get(position);</div><div class="line">                   Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();//设置逻辑</div><div class="line">               &#125;</div><div class="line">           &#125;);</div><div class="line">       &#125;</div></pre></td></tr></table></figure><p></p>
+</h3>
           
         
       
@@ -1634,139 +1782,6 @@ public class SecondActivity extends BaseActivity {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/配置变量时  系统 用户变量的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="url">配置变量时  系统 用户变量的区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T20:13:10+08:00">
-                2017-06-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/06/18/配置变量时  系统 用户变量的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>我们在Java运行环境或Android开发环境时，经常要配置环境变量，如图所示，<br><img src="http://d1.freep.cn/3tb_170617122931qa32585966.png"></p>
-<p>这里有administrator的用户变量(U)，和系统变量（S），<br>那麽，它们之间有什么区别呢？<br>简单的说，一个是当前用户使用，你用其它用户登陆，这个环境变量就不起作用了。<br>系统变量，是对所有用户都可使用的。<br>简单的说：<br>系统变量：不管以哪个用户名登陆到计算机都能使用；<br>用户变量：只能以设置变量时的用户名登陆才能使用。</p>
-<p>如果我们在自己的电脑上运行程序，用户只有一个，看不出系统变量和用户变量的区别，但是，<br>如果一台电脑有多个用户，就能看出用户变量和系统变量的区别了~~<br>PS：我们在配置的时候，一般都是配置系统变量（S），</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1817,7 +1832,7 @@ public class SecondActivity extends BaseActivity {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">91</span>
+                <span class="site-state-item-count">93</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1830,7 +1845,7 @@ public class SecondActivity extends BaseActivity {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

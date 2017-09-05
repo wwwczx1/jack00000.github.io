@@ -297,6 +297,332 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/02/[树莓派]无线网卡配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/02/[树莓派]无线网卡配置/" itemprop="url">树莓派 无线网卡配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-02T20:13:10+08:00">
+                2017-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/02/[树莓派]无线网卡配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/05/02/[树莓派]无线网卡配置/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3>一、查看网卡状态是否正常</h3><br>- 把无线网卡插到树莓派上，输入命令ifconfig -a查看是否有wlan0的信息，如果有说明网卡状态正常，可以跳过第二步，直接配置无线网络。如果查不到wlan0的信息，则需要安装无线网卡的驱动。<br><br><h3>二、查看无线网卡的信息</h3><br>- 输入命令dmesg | grep usb查看无线网卡的信息，主要是看制造厂家（Manufacturer）。比如，我的网卡信息是<br>usb 1-1.3: Manufacturer: Realtek<br><br>- 以Realtek为例，安装无线网卡驱动。<br>如果现在你的树莓派能联网，输入安装命令就可以安装Realtek的驱动了。<br><br>- 首先搜索Realtek驱动：<br><br>- apt-cache search realtek<br>看到下面信息：<br>firmware-realtek – Binary firmware for Realtek wired and wireless network adapters<br>安装Realtek驱动：<br><br>- sudo apt-get install firmware-realtek<br>如果你的树莓派现在不能上网，那么你可以去镜像站点中下载相关驱动。我推荐阿里云的镜像站点，速度比较快。<a href="http://mirrors.aliyun.com/raspbian/raspbian/pool/non-free/f/firmware-nonfree" target="_blank" rel="external">http://mirrors.aliyun.com/raspbian/raspbian/pool/non-free/f/firmware-nonfree</a><br><br>下载firmware-realtek_0.43_all.deb，用winscp上传到树莓派的/tmp目录中。输入命令安装：<br><br>- sudo dpkg -i /tmp/firmware-realtek_0.43_all.deb<br><h3>三、配置无线网络</h3>
+
+<p>用编辑器nano打开interfaces文件</p>
+<ul>
+<li>sudo nano /etc/network/interfaces<br>我的interfaces文件是这样的：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">auto</span> lo</div><div class="line"></div><div class="line">iface lo inet loopback</div><div class="line">iface eth0 inet dhcp</div><div class="line"></div><div class="line">allow-hotplug wlan0</div><div class="line">iface wlan0 inet manual</div><div class="line">wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf</div><div class="line">iface <span class="keyword">default</span> inet dhcp</div></pre></td></tr></table></figure>
+<ul>
+<li>我们把无线网卡部分全部用#注释掉，然后添加自己的配置信息，最终结果如下：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">auto</span> lo</div><div class="line"></div><div class="line">iface lo inet loopback</div><div class="line">iface eth0 inet dhcp</div><div class="line"></div><div class="line"><span class="keyword">auto</span> wlan0</div><div class="line"><span class="meta">#allow-hotplug wlan0</span></div><div class="line"><span class="meta">#iface wlan0 inet manual</span></div><div class="line">iface wlan0 inet dhcp</div><div class="line">wpa-conf /etc/wpa.conf</div><div class="line"><span class="meta">#wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf</span></div><div class="line">iface <span class="keyword">default</span> inet dhcp</div></pre></td></tr></table></figure>
+<p>使用nano编辑器，ctrl+o保存，ctrl+x退出。(别忘啦sudo 要不改不了，ctrl+o enter ctrl+x  顺序)</p>
+<p>用编辑器nano创建 /etc/wpa.conf 文件：</p>
+<ul>
+<li>sudo nano /etc/wpa.conf<br>如果你的wifi没有密码</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">network=&#123;</div><div class="line">[Tab] ssid=<span class="string">"你的无线网络名称（ssid）"</span></div><div class="line">[Tab] key_mgmt=NONE</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>如果你的wifi使用WEP加密</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">network=&#123;</div><div class="line">[Tab] ssid=<span class="string">"你的无线网络名称（ssid）"</span></div><div class="line">[Tab] key_mgmt=NONE</div><div class="line">[Tab] wep_key0=<span class="string">"你的wifi密码"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>如果你的wifi使用WPA/WPA2加密<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">network=&#123;</div><div class="line">[Tab] ssid=<span class="string">"你的无线网络名称（ssid）"</span></div><div class="line">[Tab] key_mgmt=WPA-PSK</div><div class="line">[Tab] psk=<span class="string">"你的wifi密码"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>注1：所有符号都是半角符号（英文状态下的符号），“[Tab]”表示按一次Tab键<br>注2：如果你不清楚wifi的加密模式，可以在安卓手机上用root explorer打开 /data/misc/wifi/wpa/wpa_supplicant.conf，查看wifi的信息。</p>
+<p>比如，我的wpa.conf文件是这样的：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">network=&#123;</div><div class="line">    ssid=<span class="string">"238_2"</span></div><div class="line">    key_mgmt=WPA-PSK</div><div class="line">    psk=<span class="string">"fangjun_"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>最后输入命令启用无线网卡：</p>
+<ul>
+<li><p>sudo ifup wlan0  可以连无线网了。</p>
+</li>
+<li><p>注意 远程所使用的ip地址变啦<br><img src="http://i2.muimg.com/567571/a5e06697324cfe83.png" alt=""></p>
+</li>
+<li>无线 有线连接 ip地址变啦  这个坑我卡啦3天 甚至怀疑硬件有问题，蠢蠢蠢！！！！<br><img src="http://i1.piimg.com/567571/e015d668e7b54c87.png" alt=""></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/28/【树莓派】电脑显示器当树莓派显示屏/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/28/【树莓派】电脑显示器当树莓派显示屏/" itemprop="url">树莓派起步</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-28T20:13:10+08:00">
+                2017-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/28/【树莓派】电脑显示器当树莓派显示屏/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/04/28/【树莓派】电脑显示器当树莓派显示屏/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h2>简要步骤</h2><p></p>
+<ul>
+<li>基本材料：树莓派一个，路由器一个，网线一条（用于连接路由器），笔记本一台</li>
+<li>提前下载好需要的文件：树莓派的官网下载raspbian : <a href="https://www.raspberrypi.org/downloads/" target="_blank" rel="external">https://www.raspberrypi.org/downloads/</a></li>
+<li>格式化内存卡 SDFormatter：<a href="http://pan.baidu.com/s/1bzE9qu" target="_blank" rel="external">http://pan.baidu.com/s/1bzE9qu</a></li>
+<li>写入镜像 win32diskimager ：<a href="http://pan.baidu.com/s/1o8AvKyI" target="_blank" rel="external">http://pan.baidu.com/s/1o8AvKyI</a></li>
+<li>利用putty进行ssh连接 ： <a href="http://pan.baidu.com/s/1qXJ4Q2S" target="_blank" rel="external">http://pan.baidu.com/s/1qXJ4Q2S</a></li>
+</ul>
+<p></p><h3>安装系统</h3><p></p>
+<ul>
+<li><img src="http://i4.buimg.com/567571/e34c819b2bdc189c.png" alt=""></li>
+<li><img src="http://i4.buimg.com/567571/359473e4c2df8689.png" alt=""><h3>使用putty</h3></li>
+<li>ip地址可以从路由器后台获得</li>
+<li><img src="http://i4.buimg.com/567571/b3466f90057a91fe.png" alt=""></li>
+<li>这时候点open会报错（3b树莓派默认关闭ssh）</li>
+<li>解决方法：在boot（你的sd卡）下新建ssh文件夹即可</li>
+</ul>
+<p></p><h3>安装xrdp服务</h3><p></p>
+<ul>
+<li>在putty点击open后的弹出窗口输入  用户名：pi 密码：raspberry（密码看不见）</li>
+<li>然后输入命令：sudo apt-get install xrdp</li>
+<li>打开电脑自带的远程桌面连接工具</li>
+<li><img src="http://i4.buimg.com/567571/8d7a13ffe5818890.png" alt=""></li>
+<li><img src="http://i4.buimg.com/567571/32cf0b0db9c2a5ef.png" alt=""></li>
+<li>这时候报错：error ：connect problem</li>
+<li>解决方法： 在putty点击open后的弹出窗口输入 sudo apt-get install vnc4server tightvncserver      多试几次</li>
+<li></li>
+<li>登陆成功如图</li>
+<li><img src="http://i4.buimg.com/567571/0fef7db54d1f92f0.png" alt=""></li>
+<li><img src="http://i2.muimg.com/1949/68c8507b2b02351e.png" alt=""></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/E3D插件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1440,280 +1766,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/24/产品经理练成/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/24/产品经理练成/" itemprop="url">产品经理练成</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-24T20:13:10+08:00">
-                2017-02-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/02/24/产品经理练成/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/02/24/产品经理练成/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>几种软件模型</h3><p></p>
-<ul>
-<li>瀑布模型</li>
-<li>快速原型模型</li>
-<li>螺旋模型</li>
-<li>增量模型</li>
-<li>统一过程模型</li>
-</ul>
-<hr>
-<p></p><h4>RUP 瀑布 快速模型的区别</h4><br>RUP<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">简而言之：可以用迭代开发来更好的应对变化,</div><div class="line"></div><div class="line">瀑布模型属于软件工程阶段的产物</div><div class="line">软件开发的效率,质量,</div><div class="line">以及软件开发相关的管理工作.</div><div class="line">软件越发复杂,</div><div class="line">RUP可以用迭代开发来更好的应对变化,</div><div class="line">使软件的实践更加完整.</div></pre></td></tr></table></figure><p></p>
-<p>瀑布<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">简而言之：太死板，不易变动。</div><div class="line"></div><div class="line">瀑布模型的优点：有利于大型软件开发过程中人员的组织、管理，有利于软件开发方法和工具的研究，从而提高了大型软件项目开发的质量和效率。</div><div class="line">瀑布模型的缺点：（1）开发过程一般不能逆转，否则代价太大；（2）实际的项目开发很难严格按该模型进行；</div><div class="line">（3）客户往往很难清楚地给出所有的需求，而该模型却要求如此。（4）软件的实际情况必须到项目开发的后期客户才能看到，这要求客户有足够的耐心。</div><div class="line">瀑布模型的使用范围：（1）用户的需求非常清楚全面，且在开发过程中没有或很少变化；（2）开发人员对软件的应用领域很熟悉；（3）用户的使用环境非常稳定；（4）开发工作对用户参与的要求很低。</div></pre></td></tr></table></figure></p>
-<p>快速原型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">简而言之：开发费用低、开发周期短 准确的原型设计比较困难</div><div class="line"></div><div class="line">快速原型模型的优点：（1）可以得到比较良好的需求定义，容易适应需求的变化；（2）有利于开发与培训的同步；（3）开发费用低、开发周期短且对用户更友好。</div><div class="line">快速原型模型的缺点：（1）客户与开发者对原型理解不同；（2） 准确的原型设计比较困难；（3） 不利于开发人员的创新。</div><div class="line">快速原型模型的使用范围：（1）对所开发的领域比较熟悉而且有快速的原型开发工具；（2）项目招投标时，可以以原型模型作为软件的开发模型；（3）进行产品移植或升级时，或对已有产品原型进行客户化工作时，原型模型是非常适合的。</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/22/andriod studio开发环境搭建/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/22/andriod studio开发环境搭建/" itemprop="url">android studio开发环境搭建</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-22T00:00:00+08:00">
-                2017-02-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/02/22/andriod studio开发环境搭建/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/02/22/andriod studio开发环境搭建/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>先说android studio </h3><br>1.<a href="http://www.android-studio.org/" target="_blank" rel="external">下载android studio</a><br>2.<a href="http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html" target="_blank" rel="external">下载JDK</a> <a href="http://jingyan.baidu.com/album/f96699bb8b38e0894e3c1bef.html" target="_blank" rel="external">并配置系统变量</a>.<br>3.<a href="http://tools.android-studio.org/index.php/sdk" target="_blank" rel="external">下载SDK</a><p></p>
-<p><img src="http://i4.eiimg.com/595109/2dafd76622876edf.png" alt="Markdown"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1764,7 +1816,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">91</span>
+                <span class="site-state-item-count">93</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1777,7 +1829,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
