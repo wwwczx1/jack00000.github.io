@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -239,7 +239,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Search
+            Suche
           </a>
         </li>
       
@@ -297,6 +297,148 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/08/Materialtest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/08/Materialtest/" itemprop="url">materialtest(最佳UI体验)<CODE 2 chaper12></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-08T20:13:10+08:00">
+                2017-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/08/Materialtest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/08/Materialtest/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3>学习目的：1.什么是Materrial Design  2.Toolbar与Actionbar（已淘汰）  (Materrial控件)  3.app命名空间</h3>
+
+<p>1.什么是Materrial Design:Google推出的全新界面语言</p>
+<p>2.Toolbar与Actionbar（已淘汰）  (Materrial控件)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:theme=<span class="string">"@style/AppTheme"</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>res/values/styles.xml<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;style name=<span class="string">"AppTheme"</span> parent=<span class="string">"Theme.AppCompat.Light.DarkActionBar"</span>&gt;<span class="comment">//默认使用Actionbar</span></div><div class="line">        &lt;!-- Customize your theme here. --&gt;</div><div class="line">        &lt;item name="colorPrimary"&gt;@color/colorPrimary&lt;/item&gt;</div><div class="line">        &lt;item name="colorPrimaryDark"&gt;@color/colorPrimaryDark&lt;/item&gt;</div><div class="line">        &lt;item name="colorAccent"&gt;@color/colorAccent&lt;/item&gt;</div><div class="line">    &lt;/style&gt;</div><div class="line">```    </div><div class="line">禁用Actionbar</div><div class="line">```java</div><div class="line">name=<span class="string">"AppTheme"</span> parent=<span class="string">"Theme.AppCompat.Light.NoActionBar</span></div></pre></td></tr></table></figure></p>
+<p>用Toolbar替代Actionbar<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;android.support.v7.widget.Toolbar</div><div class="line">                android:id=<span class="string">"@+id/toolbar"</span></div><div class="line">                android:layout_width=<span class="string">"match_parent"</span></div><div class="line">                android:layout_height=<span class="string">"?attr/actionBarSize"</span></div><div class="line">                android:background=<span class="string">"?attr/colorPrimary"</span></div><div class="line">                android:theme=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span></div><div class="line">                app:popupTheme=<span class="string">"@style/ThemeOverlay.AppCompat.Light"</span></div><div class="line">                app:layout_scrollFlags=<span class="string">"scroll|enterAlways|snap"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="http://i4.bvimg.com/595109/97171dbb977c9a04.png" alt="Markdown"></p>
+<p>3.创建mene文件夹 新建toolbar.xml<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</div><div class="line">&lt;menu xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    xmlns:app=<span class="string">"http://schemas.android.com/apk/res-auto"</span>&gt;</div><div class="line">    &lt;item</div><div class="line">        android:id=<span class="string">"@+id/backup"</span></div><div class="line">        android:icon=<span class="string">"@drawable/ic_backup"</span></div><div class="line">        android:title=<span class="string">"Backup"</span></div><div class="line">        app:showAsAction=<span class="string">"always"</span>/&gt;</div><div class="line">    &lt;item</div><div class="line">        android:id=<span class="string">"@+id/delete"</span></div><div class="line">        android:icon=<span class="string">"@drawable/ic_delete"</span></div><div class="line">        android:title=<span class="string">"Delete"</span></div><div class="line">        app:showAsAction=<span class="string">"ifRoom"</span>/&gt;</div><div class="line">    &lt;item</div><div class="line">        android:id=<span class="string">"@+id/settings"</span></div><div class="line">        android:icon=<span class="string">"@drawable/ic_settings"</span></div><div class="line">        android:title=<span class="string">"Settings"</span></div><div class="line">        app:showAsAction=<span class="string">"never"</span>/&gt;</div><div class="line">&lt;/menu&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="http://i4.bvimg.com/595109/831131cba95e2fba.png" alt="Markdown"><br>app:showAsAction指定显示位置  never永远在菜单栏   ifRoom屏幕空间足够则显示在Toolbar中 always永远显示在Toolbar中</p>
+<p>4.滑动菜单<br>DrawerLayout(一种布局：能放两个直接子控件  一个子控件显示主屏幕内容  另一个子控件是滑动菜单显示内容)<br>activity_main<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;android.support.v4.widget.DrawerLayout</div><div class="line">    xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    xmlns:app=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">    android:id=<span class="string">"@+id/drawer_layout"</span></div><div class="line">    android:layout_width=<span class="string">"match_parent"</span></div><div class="line">    android:layout_height=<span class="string">"match_parent"</span>&gt;</div><div class="line"></div><div class="line">    &lt;FrameLayout</div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"match_parent"</span>&gt;</div><div class="line"></div><div class="line"></div><div class="line">            &lt;android.support.v7.widget.Toolbar</div><div class="line">                android:id=<span class="string">"@+id/toolbar"</span></div><div class="line">                android:layout_width=<span class="string">"match_parent"</span></div><div class="line">                android:layout_height=<span class="string">"?attr/actionBarSize"</span></div><div class="line">                android:background=<span class="string">"?attr/colorPrimary"</span></div><div class="line">                android:theme=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span></div><div class="line">                app:popupTheme=<span class="string">"@style/ThemeOverlay.AppCompat.Light"</span></div><div class="line">                app:layout_scrollFlags=<span class="string">"scroll|enterAlways|snap"</span> /&gt;</div><div class="line">      &lt;/FrameLayout&gt;</div><div class="line"></div><div class="line">      &lt;TextView</div><div class="line">             android:layout_width=<span class="string">"match_parent"</span></div><div class="line">             android:layout_height=<span class="string">"match_parent"</span></div><div class="line">             android:layout_gravity=<span class="string">"start"</span></div><div class="line">             android:text=<span class="string">"This is name"</span></div><div class="line">             android:testSize=<span class="string">"30sp"</span></div><div class="line">             android:background=<span class="string">"#FFF"</span>/&gt;</div><div class="line">&lt;/android.support.v4.widget.DrawerLayout&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="http://i1.bvimg.com/595109/9f81ff22678cbc9e.png" alt="Markdown"></p>
+<p>防止用户不知道左边可以滑动（设置导航栏）<br>MainActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> DrawerLayout mDrawerLayout;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);</div><div class="line">        setSupportActionBar(toolbar);</div><div class="line">        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);</div><div class="line">        NavigationView navView = (NavigationView) findViewById(R.id.nav_view);</div><div class="line">        ActionBar actionBar = getSupportActionBar();</div><div class="line">        <span class="keyword">if</span> (actionBar != <span class="keyword">null</span>) &#123;</div><div class="line">            actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</div><div class="line">            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"><span class="comment">//...</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onOptionsItemSelected</span><span class="params">(MenuItem item)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (item.getItemId()) &#123;</div><div class="line">            <span class="keyword">case</span> android.R.id.home:</div><div class="line">                mDrawerLayout.openDrawer(GravityCompat.START);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="comment">//...</span></div><div class="line">            <span class="keyword">default</span>:</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/07/Lbstest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -326,7 +468,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-07T20:13:10+08:00">
                 2017-08-07
@@ -470,7 +612,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-07T20:13:10+08:00">
                 2017-08-07
@@ -603,7 +745,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-04T20:13:10+08:00">
                 2017-08-04
@@ -792,7 +934,7 @@ public void onClick(View v) {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-04T20:13:10+08:00">
                 2017-08-04
@@ -935,7 +1077,7 @@ public void onClick(View v) {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-02T20:13:10+08:00">
                 2017-08-02
@@ -1071,7 +1213,7 @@ public void onClick(View v) {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-02T20:13:10+08:00">
                 2017-08-02
@@ -1248,7 +1390,7 @@ public void onClick(View v) {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-02T20:13:10+08:00">
                 2017-08-02
@@ -1387,7 +1529,7 @@ public void onClick(View v) {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-01T20:13:10+08:00">
                 2017-08-01
@@ -1497,7 +1639,7 @@ public void onClick(View v) {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Playvideotest/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Notificationtest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="DEMO">
@@ -1516,7 +1658,7 @@ public void onClick(View v) {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/31/Playvideotest/" itemprop="url">playvideotest<CODE 2 chaper8></a></h1>
+                <a class="post-title-link" href="/2017/07/31/Notificationtest/" itemprop="url">notificationtset<CODE 2 chaper8></a></h1>
         
 
         <div class="post-meta">
@@ -1526,7 +1668,7 @@ public void onClick(View v) {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
                 2017-07-31
@@ -1547,9 +1689,9 @@ public void onClick(View v) {
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/31/Playvideotest/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/31/Notificationtest/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/31/Playvideotest/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/31/Notificationtest/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1579,217 +1721,17 @@ public void onClick(View v) {
       
         
           
-            <p></p><h3>学习目的:1.播放视频 暂停视频 停止视频(videoView类的使用)</h3><br>权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span> /&gt;</div></pre></td></tr></table></figure><p></p>
-<p>MainActivity类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> VideoView videoView;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        videoView = (VideoView) findViewById(R.id.video_view);</div><div class="line">        Button play = (Button) findViewById(R.id.play);</div><div class="line">        Button pause = (Button) findViewById(R.id.pause);</div><div class="line">        Button replay = (Button) findViewById(R.id.replay);</div><div class="line">        play.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">        pause.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">        replay.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">        <span class="keyword">if</span> (ContextCompat.checkSelfPermission(MainActivity.<span class="keyword">this</span>, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">            ActivityCompat.requestPermissions(MainActivity.<span class="keyword">this</span>, <span class="keyword">new</span> String[]&#123; Manifest.permission. WRITE_EXTERNAL_STORAGE &#125;, <span class="number">1</span>);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            initVideoPath(); <span class="comment">// 初始化MediaPlayer</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initVideoPath</span><span class="params">()</span> </span>&#123;</div><div class="line">        File file = <span class="keyword">new</span> File(Environment.getExternalStorageDirectory(), <span class="string">"movie.mp4"</span>);</div><div class="line">        videoView.setVideoPath(file.getPath()); <span class="comment">// 指定视频文件的路径</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode, String[] permissions, <span class="keyword">int</span>[] grantResults)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">            <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span> &amp;&amp; grantResults[<span class="number">0</span>] == PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">                    initVideoPath();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Toast.makeText(<span class="keyword">this</span>, <span class="string">"拒绝权限将无法使用程序"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                    finish();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">            <span class="keyword">case</span> R.id.play:</div><div class="line">                <span class="keyword">if</span> (!videoView.isPlaying()) &#123;</div><div class="line">                    videoView.start(); <span class="comment">// 开始播放</span></div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> R.id.pause:</div><div class="line">                <span class="keyword">if</span> (videoView.isPlaying()) &#123;</div><div class="line">                    videoView.pause(); <span class="comment">// 暂停播放</span></div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> R.id.replay:</div><div class="line">                <span class="keyword">if</span> (videoView.isPlaying()) &#123;</div><div class="line">                    videoView.resume(); <span class="comment">// 重新播放</span></div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        <span class="keyword">if</span> (videoView != <span class="keyword">null</span>) &#123;</div><div class="line">            videoView.suspend();</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Playaudiotest/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/31/Playaudiotest/" itemprop="url">playaudiotest<CODE 2 chaper8></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
-                2017-07-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/31/Playaudiotest/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/31/Playaudiotest/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的:1.播放音频 暂停音频 停止音频(MediaPlayer类的使用)</h3><br>权限声明<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span> /&gt;</div></pre></td></tr></table></figure><p></p>
-<p>MainActivity类<br>```java<br>public class MainActivity extends AppCompatActivity implements View.OnClickListener{</p>
-<pre><code>private MediaPlayer mediaPlayer = new MediaPlayer();
-
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-    Button play = (Button) findViewById(R.id.play);
-    Button pause = (Button) findViewById(R.id.pause);
-    Button stop = (Button) findViewById(R.id.stop);
-    play.setOnClickListener(this);
-    pause.setOnClickListener(this);
-    stop.setOnClickListener(this);
-    if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-        ActivityCompat.requestPermissions(MainActivity.this, new String[]{ Manifest.permission. WRITE_EXTERNAL_STORAGE }, 1);
-    } else {
-        initMediaPlayer(); // 初始化MediaPlayer
-    }
-}
-
-private void initMediaPlayer() {
-    try {
-        File file = new File(Environment.getExternalStorageDirectory(), &quot;music.mp3&quot;);
-        mediaPlayer.setDataSource(file.getPath()); // 指定音频文件的路径
-        mediaPlayer.prepare(); // 让MediaPlayer进入到准备状态
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-}
-
-@Override
-public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-    switch (requestCode) {
-        case 1:
-            if (grantResults.length &gt; 0 &amp;&amp; grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                initMediaPlayer();
-            } else {
-                Toast.makeText(this, &quot;拒绝权限将无法使用程序&quot;, Toast.LENGTH_SHORT).show();
-                finish();
-            }
-            break;
-        default:
-    }
-}
-
-@Override
-public void onClick(View v) {
-    switch (v.getId()) {
-        case R.id.play:
-            if (!mediaPlayer.isPlaying()) {
-                mediaPlayer.start(); // 开始播放
-            }
-            break;
-        case R.id.pause:
-            if (mediaPlayer.isPlaying()) {
-                mediaPlayer.pause(); // 暂停播放
-            }
-            break;
-        case R.id.stop:
-            if (mediaPlayer.isPlaying()) {
-                mediaPlayer.reset(); // 停止播放
-                initMediaPlayer();
-            }
-            break;
-        default:
-            break;
-    }
-}
-
-@Override
-protected void onDestroy() {
-    super.onDestroy();
-    if (mediaPlayer != null) {
-        mediaPlayer.stop();
-        mediaPlayer.release();
-    }
-}
-</code></pre><p>}</p>
+            <p></p><h3>学习目的:1.发通知（程序不在前台运行，但希望向用户发一些提示信息）</h3><br>NotificationActivity类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NotificationActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.notification_layout);</div><div class="line">        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">        manager.cancel(<span class="number">1</span>);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p>点击事件<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">           <span class="keyword">case</span> R.id.send_notice:</div><div class="line"></div><div class="line">               NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">               Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">                       .setContentTitle(<span class="string">"This is content title"</span>)<span class="comment">//指定标题内容</span></div><div class="line">                       .setContentText(<span class="string">"This is content text"</span>)<span class="comment">//指定正文内容</span></div><div class="line">                       .setWhen(System.currentTimeMillis())<span class="comment">//指定通知被创建时间</span></div><div class="line">                       .setSmallIcon(R.mipmap.ic_launcher)<span class="comment">//设置通知的小图标</span></div><div class="line">                       .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))<span class="comment">//设置通知的大图标</span></div><div class="line"></div><div class="line">                       .setAutoCancel(<span class="keyword">true</span>);<span class="comment">//点击后 通知自动取消</span></div><div class="line">                       .build();</div><div class="line">               manager.notify(<span class="number">1</span>, notification);<span class="comment">//让通知显示</span></div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">default</span>:</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
+<p>设置点击通知点击事件PendingIntent（点击通知调到NotificationAcitity.xml并点击后自动消失）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">           <span class="keyword">case</span> R.id.send_notice:</div><div class="line">               Intent intent=<span class="keyword">new</span> Intent(<span class="keyword">this</span>,NotificationAcitity.class);</div><div class="line">               PendingIntent pi=PendingIntent.getActivity(<span class="keyword">this</span>,<span class="number">0</span>,intent,<span class="number">0</span>);</div><div class="line">               NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">               Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">                       .setContentTitle(<span class="string">"This is content title"</span>)<span class="comment">//指定标题内容</span></div><div class="line">                       .setContentText(<span class="string">"This is content text"</span>)<span class="comment">//指定正文内容</span></div><div class="line">                       .setWhen(System.currentTimeMillis())<span class="comment">//指定通知被创建时间</span></div><div class="line">                       .setSmallIcon(R.mipmap.ic_launcher)<span class="comment">//设置通知的小图标</span></div><div class="line">                       .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))<span class="comment">//设置通知的大图标</span></div><div class="line">                       .setContentIntent(pi);</div><div class="line">                       .setAutoCancel(<span class="keyword">true</span>);<span class="comment">//点击后 通知自动取消</span></div><div class="line">                       .build();</div><div class="line">               manager.notify(<span class="number">1</span>, notification);<span class="comment">//让通知显示</span></div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">default</span>:</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">`</div></pre></td></tr></table></figure></p>
+<p>通知的进阶：通知提示音 灯光 /振动需要申请权限</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setSound(Uri.fromFile(<span class="keyword">new</span> File(<span class="string">"/System/media/audio/ringtone/Luna.ogg"</span>)))</div><div class="line">.bulid();</div></pre></td></tr></table></figure>
+<p>振动<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setVibrate(<span class="keyword">new</span> log[]&#123;<span class="number">0</span>,<span class="number">1000</span>,<span class="number">1000</span>,<span class="number">1000</span>&#125;)震动<span class="number">1</span>秒 静止<span class="number">1</span>秒</div><div class="line">.bulid();</div><div class="line"></div><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.VIBRATE"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p>灯光<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setLight(Color.GREEN,<span class="number">1000</span>,<span class="number">1000</span>);</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
+<p>直接使用默认设置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setDefaults(NotificationCompat.DEFAULT_ALL)</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
+<p>通知的高级功能 解决超长文字显示不僚的问题  显示超大图片 setStyle()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">.setStyle(<span class="keyword">new</span> NotificationCompat.BigTextStyle().bigText(<span class="string">"fbdvdsjfekfjlsfjskfbjsefbsejfjsjdkfbsdbsdubseufhfusefhuiegeiefjselgbsuohsufbsudfbusfseffusfus"</span>))</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
+<p>显示超大图片<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">.setStyle(<span class="keyword">new</span> NotificationCompat.BigPictureStyle.BigPicture(BitmapFactory.decodeResource(getResources(),R.drawable.big_image)));</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
+<p>设置通知的重要程度setPriority()<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setPriority(NotificationCompat.PRIORITY_MAX)<span class="comment">//最高权限</span></div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
 
           
         
@@ -1875,8 +1817,8 @@ protected void onDestroy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">93</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1889,7 +1831,7 @@ protected void onDestroy() {
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -1998,7 +1940,7 @@ protected void onDestroy() {
 
 
   <div class="powered-by">
-    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+    Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
   </div>
 
   <span class="post-meta-divider">|</span>
