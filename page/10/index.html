@@ -297,6 +297,283 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/01/hexo deploy报错及解决方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/01/hexo deploy报错及解决方法/" itemprop="url">deploy报错及其解决方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-01T20:13:10+08:00">
+                2017-02-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/01/hexo deploy报错及解决方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/02/01/hexo deploy报错及解决方法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#报错提示1：</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">INFO  Deploying: git</div><div class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.iocs/troubleshooting.html</div><div class="line">TypeError: source.replace is not a function</div></pre></td></tr></table></figure>
+<p>解决方法:<br>_config.yml中的depoloy设置（这是正确的前提，特别注意冒号后要有空格，repo配置时要写成https形式，type类型要是git）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/jack00000/jack00000.github.io.git</div><div class="line">  branch: master</div><div class="line">  message: blog</div></pre></td></tr></table></figure></p>
+<p>git bash中应该输入的命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save//安装deploy的依赖文件</div><div class="line">hexo g//重新生成public文件</div><div class="line">hexo d//部署到github上</div></pre></td></tr></table></figure></p>
+<p> ##正确后的提示代码：<br> <img src="http://i1.piimg.com/4851/f42f8de6bed1f3c0.png" alt="cmd-markdown-logo"></p>
+<p> ##如果实在不会hexo deploy，教你一种直接的方法：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">打开blog目录</div><div class="line">找到public文件</div><div class="line">将public里面的文件上传到你新建的仓库xxxx.githu.io</div><div class="line">然后直接打开游览器，输入xxxx.github.io</div></pre></td></tr></table></figure></p>
+<p>#blog文件，public文件，以及部署成功示例图<br> <img src="http://p1.bqimg.com/4851/f2acfc2a037f022c.png" alt=""><br> <img src="http://p1.bqimg.com/4851/241367ffd76771ff.png" alt=""><br> <img src="http://p1.bqimg.com/4851/59600f5a407ccfe3.png" alt=""><br> 其实你的静态文件就是public里面的文件，只要把public的东西上传到github就行</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/02/markdown基本语法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/02/markdown基本语法/" itemprop="url">markdown基本语法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-02T15:13:10+08:00">
+                2017-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/01/02/markdown基本语法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/01/02/markdown基本语法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#markdown基本语法</p>
+<p>##1.插入图片形式的链接(视频之类的)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[![][pic]][douban]</div><div class="line">[pic]:http://p1.bpimg.com/567571/f3788a440ee3c976.png</div><div class="line">[douban]: http://book.douban.com/subject/1141406/</div></pre></td></tr></table></figure></p>
+<p>##2.插入文字形式的链接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[一段文字](https://www.baidu.com/)</div></pre></td></tr></table></figure></p>
+<p>##3.插入图片<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![](http://p1.bpimg.com/567571/f3788a440ee3c976.png)</div></pre></td></tr></table></figure></p>
+<p>##来一波福利（点击图片有惊喜）：<br><a href="https://v.qq.com/x/page/q03303qk3h3.html" target="_blank" rel="external"><img src="http://p1.bpimg.com/567571/0ad716c2741e1f64.png" alt=""></a></p>
+<p>##设置照片圆角<br><img src="http://p1.bqimg.com/567571/3bd3389e3b00ad3a.png" width="800" height="200"></p>
+<p><video width="480" height="320" controls></video></p>
+<p><source src="https://v.qq.com/x/page/o00233ptqs2.html"><br></p>
+<iframe height="498" width="510" src="http://player.youku.com/embed/XMTY1MTI3NjMyNA==" frameborder="0" allowfullscreen></iframe>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/01/绿点团队/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -901,7 +1178,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-count">96</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
