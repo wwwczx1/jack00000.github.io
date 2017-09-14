@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -239,7 +239,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            Search
           </a>
         </li>
       
@@ -326,7 +326,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-01T20:13:10+08:00">
                 2017-08-01
@@ -436,6 +436,410 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Cameraalbumtest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/31/Cameraalbumtest/" itemprop="url">cameraalbumtest<CODE 2 chaper8></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
+                2017-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/31/Cameraalbumtest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/31/Cameraalbumtest/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：调用系统相册  摄像头</h3><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TAKE_PHOTO = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> CHOOSE_PHOTO = <span class="number">2</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ImageView picture;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Uri imageUri;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        Button takePhoto = (Button) findViewById(R.id.take_photo);</div><div class="line">        Button chooseFromAlbum = (Button) findViewById(R.id.choose_from_album);</div><div class="line">        picture = (ImageView) findViewById(R.id.picture);</div><div class="line">        takePhoto.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                <span class="comment">// 创建File对象，用于存储拍照后的图片</span></div><div class="line">                File outputImage = <span class="keyword">new</span> File(getExternalCacheDir(), <span class="string">"output_image.jpg"</span>);</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    <span class="keyword">if</span> (outputImage.exists()) &#123;</div><div class="line">                        outputImage.delete();</div><div class="line">                    &#125;</div><div class="line">                    outputImage.createNewFile();</div><div class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">                    e.printStackTrace();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span> (Build.VERSION.SDK_INT &lt; <span class="number">24</span>) &#123;</div><div class="line">                    imageUri = Uri.fromFile(outputImage);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    imageUri = FileProvider.getUriForFile(MainActivity.<span class="keyword">this</span>, <span class="string">"com.example.cameraalbumtest.fileprovider"</span>, outputImage);</div><div class="line">                &#125;</div><div class="line">                <span class="comment">// 启动相机程序</span></div><div class="line">                Intent intent = <span class="keyword">new</span> Intent(<span class="string">"android.media.action.IMAGE_CAPTURE"</span>);</div><div class="line">                intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);</div><div class="line">                startActivityForResult(intent, TAKE_PHOTO);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        chooseFromAlbum.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                <span class="keyword">if</span> (ContextCompat.checkSelfPermission(MainActivity.<span class="keyword">this</span>, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">                    ActivityCompat.requestPermissions(MainActivity.<span class="keyword">this</span>, <span class="keyword">new</span> String[]&#123; Manifest.permission. WRITE_EXTERNAL_STORAGE &#125;, <span class="number">1</span>);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    openAlbum();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">openAlbum</span><span class="params">()</span> </span>&#123;</div><div class="line">        Intent intent = <span class="keyword">new</span> Intent(<span class="string">"android.intent.action.GET_CONTENT"</span>);</div><div class="line">        intent.setType(<span class="string">"image/*"</span>);</div><div class="line">        startActivityForResult(intent, CHOOSE_PHOTO); <span class="comment">// 打开相册</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode, String[] permissions, <span class="keyword">int</span>[] grantResults)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">            <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span> &amp;&amp; grantResults[<span class="number">0</span>] == PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">                    openAlbum();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Toast.makeText(<span class="keyword">this</span>, <span class="string">"You denied the permission"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onActivityResult</span><span class="params">(<span class="keyword">int</span> requestCode, <span class="keyword">int</span> resultCode, Intent data)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">            <span class="keyword">case</span> TAKE_PHOTO:</div><div class="line">                <span class="keyword">if</span> (resultCode == RESULT_OK) &#123;</div><div class="line">                    <span class="keyword">try</span> &#123;</div><div class="line">                        <span class="comment">// 将拍摄的照片显示出来</span></div><div class="line">                        Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));</div><div class="line">                        picture.setImageBitmap(bitmap);</div><div class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">                        e.printStackTrace();</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CHOOSE_PHOTO:</div><div class="line">                <span class="keyword">if</span> (resultCode == RESULT_OK) &#123;</div><div class="line">                    <span class="comment">// 判断手机系统版本号</span></div><div class="line">                    <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= <span class="number">19</span>) &#123;</div><div class="line">                        <span class="comment">// 4.4及以上系统使用这个方法处理图片</span></div><div class="line">                        handleImageOnKitKat(data);</div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                        <span class="comment">// 4.4以下系统使用这个方法处理图片</span></div><div class="line">                        handleImageBeforeKitKat(data);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@TargetApi</span>(<span class="number">19</span>)</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">handleImageOnKitKat</span><span class="params">(Intent data)</span> </span>&#123;</div><div class="line">        String imagePath = <span class="keyword">null</span>;</div><div class="line">        Uri uri = data.getData();</div><div class="line">        Log.d(<span class="string">"TAG"</span>, <span class="string">"handleImageOnKitKat: uri is "</span> + uri);</div><div class="line">        <span class="keyword">if</span> (DocumentsContract.isDocumentUri(<span class="keyword">this</span>, uri)) &#123;</div><div class="line">            <span class="comment">// 如果是document类型的Uri，则通过document id处理</span></div><div class="line">            String docId = DocumentsContract.getDocumentId(uri);</div><div class="line">            <span class="keyword">if</span>(<span class="string">"com.android.providers.media.documents"</span>.equals(uri.getAuthority())) &#123;</div><div class="line">                String id = docId.split(<span class="string">":"</span>)[<span class="number">1</span>]; <span class="comment">// 解析出数字格式的id</span></div><div class="line">                String selection = MediaStore.Images.Media._ID + <span class="string">"="</span> + id;</div><div class="line">                imagePath = getImagePath(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, selection);</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"com.android.providers.downloads.documents"</span>.equals(uri.getAuthority())) &#123;</div><div class="line">                Uri contentUri = ContentUris.withAppendedId(Uri.parse(<span class="string">"content://downloads/public_downloads"</span>), Long.valueOf(docId));</div><div class="line">                imagePath = getImagePath(contentUri, <span class="keyword">null</span>);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"content"</span>.equalsIgnoreCase(uri.getScheme())) &#123;</div><div class="line">            <span class="comment">// 如果是content类型的Uri，则使用普通方式处理</span></div><div class="line">            imagePath = getImagePath(uri, <span class="keyword">null</span>);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"file"</span>.equalsIgnoreCase(uri.getScheme())) &#123;</div><div class="line">            <span class="comment">// 如果是file类型的Uri，直接获取图片路径即可</span></div><div class="line">            imagePath = uri.getPath();</div><div class="line">        &#125;</div><div class="line">        displayImage(imagePath); <span class="comment">// 根据图片路径显示图片</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">handleImageBeforeKitKat</span><span class="params">(Intent data)</span> </span>&#123;</div><div class="line">        Uri uri = data.getData();</div><div class="line">        String imagePath = getImagePath(uri, <span class="keyword">null</span>);</div><div class="line">        displayImage(imagePath);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getImagePath</span><span class="params">(Uri uri, String selection)</span> </span>&#123;</div><div class="line">        String path = <span class="keyword">null</span>;</div><div class="line">        <span class="comment">// 通过Uri和selection来获取真实的图片路径</span></div><div class="line">        Cursor cursor = getContentResolver().query(uri, <span class="keyword">null</span>, selection, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">        <span class="keyword">if</span> (cursor != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (cursor.moveToFirst()) &#123;</div><div class="line">                path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));</div><div class="line">            &#125;</div><div class="line">            cursor.close();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> path;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">displayImage</span><span class="params">(String imagePath)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (imagePath != <span class="keyword">null</span>) &#123;</div><div class="line">            Bitmap bitmap = BitmapFactory.decodeFile(imagePath);</div><div class="line">            picture.setImageBitmap(bitmap);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            Toast.makeText(<span class="keyword">this</span>, <span class="string">"failed to get image"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Notificationtest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/31/Notificationtest/" itemprop="url">notificationtset<CODE 2 chaper8></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
+                2017-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/31/Notificationtest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/31/Notificationtest/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的:1.发通知（程序不在前台运行，但希望向用户发一些提示信息）</h3><br>NotificationActivity类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NotificationActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.notification_layout);</div><div class="line">        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">        manager.cancel(<span class="number">1</span>);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p>点击事件<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">           <span class="keyword">case</span> R.id.send_notice:</div><div class="line"></div><div class="line">               NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">               Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">                       .setContentTitle(<span class="string">"This is content title"</span>)<span class="comment">//指定标题内容</span></div><div class="line">                       .setContentText(<span class="string">"This is content text"</span>)<span class="comment">//指定正文内容</span></div><div class="line">                       .setWhen(System.currentTimeMillis())<span class="comment">//指定通知被创建时间</span></div><div class="line">                       .setSmallIcon(R.mipmap.ic_launcher)<span class="comment">//设置通知的小图标</span></div><div class="line">                       .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))<span class="comment">//设置通知的大图标</span></div><div class="line"></div><div class="line">                       .setAutoCancel(<span class="keyword">true</span>);<span class="comment">//点击后 通知自动取消</span></div><div class="line">                       .build();</div><div class="line">               manager.notify(<span class="number">1</span>, notification);<span class="comment">//让通知显示</span></div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">default</span>:</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
+<p>设置点击通知点击事件PendingIntent（点击通知调到NotificationAcitity.xml并点击后自动消失）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">           <span class="keyword">case</span> R.id.send_notice:</div><div class="line">               Intent intent=<span class="keyword">new</span> Intent(<span class="keyword">this</span>,NotificationAcitity.class);</div><div class="line">               PendingIntent pi=PendingIntent.getActivity(<span class="keyword">this</span>,<span class="number">0</span>,intent,<span class="number">0</span>);</div><div class="line">               NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">               Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">                       .setContentTitle(<span class="string">"This is content title"</span>)<span class="comment">//指定标题内容</span></div><div class="line">                       .setContentText(<span class="string">"This is content text"</span>)<span class="comment">//指定正文内容</span></div><div class="line">                       .setWhen(System.currentTimeMillis())<span class="comment">//指定通知被创建时间</span></div><div class="line">                       .setSmallIcon(R.mipmap.ic_launcher)<span class="comment">//设置通知的小图标</span></div><div class="line">                       .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))<span class="comment">//设置通知的大图标</span></div><div class="line">                       .setContentIntent(pi);</div><div class="line">                       .setAutoCancel(<span class="keyword">true</span>);<span class="comment">//点击后 通知自动取消</span></div><div class="line">                       .build();</div><div class="line">               manager.notify(<span class="number">1</span>, notification);<span class="comment">//让通知显示</span></div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">default</span>:</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">`</div></pre></td></tr></table></figure></p>
+<p>通知的进阶：通知提示音 灯光 /振动需要申请权限</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setSound(Uri.fromFile(<span class="keyword">new</span> File(<span class="string">"/System/media/audio/ringtone/Luna.ogg"</span>)))</div><div class="line">.bulid();</div></pre></td></tr></table></figure>
+<p>振动<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setVibrate(<span class="keyword">new</span> log[]&#123;<span class="number">0</span>,<span class="number">1000</span>,<span class="number">1000</span>,<span class="number">1000</span>&#125;)震动<span class="number">1</span>秒 静止<span class="number">1</span>秒</div><div class="line">.bulid();</div><div class="line"></div><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.VIBRATE"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p>灯光<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setLight(Color.GREEN,<span class="number">1000</span>,<span class="number">1000</span>);</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
+<p>直接使用默认设置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setDefaults(NotificationCompat.DEFAULT_ALL)</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
+<p>通知的高级功能 解决超长文字显示不僚的问题  显示超大图片 setStyle()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">.setStyle(<span class="keyword">new</span> NotificationCompat.BigTextStyle().bigText(<span class="string">"fbdvdsjfekfjlsfjskfbjsefbsejfjsjdkfbsdbsdubseufhfusefhuiegeiefjselgbsuohsufbsudfbusfseffusfus"</span>))</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
+<p>显示超大图片<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">.setStyle(<span class="keyword">new</span> NotificationCompat.BigPictureStyle.BigPicture(BitmapFactory.decodeResource(getResources(),R.drawable.big_image)));</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
+<p>设置通知的重要程度setPriority()<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setPriority(NotificationCompat.PRIORITY_MAX)<span class="comment">//最高权限</span></div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Webviewtest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/31/Webviewtest/" itemprop="url">webviewtest<CODE 2 chaper9></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
+                2017-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/31/Webviewtest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/31/Webviewtest/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：1.显示各种网页</h3><br>权限声明<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.INTERNET"</span> /&gt;</div></pre></td></tr></table></figure><p></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        WebView webView = (WebView) findViewById(R.id.web_view);</div><div class="line">        webView.getSettings().setJavaScriptEnabled(<span class="keyword">true</span>);<span class="comment">//支持javas脚本</span></div><div class="line">        webView.setWebViewClient(<span class="keyword">new</span> WebViewClient());<span class="comment">//当网页跳转到另一个网页时  任然在webview显示</span></div><div class="line">        webView.loadUrl(<span class="string">"http://www.baidu.com"</span>);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Playaudiotest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -465,7 +869,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
                 2017-07-31
@@ -645,410 +1049,6 @@ protected void onDestroy() {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Notificationtest/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/31/Notificationtest/" itemprop="url">notificationtset<CODE 2 chaper8></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
-                2017-07-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/31/Notificationtest/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/31/Notificationtest/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的:1.发通知（程序不在前台运行，但希望向用户发一些提示信息）</h3><br>NotificationActivity类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NotificationActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.notification_layout);</div><div class="line">        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">        manager.cancel(<span class="number">1</span>);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p>点击事件<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">           <span class="keyword">case</span> R.id.send_notice:</div><div class="line"></div><div class="line">               NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">               Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">                       .setContentTitle(<span class="string">"This is content title"</span>)<span class="comment">//指定标题内容</span></div><div class="line">                       .setContentText(<span class="string">"This is content text"</span>)<span class="comment">//指定正文内容</span></div><div class="line">                       .setWhen(System.currentTimeMillis())<span class="comment">//指定通知被创建时间</span></div><div class="line">                       .setSmallIcon(R.mipmap.ic_launcher)<span class="comment">//设置通知的小图标</span></div><div class="line">                       .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))<span class="comment">//设置通知的大图标</span></div><div class="line"></div><div class="line">                       .setAutoCancel(<span class="keyword">true</span>);<span class="comment">//点击后 通知自动取消</span></div><div class="line">                       .build();</div><div class="line">               manager.notify(<span class="number">1</span>, notification);<span class="comment">//让通知显示</span></div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">default</span>:</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
-<p>设置点击通知点击事件PendingIntent（点击通知调到NotificationAcitity.xml并点击后自动消失）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">           <span class="keyword">case</span> R.id.send_notice:</div><div class="line">               Intent intent=<span class="keyword">new</span> Intent(<span class="keyword">this</span>,NotificationAcitity.class);</div><div class="line">               PendingIntent pi=PendingIntent.getActivity(<span class="keyword">this</span>,<span class="number">0</span>,intent,<span class="number">0</span>);</div><div class="line">               NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">               Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">                       .setContentTitle(<span class="string">"This is content title"</span>)<span class="comment">//指定标题内容</span></div><div class="line">                       .setContentText(<span class="string">"This is content text"</span>)<span class="comment">//指定正文内容</span></div><div class="line">                       .setWhen(System.currentTimeMillis())<span class="comment">//指定通知被创建时间</span></div><div class="line">                       .setSmallIcon(R.mipmap.ic_launcher)<span class="comment">//设置通知的小图标</span></div><div class="line">                       .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))<span class="comment">//设置通知的大图标</span></div><div class="line">                       .setContentIntent(pi);</div><div class="line">                       .setAutoCancel(<span class="keyword">true</span>);<span class="comment">//点击后 通知自动取消</span></div><div class="line">                       .build();</div><div class="line">               manager.notify(<span class="number">1</span>, notification);<span class="comment">//让通知显示</span></div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">default</span>:</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">`</div></pre></td></tr></table></figure></p>
-<p>通知的进阶：通知提示音 灯光 /振动需要申请权限</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setSound(Uri.fromFile(<span class="keyword">new</span> File(<span class="string">"/System/media/audio/ringtone/Luna.ogg"</span>)))</div><div class="line">.bulid();</div></pre></td></tr></table></figure>
-<p>振动<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setVibrate(<span class="keyword">new</span> log[]&#123;<span class="number">0</span>,<span class="number">1000</span>,<span class="number">1000</span>,<span class="number">1000</span>&#125;)震动<span class="number">1</span>秒 静止<span class="number">1</span>秒</div><div class="line">.bulid();</div><div class="line"></div><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.VIBRATE"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<p>灯光<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setLight(Color.GREEN,<span class="number">1000</span>,<span class="number">1000</span>);</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
-<p>直接使用默认设置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setDefaults(NotificationCompat.DEFAULT_ALL)</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
-<p>通知的高级功能 解决超长文字显示不僚的问题  显示超大图片 setStyle()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">.setStyle(<span class="keyword">new</span> NotificationCompat.BigTextStyle().bigText(<span class="string">"fbdvdsjfekfjlsfjskfbjsefbsejfjsjdkfbsdbsdubseufhfusefhuiegeiefjselgbsuohsufbsudfbusfseffusfus"</span>))</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
-<p>显示超大图片<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">.setStyle(<span class="keyword">new</span> NotificationCompat.BigPictureStyle.BigPicture(BitmapFactory.decodeResource(getResources(),R.drawable.big_image)));</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
-<p>设置通知的重要程度setPriority()<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setPriority(NotificationCompat.PRIORITY_MAX)<span class="comment">//最高权限</span></div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Webviewtest/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/31/Webviewtest/" itemprop="url">webviewtest<CODE 2 chaper9></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
-                2017-07-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/31/Webviewtest/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/31/Webviewtest/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的：1.显示各种网页</h3><br>权限声明<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.INTERNET"</span> /&gt;</div></pre></td></tr></table></figure><p></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        WebView webView = (WebView) findViewById(R.id.web_view);</div><div class="line">        webView.getSettings().setJavaScriptEnabled(<span class="keyword">true</span>);<span class="comment">//支持javas脚本</span></div><div class="line">        webView.setWebViewClient(<span class="keyword">new</span> WebViewClient());<span class="comment">//当网页跳转到另一个网页时  任然在webview显示</span></div><div class="line">        webView.loadUrl(<span class="string">"http://www.baidu.com"</span>);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Cameraalbumtest/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/31/Cameraalbumtest/" itemprop="url">cameraalbumtest<CODE 2 chaper8></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
-                2017-07-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/31/Cameraalbumtest/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/31/Cameraalbumtest/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的：调用系统相册  摄像头</h3><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TAKE_PHOTO = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> CHOOSE_PHOTO = <span class="number">2</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ImageView picture;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Uri imageUri;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        Button takePhoto = (Button) findViewById(R.id.take_photo);</div><div class="line">        Button chooseFromAlbum = (Button) findViewById(R.id.choose_from_album);</div><div class="line">        picture = (ImageView) findViewById(R.id.picture);</div><div class="line">        takePhoto.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                <span class="comment">// 创建File对象，用于存储拍照后的图片</span></div><div class="line">                File outputImage = <span class="keyword">new</span> File(getExternalCacheDir(), <span class="string">"output_image.jpg"</span>);</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    <span class="keyword">if</span> (outputImage.exists()) &#123;</div><div class="line">                        outputImage.delete();</div><div class="line">                    &#125;</div><div class="line">                    outputImage.createNewFile();</div><div class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">                    e.printStackTrace();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span> (Build.VERSION.SDK_INT &lt; <span class="number">24</span>) &#123;</div><div class="line">                    imageUri = Uri.fromFile(outputImage);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    imageUri = FileProvider.getUriForFile(MainActivity.<span class="keyword">this</span>, <span class="string">"com.example.cameraalbumtest.fileprovider"</span>, outputImage);</div><div class="line">                &#125;</div><div class="line">                <span class="comment">// 启动相机程序</span></div><div class="line">                Intent intent = <span class="keyword">new</span> Intent(<span class="string">"android.media.action.IMAGE_CAPTURE"</span>);</div><div class="line">                intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);</div><div class="line">                startActivityForResult(intent, TAKE_PHOTO);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        chooseFromAlbum.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                <span class="keyword">if</span> (ContextCompat.checkSelfPermission(MainActivity.<span class="keyword">this</span>, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">                    ActivityCompat.requestPermissions(MainActivity.<span class="keyword">this</span>, <span class="keyword">new</span> String[]&#123; Manifest.permission. WRITE_EXTERNAL_STORAGE &#125;, <span class="number">1</span>);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    openAlbum();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">openAlbum</span><span class="params">()</span> </span>&#123;</div><div class="line">        Intent intent = <span class="keyword">new</span> Intent(<span class="string">"android.intent.action.GET_CONTENT"</span>);</div><div class="line">        intent.setType(<span class="string">"image/*"</span>);</div><div class="line">        startActivityForResult(intent, CHOOSE_PHOTO); <span class="comment">// 打开相册</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode, String[] permissions, <span class="keyword">int</span>[] grantResults)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">            <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span> &amp;&amp; grantResults[<span class="number">0</span>] == PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">                    openAlbum();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Toast.makeText(<span class="keyword">this</span>, <span class="string">"You denied the permission"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onActivityResult</span><span class="params">(<span class="keyword">int</span> requestCode, <span class="keyword">int</span> resultCode, Intent data)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">            <span class="keyword">case</span> TAKE_PHOTO:</div><div class="line">                <span class="keyword">if</span> (resultCode == RESULT_OK) &#123;</div><div class="line">                    <span class="keyword">try</span> &#123;</div><div class="line">                        <span class="comment">// 将拍摄的照片显示出来</span></div><div class="line">                        Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));</div><div class="line">                        picture.setImageBitmap(bitmap);</div><div class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">                        e.printStackTrace();</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CHOOSE_PHOTO:</div><div class="line">                <span class="keyword">if</span> (resultCode == RESULT_OK) &#123;</div><div class="line">                    <span class="comment">// 判断手机系统版本号</span></div><div class="line">                    <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= <span class="number">19</span>) &#123;</div><div class="line">                        <span class="comment">// 4.4及以上系统使用这个方法处理图片</span></div><div class="line">                        handleImageOnKitKat(data);</div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                        <span class="comment">// 4.4以下系统使用这个方法处理图片</span></div><div class="line">                        handleImageBeforeKitKat(data);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@TargetApi</span>(<span class="number">19</span>)</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">handleImageOnKitKat</span><span class="params">(Intent data)</span> </span>&#123;</div><div class="line">        String imagePath = <span class="keyword">null</span>;</div><div class="line">        Uri uri = data.getData();</div><div class="line">        Log.d(<span class="string">"TAG"</span>, <span class="string">"handleImageOnKitKat: uri is "</span> + uri);</div><div class="line">        <span class="keyword">if</span> (DocumentsContract.isDocumentUri(<span class="keyword">this</span>, uri)) &#123;</div><div class="line">            <span class="comment">// 如果是document类型的Uri，则通过document id处理</span></div><div class="line">            String docId = DocumentsContract.getDocumentId(uri);</div><div class="line">            <span class="keyword">if</span>(<span class="string">"com.android.providers.media.documents"</span>.equals(uri.getAuthority())) &#123;</div><div class="line">                String id = docId.split(<span class="string">":"</span>)[<span class="number">1</span>]; <span class="comment">// 解析出数字格式的id</span></div><div class="line">                String selection = MediaStore.Images.Media._ID + <span class="string">"="</span> + id;</div><div class="line">                imagePath = getImagePath(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, selection);</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"com.android.providers.downloads.documents"</span>.equals(uri.getAuthority())) &#123;</div><div class="line">                Uri contentUri = ContentUris.withAppendedId(Uri.parse(<span class="string">"content://downloads/public_downloads"</span>), Long.valueOf(docId));</div><div class="line">                imagePath = getImagePath(contentUri, <span class="keyword">null</span>);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"content"</span>.equalsIgnoreCase(uri.getScheme())) &#123;</div><div class="line">            <span class="comment">// 如果是content类型的Uri，则使用普通方式处理</span></div><div class="line">            imagePath = getImagePath(uri, <span class="keyword">null</span>);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"file"</span>.equalsIgnoreCase(uri.getScheme())) &#123;</div><div class="line">            <span class="comment">// 如果是file类型的Uri，直接获取图片路径即可</span></div><div class="line">            imagePath = uri.getPath();</div><div class="line">        &#125;</div><div class="line">        displayImage(imagePath); <span class="comment">// 根据图片路径显示图片</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">handleImageBeforeKitKat</span><span class="params">(Intent data)</span> </span>&#123;</div><div class="line">        Uri uri = data.getData();</div><div class="line">        String imagePath = getImagePath(uri, <span class="keyword">null</span>);</div><div class="line">        displayImage(imagePath);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getImagePath</span><span class="params">(Uri uri, String selection)</span> </span>&#123;</div><div class="line">        String path = <span class="keyword">null</span>;</div><div class="line">        <span class="comment">// 通过Uri和selection来获取真实的图片路径</span></div><div class="line">        Cursor cursor = getContentResolver().query(uri, <span class="keyword">null</span>, selection, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">        <span class="keyword">if</span> (cursor != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (cursor.moveToFirst()) &#123;</div><div class="line">                path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));</div><div class="line">            &#125;</div><div class="line">            cursor.close();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> path;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">displayImage</span><span class="params">(String imagePath)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (imagePath != <span class="keyword">null</span>) &#123;</div><div class="line">            Bitmap bitmap = BitmapFactory.decodeFile(imagePath);</div><div class="line">            picture.setImageBitmap(bitmap);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            Toast.makeText(<span class="keyword">this</span>, <span class="string">"failed to get image"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Playvideotest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1078,7 +1078,7 @@ protected void onDestroy() {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
                 2017-07-31
@@ -1181,6 +1181,144 @@ protected void onDestroy() {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/30/Databasetest2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/30/Databasetest2/" itemprop="url">databasetest2<CODE 2 chaper7></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T13:10:00+08:00">
+                2017-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/30/Databasetest2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/30/Databasetest2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的:1.实现跨程序数据共享 1.新建内容提供器的两种方法</h3><br>1.新建内容提供器（通过新建一个类继承ContentProvider类的方式创建）重写如下方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DatabaseProvider</span> <span class="keyword">extends</span> <span class="title">ContentProvider</span> </span>&#123;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="comment">//初始化内容提供器时调用  这时候数据库完成创建或升级操作</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="comment">//Uri确定那张表 projection确定查询那些列    selection与selectionArgs约束查询哪些行    sortOrder对结果进行排序最后存到Cursor对象中</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Cursor <span class="title">query</span><span class="params">(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="comment">//Uri指定要添加的表  values待添加的数据</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Uri <span class="title">insert</span><span class="params">(Uri uri, ContentValues values)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="comment">//uri确定哪张表    values新数据保存在此  selection 与 selectionArgs约束更新哪些行</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">update</span><span class="params">(Uri uri, ContentValues values, String selection, String[] selectionArgs)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="comment">//uri确定哪张表  selection 与 selectionArgs约束删除哪些行</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">delete</span><span class="params">(Uri uri, String selection, String[] selectionArgs)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="comment">//根据传入的uri返回相应的MIME</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getType</span><span class="params">(Uri uri)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure><p></p>
+<p>2.重点解析uri参数<br>标准的URI写法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//表示调用方期望访问的是com.eaxmple.app这个应用的tabel表的数据</span></div><div class="line">content:<span class="comment">//com.eaxmple.app.provider/tablel</span></div><div class="line"><span class="comment">//可以加id</span></div><div class="line"><span class="comment">//表示调用方期望访问的是com.eaxmple.app这个应用的tabel表中id为1的数据</span></div><div class="line">content:<span class="comment">//com.eaxmple.app.provider/tablel/1</span></div></pre></td></tr></table></figure></p>
+<p>URI格式   *  #<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//表示匹配任意表内容</span></div><div class="line">content:<span class="comment">//com.eaxmple.app.provider/*</span></div><div class="line"><span class="comment">//表示匹配tablel表任意一行内容</span></div><div class="line">content:<span class="comment">//com.eaxmple.app.provider/tablel/#</span></div></pre></td></tr></table></figure></p>
+<p>3.UriMatcher类的math（）方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DatabaseProvider</span> <span class="keyword">extends</span> <span class="title">ContentProvider</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BOOK_DIR = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BOOK_ITEM = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> CATEGORY_DIR = <span class="number">2</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> CATEGORY_ITEM = <span class="number">3</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AUTHORITY = <span class="string">"com.example.databasetest.provider"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> UriMatcher uriMatcher;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> MyDatabaseHelper dbHelper;</div><div class="line"></div><div class="line">    <span class="keyword">static</span> &#123;</div><div class="line">        uriMatcher = <span class="keyword">new</span> UriMatcher(UriMatcher.NO_MATCH);</div><div class="line">        uriMatcher.addURI(<span class="string">"com.eaxmple.app.provider"</span>, <span class="string">"book"</span>, BOOK_DIR);<span class="comment">//内容提供器 表名 使数据与之关联</span></div><div class="line">        uriMatcher.addURI(<span class="string">"com.eaxmple.app.provider"</span>, <span class="string">"book/#"</span>, BOOK_ITEM);</div><div class="line">        uriMatcher.addURI(<span class="string">"com.eaxmple.app.provider"</span>, <span class="string">"category"</span>, CATEGORY_DIR);</div><div class="line">        uriMatcher.addURI(<span class="string">"com.eaxmple.app.provider"</span>, <span class="string">"category/#"</span>, CATEGORY_ITEM);</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> Cursor <span class="title">query</span><span class="params">(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)</span> </span>&#123;</div><div class="line">            <span class="comment">// 查询数据</span></div><div class="line"></div><div class="line">            <span class="keyword">switch</span> (uriMatcher.match(uri)) &#123;</div><div class="line">                <span class="keyword">case</span> BOOK_DIR:</div><div class="line">                    cursor = db.query(<span class="string">"Book"</span>, projection, selection, selectionArgs, <span class="keyword">null</span>, <span class="keyword">null</span>, sortOrder);</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">case</span> BOOK_ITEM:</div><div class="line">                    String bookId = uri.getPathSegments().get(<span class="number">1</span>);</div><div class="line">                    cursor = db.query(<span class="string">"Book"</span>, projection, <span class="string">"id = ?"</span>, <span class="keyword">new</span> String[] &#123; bookId &#125;, <span class="keyword">null</span>, <span class="keyword">null</span>, sortOrder);</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">case</span> CATEGORY_DIR:</div><div class="line">                    cursor = db.query(<span class="string">"Category"</span>, projection, selection, selectionArgs, <span class="keyword">null</span>, <span class="keyword">null</span>, sortOrder);</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">case</span> CATEGORY_ITEM:</div><div class="line">                    String categoryId = uri.getPathSegments().get(<span class="number">1</span>);</div><div class="line">                    cursor = db.query(<span class="string">"Category"</span>, projection, <span class="string">"id = ?"</span>, <span class="keyword">new</span> String[] &#123; categoryId &#125;, <span class="keyword">null</span>, <span class="keyword">null</span>, sortOrder);</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">default</span>:</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> cursor;</div><div class="line">        &#125;</div><div class="line"></div><div class="line"><span class="number">1</span>.新建内容提供器（AS快捷方式创建）</div></pre></td></tr></table></figure></p>
+<p>com.example.broadcasttest-&gt;new-&gt;other-&gt;Content Provider<br>//重写几个方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">修改databaseProvider</div><div class="line"></div><div class="line">```java</div><div class="line">//继承内容提供器</div><div class="line">public class DatabaseProvider extends ContentProvider &#123;</div><div class="line"></div><div class="line">    public static final int BOOK_DIR = 0;</div><div class="line"></div><div class="line">    public static final int BOOK_ITEM = 1;</div><div class="line"></div><div class="line">    public static final int CATEGORY_DIR = 2;</div><div class="line"></div><div class="line">    public static final int CATEGORY_ITEM = 3;</div><div class="line"></div><div class="line">    public static final String AUTHORITY = &quot;com.example.databasetest.provider&quot;;</div><div class="line"></div><div class="line">    private static UriMatcher uriMatcher;</div><div class="line"></div><div class="line">    private MyDatabaseHelper dbHelper;</div><div class="line"></div><div class="line">    static &#123;</div><div class="line">        uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);</div><div class="line">        uriMatcher.addURI(AUTHORITY, &quot;book&quot;, BOOK_DIR);</div><div class="line">        uriMatcher.addURI(AUTHORITY, &quot;book/#&quot;, BOOK_ITEM);</div><div class="line">        uriMatcher.addURI(AUTHORITY, &quot;category&quot;, CATEGORY_DIR);</div><div class="line">        uriMatcher.addURI(AUTHORITY, &quot;category/#&quot;, CATEGORY_ITEM);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    //创建一个yDatabaseHelper实例  这时候数据库完成创建或升级操作</div><div class="line">    public boolean onCreate() &#123;</div><div class="line">        dbHelper = new MyDatabaseHelper(getContext(), &quot;BookStore.db&quot;, null, 2);</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) &#123;</div><div class="line">        // 查询数据</div><div class="line">        SQLiteDatabase db = dbHelper.getReadableDatabase();</div><div class="line">        Cursor cursor = null;</div><div class="line">        switch (uriMatcher.match(uri)) &#123;</div><div class="line">            case BOOK_DIR:</div><div class="line">                cursor = db.query(&quot;Book&quot;, projection, selection, selectionArgs, null, null, sortOrder);</div><div class="line">                break;</div><div class="line">            case BOOK_ITEM:</div><div class="line">                String bookId = uri.getPathSegments().get(1);</div><div class="line">                cursor = db.query(&quot;Book&quot;, projection, &quot;id = ?&quot;, new String[] &#123; bookId &#125;, null, null, sortOrder);</div><div class="line">                break;</div><div class="line">            case CATEGORY_DIR:</div><div class="line">                cursor = db.query(&quot;Category&quot;, projection, selection, selectionArgs, null, null, sortOrder);</div><div class="line">                break;</div><div class="line">            case CATEGORY_ITEM:</div><div class="line">                String categoryId = uri.getPathSegments().get(1);</div><div class="line">                cursor = db.query(&quot;Category&quot;, projection, &quot;id = ?&quot;, new String[] &#123; categoryId &#125;, null, null, sortOrder);</div><div class="line">                break;</div><div class="line">            default:</div><div class="line">                break;</div><div class="line">        &#125;</div><div class="line">        return cursor;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Uri insert(Uri uri, ContentValues values) &#123;</div><div class="line">        // 添加数据</div><div class="line">        SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">        Uri uriReturn = null;</div><div class="line">        switch (uriMatcher.match(uri)) &#123;</div><div class="line">            case BOOK_DIR:</div><div class="line">            case BOOK_ITEM:</div><div class="line">                long newBookId = db.insert(&quot;Book&quot;, null, values);</div><div class="line">                uriReturn = Uri.parse(&quot;content://&quot; + AUTHORITY + &quot;/book/&quot; + newBookId);</div><div class="line">                break;</div><div class="line">            case CATEGORY_DIR:</div><div class="line">            case CATEGORY_ITEM:</div><div class="line">                long newCategoryId = db.insert(&quot;Category&quot;, null, values);</div><div class="line">                uriReturn = Uri.parse(&quot;content://&quot; + AUTHORITY + &quot;/category/&quot; + newCategoryId);</div><div class="line">                break;</div><div class="line">            default:</div><div class="line">                break;</div><div class="line">        &#125;</div><div class="line">        return uriReturn;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) &#123;</div><div class="line">        // 更新数据</div><div class="line">        SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">        int updatedRows = 0;</div><div class="line">        switch (uriMatcher.match(uri)) &#123;</div><div class="line">            case BOOK_DIR:</div><div class="line">                updatedRows = db.update(&quot;Book&quot;, values, selection, selectionArgs);</div><div class="line">                break;</div><div class="line">            case BOOK_ITEM:</div><div class="line">                String bookId = uri.getPathSegments().get(1);</div><div class="line">                updatedRows = db.update(&quot;Book&quot;, values, &quot;id = ?&quot;, new String[] &#123; bookId &#125;);</div><div class="line">                break;</div><div class="line">            case CATEGORY_DIR:</div><div class="line">                updatedRows = db.update(&quot;Category&quot;, values, selection, selectionArgs);</div><div class="line">                break;</div><div class="line">            case CATEGORY_ITEM:</div><div class="line">                String categoryId = uri.getPathSegments().get(1);</div><div class="line">                updatedRows = db.update(&quot;Category&quot;, values, &quot;id = ?&quot;, new String[] &#123; categoryId &#125;);</div><div class="line">                break;</div><div class="line">            default:</div><div class="line">                break;</div><div class="line">        &#125;</div><div class="line">        return updatedRows;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public int delete(Uri uri, String selection, String[] selectionArgs) &#123;</div><div class="line">        // 删除数据</div><div class="line">        SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">        int deletedRows = 0;</div><div class="line">        switch (uriMatcher.match(uri)) &#123;</div><div class="line">            case BOOK_DIR:</div><div class="line">                deletedRows = db.delete(&quot;Book&quot;, selection, selectionArgs);</div><div class="line">                break;</div><div class="line">            case BOOK_ITEM:</div><div class="line">                String bookId = uri.getPathSegments().get(1);</div><div class="line">                deletedRows = db.delete(&quot;Book&quot;, &quot;id = ?&quot;, new String[] &#123; bookId &#125;);</div><div class="line">                break;</div><div class="line">            case CATEGORY_DIR:</div><div class="line">                deletedRows = db.delete(&quot;Category&quot;, selection, selectionArgs);</div><div class="line">                break;</div><div class="line">            case CATEGORY_ITEM:</div><div class="line">                String categoryId = uri.getPathSegments().get(1);</div><div class="line">                deletedRows = db.delete(&quot;Category&quot;, &quot;id = ?&quot;, new String[] &#123; categoryId &#125;);</div><div class="line">                break;</div><div class="line">            default:</div><div class="line">                break;</div><div class="line">        &#125;</div><div class="line">        return deletedRows;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    //所有内容提供器都必须提供的方法 用于获取URI对象所对应的MIME类型    MIME由三个部分组成</div><div class="line">    //1.必须以vnd开头 2.uri以路径结尾则android.cursor.dir/  以id结尾则android.cursor.item/ 3.最后接上vnd.&lt;authority&gt;.&lt;path&gt;</div><div class="line">    //例如：URI：content://com.eaxmple.app.provider/tabel</div><div class="line">    //MIME:vnd.android.sursor.dir/vnd.com.eaxmple.app.provider.tabel</div><div class="line">    public String getType(Uri uri) &#123;</div><div class="line">        switch (uriMatcher.match(uri)) &#123;</div><div class="line">            case BOOK_DIR:</div><div class="line">                return &quot;vnd.android.cursor.dir/vnd.com.example.databasetest. provider.book&quot;;//返回MIME</div><div class="line">            case BOOK_ITEM:</div><div class="line">                return &quot;vnd.android.cursor.item/vnd.com.example.databasetest. provider.book&quot;;</div><div class="line">            case CATEGORY_DIR:</div><div class="line">                return &quot;vnd.android.cursor.dir/vnd.com.example.databasetest. provider.category&quot;;</div><div class="line">            case CATEGORY_ITEM:</div><div class="line">                return &quot;vnd.android.cursor.item/vnd.com.example.databasetest. provider.category&quot;;</div><div class="line">        &#125;</div><div class="line">        return null;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>mydatabaseHalper类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyDatabaseHelper</span> <span class="keyword">extends</span> <span class="title">SQLiteOpenHelper</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CREATE_BOOK = <span class="string">"create table Book ("</span></div><div class="line">            + <span class="string">"id integer primary key autoincrement, "</span></div><div class="line">            + <span class="string">"author text, "</span></div><div class="line">            + <span class="string">"price real, "</span></div><div class="line">            + <span class="string">"pages integer, "</span></div><div class="line">            + <span class="string">"name text)"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CREATE_CATEGORY = <span class="string">"create table Category ("</span></div><div class="line">            + <span class="string">"id integer primary key autoincrement, "</span></div><div class="line">            + <span class="string">"category_name text, "</span></div><div class="line">            + <span class="string">"category_code integer)"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Context mContext;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyDatabaseHelper</span><span class="params">(Context context, String name,</span></span></div><div class="line"><span class="function"><span class="params">                            SQLiteDatabase.CursorFactory factory, <span class="keyword">int</span> version)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, name, factory, version);</div><div class="line">        mContext = context;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(SQLiteDatabase db)</span> </span>&#123;</div><div class="line">        db.execSQL(CREATE_BOOK);</div><div class="line">        db.execSQL(CREATE_CATEGORY);</div><div class="line">       <span class="comment">// Toast.makeText(mContext, "Create succeeded", Toast.LENGTH_SHORT).show();</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUpgrade</span><span class="params">(SQLiteDatabase db, <span class="keyword">int</span> oldVersion, <span class="keyword">int</span> newVersion)</span> </span>&#123;</div><div class="line">        db.execSQL(<span class="string">"drop table if exists Book"</span>);</div><div class="line">        db.execSQL(<span class="string">"drop table if exists Category"</span>);</div><div class="line">        onCreate(db);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>MianActivity类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> MyDatabaseHelper dbHelper;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        dbHelper = <span class="keyword">new</span> MyDatabaseHelper(<span class="keyword">this</span>, <span class="string">"BookStore.db"</span>, <span class="keyword">null</span>, <span class="number">2</span>);</div><div class="line">        Button createDatabase = (Button) findViewById(R.id.create_database);</div><div class="line">        createDatabase.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                dbHelper.getWritableDatabase();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        Button addData = (Button) findViewById(R.id.add_data);</div><div class="line">        addData.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                ContentValues values = <span class="keyword">new</span> ContentValues();</div><div class="line">                <span class="comment">// 开始组装第一条数据</span></div><div class="line">                values.put(<span class="string">"name"</span>, <span class="string">"The Da Vinci Code"</span>);</div><div class="line">                values.put(<span class="string">"author"</span>, <span class="string">"Dan Brown"</span>);</div><div class="line">                values.put(<span class="string">"pages"</span>, <span class="number">454</span>);</div><div class="line">                values.put(<span class="string">"price"</span>, <span class="number">16.96</span>);</div><div class="line">                db.insert(<span class="string">"Book"</span>, <span class="keyword">null</span>, values); <span class="comment">// 插入第一条数据</span></div><div class="line">                values.clear();</div><div class="line">                <span class="comment">// 开始组装第二条数据</span></div><div class="line">                values.put(<span class="string">"name"</span>, <span class="string">"The Lost Symbol"</span>);</div><div class="line">                values.put(<span class="string">"author"</span>, <span class="string">"Dan Brown"</span>);</div><div class="line">                values.put(<span class="string">"pages"</span>, <span class="number">510</span>);</div><div class="line">                values.put(<span class="string">"price"</span>, <span class="number">19.95</span>);</div><div class="line">                db.insert(<span class="string">"Book"</span>, <span class="keyword">null</span>, values); <span class="comment">// 插入第二条数据</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        Button updateData = (Button) findViewById(R.id.update_data);</div><div class="line">        updateData.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                ContentValues values = <span class="keyword">new</span> ContentValues();</div><div class="line">                values.put(<span class="string">"price"</span>, <span class="number">10.99</span>);</div><div class="line">                db.update(<span class="string">"Book"</span>, values, <span class="string">"name = ?"</span>, <span class="keyword">new</span> String[] &#123; <span class="string">"The Da Vinci Code"</span> &#125;);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        Button deleteButton = (Button) findViewById(R.id.delete_data);</div><div class="line">        deleteButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                db.delete(<span class="string">"Book"</span>, <span class="string">"pages &gt; ?"</span>, <span class="keyword">new</span> String[] &#123; <span class="string">"500"</span> &#125;);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        Button queryButton = (Button) findViewById(R.id.query_data);</div><div class="line">        queryButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                <span class="comment">// 查询Book表中所有的数据</span></div><div class="line">                Cursor cursor = db.query(<span class="string">"Book"</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">                <span class="keyword">if</span> (cursor.moveToFirst()) &#123;</div><div class="line">                    <span class="keyword">do</span> &#123;</div><div class="line">                        <span class="comment">// 遍历Cursor对象，取出数据并打印</span></div><div class="line">                        String name = cursor.getString(cursor.getColumnIndex(<span class="string">"name"</span>));</div><div class="line">                        String author = cursor.getString(cursor.getColumnIndex(<span class="string">"author"</span>));</div><div class="line">                        <span class="keyword">int</span> pages = cursor.getInt(cursor.getColumnIndex(<span class="string">"pages"</span>));</div><div class="line">                        <span class="keyword">double</span> price = cursor.getDouble(cursor.getColumnIndex(<span class="string">"price"</span>));</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book name is "</span> + name);</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book author is "</span> + author);</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book pages is "</span> + pages);</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book price is "</span> + price);</div><div class="line">                    &#125; <span class="keyword">while</span> (cursor.moveToNext());</div><div class="line">                &#125;</div><div class="line">                cursor.close();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/30/Runtimepermissiontest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1210,7 +1348,7 @@ protected void onDestroy() {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T13:10:00+08:00">
                 2017-07-30
@@ -1342,7 +1480,7 @@ protected void onDestroy() {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T13:10:00+08:00">
                 2017-07-30
@@ -1448,144 +1586,6 @@ protected void onDestroy() {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/30/Databasetest2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/30/Databasetest2/" itemprop="url">databasetest2<CODE 2 chaper7></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T13:10:00+08:00">
-                2017-07-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/30/Databasetest2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/30/Databasetest2/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的:1.实现跨程序数据共享 1.新建内容提供器的两种方法</h3><br>1.新建内容提供器（通过新建一个类继承ContentProvider类的方式创建）重写如下方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DatabaseProvider</span> <span class="keyword">extends</span> <span class="title">ContentProvider</span> </span>&#123;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="comment">//初始化内容提供器时调用  这时候数据库完成创建或升级操作</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="comment">//Uri确定那张表 projection确定查询那些列    selection与selectionArgs约束查询哪些行    sortOrder对结果进行排序最后存到Cursor对象中</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Cursor <span class="title">query</span><span class="params">(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="comment">//Uri指定要添加的表  values待添加的数据</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Uri <span class="title">insert</span><span class="params">(Uri uri, ContentValues values)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="comment">//uri确定哪张表    values新数据保存在此  selection 与 selectionArgs约束更新哪些行</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">update</span><span class="params">(Uri uri, ContentValues values, String selection, String[] selectionArgs)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="comment">//uri确定哪张表  selection 与 selectionArgs约束删除哪些行</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">delete</span><span class="params">(Uri uri, String selection, String[] selectionArgs)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="comment">//根据传入的uri返回相应的MIME</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getType</span><span class="params">(Uri uri)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure><p></p>
-<p>2.重点解析uri参数<br>标准的URI写法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//表示调用方期望访问的是com.eaxmple.app这个应用的tabel表的数据</span></div><div class="line">content:<span class="comment">//com.eaxmple.app.provider/tablel</span></div><div class="line"><span class="comment">//可以加id</span></div><div class="line"><span class="comment">//表示调用方期望访问的是com.eaxmple.app这个应用的tabel表中id为1的数据</span></div><div class="line">content:<span class="comment">//com.eaxmple.app.provider/tablel/1</span></div></pre></td></tr></table></figure></p>
-<p>URI格式   *  #<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//表示匹配任意表内容</span></div><div class="line">content:<span class="comment">//com.eaxmple.app.provider/*</span></div><div class="line"><span class="comment">//表示匹配tablel表任意一行内容</span></div><div class="line">content:<span class="comment">//com.eaxmple.app.provider/tablel/#</span></div></pre></td></tr></table></figure></p>
-<p>3.UriMatcher类的math（）方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DatabaseProvider</span> <span class="keyword">extends</span> <span class="title">ContentProvider</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BOOK_DIR = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BOOK_ITEM = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> CATEGORY_DIR = <span class="number">2</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> CATEGORY_ITEM = <span class="number">3</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AUTHORITY = <span class="string">"com.example.databasetest.provider"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> UriMatcher uriMatcher;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> MyDatabaseHelper dbHelper;</div><div class="line"></div><div class="line">    <span class="keyword">static</span> &#123;</div><div class="line">        uriMatcher = <span class="keyword">new</span> UriMatcher(UriMatcher.NO_MATCH);</div><div class="line">        uriMatcher.addURI(<span class="string">"com.eaxmple.app.provider"</span>, <span class="string">"book"</span>, BOOK_DIR);<span class="comment">//内容提供器 表名 使数据与之关联</span></div><div class="line">        uriMatcher.addURI(<span class="string">"com.eaxmple.app.provider"</span>, <span class="string">"book/#"</span>, BOOK_ITEM);</div><div class="line">        uriMatcher.addURI(<span class="string">"com.eaxmple.app.provider"</span>, <span class="string">"category"</span>, CATEGORY_DIR);</div><div class="line">        uriMatcher.addURI(<span class="string">"com.eaxmple.app.provider"</span>, <span class="string">"category/#"</span>, CATEGORY_ITEM);</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> Cursor <span class="title">query</span><span class="params">(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)</span> </span>&#123;</div><div class="line">            <span class="comment">// 查询数据</span></div><div class="line"></div><div class="line">            <span class="keyword">switch</span> (uriMatcher.match(uri)) &#123;</div><div class="line">                <span class="keyword">case</span> BOOK_DIR:</div><div class="line">                    cursor = db.query(<span class="string">"Book"</span>, projection, selection, selectionArgs, <span class="keyword">null</span>, <span class="keyword">null</span>, sortOrder);</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">case</span> BOOK_ITEM:</div><div class="line">                    String bookId = uri.getPathSegments().get(<span class="number">1</span>);</div><div class="line">                    cursor = db.query(<span class="string">"Book"</span>, projection, <span class="string">"id = ?"</span>, <span class="keyword">new</span> String[] &#123; bookId &#125;, <span class="keyword">null</span>, <span class="keyword">null</span>, sortOrder);</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">case</span> CATEGORY_DIR:</div><div class="line">                    cursor = db.query(<span class="string">"Category"</span>, projection, selection, selectionArgs, <span class="keyword">null</span>, <span class="keyword">null</span>, sortOrder);</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">case</span> CATEGORY_ITEM:</div><div class="line">                    String categoryId = uri.getPathSegments().get(<span class="number">1</span>);</div><div class="line">                    cursor = db.query(<span class="string">"Category"</span>, projection, <span class="string">"id = ?"</span>, <span class="keyword">new</span> String[] &#123; categoryId &#125;, <span class="keyword">null</span>, <span class="keyword">null</span>, sortOrder);</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">default</span>:</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> cursor;</div><div class="line">        &#125;</div><div class="line"></div><div class="line"><span class="number">1</span>.新建内容提供器（AS快捷方式创建）</div></pre></td></tr></table></figure></p>
-<p>com.example.broadcasttest-&gt;new-&gt;other-&gt;Content Provider<br>//重写几个方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">修改databaseProvider</div><div class="line"></div><div class="line">```java</div><div class="line">//继承内容提供器</div><div class="line">public class DatabaseProvider extends ContentProvider &#123;</div><div class="line"></div><div class="line">    public static final int BOOK_DIR = 0;</div><div class="line"></div><div class="line">    public static final int BOOK_ITEM = 1;</div><div class="line"></div><div class="line">    public static final int CATEGORY_DIR = 2;</div><div class="line"></div><div class="line">    public static final int CATEGORY_ITEM = 3;</div><div class="line"></div><div class="line">    public static final String AUTHORITY = &quot;com.example.databasetest.provider&quot;;</div><div class="line"></div><div class="line">    private static UriMatcher uriMatcher;</div><div class="line"></div><div class="line">    private MyDatabaseHelper dbHelper;</div><div class="line"></div><div class="line">    static &#123;</div><div class="line">        uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);</div><div class="line">        uriMatcher.addURI(AUTHORITY, &quot;book&quot;, BOOK_DIR);</div><div class="line">        uriMatcher.addURI(AUTHORITY, &quot;book/#&quot;, BOOK_ITEM);</div><div class="line">        uriMatcher.addURI(AUTHORITY, &quot;category&quot;, CATEGORY_DIR);</div><div class="line">        uriMatcher.addURI(AUTHORITY, &quot;category/#&quot;, CATEGORY_ITEM);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    //创建一个yDatabaseHelper实例  这时候数据库完成创建或升级操作</div><div class="line">    public boolean onCreate() &#123;</div><div class="line">        dbHelper = new MyDatabaseHelper(getContext(), &quot;BookStore.db&quot;, null, 2);</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) &#123;</div><div class="line">        // 查询数据</div><div class="line">        SQLiteDatabase db = dbHelper.getReadableDatabase();</div><div class="line">        Cursor cursor = null;</div><div class="line">        switch (uriMatcher.match(uri)) &#123;</div><div class="line">            case BOOK_DIR:</div><div class="line">                cursor = db.query(&quot;Book&quot;, projection, selection, selectionArgs, null, null, sortOrder);</div><div class="line">                break;</div><div class="line">            case BOOK_ITEM:</div><div class="line">                String bookId = uri.getPathSegments().get(1);</div><div class="line">                cursor = db.query(&quot;Book&quot;, projection, &quot;id = ?&quot;, new String[] &#123; bookId &#125;, null, null, sortOrder);</div><div class="line">                break;</div><div class="line">            case CATEGORY_DIR:</div><div class="line">                cursor = db.query(&quot;Category&quot;, projection, selection, selectionArgs, null, null, sortOrder);</div><div class="line">                break;</div><div class="line">            case CATEGORY_ITEM:</div><div class="line">                String categoryId = uri.getPathSegments().get(1);</div><div class="line">                cursor = db.query(&quot;Category&quot;, projection, &quot;id = ?&quot;, new String[] &#123; categoryId &#125;, null, null, sortOrder);</div><div class="line">                break;</div><div class="line">            default:</div><div class="line">                break;</div><div class="line">        &#125;</div><div class="line">        return cursor;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Uri insert(Uri uri, ContentValues values) &#123;</div><div class="line">        // 添加数据</div><div class="line">        SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">        Uri uriReturn = null;</div><div class="line">        switch (uriMatcher.match(uri)) &#123;</div><div class="line">            case BOOK_DIR:</div><div class="line">            case BOOK_ITEM:</div><div class="line">                long newBookId = db.insert(&quot;Book&quot;, null, values);</div><div class="line">                uriReturn = Uri.parse(&quot;content://&quot; + AUTHORITY + &quot;/book/&quot; + newBookId);</div><div class="line">                break;</div><div class="line">            case CATEGORY_DIR:</div><div class="line">            case CATEGORY_ITEM:</div><div class="line">                long newCategoryId = db.insert(&quot;Category&quot;, null, values);</div><div class="line">                uriReturn = Uri.parse(&quot;content://&quot; + AUTHORITY + &quot;/category/&quot; + newCategoryId);</div><div class="line">                break;</div><div class="line">            default:</div><div class="line">                break;</div><div class="line">        &#125;</div><div class="line">        return uriReturn;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) &#123;</div><div class="line">        // 更新数据</div><div class="line">        SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">        int updatedRows = 0;</div><div class="line">        switch (uriMatcher.match(uri)) &#123;</div><div class="line">            case BOOK_DIR:</div><div class="line">                updatedRows = db.update(&quot;Book&quot;, values, selection, selectionArgs);</div><div class="line">                break;</div><div class="line">            case BOOK_ITEM:</div><div class="line">                String bookId = uri.getPathSegments().get(1);</div><div class="line">                updatedRows = db.update(&quot;Book&quot;, values, &quot;id = ?&quot;, new String[] &#123; bookId &#125;);</div><div class="line">                break;</div><div class="line">            case CATEGORY_DIR:</div><div class="line">                updatedRows = db.update(&quot;Category&quot;, values, selection, selectionArgs);</div><div class="line">                break;</div><div class="line">            case CATEGORY_ITEM:</div><div class="line">                String categoryId = uri.getPathSegments().get(1);</div><div class="line">                updatedRows = db.update(&quot;Category&quot;, values, &quot;id = ?&quot;, new String[] &#123; categoryId &#125;);</div><div class="line">                break;</div><div class="line">            default:</div><div class="line">                break;</div><div class="line">        &#125;</div><div class="line">        return updatedRows;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public int delete(Uri uri, String selection, String[] selectionArgs) &#123;</div><div class="line">        // 删除数据</div><div class="line">        SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">        int deletedRows = 0;</div><div class="line">        switch (uriMatcher.match(uri)) &#123;</div><div class="line">            case BOOK_DIR:</div><div class="line">                deletedRows = db.delete(&quot;Book&quot;, selection, selectionArgs);</div><div class="line">                break;</div><div class="line">            case BOOK_ITEM:</div><div class="line">                String bookId = uri.getPathSegments().get(1);</div><div class="line">                deletedRows = db.delete(&quot;Book&quot;, &quot;id = ?&quot;, new String[] &#123; bookId &#125;);</div><div class="line">                break;</div><div class="line">            case CATEGORY_DIR:</div><div class="line">                deletedRows = db.delete(&quot;Category&quot;, selection, selectionArgs);</div><div class="line">                break;</div><div class="line">            case CATEGORY_ITEM:</div><div class="line">                String categoryId = uri.getPathSegments().get(1);</div><div class="line">                deletedRows = db.delete(&quot;Category&quot;, &quot;id = ?&quot;, new String[] &#123; categoryId &#125;);</div><div class="line">                break;</div><div class="line">            default:</div><div class="line">                break;</div><div class="line">        &#125;</div><div class="line">        return deletedRows;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    //所有内容提供器都必须提供的方法 用于获取URI对象所对应的MIME类型    MIME由三个部分组成</div><div class="line">    //1.必须以vnd开头 2.uri以路径结尾则android.cursor.dir/  以id结尾则android.cursor.item/ 3.最后接上vnd.&lt;authority&gt;.&lt;path&gt;</div><div class="line">    //例如：URI：content://com.eaxmple.app.provider/tabel</div><div class="line">    //MIME:vnd.android.sursor.dir/vnd.com.eaxmple.app.provider.tabel</div><div class="line">    public String getType(Uri uri) &#123;</div><div class="line">        switch (uriMatcher.match(uri)) &#123;</div><div class="line">            case BOOK_DIR:</div><div class="line">                return &quot;vnd.android.cursor.dir/vnd.com.example.databasetest. provider.book&quot;;//返回MIME</div><div class="line">            case BOOK_ITEM:</div><div class="line">                return &quot;vnd.android.cursor.item/vnd.com.example.databasetest. provider.book&quot;;</div><div class="line">            case CATEGORY_DIR:</div><div class="line">                return &quot;vnd.android.cursor.dir/vnd.com.example.databasetest. provider.category&quot;;</div><div class="line">            case CATEGORY_ITEM:</div><div class="line">                return &quot;vnd.android.cursor.item/vnd.com.example.databasetest. provider.category&quot;;</div><div class="line">        &#125;</div><div class="line">        return null;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>mydatabaseHalper类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyDatabaseHelper</span> <span class="keyword">extends</span> <span class="title">SQLiteOpenHelper</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CREATE_BOOK = <span class="string">"create table Book ("</span></div><div class="line">            + <span class="string">"id integer primary key autoincrement, "</span></div><div class="line">            + <span class="string">"author text, "</span></div><div class="line">            + <span class="string">"price real, "</span></div><div class="line">            + <span class="string">"pages integer, "</span></div><div class="line">            + <span class="string">"name text)"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CREATE_CATEGORY = <span class="string">"create table Category ("</span></div><div class="line">            + <span class="string">"id integer primary key autoincrement, "</span></div><div class="line">            + <span class="string">"category_name text, "</span></div><div class="line">            + <span class="string">"category_code integer)"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Context mContext;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyDatabaseHelper</span><span class="params">(Context context, String name,</span></span></div><div class="line"><span class="function"><span class="params">                            SQLiteDatabase.CursorFactory factory, <span class="keyword">int</span> version)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, name, factory, version);</div><div class="line">        mContext = context;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(SQLiteDatabase db)</span> </span>&#123;</div><div class="line">        db.execSQL(CREATE_BOOK);</div><div class="line">        db.execSQL(CREATE_CATEGORY);</div><div class="line">       <span class="comment">// Toast.makeText(mContext, "Create succeeded", Toast.LENGTH_SHORT).show();</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUpgrade</span><span class="params">(SQLiteDatabase db, <span class="keyword">int</span> oldVersion, <span class="keyword">int</span> newVersion)</span> </span>&#123;</div><div class="line">        db.execSQL(<span class="string">"drop table if exists Book"</span>);</div><div class="line">        db.execSQL(<span class="string">"drop table if exists Category"</span>);</div><div class="line">        onCreate(db);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>MianActivity类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> MyDatabaseHelper dbHelper;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        dbHelper = <span class="keyword">new</span> MyDatabaseHelper(<span class="keyword">this</span>, <span class="string">"BookStore.db"</span>, <span class="keyword">null</span>, <span class="number">2</span>);</div><div class="line">        Button createDatabase = (Button) findViewById(R.id.create_database);</div><div class="line">        createDatabase.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                dbHelper.getWritableDatabase();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        Button addData = (Button) findViewById(R.id.add_data);</div><div class="line">        addData.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                ContentValues values = <span class="keyword">new</span> ContentValues();</div><div class="line">                <span class="comment">// 开始组装第一条数据</span></div><div class="line">                values.put(<span class="string">"name"</span>, <span class="string">"The Da Vinci Code"</span>);</div><div class="line">                values.put(<span class="string">"author"</span>, <span class="string">"Dan Brown"</span>);</div><div class="line">                values.put(<span class="string">"pages"</span>, <span class="number">454</span>);</div><div class="line">                values.put(<span class="string">"price"</span>, <span class="number">16.96</span>);</div><div class="line">                db.insert(<span class="string">"Book"</span>, <span class="keyword">null</span>, values); <span class="comment">// 插入第一条数据</span></div><div class="line">                values.clear();</div><div class="line">                <span class="comment">// 开始组装第二条数据</span></div><div class="line">                values.put(<span class="string">"name"</span>, <span class="string">"The Lost Symbol"</span>);</div><div class="line">                values.put(<span class="string">"author"</span>, <span class="string">"Dan Brown"</span>);</div><div class="line">                values.put(<span class="string">"pages"</span>, <span class="number">510</span>);</div><div class="line">                values.put(<span class="string">"price"</span>, <span class="number">19.95</span>);</div><div class="line">                db.insert(<span class="string">"Book"</span>, <span class="keyword">null</span>, values); <span class="comment">// 插入第二条数据</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        Button updateData = (Button) findViewById(R.id.update_data);</div><div class="line">        updateData.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                ContentValues values = <span class="keyword">new</span> ContentValues();</div><div class="line">                values.put(<span class="string">"price"</span>, <span class="number">10.99</span>);</div><div class="line">                db.update(<span class="string">"Book"</span>, values, <span class="string">"name = ?"</span>, <span class="keyword">new</span> String[] &#123; <span class="string">"The Da Vinci Code"</span> &#125;);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        Button deleteButton = (Button) findViewById(R.id.delete_data);</div><div class="line">        deleteButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                db.delete(<span class="string">"Book"</span>, <span class="string">"pages &gt; ?"</span>, <span class="keyword">new</span> String[] &#123; <span class="string">"500"</span> &#125;);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        Button queryButton = (Button) findViewById(R.id.query_data);</div><div class="line">        queryButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                <span class="comment">// 查询Book表中所有的数据</span></div><div class="line">                Cursor cursor = db.query(<span class="string">"Book"</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">                <span class="keyword">if</span> (cursor.moveToFirst()) &#123;</div><div class="line">                    <span class="keyword">do</span> &#123;</div><div class="line">                        <span class="comment">// 遍历Cursor对象，取出数据并打印</span></div><div class="line">                        String name = cursor.getString(cursor.getColumnIndex(<span class="string">"name"</span>));</div><div class="line">                        String author = cursor.getString(cursor.getColumnIndex(<span class="string">"author"</span>));</div><div class="line">                        <span class="keyword">int</span> pages = cursor.getInt(cursor.getColumnIndex(<span class="string">"pages"</span>));</div><div class="line">                        <span class="keyword">double</span> price = cursor.getDouble(cursor.getColumnIndex(<span class="string">"price"</span>));</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book name is "</span> + name);</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book author is "</span> + author);</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book pages is "</span> + pages);</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book price is "</span> + price);</div><div class="line">                    &#125; <span class="keyword">while</span> (cursor.moveToNext());</div><div class="line">                &#125;</div><div class="line">                cursor.close();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/29/DataBestTest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1615,7 +1615,7 @@ protected void onDestroy() {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-29T20:13:10+08:00">
                 2017-07-29
@@ -1787,7 +1787,7 @@ protected void onDestroy() {
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">96</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1800,7 +1800,7 @@ protected void onDestroy() {
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -1909,7 +1909,7 @@ protected void onDestroy() {
 
 
   <div class="powered-by">
-    Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
   </div>
 
   <span class="post-meta-divider">|</span>
