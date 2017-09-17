@@ -108,7 +108,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: true,
@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -239,7 +239,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            Search
           </a>
         </li>
       
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/Coolweather6/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/Coolweather5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="DEMO">
@@ -316,7 +316,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/17/Coolweather6/" itemprop="url">coolweather6<CODE 2 chaper14></a></h1>
+                <a class="post-title-link" href="/2017/08/17/Coolweather5/" itemprop="url">coolweather5<CODE 2 chaper14></a></h1>
         
 
         <div class="post-meta">
@@ -326,7 +326,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-17T20:13:10+08:00">
                 2017-08-17
@@ -347,9 +347,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/17/Coolweather6/#comments" itemprop="discussionUrl">
+                <a href="/2017/08/17/Coolweather5/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/17/Coolweather6/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/08/17/Coolweather5/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -379,13 +379,17 @@
       
         
           
-            <p></p><h3>学习目的：1.获取必应每日一图<p></p>
-<p>1.获取必应每日一图</p>
-<p>每日一图接口：<a href="http://guolin.tech/api/bing_pic" target="_blank" rel="external">http://guolin.tech/api/bing_pic</a></p>
-<p>服务器返回<a href="http://cn.bing.com/az/hprichbg/rb/AlaskaLynx_ROW9337883641_1920x1080.jpg每日一图背景" target="_blank" rel="external">http://cn.bing.com/az/hprichbg/rb/AlaskaLynx_ROW9337883641_1920x1080.jpg每日一图背景</a></p>
-<p>使用Glide加载即可</p>
-<p>修改activity_weather<br>```xml</p>
-<framelayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/colorPrimary"><br><br>    <imageview android:id="@+id/bing_pic_img" android:layout_width="match_parent" android:layout_height="match_parent" android:scaletype="centerCrop"><br><br><br>      //…3qe<br></imageview></framelayout>
+            <p></p><h3>学习目的:1.将天气显示到界面上<p></p>
+<p>首先在Utility类中添加解析JSON数据的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Utility</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="comment">//...</span></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 将返回的JSON数据解析成Weather实体类</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Weather <span class="title">handleWeatherResponse</span><span class="params">(String response)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            JSONObject jsonObject = <span class="keyword">new</span> JSONObject(response);</div><div class="line">            JSONArray jsonArray = jsonObject.getJSONArray(<span class="string">"HeWeather"</span>);</div><div class="line">            String weatherContent = jsonArray.getJSONObject(<span class="number">0</span>).toString();</div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Gson().fromJson(weatherContent, Weather.class);</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>handleWeatherResponse()方法通过jsonObject jsonArray将天气主体内容解析出来 如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  "status"："ok",</div><div class="line">  "basic":&#123;&#125;,</div><div class="line">  "aqi"：&#123;&#125;,</div><div class="line">  "now":&#123;&#125;,</div><div class="line">  "suggestion":&#123;&#125;,</div><div class="line">  "daily_forecast":[]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>按照上面数据格式定义的GSON实体类，只需通过fromjson()直接将JSON数据转换成weather对象。</p>
+<p>接下来 在活动中请求天气数据 以及将数据展示在界面上。<br>修改WeatherAcivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.coolweather.android;</div><div class="line"></div><div class="line"><span class="keyword">import</span> android.content.Intent;</div><div class="line"><span class="keyword">import</span> android.content.SharedPreferences;</div><div class="line"><span class="keyword">import</span> android.graphics.Color;</div><div class="line"><span class="keyword">import</span> android.os.Build;</div><div class="line"><span class="keyword">import</span> android.os.Bundle;</div><div class="line"><span class="keyword">import</span> android.preference.PreferenceManager;</div><div class="line"><span class="keyword">import</span> android.support.v4.view.GravityCompat;</div><div class="line"><span class="keyword">import</span> android.support.v4.widget.DrawerLayout;</div><div class="line"><span class="keyword">import</span> android.support.v4.widget.SwipeRefreshLayout;</div><div class="line"><span class="keyword">import</span> android.support.v7.app.AppCompatActivity;</div><div class="line"><span class="keyword">import</span> android.view.LayoutInflater;</div><div class="line"><span class="keyword">import</span> android.view.View;</div><div class="line"><span class="keyword">import</span> android.widget.Button;</div><div class="line"><span class="keyword">import</span> android.widget.ImageView;</div><div class="line"><span class="keyword">import</span> android.widget.LinearLayout;</div><div class="line"><span class="keyword">import</span> android.widget.ScrollView;</div><div class="line"><span class="keyword">import</span> android.widget.TextView;</div><div class="line"><span class="keyword">import</span> android.widget.Toast;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.bumptech.glide.Glide;</div><div class="line"><span class="keyword">import</span> com.coolweather.android.gson.Forecast;</div><div class="line"><span class="keyword">import</span> com.coolweather.android.gson.Weather;</div><div class="line"><span class="keyword">import</span> com.coolweather.android.service.AutoUpdateService;</div><div class="line"><span class="keyword">import</span> com.coolweather.android.util.HttpUtil;</div><div class="line"><span class="keyword">import</span> com.coolweather.android.util.Utility;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"></div><div class="line"><span class="keyword">import</span> okhttp3.Call;</div><div class="line"><span class="keyword">import</span> okhttp3.Callback;</div><div class="line"><span class="keyword">import</span> okhttp3.Response;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeatherActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> DrawerLayout drawerLayout;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> SwipeRefreshLayout swipeRefresh;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ScrollView weatherLayout;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Button navButton;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> TextView titleCity;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> TextView titleUpdateTime;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> TextView degreeText;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> TextView weatherInfoText;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> LinearLayout forecastLayout;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> TextView aqiText;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> TextView pm25Text;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> TextView comfortText;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> TextView carWashText;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> TextView sportText;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ImageView bingPicImg;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String mWeatherId;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= <span class="number">21</span>) &#123;</div><div class="line">            View decorView = getWindow().getDecorView();</div><div class="line">            decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN</div><div class="line">                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);</div><div class="line">            getWindow().setStatusBarColor(Color.TRANSPARENT);</div><div class="line">        &#125;</div><div class="line">        setContentView(R.layout.activity_weather);</div><div class="line">        <span class="comment">// 初始化各控件</span></div><div class="line">        bingPicImg = (ImageView) findViewById(R.id.bing_pic_img);</div><div class="line">        weatherLayout = (ScrollView) findViewById(R.id.weather_layout);</div><div class="line">        titleCity = (TextView) findViewById(R.id.title_city);</div><div class="line">        titleUpdateTime = (TextView) findViewById(R.id.title_update_time);</div><div class="line">        degreeText = (TextView) findViewById(R.id.degree_text);</div><div class="line">        weatherInfoText = (TextView) findViewById(R.id.weather_info_text);</div><div class="line">        forecastLayout = (LinearLayout) findViewById(R.id.forecast_layout);</div><div class="line">        aqiText = (TextView) findViewById(R.id.aqi_text);</div><div class="line">        pm25Text = (TextView) findViewById(R.id.pm25_text);</div><div class="line">        comfortText = (TextView) findViewById(R.id.comfort_text);</div><div class="line">        carWashText = (TextView) findViewById(R.id.car_wash_text);</div><div class="line">        sportText = (TextView) findViewById(R.id.sport_text);</div><div class="line">        swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);</div><div class="line">        swipeRefresh.setColorSchemeResources(R.color.colorPrimary);</div><div class="line">        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);</div><div class="line">        navButton = (Button) findViewById(R.id.nav_button);</div><div class="line">        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(<span class="keyword">this</span>);</div><div class="line">        String weatherString = prefs.getString(<span class="string">"weather"</span>, <span class="keyword">null</span>);</div><div class="line">        <span class="keyword">if</span> (weatherString != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="comment">// 有缓存时直接解析天气数据</span></div><div class="line">            Weather weather = Utility.handleWeatherResponse(weatherString);</div><div class="line">            mWeatherId = weather.basic.weatherId;</div><div class="line">            showWeatherInfo(weather);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// 无缓存时去服务器查询天气</span></div><div class="line">            mWeatherId = getIntent().getStringExtra(<span class="string">"weather_id"</span>);</div><div class="line">            weatherLayout.setVisibility(View.INVISIBLE);</div><div class="line">            requestWeather(mWeatherId);</div><div class="line">        &#125;</div><div class="line">        swipeRefresh.setOnRefreshListener(<span class="keyword">new</span> SwipeRefreshLayout.OnRefreshListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRefresh</span><span class="params">()</span> </span>&#123;</div><div class="line">                requestWeather(mWeatherId);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        navButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                drawerLayout.openDrawer(GravityCompat.START);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        String bingPic = prefs.getString(<span class="string">"bing_pic"</span>, <span class="keyword">null</span>);</div><div class="line">        <span class="keyword">if</span> (bingPic != <span class="keyword">null</span>) &#123;</div><div class="line">            Glide.with(<span class="keyword">this</span>).load(bingPic).into(bingPicImg);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            loadBingPic();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 根据天气id请求城市天气信息。</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">requestWeather</span><span class="params">(<span class="keyword">final</span> String weatherId)</span> </span>&#123;</div><div class="line">        String weatherUrl = <span class="string">"http://guolin.tech/api/weather?cityid="</span> + weatherId + <span class="string">"&amp;key=bc0418b57b2d4918819d3974ac1285d9"</span>;</div><div class="line">        HttpUtil.sendOkHttpRequest(weatherUrl, <span class="keyword">new</span> Callback() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(Call call, Response response)</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">                <span class="keyword">final</span> String responseText = response.body().string();</div><div class="line">                <span class="keyword">final</span> Weather weather = Utility.handleWeatherResponse(responseText);</div><div class="line">                runOnUiThread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">                    <span class="meta">@Override</span></div><div class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                        <span class="keyword">if</span> (weather != <span class="keyword">null</span> &amp;&amp; <span class="string">"ok"</span>.equals(weather.status)) &#123;</div><div class="line">                            SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(WeatherActivity.<span class="keyword">this</span>).edit();</div><div class="line">                            editor.putString(<span class="string">"weather"</span>, responseText);</div><div class="line">                            editor.apply();</div><div class="line">                            mWeatherId = weather.basic.weatherId;</div><div class="line">                            showWeatherInfo(weather);</div><div class="line">                        &#125; <span class="keyword">else</span> &#123;</div><div class="line">                            Toast.makeText(WeatherActivity.<span class="keyword">this</span>, <span class="string">"获取天气信息失败"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                        &#125;</div><div class="line">                        swipeRefresh.setRefreshing(<span class="keyword">false</span>);</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(Call call, IOException e)</span> </span>&#123;</div><div class="line">                e.printStackTrace();</div><div class="line">                runOnUiThread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">                    <span class="meta">@Override</span></div><div class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                        Toast.makeText(WeatherActivity.<span class="keyword">this</span>, <span class="string">"获取天气信息失败"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                        swipeRefresh.setRefreshing(<span class="keyword">false</span>);</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        loadBingPic();</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 处理并展示Weather实体类中的数据。</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">showWeatherInfo</span><span class="params">(Weather weather)</span> </span>&#123;</div><div class="line">        String cityName = weather.basic.cityName;</div><div class="line">        String updateTime = weather.basic.update.updateTime.split(<span class="string">" "</span>)[<span class="number">1</span>];</div><div class="line">        String degree = weather.now.temperature + <span class="string">"℃"</span>;</div><div class="line">        String weatherInfo = weather.now.more.info;</div><div class="line">        titleCity.setText(cityName);</div><div class="line">        titleUpdateTime.setText(updateTime);</div><div class="line">        degreeText.setText(degree);</div><div class="line">        weatherInfoText.setText(weatherInfo);</div><div class="line">        forecastLayout.removeAllViews();</div><div class="line">        <span class="keyword">for</span> (Forecast forecast : weather.forecastList) &#123;</div><div class="line">            View view = LayoutInflater.from(<span class="keyword">this</span>).inflate(R.layout.forecast_item, forecastLayout, <span class="keyword">false</span>);</div><div class="line">            TextView dateText = (TextView) view.findViewById(R.id.date_text);</div><div class="line">            TextView infoText = (TextView) view.findViewById(R.id.info_text);</div><div class="line">            TextView maxText = (TextView) view.findViewById(R.id.max_text);</div><div class="line">            TextView minText = (TextView) view.findViewById(R.id.min_text);</div><div class="line">            dateText.setText(forecast.date);</div><div class="line">            infoText.setText(forecast.more.info);</div><div class="line">            maxText.setText(forecast.temperature.max);</div><div class="line">            minText.setText(forecast.temperature.min);</div><div class="line">            forecastLayout.addView(view);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (weather.aqi != <span class="keyword">null</span>) &#123;</div><div class="line">            aqiText.setText(weather.aqi.city.aqi);</div><div class="line">            pm25Text.setText(weather.aqi.city.pm25);</div><div class="line">        &#125;</div><div class="line">        String comfort = <span class="string">"舒适度："</span> + weather.suggestion.comfort.info;</div><div class="line">        String carWash = <span class="string">"洗车指数："</span> + weather.suggestion.carWash.info;</div><div class="line">        String sport = <span class="string">"运行建议："</span> + weather.suggestion.sport.info;</div><div class="line">        comfortText.setText(comfort);</div><div class="line">        carWashText.setText(carWash);</div><div class="line">        sportText.setText(sport);</div><div class="line">        weatherLayout.setVisibility(View.VISIBLE);</div><div class="line">        Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>, AutoUpdateService.class);</div><div class="line">        startService(intent);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接下来，如何从省市列表跳转到天气界面<br>修改ChooseAreaFragment<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.coolweather.android;</div><div class="line"></div><div class="line"><span class="keyword">import</span> android.app.ProgressDialog;</div><div class="line"><span class="keyword">import</span> android.content.Intent;</div><div class="line"><span class="keyword">import</span> android.os.Bundle;</div><div class="line"><span class="keyword">import</span> android.support.v4.app.Fragment;</div><div class="line"><span class="keyword">import</span> android.util.Log;</div><div class="line"><span class="keyword">import</span> android.view.LayoutInflater;</div><div class="line"><span class="keyword">import</span> android.view.View;</div><div class="line"><span class="keyword">import</span> android.view.ViewGroup;</div><div class="line"><span class="keyword">import</span> android.widget.AdapterView;</div><div class="line"><span class="keyword">import</span> android.widget.ArrayAdapter;</div><div class="line"><span class="keyword">import</span> android.widget.Button;</div><div class="line"><span class="keyword">import</span> android.widget.ListView;</div><div class="line"><span class="keyword">import</span> android.widget.TextView;</div><div class="line"><span class="keyword">import</span> android.widget.Toast;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.coolweather.android.db.City;</div><div class="line"><span class="keyword">import</span> com.coolweather.android.db.County;</div><div class="line"><span class="keyword">import</span> com.coolweather.android.db.Province;</div><div class="line"><span class="keyword">import</span> com.coolweather.android.util.HttpUtil;</div><div class="line"><span class="keyword">import</span> com.coolweather.android.util.Utility;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.litepal.crud.DataSupport;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">import</span> okhttp3.Call;</div><div class="line"><span class="keyword">import</span> okhttp3.Callback;</div><div class="line"><span class="keyword">import</span> okhttp3.Response;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ChooseAreaFragment</span> <span class="keyword">extends</span> <span class="title">Fragment</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">//...</span></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onActivityCreated</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onActivityCreated(savedInstanceState);</div><div class="line">        listView.setOnItemClickListener(<span class="keyword">new</span> AdapterView.OnItemClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onItemClick</span><span class="params">(AdapterView&lt;?&gt; parent, View view, <span class="keyword">int</span> position, <span class="keyword">long</span> id)</span> </span>&#123;</div><div class="line">                <span class="keyword">if</span> (currentLevel == LEVEL_PROVINCE) &#123;</div><div class="line">                    selectedProvince = provinceList.get(position);</div><div class="line">                    queryCities();</div><div class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (currentLevel == LEVEL_CITY) &#123;</div><div class="line">                    selectedCity = cityList.get(position);</div><div class="line">                    queryCounties();</div><div class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (currentLevel == LEVEL_COUNTY) &#123;</div><div class="line">                    String weatherId = countyList.get(position).getWeatherId();</div><div class="line">                    <span class="keyword">if</span> (getActivity() <span class="keyword">instanceof</span> MainActivity) &#123;</div><div class="line">                        Intent intent = <span class="keyword">new</span> Intent(getActivity(), WeatherActivity.class);</div><div class="line">                        intent.putExtra(<span class="string">"weather_id"</span>, weatherId);</div><div class="line">                        startActivity(intent);</div><div class="line">                        getActivity().finish();</div><div class="line">                    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (getActivity() <span class="keyword">instanceof</span> WeatherActivity) &#123;</div><div class="line">                        WeatherActivity activity = (WeatherActivity) getActivity();</div><div class="line">                        activity.drawerLayout.closeDrawers();</div><div class="line">                        activity.swipeRefresh.setRefreshing(<span class="keyword">true</span>);</div><div class="line">                        activity.requestWeather(weatherId);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        backButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                <span class="keyword">if</span> (currentLevel == LEVEL_COUNTY) &#123;</div><div class="line">                    queryCities();</div><div class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (currentLevel == LEVEL_CITY) &#123;</div><div class="line">                    queryProvinces();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        queryProvinces();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>onItemClick()加拉一个if判断  当前级别是LEVEL_COUNTY 就启动WeatherActivity 把当前选择县的id传过去</p>
+<p>还需在MainActivit加入缓存数据判断</p>
+<p>MainActivit<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> android.content.Intent;</div><div class="line"><span class="keyword">import</span> android.content.SharedPreferences;</div><div class="line"><span class="keyword">import</span> android.preference.PreferenceManager;</div><div class="line"><span class="keyword">import</span> android.support.v7.app.ActionBar;</div><div class="line"><span class="keyword">import</span> android.support.v7.app.AppCompatActivity;</div><div class="line"><span class="keyword">import</span> android.os.Bundle;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(<span class="keyword">this</span>);</div><div class="line">        <span class="keyword">if</span> (prefs.getString(<span class="string">"weather"</span>, <span class="keyword">null</span>) != <span class="keyword">null</span>) &#123;</div><div class="line">            Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>, WeatherActivity.class);</div><div class="line">            startActivity(intent);</div><div class="line">            finish();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>现在onCreate()方法一开始先从SharedPreferences文件中读取数据 不为null就说明之前请求过天气数据 直接跳转到WeatherActivity即可</p>
 </h3>
           
         
@@ -463,7 +467,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-16T20:13:10+08:00">
                 2017-08-16
@@ -594,7 +598,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T20:13:10+08:00">
                 2017-08-15
@@ -730,7 +734,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T20:13:10+08:00">
                 2017-08-15
@@ -886,7 +890,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T20:13:10+08:00">
                 2017-08-15
@@ -1023,7 +1027,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-14T20:13:10+08:00">
                 2017-08-14
@@ -1157,7 +1161,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-14T20:13:10+08:00">
                 2017-08-14
@@ -1296,7 +1300,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-13T20:13:10+08:00">
                 2017-08-13
@@ -1417,6 +1421,142 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/Materialtest6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/11/Materialtest6/" itemprop="url">materialtest6(最佳UI体验)<CODE 2 chaper12></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T20:13:10+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/11/Materialtest6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/11/Materialtest6/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：3.可折叠的标题栏(逻辑编写) 4.充分利用系统状态栏空间（上拉时背景图与状态栏融合）<br>FruitActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String FRUIT_NAME = <span class="string">"fruit_name"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String FRUIT_IMAGE_ID = <span class="string">"fruit_image_id"</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_fruit);</div><div class="line">        Intent intent = getIntent();</div><div class="line">        String fruitName = intent.getStringExtra(FRUIT_NAME);</div><div class="line">        <span class="keyword">int</span> fruitImageId = intent.getIntExtra(FRUIT_IMAGE_ID, <span class="number">0</span>);</div><div class="line">        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);</div><div class="line">        CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);</div><div class="line">        ImageView fruitImageView = (ImageView) findViewById(R.id.fruit_image_view);</div><div class="line">        TextView fruitContentText = (TextView) findViewById(R.id.fruit_content_text);</div><div class="line">        setSupportActionBar(toolbar);</div><div class="line">        ActionBar actionBar = getSupportActionBar();</div><div class="line">        <span class="keyword">if</span> (actionBar != <span class="keyword">null</span>) &#123;</div><div class="line">            actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">        collapsingToolbar.setTitle(fruitName);</div><div class="line">        Glide.with(<span class="keyword">this</span>).load(fruitImageId).into(fruitImageView);</div><div class="line">        String fruitContent = generateFruitContent(fruitName);</div><div class="line">        fruitContentText.setText(fruitContent);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">generateFruitContent</span><span class="params">(String fruitName)</span> </span>&#123;</div><div class="line">        StringBuilder fruitContent = <span class="keyword">new</span> StringBuilder();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">500</span>; i++) &#123;</div><div class="line">            fruitContent.append(fruitName);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> fruitContent.toString();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onOptionsItemSelected</span><span class="params">(MenuItem item)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (item.getItemId()) &#123;</div><div class="line">            <span class="keyword">case</span> android.R.id.home:</div><div class="line">                finish();</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.onOptionsItemSelected(item);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p>FruitAdapter<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitAdapter</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">Adapter</span>&lt;<span class="title">FruitAdapter</span>.<span class="title">ViewHolder</span>&gt;</span>&#123;</div><div class="line"></div><div class="line">  <span class="comment">//...</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> ViewHolder <span class="title">onCreateViewHolder</span><span class="params">(ViewGroup parent, <span class="keyword">int</span> viewType)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (mContext == <span class="keyword">null</span>) &#123;</div><div class="line">            mContext = parent.getContext();</div><div class="line">        &#125;</div><div class="line">        View view = LayoutInflater.from(mContext).inflate(R.layout.fruit_item, parent, <span class="keyword">false</span>);</div><div class="line">        <span class="keyword">final</span> ViewHolder holder = <span class="keyword">new</span> ViewHolder(view);</div><div class="line">        holder.cardView.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                <span class="keyword">int</span> position = holder.getAdapterPosition();</div><div class="line">                Fruit fruit = mFruitList.get(position);</div><div class="line">                Intent intent = <span class="keyword">new</span> Intent(mContext, FruitActivity.class);</div><div class="line">                intent.putExtra(FruitActivity.FRUIT_NAME, fruit.getName());</div><div class="line">                intent.putExtra(FruitActivity.FRUIT_IMAGE_ID, fruit.getImageId());</div><div class="line">                mContext.startActivity(intent);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">return</span> holder;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://i2.bvimg.com/595109/9969140c788f23de.png" alt="Markdown"><br><img src="http://i2.bvimg.com/595109/979fb8917ee7e4f0.png" alt="Markdown"><br><img src="http://i2.bvimg.com/595109/694b5a2a6b82b311.png" alt="Markdown"><br><img src="http://i2.bvimg.com/595109/429607e5ed515c13.png" alt="Markdown"></p>
+<p>充分利用系统状态栏空间（上拉时背景图与状态栏融合）<br>activity_fruit<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.CoordinatorLayout</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span>//上拉时背景图与状态栏融合 还需设置主题透明</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">android.support.design.widget.AppBarLayout</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/appBar"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"250dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span>//上拉时背景图与状态栏融合 还需设置主题透明</div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">android.support.design.widget.CollapsingToolbarLayout</span></span></div><div class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/collapsing_toolbar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:theme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>//上拉时背景图与状态栏融合 还需设置主题透明</span></div><div class="line"><span class="tag">            <span class="attr">app:contentScrim</span>=<span class="string">"?attr/colorPrimary"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:layout_scrollFlags</span>=<span class="string">"scroll|exitUntilCollapsed"</span>&gt;</span></div><div class="line"></div><div class="line">            <span class="tag">&lt;<span class="name">ImageView</span></span></div><div class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/fruit_image_view"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:scaleType</span>=<span class="string">"centerCrop"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">                <span class="attr">app:layout_collapseMode</span>=<span class="string">"parallax"</span> /&gt;</span></div><div class="line"></div><div class="line">          //...</div><div class="line"><span class="tag">&lt;/<span class="name">android.support.design.widget.CoordinatorLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>还需设置主题透明 创建New-&gt;Directory-&gt;values-v21-&gt;New-&gt;Values resource file-&gt;style.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- Base application theme. --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="xml">        <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/colorPrimary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/colorPrimaryDark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>@color/colorAccent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"FruitActivityTheme"</span> <span class="attr">parent</span>=<span class="string">"AppTheme"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>AndroidMaifest.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span></span></div><div class="line"><span class="tag">            <span class="attr">android:name</span>=<span class="string">".FruitActivity"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:theme</span>=<span class="string">"@style/FruitActivityTheme"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div></pre></td></tr></table></figure></p>
+</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/Materialtest5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1446,7 +1586,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T20:13:10+08:00">
                 2017-08-11
@@ -1560,142 +1700,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/Materialtest6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/11/Materialtest6/" itemprop="url">materialtest6(最佳UI体验)<CODE 2 chaper12></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T20:13:10+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/11/Materialtest6/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/11/Materialtest6/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的：3.可折叠的标题栏(逻辑编写) 4.充分利用系统状态栏空间（上拉时背景图与状态栏融合）<br>FruitActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String FRUIT_NAME = <span class="string">"fruit_name"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String FRUIT_IMAGE_ID = <span class="string">"fruit_image_id"</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_fruit);</div><div class="line">        Intent intent = getIntent();</div><div class="line">        String fruitName = intent.getStringExtra(FRUIT_NAME);</div><div class="line">        <span class="keyword">int</span> fruitImageId = intent.getIntExtra(FRUIT_IMAGE_ID, <span class="number">0</span>);</div><div class="line">        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);</div><div class="line">        CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);</div><div class="line">        ImageView fruitImageView = (ImageView) findViewById(R.id.fruit_image_view);</div><div class="line">        TextView fruitContentText = (TextView) findViewById(R.id.fruit_content_text);</div><div class="line">        setSupportActionBar(toolbar);</div><div class="line">        ActionBar actionBar = getSupportActionBar();</div><div class="line">        <span class="keyword">if</span> (actionBar != <span class="keyword">null</span>) &#123;</div><div class="line">            actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">        collapsingToolbar.setTitle(fruitName);</div><div class="line">        Glide.with(<span class="keyword">this</span>).load(fruitImageId).into(fruitImageView);</div><div class="line">        String fruitContent = generateFruitContent(fruitName);</div><div class="line">        fruitContentText.setText(fruitContent);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">generateFruitContent</span><span class="params">(String fruitName)</span> </span>&#123;</div><div class="line">        StringBuilder fruitContent = <span class="keyword">new</span> StringBuilder();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">500</span>; i++) &#123;</div><div class="line">            fruitContent.append(fruitName);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> fruitContent.toString();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onOptionsItemSelected</span><span class="params">(MenuItem item)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (item.getItemId()) &#123;</div><div class="line">            <span class="keyword">case</span> android.R.id.home:</div><div class="line">                finish();</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.onOptionsItemSelected(item);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p>FruitAdapter<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitAdapter</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">Adapter</span>&lt;<span class="title">FruitAdapter</span>.<span class="title">ViewHolder</span>&gt;</span>&#123;</div><div class="line"></div><div class="line">  <span class="comment">//...</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> ViewHolder <span class="title">onCreateViewHolder</span><span class="params">(ViewGroup parent, <span class="keyword">int</span> viewType)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (mContext == <span class="keyword">null</span>) &#123;</div><div class="line">            mContext = parent.getContext();</div><div class="line">        &#125;</div><div class="line">        View view = LayoutInflater.from(mContext).inflate(R.layout.fruit_item, parent, <span class="keyword">false</span>);</div><div class="line">        <span class="keyword">final</span> ViewHolder holder = <span class="keyword">new</span> ViewHolder(view);</div><div class="line">        holder.cardView.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                <span class="keyword">int</span> position = holder.getAdapterPosition();</div><div class="line">                Fruit fruit = mFruitList.get(position);</div><div class="line">                Intent intent = <span class="keyword">new</span> Intent(mContext, FruitActivity.class);</div><div class="line">                intent.putExtra(FruitActivity.FRUIT_NAME, fruit.getName());</div><div class="line">                intent.putExtra(FruitActivity.FRUIT_IMAGE_ID, fruit.getImageId());</div><div class="line">                mContext.startActivity(intent);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">return</span> holder;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><img src="http://i2.bvimg.com/595109/9969140c788f23de.png" alt="Markdown"><br><img src="http://i2.bvimg.com/595109/979fb8917ee7e4f0.png" alt="Markdown"><br><img src="http://i2.bvimg.com/595109/694b5a2a6b82b311.png" alt="Markdown"><br><img src="http://i2.bvimg.com/595109/429607e5ed515c13.png" alt="Markdown"></p>
-<p>充分利用系统状态栏空间（上拉时背景图与状态栏融合）<br>activity_fruit<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.CoordinatorLayout</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span>//上拉时背景图与状态栏融合 还需设置主题透明</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">android.support.design.widget.AppBarLayout</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/appBar"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"250dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span>//上拉时背景图与状态栏融合 还需设置主题透明</div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">android.support.design.widget.CollapsingToolbarLayout</span></span></div><div class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/collapsing_toolbar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:theme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>//上拉时背景图与状态栏融合 还需设置主题透明</span></div><div class="line"><span class="tag">            <span class="attr">app:contentScrim</span>=<span class="string">"?attr/colorPrimary"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:layout_scrollFlags</span>=<span class="string">"scroll|exitUntilCollapsed"</span>&gt;</span></div><div class="line"></div><div class="line">            <span class="tag">&lt;<span class="name">ImageView</span></span></div><div class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/fruit_image_view"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:scaleType</span>=<span class="string">"centerCrop"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">                <span class="attr">app:layout_collapseMode</span>=<span class="string">"parallax"</span> /&gt;</span></div><div class="line"></div><div class="line">          //...</div><div class="line"><span class="tag">&lt;/<span class="name">android.support.design.widget.CoordinatorLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>还需设置主题透明 创建New-&gt;Directory-&gt;values-v21-&gt;New-&gt;Values resource file-&gt;style.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- Base application theme. --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="xml">        <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/colorPrimary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/colorPrimaryDark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>@color/colorAccent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"FruitActivityTheme"</span> <span class="attr">parent</span>=<span class="string">"AppTheme"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>AndroidMaifest.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span></span></div><div class="line"><span class="tag">            <span class="attr">android:name</span>=<span class="string">".FruitActivity"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:theme</span>=<span class="string">"@style/FruitActivityTheme"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div></pre></td></tr></table></figure></p>
-</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1747,7 +1751,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">97</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1760,7 +1764,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -1869,7 +1873,7 @@
 
 
   <div class="powered-by">
-    Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
   </div>
 
   <span class="post-meta-divider">|</span>
