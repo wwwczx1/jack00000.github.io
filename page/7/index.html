@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -239,7 +239,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Search
+            Suche
           </a>
         </li>
       
@@ -297,6 +297,543 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/21/RecycleView/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/21/RecycleView/" itemprop="url">RecycleView<CODE 2 chaper3></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T20:13:10+08:00">
+                2017-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/21/RecycleView/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/21/RecycleView/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：1.RecycleView的基本用法 2.实现横向列表  3.实现瀑布流 4.RecycleView的点击事件（需添加依赖库）<p></p>
+<hr>
+<p><img src="http://i1.ciimg.com/595109/7853ee0ff4b9f52e.png" alt="Markdown"></p>
+<p></p><h3>1.RecycleView的基本用法（不止可实现列表 还可实现瀑布流等） </h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line">添加一行代码（依赖）</div><div class="line">dependencies &#123;</div><div class="line">    compile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])</div><div class="line">    testCompile &apos;junit:junit:4.12&apos;</div><div class="line">    compile &apos;com.android.support:appcompat-v7:24.2.1&apos;</div><div class="line">    compile &apos;com.android.support:recyclerview-v7:24.2.1&apos;//recycleview定义在suprot库中  需添加依赖库</div><div class="line">&#125;</div><div class="line"></div><div class="line">创建RecycleView布局</div><div class="line">&lt;android.support.v7.widget.RecyclerView</div><div class="line">        android:id=&quot;@+id/recycler_view&quot;</div><div class="line">        android:layout_width=&quot;match_parent&quot;</div><div class="line">        android:layout_height=&quot;match_parent&quot; /&gt;</div><div class="line"></div><div class="line">重写FruitAdaper类（思路：ViewHolder获取子项布局ID再设置监听器）</div><div class="line">public class FruitAdapter extends RecyclerView.Adapter&lt;FruitAdapter.ViewHolder&gt;&#123;// 中括号里一般是类名 泛型</div><div class="line"></div><div class="line">    private List&lt;Fruit&gt; mFruitList;//定义全局变量</div><div class="line"></div><div class="line">    static class ViewHolder extends RecyclerView.ViewHolder &#123;//RecycleView有ViewHolder内部类</div><div class="line">        View fruitView;</div><div class="line">        ImageView fruitImage;</div><div class="line">        TextView fruitName;</div><div class="line"></div><div class="line">        public ViewHolder(View view) &#123;//子项的布局</div><div class="line">            super(view);</div><div class="line">            fruitView = view;</div><div class="line">            fruitImage = (ImageView) view.findViewById(R.id.fruit_image);</div><div class="line">            fruitName = (TextView) view.findViewById(R.id.fruit_name);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public FruitAdapter(List&lt;Fruit&gt; fruitList) &#123;</div><div class="line">        mFruitList = fruitList;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) &#123;</div><div class="line">        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item, parent, false);</div><div class="line">        final ViewHolder holder = new ViewHolder(view);</div><div class="line">        holder.fruitView.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">            @Override</div><div class="line">            public void onClick(View v) &#123;</div><div class="line">                int position = holder.getAdapterPosition();</div><div class="line">                Fruit fruit = mFruitList.get(position);</div><div class="line">                Toast.makeText(v.getContext(), &quot;you clicked view &quot; + fruit.getName(), Toast.LENGTH_SHORT).show();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        holder.fruitImage.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">            @Override</div><div class="line">            public void onClick(View v) &#123;</div><div class="line">                int position = holder.getAdapterPosition();</div><div class="line">                Fruit fruit = mFruitList.get(position);</div><div class="line">                Toast.makeText(v.getContext(), &quot;you clicked image &quot; + fruit.getName(), Toast.LENGTH_SHORT).show();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        return holder;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onBindViewHolder(ViewHolder holder, int position) &#123;//对子项数据进行赋值</div><div class="line">        Fruit fruit = mFruitList.get(position);</div><div class="line">        holder.fruitImage.setImageResource(fruit.getImageId());</div><div class="line">        holder.fruitName.setText(fruit.getName());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public int getItemCount() &#123;</div><div class="line">        return mFruitList.size();</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    MainActivity类</div><div class="line">    public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">        private List&lt;Fruit&gt; fruitList = new ArrayList&lt;Fruit&gt;();</div><div class="line"></div><div class="line">        @Override</div><div class="line">        protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">            super.onCreate(savedInstanceState);</div><div class="line">            setContentView(R.layout.activity_main);</div><div class="line">            initFruits();//初始化数据 自定义方法</div><div class="line">            RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);</div><div class="line">            LinearLayoutManager layoutManager=new LinearLayoutManager(this);//指定布局方式 可以是横向 竖向 此为竖向</div><div class="line">            recyclerView.setLayoutManager(layoutManager);//启动自定义布局</div><div class="line">            FruitAdapter adapter = new FruitAdapter(fruitList);</div><div class="line">            recyclerView.setAdapter(adapter);</div><div class="line">        &#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>2.实现横向列表（只用加一行代码）</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);</div><div class="line">LinearLayoutManager layoutManager=new LinearLayoutManager(this);//指定布局方式 可以是横向 竖向 此为竖向</div><div class="line">layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);//横向线性布局  默认为竖向</div><div class="line">recyclerView.setLayoutManager(layoutManager);//启动自定义布局</div><div class="line">FruitAdapter adapter = new FruitAdapter(fruitList);</div><div class="line">recyclerView.setAdapter(adapter);</div></pre></td></tr></table></figure><p></p>
+<p></p><h3> 3.实现瀑布流 (只用加一行代码)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);</div><div class="line">LinearLayoutManager layoutManager=new LinearLayoutManager(this);//指定布局方式 可以是横向 竖向 此为竖向</div><div class="line">StaggeredGridLayoutManager layoutManager = new</div><div class="line">                StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);//瀑布流  默认为竖向</div><div class="line">recyclerView.setLayoutManager(layoutManager);//启动自定义布局</div><div class="line">FruitAdapter adapter = new FruitAdapter(fruitList);</div><div class="line">recyclerView.setAdapter(adapter);</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>4.RecycleView的点击事件</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">不同于ListView（setOnItemClickListener） RecycleView没有点击事件</div><div class="line"></div><div class="line">static class ViewHolder extends RecyclerView.ViewHolder &#123;//RecycleView有ViewHolder内部类</div><div class="line">    View fruitView;//保存最外层子布局实例</div><div class="line">    ImageView fruitImage;</div><div class="line">    TextView fruitName;</div><div class="line"></div><div class="line">    public ViewHolder(View view) &#123;//子项的布局</div><div class="line">        super(view);</div><div class="line">        fruitView = view;//保存最外层子布局实例</div><div class="line">        fruitImage = (ImageView) view.findViewById(R.id.fruit_image);</div><div class="line">        fruitName = (TextView) view.findViewById(R.id.fruit_name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public FruitAdapter(List&lt;Fruit&gt; fruitList) &#123;</div><div class="line">    mFruitList = fruitList;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) &#123;</div><div class="line">    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item, parent, false);</div><div class="line">    final ViewHolder holder = new ViewHolder(view);</div><div class="line">    holder.fruitView.setOnClickListener(new View.OnClickListener() &#123;//给RecycleViewS设置点击事件</div><div class="line">        @Override</div><div class="line">        public void onClick(View v) &#123;</div><div class="line">            int position = holder.getAdapterPosition();</div><div class="line">            Fruit fruit = mFruitList.get(position);</div><div class="line">            Toast.makeText(v.getContext(), &quot;you clicked view &quot; + fruit.getName(), Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    holder.fruitImage.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">        @Override</div><div class="line">        public void onClick(View v) &#123;</div><div class="line">            int position = holder.getAdapterPosition();</div><div class="line">            Fruit fruit = mFruitList.get(position);</div><div class="line">            Toast.makeText(v.getContext(), &quot;you clicked image &quot; + fruit.getName(), Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    return holder;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/logcat及log/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/20/logcat及log/" itemprop="url">logcat及log<CODE 2 chaper2></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
+                2017-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/20/logcat及log/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/20/logcat及log/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>log</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">log.v()//verbose 琐碎日志</div><div class="line">log.d()//debug调试信息</div><div class="line">log.i()//比较重要的数据 用户数据</div><div class="line">log.w()//warn</div><div class="line">log.e()//error</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>logcat and 过滤器</h3><br><img src="http://img.027cgb.cn/20170721/20177216711775731906.png"><br><img src="http://img.027cgb.cn/20170721/20177217341775731906.png"><p></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/build.gradle文件详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/20/build.gradle文件详解/" itemprop="url">build.gradle文件详解<CODE 2 chaper2></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
+                2017-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/20/build.gradle文件详解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/20/build.gradle文件详解/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>build.gradle(项目目录下)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()//代码托管仓库，声明后可引用jcenter上的开源项目</div><div class="line">    &#125;</div><div class="line">    dependencies &#123;</div><div class="line">        classpath &apos;com.android.tools.build:gradle:2.2.0&apos;//“依赖”文件使用classpath声明一个gradle插件  声明的原因：让gradle知道构建的是Android java 还是</div><div class="line">c++                                                     //com.android.tools.build:gradle:2.2.0说明构建的是android项目</div><div class="line">        // NOTE: Do not place your application dependencies here; they belong</div><div class="line">        // in the individual module build.gradle files</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">allprojects &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()//代码托管仓库，声明后可引用jcenter上的开源项目</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">task clean(type: Delete) &#123;</div><div class="line">    delete rootProject.buildDir</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>build.gradle(项目目录下)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;com.android.application&apos;//应用一个插件 两个值可选  应用程序模块 （可直接运行）   com.android.library库模块（作为代码库依附别的库运行）</div><div class="line"></div><div class="line">android &#123;</div><div class="line">    compileSdkVersion 24  //编译所用sdk版本</div><div class="line">    buildToolsVersion &quot;24.0.2&quot;//构建工具版本</div><div class="line">    defaultConfig &#123;//细节配置</div><div class="line">        applicationId &quot;com.example.helloworld&quot;//项目包名</div><div class="line">        minSdkVersion 15//最低sdk版本</div><div class="line">        targetSdkVersion 24//充分测试的sdk版本</div><div class="line">        versionCode 1//项目版本号</div><div class="line">        versionName &quot;1.0&quot;//项目版本名</div><div class="line">    &#125;</div><div class="line">    buildTypes &#123;//生成安装文件的相关配置</div><div class="line">        release &#123;//release指定生产正式版安装文件的配置    debug闭包指定生成测试版安装文件的配置</div><div class="line">            minifyEnabled false//指定是否对项目的代码进行混淆</div><div class="line">            proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;//proguardFiles指定混淆的规则文件  //proguard-android.txt通用混淆规则  //proguard-rules.pro自定义混淆规则</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">dependencies &#123;//指定项目的所有依赖文件</div><div class="line">    compile fileTree(include: [&apos;*.jar&apos;], dir: &apos;libs&apos;)//本地依赖声明</div><div class="line">    compile &apos;com.android.support:appcompat-v7:24.2.1&apos;//远程依赖声明</div><div class="line">    testCompile &apos;junit:junit:4.12&apos;//声明测试用例库</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/ListView/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/20/ListView/" itemprop="url">ListView<CODE 2 chaper3></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
+                2017-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/20/ListView/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/20/ListView/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：1.了解ListView（列表）的用法 2.定制listview的界面(自定义适配器) 3.提升ListView的运行效率<br>4.ListView的点击事件<p></p>
+<p></p><h3>ListView（列表）的用法</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">ListView需要大量数据  来源数据库 或自定义</div><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    private String[] data=&#123;&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;&#125;;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        ArraryAdapter&lt;String&gt;adapter = new ArraryAdapter(MainActivity.this, R.layout.fruit_item, data);//第一个参数 上下文  布局ID 数据名//ArraryAdapter数组适配器</div><div class="line">        ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">        listView.setAdapter(adapter);//启动适配器</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">```    </div><div class="line"></div><div class="line">&lt;h3&gt;定制listview的界面&lt;/h3&gt;</div><div class="line"></div><div class="line">&lt;img src=&apos;http://img.027cgb.cn/20170722/20177222181775731906.png&apos; /&gt;</div><div class="line"></div><div class="line">```Android</div><div class="line">如：列表每一项包含图片及文字</div><div class="line">详解每一步：</div><div class="line">1.两个布局activity_main 及fruit_item(简单，不赘述)</div><div class="line"></div><div class="line">2.fruit类（简单，不赘述）</div><div class="line">public class Fruit &#123;</div><div class="line"></div><div class="line">    private String name;</div><div class="line"></div><div class="line">    private int imageId;</div><div class="line"></div><div class="line">    public Fruit(String name, int imageId) &#123;</div><div class="line">        this.name = name;</div><div class="line">        this.imageId = imageId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public String getName() &#123;</div><div class="line">        return name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public int getImageId() &#123;</div><div class="line">        return imageId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">3.FruitAdaper类</div><div class="line">public class FruitAdapter extends ArrayAdapter&lt;Fruit&gt; &#123;//继承ArrayAdaper 从而使之能调用适配器需要的函数 //泛型为fruit类</div><div class="line"></div><div class="line">    private int resourceId;</div><div class="line"></div><div class="line">    public FruitAdapter(Context context, int textViewResourceId, List&lt;Fruit&gt; objects) &#123;//上下文 布局id 列表对象</div><div class="line">        super(context, textViewResourceId, objects);//调用父类构造函数   及FruitAdapter()等同于ArrayAdaper()</div><div class="line">        resourceId = textViewResourceId;//之所以另定义一个变量来获得textViewResourceId,是怕使用过程中将之改变</div><div class="line">    &#125;</div><div class="line">//  重写getView方法(获取到视图类对象的指针，并转换成CAdaptoneViewView   的指针)</div><div class="line">  public View getView(int position, View convertView, ViewGroup parent) &#123;/ /每个子项滚动到屏幕内都会被调用</div><div class="line">        Fruit fruit = getItem(position); // 获取当前项的Fruit实例</div><div class="line">        View view=layoutInflater.from(getContext()).inflate(resourceId,parent,false);//为子项加载我们传入的布局</div><div class="line">        ImageView fruitImage=(ImageView)view.findViewById(R.id.fruit_image);//ImageView内部类</div><div class="line">        TextView fruitName=(TextView)view.findViewById(R.id.fruit_name);//TextView内部类</div><div class="line">        fruitImage.setImageResouceId(fruit.getImageId());</div><div class="line">        fruitName.setText(fruit.getName());</div><div class="line">        return view;</div><div class="line">    &#125;</div></pre></td></tr></table></figure><p></p>
+<p><img src="http://i4.piimg.com/595109/3e87d1af99d7521b.png" alt="Markdown"></p>
+<p>4.MianActivity类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    private List&lt;Fruit&gt; fruitList = new ArrayList&lt;Fruit&gt;();//用ArrayList（）方法声明一个fruitList列表 指定泛型为Fruit</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        initFruits(); // 初始化水果数据</div><div class="line">        FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);//第一个参数 传入水果对象  布局ID 水果列表</div><div class="line">        ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">        listView.setAdapter(adapter);//启动适配器</div><div class="line">        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;//给listview设置监听器</div><div class="line">            @Override</div><div class="line">            public void onItemClick(AdapterView&lt;?&gt; parent, View view,</div><div class="line">                                    int position, long id) &#123;</div><div class="line">                Fruit fruit = fruitList.get(position);</div><div class="line">                Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();//设置逻辑</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private void initFruits() &#123;</div><div class="line">            for (int i = 0; i &lt; 2; i++) &#123;//循环两次是出于谨慎</div><div class="line">                Fruit apple = new Fruit(&quot;Apple&quot;, R.drawable.apple_pic);</div><div class="line">                fruitList.add(apple);</div><div class="line">                Fruit banana = new Fruit(&quot;Banana&quot;, R.drawable.banana_pic);</div><div class="line">                fruitList.add(banana);</div><div class="line">                Fruit orange = new Fruit(&quot;Orange&quot;, R.drawable.orange_pic);</div><div class="line">                fruitList.add(orange);</div><div class="line">                Fruit watermelon = new Fruit(&quot;Watermelon&quot;, R.drawable.watermelon_pic);</div><div class="line">                fruitList.add(watermelon);</div><div class="line">                Fruit pear = new Fruit(&quot;Pear&quot;, R.drawable.pear_pic);</div><div class="line">                fruitList.add(pear);</div><div class="line">                Fruit grape = new Fruit(&quot;Grape&quot;, R.drawable.grape_pic);</div><div class="line">                fruitList.add(grape);</div><div class="line">                Fruit pineapple = new Fruit(&quot;Pineapple&quot;, R.drawable.pineapple_pic);</div><div class="line">                fruitList.add(pineapple);</div><div class="line">                Fruit strawberry = new Fruit(&quot;Strawberry&quot;, R.drawable.strawberry_pic);</div><div class="line">                fruitList.add(strawberry);</div><div class="line">                Fruit cherry = new Fruit(&quot;Cherry&quot;, R.drawable.cherry_pic);</div><div class="line">                fruitList.add(cherry);</div><div class="line">                Fruit mango = new Fruit(&quot;Mango&quot;, R.drawable.mango_pic);</div><div class="line">                fruitList.add(mango);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure></p>
+<p></p><h3>3.ListView的优化</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">需要优化的点：1.getView每一次滑动都要将布局重载！（效率低）</div><div class="line">2.每次getView（）都会通过findViewById获取一次控件实例</div><div class="line">优化思路 使用convertView参数（布局缓存重用） 新建viewHolder集合类</div><div class="line">优化后代码：</div><div class="line">public View getView(int position, View convertView, ViewGroup parent) &#123;//每个子项滚动到屏幕内都会被调用</div><div class="line">       Fruit fruit = getItem(position); // 获取当前项的Fruit实例</div><div class="line">       View view;</div><div class="line">       ViewHolder viewHolder;</div><div class="line">       if (convertView == null) &#123;</div><div class="line">           view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);</div><div class="line">           viewHolder = new ViewHolder();</div><div class="line">           viewHolder.fruitImage = (ImageView) view.findViewById (R.id.fruit_image);</div><div class="line">           viewHolder.fruitName = (TextView) view.findViewById (R.id.fruit_name);</div><div class="line">           view.setTag(viewHolder); // 将ViewHolder存储在View中</div><div class="line">       &#125; else &#123;</div><div class="line">           view = convertView;</div><div class="line">           viewHolder = (ViewHolder) view.getTag(); // 重新获取ViewHolder</div><div class="line">       &#125;</div><div class="line">       viewHolder.fruitImage.setImageResource(fruit.getImageId());</div><div class="line">       viewHolder.fruitName.setText(fruit.getName());</div><div class="line">       return view;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   class ViewHolder &#123;</div><div class="line"></div><div class="line">       ImageView fruitImage;</div><div class="line"></div><div class="line">       TextView fruitName;</div><div class="line"></div><div class="line">   &#125;</div></pre></td></tr></table></figure><p></p>
+<p>   </p><h3>4.ListView的点击事件</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">简单，不赘述。</div><div class="line">   protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">           super.onCreate(savedInstanceState);</div><div class="line">           setContentView(R.layout.activity_main);</div><div class="line">           initFruits(); // 初始化水果数据</div><div class="line">           FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);//第一个参数 传入水果对象  布局ID 水果列表</div><div class="line">           ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">           listView.setAdapter(adapter);//启动适配器</div><div class="line">           listView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;//给listview设置监听器</div><div class="line">               @Override</div><div class="line">               public void onItemClick(AdapterView&lt;?&gt; parent, View view,</div><div class="line">                                       int position, long id) &#123;</div><div class="line">                   Fruit fruit = fruitList.get(position);</div><div class="line">                   Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();//设置逻辑</div><div class="line">               &#125;</div><div class="line">           &#125;);</div><div class="line">       &#125;</div></pre></td></tr></table></figure><p></p>
+</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/ActivityText/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -326,7 +863,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
                 2017-07-20
@@ -486,539 +1023,6 @@ public class SecondActivity extends BaseActivity {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/logcat及log/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/20/logcat及log/" itemprop="url">logcat及log<CODE 2 chaper2></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
-                2017-07-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/20/logcat及log/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/20/logcat及log/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>log</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">log.v()//verbose 琐碎日志</div><div class="line">log.d()//debug调试信息</div><div class="line">log.i()//比较重要的数据 用户数据</div><div class="line">log.w()//warn</div><div class="line">log.e()//error</div></pre></td></tr></table></figure><p></p>
-<p></p><h3>logcat and 过滤器</h3><br><img src="http://img.027cgb.cn/20170721/20177216711775731906.png"><br><img src="http://img.027cgb.cn/20170721/20177217341775731906.png"><p></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/ListView/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/20/ListView/" itemprop="url">ListView<CODE 2 chaper3></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
-                2017-07-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/20/ListView/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/20/ListView/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的：1.了解ListView（列表）的用法 2.定制listview的界面(自定义适配器) 3.提升ListView的运行效率<br>4.ListView的点击事件<p></p>
-<p></p><h3>ListView（列表）的用法</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">ListView需要大量数据  来源数据库 或自定义</div><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    private String[] data=&#123;&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;&#125;;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        ArraryAdapter&lt;String&gt;adapter = new ArraryAdapter(MainActivity.this, R.layout.fruit_item, data);//第一个参数 上下文  布局ID 数据名//ArraryAdapter数组适配器</div><div class="line">        ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">        listView.setAdapter(adapter);//启动适配器</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">```    </div><div class="line"></div><div class="line">&lt;h3&gt;定制listview的界面&lt;/h3&gt;</div><div class="line"></div><div class="line">&lt;img src=&apos;http://img.027cgb.cn/20170722/20177222181775731906.png&apos; /&gt;</div><div class="line"></div><div class="line">```Android</div><div class="line">如：列表每一项包含图片及文字</div><div class="line">详解每一步：</div><div class="line">1.两个布局activity_main 及fruit_item(简单，不赘述)</div><div class="line"></div><div class="line">2.fruit类（简单，不赘述）</div><div class="line">public class Fruit &#123;</div><div class="line"></div><div class="line">    private String name;</div><div class="line"></div><div class="line">    private int imageId;</div><div class="line"></div><div class="line">    public Fruit(String name, int imageId) &#123;</div><div class="line">        this.name = name;</div><div class="line">        this.imageId = imageId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public String getName() &#123;</div><div class="line">        return name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public int getImageId() &#123;</div><div class="line">        return imageId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">3.FruitAdaper类</div><div class="line">public class FruitAdapter extends ArrayAdapter&lt;Fruit&gt; &#123;//继承ArrayAdaper 从而使之能调用适配器需要的函数 //泛型为fruit类</div><div class="line"></div><div class="line">    private int resourceId;</div><div class="line"></div><div class="line">    public FruitAdapter(Context context, int textViewResourceId, List&lt;Fruit&gt; objects) &#123;//上下文 布局id 列表对象</div><div class="line">        super(context, textViewResourceId, objects);//调用父类构造函数   及FruitAdapter()等同于ArrayAdaper()</div><div class="line">        resourceId = textViewResourceId;//之所以另定义一个变量来获得textViewResourceId,是怕使用过程中将之改变</div><div class="line">    &#125;</div><div class="line">//  重写getView方法(获取到视图类对象的指针，并转换成CAdaptoneViewView   的指针)</div><div class="line">  public View getView(int position, View convertView, ViewGroup parent) &#123;/ /每个子项滚动到屏幕内都会被调用</div><div class="line">        Fruit fruit = getItem(position); // 获取当前项的Fruit实例</div><div class="line">        View view=layoutInflater.from(getContext()).inflate(resourceId,parent,false);//为子项加载我们传入的布局</div><div class="line">        ImageView fruitImage=(ImageView)view.findViewById(R.id.fruit_image);//ImageView内部类</div><div class="line">        TextView fruitName=(TextView)view.findViewById(R.id.fruit_name);//TextView内部类</div><div class="line">        fruitImage.setImageResouceId(fruit.getImageId());</div><div class="line">        fruitName.setText(fruit.getName());</div><div class="line">        return view;</div><div class="line">    &#125;</div></pre></td></tr></table></figure><p></p>
-<p><img src="http://i4.piimg.com/595109/3e87d1af99d7521b.png" alt="Markdown"></p>
-<p>4.MianActivity类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    private List&lt;Fruit&gt; fruitList = new ArrayList&lt;Fruit&gt;();//用ArrayList（）方法声明一个fruitList列表 指定泛型为Fruit</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        initFruits(); // 初始化水果数据</div><div class="line">        FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);//第一个参数 传入水果对象  布局ID 水果列表</div><div class="line">        ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">        listView.setAdapter(adapter);//启动适配器</div><div class="line">        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;//给listview设置监听器</div><div class="line">            @Override</div><div class="line">            public void onItemClick(AdapterView&lt;?&gt; parent, View view,</div><div class="line">                                    int position, long id) &#123;</div><div class="line">                Fruit fruit = fruitList.get(position);</div><div class="line">                Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();//设置逻辑</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private void initFruits() &#123;</div><div class="line">            for (int i = 0; i &lt; 2; i++) &#123;//循环两次是出于谨慎</div><div class="line">                Fruit apple = new Fruit(&quot;Apple&quot;, R.drawable.apple_pic);</div><div class="line">                fruitList.add(apple);</div><div class="line">                Fruit banana = new Fruit(&quot;Banana&quot;, R.drawable.banana_pic);</div><div class="line">                fruitList.add(banana);</div><div class="line">                Fruit orange = new Fruit(&quot;Orange&quot;, R.drawable.orange_pic);</div><div class="line">                fruitList.add(orange);</div><div class="line">                Fruit watermelon = new Fruit(&quot;Watermelon&quot;, R.drawable.watermelon_pic);</div><div class="line">                fruitList.add(watermelon);</div><div class="line">                Fruit pear = new Fruit(&quot;Pear&quot;, R.drawable.pear_pic);</div><div class="line">                fruitList.add(pear);</div><div class="line">                Fruit grape = new Fruit(&quot;Grape&quot;, R.drawable.grape_pic);</div><div class="line">                fruitList.add(grape);</div><div class="line">                Fruit pineapple = new Fruit(&quot;Pineapple&quot;, R.drawable.pineapple_pic);</div><div class="line">                fruitList.add(pineapple);</div><div class="line">                Fruit strawberry = new Fruit(&quot;Strawberry&quot;, R.drawable.strawberry_pic);</div><div class="line">                fruitList.add(strawberry);</div><div class="line">                Fruit cherry = new Fruit(&quot;Cherry&quot;, R.drawable.cherry_pic);</div><div class="line">                fruitList.add(cherry);</div><div class="line">                Fruit mango = new Fruit(&quot;Mango&quot;, R.drawable.mango_pic);</div><div class="line">                fruitList.add(mango);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure></p>
-<p></p><h3>3.ListView的优化</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">需要优化的点：1.getView每一次滑动都要将布局重载！（效率低）</div><div class="line">2.每次getView（）都会通过findViewById获取一次控件实例</div><div class="line">优化思路 使用convertView参数（布局缓存重用） 新建viewHolder集合类</div><div class="line">优化后代码：</div><div class="line">public View getView(int position, View convertView, ViewGroup parent) &#123;//每个子项滚动到屏幕内都会被调用</div><div class="line">       Fruit fruit = getItem(position); // 获取当前项的Fruit实例</div><div class="line">       View view;</div><div class="line">       ViewHolder viewHolder;</div><div class="line">       if (convertView == null) &#123;</div><div class="line">           view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);</div><div class="line">           viewHolder = new ViewHolder();</div><div class="line">           viewHolder.fruitImage = (ImageView) view.findViewById (R.id.fruit_image);</div><div class="line">           viewHolder.fruitName = (TextView) view.findViewById (R.id.fruit_name);</div><div class="line">           view.setTag(viewHolder); // 将ViewHolder存储在View中</div><div class="line">       &#125; else &#123;</div><div class="line">           view = convertView;</div><div class="line">           viewHolder = (ViewHolder) view.getTag(); // 重新获取ViewHolder</div><div class="line">       &#125;</div><div class="line">       viewHolder.fruitImage.setImageResource(fruit.getImageId());</div><div class="line">       viewHolder.fruitName.setText(fruit.getName());</div><div class="line">       return view;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   class ViewHolder &#123;</div><div class="line"></div><div class="line">       ImageView fruitImage;</div><div class="line"></div><div class="line">       TextView fruitName;</div><div class="line"></div><div class="line">   &#125;</div></pre></td></tr></table></figure><p></p>
-<p>   </p><h3>4.ListView的点击事件</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">简单，不赘述。</div><div class="line">   protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">           super.onCreate(savedInstanceState);</div><div class="line">           setContentView(R.layout.activity_main);</div><div class="line">           initFruits(); // 初始化水果数据</div><div class="line">           FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);//第一个参数 传入水果对象  布局ID 水果列表</div><div class="line">           ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">           listView.setAdapter(adapter);//启动适配器</div><div class="line">           listView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;//给listview设置监听器</div><div class="line">               @Override</div><div class="line">               public void onItemClick(AdapterView&lt;?&gt; parent, View view,</div><div class="line">                                       int position, long id) &#123;</div><div class="line">                   Fruit fruit = fruitList.get(position);</div><div class="line">                   Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();//设置逻辑</div><div class="line">               &#125;</div><div class="line">           &#125;);</div><div class="line">       &#125;</div></pre></td></tr></table></figure><p></p>
-</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/build.gradle文件详解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/20/build.gradle文件详解/" itemprop="url">build.gradle文件详解<CODE 2 chaper2></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
-                2017-07-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/20/build.gradle文件详解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/20/build.gradle文件详解/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>build.gradle(项目目录下)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()//代码托管仓库，声明后可引用jcenter上的开源项目</div><div class="line">    &#125;</div><div class="line">    dependencies &#123;</div><div class="line">        classpath &apos;com.android.tools.build:gradle:2.2.0&apos;//“依赖”文件使用classpath声明一个gradle插件  声明的原因：让gradle知道构建的是Android java 还是</div><div class="line">c++                                                     //com.android.tools.build:gradle:2.2.0说明构建的是android项目</div><div class="line">        // NOTE: Do not place your application dependencies here; they belong</div><div class="line">        // in the individual module build.gradle files</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">allprojects &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()//代码托管仓库，声明后可引用jcenter上的开源项目</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">task clean(type: Delete) &#123;</div><div class="line">    delete rootProject.buildDir</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p></p><h3>build.gradle(项目目录下)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;com.android.application&apos;//应用一个插件 两个值可选  应用程序模块 （可直接运行）   com.android.library库模块（作为代码库依附别的库运行）</div><div class="line"></div><div class="line">android &#123;</div><div class="line">    compileSdkVersion 24  //编译所用sdk版本</div><div class="line">    buildToolsVersion &quot;24.0.2&quot;//构建工具版本</div><div class="line">    defaultConfig &#123;//细节配置</div><div class="line">        applicationId &quot;com.example.helloworld&quot;//项目包名</div><div class="line">        minSdkVersion 15//最低sdk版本</div><div class="line">        targetSdkVersion 24//充分测试的sdk版本</div><div class="line">        versionCode 1//项目版本号</div><div class="line">        versionName &quot;1.0&quot;//项目版本名</div><div class="line">    &#125;</div><div class="line">    buildTypes &#123;//生成安装文件的相关配置</div><div class="line">        release &#123;//release指定生产正式版安装文件的配置    debug闭包指定生成测试版安装文件的配置</div><div class="line">            minifyEnabled false//指定是否对项目的代码进行混淆</div><div class="line">            proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;//proguardFiles指定混淆的规则文件  //proguard-android.txt通用混淆规则  //proguard-rules.pro自定义混淆规则</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">dependencies &#123;//指定项目的所有依赖文件</div><div class="line">    compile fileTree(include: [&apos;*.jar&apos;], dir: &apos;libs&apos;)//本地依赖声明</div><div class="line">    compile &apos;com.android.support:appcompat-v7:24.2.1&apos;//远程依赖声明</div><div class="line">    testCompile &apos;junit:junit:4.12&apos;//声明测试用例库</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/配置变量时  系统 用户变量的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="url">配置变量时  系统 用户变量的区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T20:13:10+08:00">
-                2017-06-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/06/18/配置变量时  系统 用户变量的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>我们在Java运行环境或Android开发环境时，经常要配置环境变量，如图所示，<br><img src="http://d1.freep.cn/3tb_170617122931qa32585966.png"></p>
-<p>这里有administrator的用户变量(U)，和系统变量（S），<br>那麽，它们之间有什么区别呢？<br>简单的说，一个是当前用户使用，你用其它用户登陆，这个环境变量就不起作用了。<br>系统变量，是对所有用户都可使用的。<br>简单的说：<br>系统变量：不管以哪个用户名登陆到计算机都能使用；<br>用户变量：只能以设置变量时的用户名登陆才能使用。</p>
-<p>如果我们在自己的电脑上运行程序，用户只有一个，看不出系统变量和用户变量的区别，但是，<br>如果一台电脑有多个用户，就能看出用户变量和系统变量的区别了~~<br>PS：我们在配置的时候，一般都是配置系统变量（S），</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/ANdriod sdk 更新问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1048,7 +1052,7 @@ public class SecondActivity extends BaseActivity {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T20:13:10+08:00">
                 2017-06-18
@@ -1159,6 +1163,139 @@ public class SecondActivity extends BaseActivity {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/配置变量时  系统 用户变量的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="url">配置变量时  系统 用户变量的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T20:13:10+08:00">
+                2017-06-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/18/配置变量时  系统 用户变量的区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我们在Java运行环境或Android开发环境时，经常要配置环境变量，如图所示，<br><img src="http://d1.freep.cn/3tb_170617122931qa32585966.png"></p>
+<p>这里有administrator的用户变量(U)，和系统变量（S），<br>那麽，它们之间有什么区别呢？<br>简单的说，一个是当前用户使用，你用其它用户登陆，这个环境变量就不起作用了。<br>系统变量，是对所有用户都可使用的。<br>简单的说：<br>系统变量：不管以哪个用户名登陆到计算机都能使用；<br>用户变量：只能以设置变量时的用户名登陆才能使用。</p>
+<p>如果我们在自己的电脑上运行程序，用户只有一个，看不出系统变量和用户变量的区别，但是，<br>如果一台电脑有多个用户，就能看出用户变量和系统变量的区别了~~<br>PS：我们在配置的时候，一般都是配置系统变量（S），</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/14/JDK SDK配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1188,7 +1325,7 @@ public class SecondActivity extends BaseActivity {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-14T20:13:10+08:00">
                 2017-06-14
@@ -1334,7 +1471,7 @@ public class SecondActivity extends BaseActivity {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-04T20:13:10+08:00">
                 2017-06-04
@@ -1472,7 +1609,7 @@ public class SecondActivity extends BaseActivity {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-28T20:13:10+08:00">
                 2017-05-28
@@ -1569,138 +1706,6 @@ public class SecondActivity extends BaseActivity {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/24/二叉平衡树相关算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/24/二叉平衡树相关算法/" itemprop="url">二叉平衡树相关算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-24T18:00:00+08:00">
-                2017-05-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/24/二叉平衡树相关算法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/24/二叉平衡树相关算法/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div><div class="line">274</div><div class="line">275</div><div class="line">276</div><div class="line">277</div><div class="line">278</div><div class="line">279</div><div class="line">280</div><div class="line">281</div><div class="line">282</div><div class="line">283</div><div class="line">284</div><div class="line">285</div><div class="line">286</div><div class="line">287</div><div class="line">288</div><div class="line">289</div><div class="line">290</div><div class="line">291</div><div class="line">292</div><div class="line">293</div><div class="line">294</div><div class="line">295</div><div class="line">296</div><div class="line">297</div><div class="line">298</div><div class="line">299</div><div class="line">300</div><div class="line">301</div><div class="line">302</div><div class="line">303</div><div class="line">304</div><div class="line">305</div><div class="line">306</div><div class="line">307</div><div class="line">308</div><div class="line">309</div><div class="line">310</div><div class="line">311</div><div class="line">312</div><div class="line">313</div><div class="line">314</div><div class="line">315</div><div class="line">316</div><div class="line">317</div><div class="line">318</div><div class="line">319</div><div class="line">320</div><div class="line">321</div><div class="line">322</div><div class="line">323</div><div class="line">324</div><div class="line">325</div><div class="line">326</div><div class="line">327</div><div class="line">328</div><div class="line">329</div><div class="line">330</div><div class="line">331</div><div class="line">332</div><div class="line">333</div><div class="line">334</div><div class="line">335</div><div class="line">336</div><div class="line">337</div><div class="line">338</div><div class="line">339</div><div class="line">340</div><div class="line">341</div><div class="line">342</div><div class="line">343</div><div class="line">344</div><div class="line">345</div><div class="line">346</div><div class="line">347</div><div class="line">348</div><div class="line">349</div><div class="line">350</div><div class="line">351</div><div class="line">352</div><div class="line">353</div><div class="line">354</div><div class="line">355</div><div class="line">356</div><div class="line">357</div><div class="line">358</div><div class="line">359</div><div class="line">360</div><div class="line">361</div><div class="line">362</div><div class="line">363</div><div class="line">364</div><div class="line">365</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> KeyType;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> InfoType;</div><div class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line">	KeyType Key;</div><div class="line">	<span class="keyword">int</span> bf;</div><div class="line">	InfoType data;</div><div class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></div><div class="line">&#125;BSTNode;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">LeftProcess</span><span class="params">(BSTNode *&amp;p, <span class="keyword">int</span> &amp;taller)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	BSTNode *p1,*p2;</div><div class="line">	<span class="keyword">if</span> (p-&gt;bf == <span class="number">0</span>)</div><div class="line">	&#123;</div><div class="line">		p-&gt;bf = <span class="number">1</span>;</div><div class="line">		taller = <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;bf == <span class="number">1</span>)</div><div class="line">	&#123;</div><div class="line">		p-&gt;bf = <span class="number">0</span>;</div><div class="line">		taller = <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span></div><div class="line">	&#123;</div><div class="line">		p1 = p-&gt;lchild;</div><div class="line">		<span class="keyword">if</span> (p1-&gt;bf == <span class="number">1</span>)</div><div class="line">		&#123;</div><div class="line">			p-&gt;lchild = p1-&gt;rchild;</div><div class="line">			p1-&gt;rchild = p;</div><div class="line">			p-&gt;bf = p1-&gt;bf = <span class="number">0</span>;</div><div class="line">			p = p1;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (p1-&gt;bf == <span class="number">-1</span>)</div><div class="line">		&#123;</div><div class="line">			p2 = p1-&gt;rchild;</div><div class="line">			p1-&gt;rchild = p2-&gt;lchild;</div><div class="line">			p2-&gt;lchild = p1;</div><div class="line">			p-&gt;lchild = p2-&gt;rchild;</div><div class="line">			p2-&gt;rchild = p;</div><div class="line">			<span class="keyword">if</span> (p2-&gt;bf == <span class="number">1</span>)</div><div class="line">				p-&gt;bf = p1-&gt;bf = <span class="number">0</span>;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (p2-&gt;bf == <span class="number">1</span>)</div><div class="line">			&#123;</div><div class="line">				p1-&gt;bf = <span class="number">0</span>;</div><div class="line">				p-&gt;bf = <span class="number">-1</span>;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span></div><div class="line">			&#123;</div><div class="line">				p1-&gt;bf = <span class="number">1</span>;</div><div class="line">				p-&gt;bf = <span class="number">0</span>;</div><div class="line">			&#125;</div><div class="line">			p = p2; p-&gt;bf = <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		taller = <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">&#125;<span class="function"><span class="keyword">void</span> <span class="title">RightProcess</span><span class="params">(BSTNode * &amp;p, <span class="keyword">int</span> &amp;taller)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	BSTNode *p1, *p2;</div><div class="line">	<span class="keyword">if</span> (p-&gt;bf == <span class="number">0</span>)</div><div class="line">	&#123;</div><div class="line">		p-&gt;bf = <span class="number">-1</span>;</div><div class="line">		taller = <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;bf == <span class="number">1</span>)</div><div class="line">	&#123;</div><div class="line">		p-&gt;bf = <span class="number">0</span>;</div><div class="line">		taller = <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span></div><div class="line">	&#123;</div><div class="line">		p1 = p-&gt;rchild;</div><div class="line">		<span class="keyword">if</span> (p1-&gt;bf == <span class="number">-1</span>)</div><div class="line">		&#123;</div><div class="line">			p-&gt;rchild - p1-&gt;lchild;</div><div class="line">			p1-&gt;lchild = p;</div><div class="line">			p-&gt;bf = p1-&gt;bf = <span class="number">0</span>;</div><div class="line">			p = p1;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (p1-&gt;bf == <span class="number">1</span>)</div><div class="line">		&#123;</div><div class="line">			p2 = p1-&gt;lchild;</div><div class="line">			p1-&gt;lchild = p2-&gt;rchild;</div><div class="line">			p2-&gt;rchild = p1;</div><div class="line">			p-&gt;rchild = p2-&gt;lchild;</div><div class="line">			p2-&gt;lchild = p;</div><div class="line">			<span class="keyword">if</span> (p2-&gt;bf == <span class="number">0</span>)</div><div class="line">				p-&gt;bf = p1-&gt;bf = <span class="number">0</span>;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (p2-&gt;bf == <span class="number">-1</span>)</div><div class="line">			&#123;</div><div class="line">				p1-&gt;bf = <span class="number">0</span>;</div><div class="line">				p-&gt;bf = <span class="number">0</span>;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span></div><div class="line">			&#123;</div><div class="line">				p1-&gt;bf = <span class="number">-1</span>;</div><div class="line">				p-&gt;bf = <span class="number">0</span>;</div><div class="line">			&#125;</div><div class="line">			p = p2; p-&gt;bf = <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		taller = <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">InseertAVL</span><span class="params">(BSTNode * &amp;b, KeyType e, <span class="keyword">int</span> &amp;taller)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">if</span> (b == <span class="literal">NULL</span>)</div><div class="line">	&#123;</div><div class="line">		b = (BSTNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BSTNode));</div><div class="line">		b-&gt;Key = e;</div><div class="line">		b-&gt;lchild = b-&gt;rchild = <span class="literal">NULL</span>;</div><div class="line">		b-&gt;bf = <span class="number">1</span>;</div><div class="line">		taller = <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span> (e == b-&gt;Key)</div><div class="line">		&#123;</div><div class="line">			taller = <span class="number">0</span>;</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (e &lt; b-&gt;Key)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">if</span> ((InseertAVL(b-&gt;lchild, e, taller)) == <span class="number">0</span>)</div><div class="line">				<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">			<span class="keyword">if</span> (taller == <span class="number">1</span>)</div><div class="line">				LeftProcess(b, taller);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span></div><div class="line">		&#123;</div><div class="line">			<span class="keyword">if</span> ((InseertAVL(b-&gt;lchild, e, taller)) == <span class="number">0</span>)</div><div class="line">				<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">			<span class="keyword">if</span> (taller == <span class="number">1</span>)</div><div class="line">				RightProcess(b, taller);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">DispBSTree</span><span class="params">(BSTNode * b)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">if</span> (b != <span class="literal">NULL</span>)</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>, b-&gt;Key);</div><div class="line">		<span class="keyword">if</span> (b-&gt;lchild != <span class="literal">NULL</span> || b-&gt;rchild != <span class="literal">NULL</span>)</div><div class="line">		&#123;</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"("</span>);</div><div class="line">			DispBSTree(b-&gt;lchild);</div><div class="line">			<span class="keyword">if</span> (b-&gt;rchild != <span class="literal">NULL</span>)<span class="built_in">printf</span>(<span class="string">","</span>);</div><div class="line">			DispBSTree(b-&gt;rchild);</div><div class="line">			<span class="built_in">printf</span>(<span class="string">")"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">LeftProcee1</span><span class="params">(BSTNode * &amp;p, <span class="keyword">int</span> &amp;taller)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	BSTNode *p1, *p2;</div><div class="line">	<span class="keyword">if</span> (p-&gt;bf == <span class="number">1</span>)</div><div class="line">	&#123;</div><div class="line">		p-&gt;bf = <span class="number">0</span>;</div><div class="line">		taller = <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;bf == <span class="number">0</span>)</div><div class="line">	&#123;</div><div class="line">		p-&gt;bf = <span class="number">-1</span>;</div><div class="line">		taller = <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span></div><div class="line">	&#123;</div><div class="line">		p1 = p-&gt;rchild;</div><div class="line">		<span class="keyword">if</span> (p1-&gt;bf == <span class="number">0</span>)</div><div class="line">		&#123;</div><div class="line">			p-&gt;rchild = p1-&gt;lchild;</div><div class="line">			p1-&gt;lchild = p;</div><div class="line">			p1 -&gt; bf = <span class="number">1</span>; p-&gt;bf = <span class="number">-1</span>;</div><div class="line">			p = p1;</div><div class="line">			taller = <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (p1-&gt;bf == <span class="number">-1</span>)</div><div class="line">		&#123;</div><div class="line">			p-&gt;rchild = p1-&gt;lchild;</div><div class="line">			p1-&gt;lchild = p;</div><div class="line">			p1-&gt;bf = p-&gt;bf = <span class="number">0</span>;</div><div class="line">			p = p1 = <span class="number">0</span>;</div><div class="line">			taller = <span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span></div><div class="line">		&#123;</div><div class="line">			p2 = p1-&gt;lchild;</div><div class="line">			p1-&gt;lchild = p2-&gt;rchild;</div><div class="line">			p2-&gt;rchild = p1;</div><div class="line">			p-&gt;rchild = p2-&gt;lchild;</div><div class="line">			p2-&gt;lchild = p;</div><div class="line">			<span class="keyword">if</span> (p2-&gt;bf == <span class="number">0</span>)</div><div class="line">			&#123;</div><div class="line">				p-&gt;bf = <span class="number">0</span>;</div><div class="line">				p1-&gt;bf = <span class="number">0</span>;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (p2-&gt;bf = <span class="number">1</span>)</div><div class="line">			&#123;</div><div class="line">				p-&gt;bf = <span class="number">1</span>;</div><div class="line">				p1-&gt;bf = <span class="number">0</span>;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span></div><div class="line">			&#123;</div><div class="line">				p-&gt;bf = <span class="number">0</span>;</div><div class="line">				p1-&gt;bf = <span class="number">-1</span>;</div><div class="line">			&#125;</div><div class="line">			p2-&gt;bf = <span class="number">0</span>;</div><div class="line">			p = p2;</div><div class="line">			taller = <span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">RightProcess1</span><span class="params">(BSTNode * &amp;p, <span class="keyword">int</span> &amp;taller)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	BSTNode *p1, *p2;</div><div class="line">	<span class="keyword">if</span> (p-&gt;bf == <span class="number">-1</span>)</div><div class="line">	&#123;</div><div class="line">		p-&gt;bf = <span class="number">0</span>;</div><div class="line">		taller = <span class="number">-1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;bf ==<span class="number">0</span>)</div><div class="line">	&#123;</div><div class="line">		p-&gt;bf = <span class="number">1</span>;</div><div class="line">		taller = <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span></div><div class="line">	&#123;</div><div class="line">		p1 = p-&gt;lchild;</div><div class="line">		<span class="keyword">if</span> (p1-&gt;bf == <span class="number">0</span>)</div><div class="line">		&#123;</div><div class="line">			p-&gt;lchild = p1-&gt;rchild;</div><div class="line">			p-&gt;rchild = p;</div><div class="line">			p1-&gt;bf = <span class="number">-1</span>; p-&gt;bf = <span class="number">1</span>;</div><div class="line">			p = p1;</div><div class="line">			taller = <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (p1-&gt;bf == <span class="number">1</span>)</div><div class="line">		&#123;</div><div class="line">			p-&gt;lchild = p1-&gt;rchild;</div><div class="line">			p1-&gt;rchild = p;</div><div class="line">			p-&gt;bf = p-&gt;bf = <span class="number">0</span>;</div><div class="line">			p = p1;</div><div class="line">			taller = <span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span></div><div class="line">		&#123;</div><div class="line">			p2 = p1-&gt;rchild;</div><div class="line">			p1-&gt;rchild = p2-&gt;lchild;</div><div class="line">			p2-&gt;lchild = p1;</div><div class="line">			p-&gt;lchild = p2-&gt;rchild;</div><div class="line">			p2-&gt;rchild = p;</div><div class="line">			<span class="keyword">if</span> (p2-&gt;bf == <span class="number">0</span>)</div><div class="line">			&#123;</div><div class="line">				p-&gt;bf = <span class="number">0</span>;</div><div class="line">				p1-&gt;bf = <span class="number">0</span>;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (p2-&gt;bf == <span class="number">1</span>)</div><div class="line">			&#123;</div><div class="line">				p-&gt;bf = <span class="number">-1</span>;</div><div class="line">				p1-&gt;bf = <span class="number">0</span>;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span></div><div class="line">			&#123;</div><div class="line">				p-&gt;bf = <span class="number">0</span>;</div><div class="line">				p1-&gt;bf = <span class="number">1</span>;</div><div class="line">			&#125;</div><div class="line">			p2-&gt;bf = <span class="number">0</span>;</div><div class="line">			p = p2;</div><div class="line">			taller = <span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Delete2</span><span class="params">(BSTNode * &amp;q, BSTNode * &amp;r, <span class="keyword">int</span> &amp;taller)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">if</span> (r-&gt;rchild == <span class="literal">NULL</span>)</div><div class="line">	&#123;</div><div class="line">		q-&gt;Key = r-&gt;Key;</div><div class="line">		q = r;</div><div class="line">		r = r-&gt;rchild;</div><div class="line">		<span class="built_in">free</span>(q);</div><div class="line">		taller = <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span></div><div class="line">	&#123;</div><div class="line">		Delete2(q, r-&gt;rchild, taller);</div><div class="line">		<span class="keyword">if</span> (taller == <span class="number">1</span>)</div><div class="line">			RightProcess1(r, taller);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">DeleteAVL</span><span class="params">(BSTNode * &amp;p, KeyType x, <span class="keyword">int</span> &amp;taller)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> k;</div><div class="line">	BSTNode *q;</div><div class="line">	<span class="keyword">if</span> (p == <span class="literal">NULL</span>)</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (x &lt; p-&gt;Key)</div><div class="line">	&#123;</div><div class="line">		k = DeleteAVL(p-&gt;rchild, x, taller);</div><div class="line">		<span class="keyword">if</span> (taller == <span class="number">1</span>)</div><div class="line">			RightProcess1(p, taller);</div><div class="line">		<span class="keyword">return</span> k;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (x &gt; p-&gt;Key)</div><div class="line">	&#123;</div><div class="line">		k = DeleteAVL(p-&gt;rchild, x, taller);</div><div class="line">		<span class="keyword">if</span> (taller == <span class="number">1</span>)</div><div class="line">			RightProcess1(p, taller);</div><div class="line">		<span class="keyword">return</span> k;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span></div><div class="line">	&#123;</div><div class="line">		q = p;</div><div class="line">		<span class="keyword">if</span> (p-&gt;rchild == <span class="literal">NULL</span>)</div><div class="line">		&#123;</div><div class="line">			p = p-&gt;lchild;</div><div class="line">			<span class="built_in">free</span>(q);</div><div class="line">			taller = <span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;lchild == <span class="literal">NULL</span>)</div><div class="line">		&#123;</div><div class="line">			p = p-&gt;rchild;</div><div class="line">			<span class="built_in">free</span>(q);</div><div class="line">			taller = <span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span></div><div class="line">		&#123;</div><div class="line">			Delete2(q, q-&gt;lchild, taller);</div><div class="line">			<span class="keyword">if</span> (taller == <span class="number">1</span>)</div><div class="line">				LeftProcee1(q, taller);</div><div class="line">			p = q;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	BSTNode *b = <span class="literal">NULL</span>;</div><div class="line">	<span class="keyword">int</span> i, j, k;</div><div class="line">	KeyType a[] = &#123; <span class="number">4</span>,<span class="number">9</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">7</span> &#125;, n = <span class="number">10</span>;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"创建一颗AVL树\n"</span>);</div><div class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"第%d步，插入%d元素："</span>, i + <span class="number">1</span>, a[i]);</div><div class="line">		InseertAVL(b, a[i], j);</div><div class="line">		DispBSTree(b); <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"结果AVL："</span>); DispBSTree(b); <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"删除节点:\n"</span>);</div><div class="line">	k = <span class="number">8</span>;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"删除节点%d:"</span>, k);</div><div class="line">	DeleteAVL(b, k, j);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"AVL:"</span>); DispBSTree(b); <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">	k -= <span class="number">2</span>;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"删除节点%d"</span>, k);</div><div class="line">	DeleteAVL(b, j, k);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"AVL:"</span>); DispBSTree(b); <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">	getchar();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="http://i1.piimg.com/595109/ada0c1fdf636ab31.png" alt="Markdown"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1751,8 +1756,8 @@ public class SecondActivity extends BaseActivity {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">96</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">97</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1765,7 +1770,7 @@ public class SecondActivity extends BaseActivity {
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -1874,7 +1879,7 @@ public class SecondActivity extends BaseActivity {
 
 
   <div class="powered-by">
-    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+    Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
   </div>
 
   <span class="post-meta-divider">|</span>

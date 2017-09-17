@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -239,7 +239,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Search
+            Suche
           </a>
         </li>
       
@@ -297,6 +297,169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/29/DataBestTest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DEMO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HEXO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/29/DataBestTest/" itemprop="url">DataBestTest<CODE 2 chaper5></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-29T20:13:10+08:00">
+                2017-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/29/DataBestTest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/29/DataBestTest/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：1.创建数据库 2.升级数据库 3.对数据库的四种操作 4.使用SQL操作数据库 5.使用LitePal操作数据库<p></p>
+<p>1.创建名为BookStore.db数据库</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//MyDatabaseHelper</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyDatabaseHelper</span> <span class="keyword">extends</span> <span class="title">SQLiteOpenHelper</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CREATE_BOOK = <span class="string">"create table Book ("</span></div><div class="line">            + <span class="string">"id integer primary key autoincrement, "</span></div><div class="line">            + <span class="string">"author text, "</span></div><div class="line">            + <span class="string">"price real, "</span></div><div class="line">            + <span class="string">"pages integer, "</span></div><div class="line">            + <span class="string">"name text)"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Context mContext;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyDatabaseHelper</span><span class="params">(Context context, String name,</span></span></div><div class="line"><span class="function"><span class="params">                            SQLiteDatabase.CursorFactory factory, <span class="keyword">int</span> version)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, name, factory, version);</div><div class="line">        mContext = context;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(SQLiteDatabase db)</span> </span>&#123;</div><div class="line">        db.execSQL(CREATE_BOOK);</div><div class="line"></div><div class="line">        Toast.makeText(mContext, <span class="string">"Create succeeded"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUpgrade</span><span class="params">(SQLiteDatabase db, <span class="keyword">int</span> oldVersion, <span class="keyword">int</span> newVersion)</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//MainActivity</span></div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">private</span> MyDatabaseHelper dbHelper;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">            <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">            setContentView(R.layout.activity_main);</div><div class="line">            dbHelper = <span class="keyword">new</span> MyDatabaseHelper(<span class="keyword">this</span>, <span class="string">"BookStore.db"</span>, <span class="keyword">null</span>, <span class="number">2</span>);</div><div class="line">            Button createDatabase = (Button) findViewById(R.id.create_database);</div><div class="line">            createDatabase.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                    dbHelper.getWritableDatabase();</div><div class="line">                &#125;</div><div class="line">            &#125;);    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>2.升级数据库(给它加东西) onUpgrade()<br>建表Category<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CREATE_CATEGORY = <span class="string">"create table Category ("</span></div><div class="line">            + <span class="string">"id integer primary key autoincrement, "</span></div><div class="line">            + <span class="string">"category_name text, "</span></div><div class="line">            + <span class="string">"category_code integer)"</span>;</div><div class="line"></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(SQLiteDatabase db)</span> </span>&#123;</div><div class="line">                db.execSQL(CREATE_BOOK);</div><div class="line">                db.execSQL(CREATE_CATEGORY);</div><div class="line">                Toast.makeText(mContext, <span class="string">"Create succeeded"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">            &#125;</div></pre></td></tr></table></figure></p>
+<p>onUpgrade()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUpgrade</span><span class="params">(SQLiteDatabase db, <span class="keyword">int</span> oldVersion, <span class="keyword">int</span> newVersion)</span> </span>&#123;</div><div class="line">       db.execSQL(<span class="string">"drop table if exists Book"</span>);</div><div class="line">       db.execSQL(<span class="string">"drop table if exists Category"</span>);</div><div class="line">       onCreate(db);</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
+<p>MianActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        dbHelper = <span class="keyword">new</span> MyDatabaseHelper(<span class="keyword">this</span>, <span class="string">"BookStore.db"</span>, <span class="keyword">null</span>, <span class="number">2</span>);<span class="comment">//将数据库版本号指定为2</span></div><div class="line">        Button createDatabase = (Button) findViewById(R.id.create_database);</div><div class="line">        createDatabase.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                dbHelper.getWritableDatabase();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
+<p>3.对数据库的四种操作</p>
+<ul>
+<li>Create添加 insert（）方法</li>
+<li>Retrieve查询 Updata（）方法</li>
+<li>Updata更新</li>
+<li>Delete删除</li>
+</ul>
+<p>1.Create添加 insert（）方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">Button addData = (Button) findViewById(R.id.add_data);</div><div class="line">       addData.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">               SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">               ContentValues values = <span class="keyword">new</span> ContentValues();<span class="comment">//提供put（）方法</span></div><div class="line">               <span class="comment">// 开始组装第一条数据</span></div><div class="line">               values.put(<span class="string">"name"</span>, <span class="string">"The Da Vinci Code"</span>);</div><div class="line">               values.put(<span class="string">"author"</span>, <span class="string">"Dan Brown"</span>);</div><div class="line">               values.put(<span class="string">"pages"</span>, <span class="number">454</span>);</div><div class="line">               values.put(<span class="string">"price"</span>, <span class="number">16.96</span>);</div><div class="line">               db.insert(<span class="string">"Book"</span>, <span class="keyword">null</span>, values); <span class="comment">// 插入第一条数据  表名 给空的列赋值null ContentValues对象（提供put（）方法）</span></div><div class="line">               values.clear();</div><div class="line">               <span class="comment">// 开始组装第二条数据</span></div><div class="line">               values.put(<span class="string">"name"</span>, <span class="string">"The Lost Symbol"</span>);</div><div class="line">               values.put(<span class="string">"author"</span>, <span class="string">"Dan Brown"</span>);</div><div class="line">               values.put(<span class="string">"pages"</span>, <span class="number">510</span>);</div><div class="line">               values.put(<span class="string">"price"</span>, <span class="number">19.95</span>);</div><div class="line">               db.insert(<span class="string">"Book"</span>, <span class="keyword">null</span>, values); <span class="comment">// 插入第二条数据</span></div><div class="line">           &#125;</div><div class="line">       &#125;);</div></pre></td></tr></table></figure></p>
+<p>2.Updata更新 Updata（）方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Button updateData = (Button) findViewById(R.id.update_data);</div><div class="line">        updateData.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                ContentValues values = <span class="keyword">new</span> ContentValues();</div><div class="line">                values.put(<span class="string">"price"</span>, <span class="number">10.99</span>);</div><div class="line">                db.update(<span class="string">"Book"</span>, values, <span class="string">"name = ?"</span>, <span class="keyword">new</span> String[] &#123; <span class="string">"The Da Vinci Code"</span> &#125;);<span class="comment">//更新name =The Da Vinci Code的这一行</span></div><div class="line">                <span class="comment">//将名字为he Da Vinci Code的price改为10.99</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
+<p>3.Delete删除<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Button deleteButton = (Button) findViewById(R.id.delete_data);</div><div class="line">        deleteButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                db.delete(<span class="string">"Book"</span>, <span class="string">"pages &gt; ?"</span>, <span class="keyword">new</span> String[] &#123; <span class="string">"500"</span> &#125;);<span class="comment">//删除页数超过500页的的boo表中的数据</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
+<p>4.Retrieve查询 query（）方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">Button queryButton = (Button) findViewById(R.id.query_data);</div><div class="line">        queryButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                SQLiteDatabase db = dbHelper.getWritableDatabase();</div><div class="line">                <span class="comment">// 查询Book表中所有的数据</span></div><div class="line">                Cursor cursor = db.query(<span class="string">"Book"</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);<span class="comment">//调用getColumnIndex方法</span></div><div class="line">                <span class="keyword">if</span> (cursor.moveToFirst()) &#123;</div><div class="line">                    <span class="keyword">do</span> &#123;</div><div class="line">                        <span class="comment">// 遍历Cursor对象，取出数据并打印</span></div><div class="line">                        String name = cursor.getString(cursor.getColumnIndex(<span class="string">"name"</span>));</div><div class="line">                        String author = cursor.getString(cursor.getColumnIndex(<span class="string">"author"</span>));</div><div class="line">                        <span class="keyword">int</span> pages = cursor.getInt(cursor.getColumnIndex(<span class="string">"pages"</span>));</div><div class="line">                        <span class="keyword">double</span> price = cursor.getDouble(cursor.getColumnIndex(<span class="string">"price"</span>));</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book name is "</span> + name);</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book author is "</span> + author);</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book pages is "</span> + pages);</div><div class="line">                        Log.d(<span class="string">"MainActivity"</span>, <span class="string">"book price is "</span> + price);</div><div class="line">                    &#125; <span class="keyword">while</span> (cursor.moveToNext());</div><div class="line">                &#125;</div><div class="line">                cursor.close();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
+<p>使用SQL操作数据库</p>
+<ul>
+<li><p>添加数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">db.execSQL(<span class="string">"insret into Book (name,author,pages,price)values(?,?,?,?)"</span>,<span class="keyword">new</span> String[]&#123;<span class="string">"The Da Vinci Code"</span>,<span class="string">"Dan Brown "</span>,<span class="string">"545"</span>,<span class="string">"16.96"</span>&#125;);</div><div class="line">db.execSQL(<span class="string">"insret into Book (name,author,pages,price)values(?,?,?,?)"</span>,<span class="keyword">new</span> String[]&#123;<span class="string">"The Lost Symbol"</span>,<span class="string">"Dan Brown "</span>,<span class="string">"545"</span>,<span class="string">"16.96"</span>&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>更新数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.execSQL(<span class="string">"updata Book set price=? where name=?"</span>,<span class="keyword">new</span> String[]&#123;<span class="string">"10.99"</span>,<span class="string">"The Da Vinci Code"</span>&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>删除数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.execSQL(<span class="string">"delete from Book where pages&gt;?,new String[]&#123;"</span><span class="number">500</span><span class="string">"&#125;"</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>查询数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.rawQuery(<span class="string">"select * from Book"</span>,<span class="keyword">null</span>);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>5.使用LitePal操作数据库</p>
+</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/29/LietPal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -326,7 +489,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-29T20:13:10+08:00">
                 2017-07-29
@@ -497,7 +660,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-28T20:13:10+08:00">
                 2017-07-28
@@ -655,7 +818,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-28T20:13:10+08:00">
                 2017-07-28
@@ -811,7 +974,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-27T20:13:11+08:00">
                 2017-07-27
@@ -942,7 +1105,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-25T20:13:10+08:00">
                 2017-07-25
@@ -1091,7 +1254,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-24T20:13:10+08:00">
                 2017-07-24
@@ -1227,7 +1390,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-24T20:13:10+08:00">
                 2017-07-24
@@ -1371,7 +1534,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-23T20:13:10+08:00">
                 2017-07-23
@@ -1538,7 +1701,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-22T20:13:10+08:00">
                 2017-07-22
@@ -1673,143 +1836,6 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/21/RecycleView/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/21/RecycleView/" itemprop="url">RecycleView<CODE 2 chaper3></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T20:13:10+08:00">
-                2017-07-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/21/RecycleView/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/21/RecycleView/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的：1.RecycleView的基本用法 2.实现横向列表  3.实现瀑布流 4.RecycleView的点击事件（需添加依赖库）<p></p>
-<hr>
-<p><img src="http://i1.ciimg.com/595109/7853ee0ff4b9f52e.png" alt="Markdown"></p>
-<p></p><h3>1.RecycleView的基本用法（不止可实现列表 还可实现瀑布流等） </h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line">添加一行代码（依赖）</div><div class="line">dependencies &#123;</div><div class="line">    compile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])</div><div class="line">    testCompile &apos;junit:junit:4.12&apos;</div><div class="line">    compile &apos;com.android.support:appcompat-v7:24.2.1&apos;</div><div class="line">    compile &apos;com.android.support:recyclerview-v7:24.2.1&apos;//recycleview定义在suprot库中  需添加依赖库</div><div class="line">&#125;</div><div class="line"></div><div class="line">创建RecycleView布局</div><div class="line">&lt;android.support.v7.widget.RecyclerView</div><div class="line">        android:id=&quot;@+id/recycler_view&quot;</div><div class="line">        android:layout_width=&quot;match_parent&quot;</div><div class="line">        android:layout_height=&quot;match_parent&quot; /&gt;</div><div class="line"></div><div class="line">重写FruitAdaper类（思路：ViewHolder获取子项布局ID再设置监听器）</div><div class="line">public class FruitAdapter extends RecyclerView.Adapter&lt;FruitAdapter.ViewHolder&gt;&#123;// 中括号里一般是类名 泛型</div><div class="line"></div><div class="line">    private List&lt;Fruit&gt; mFruitList;//定义全局变量</div><div class="line"></div><div class="line">    static class ViewHolder extends RecyclerView.ViewHolder &#123;//RecycleView有ViewHolder内部类</div><div class="line">        View fruitView;</div><div class="line">        ImageView fruitImage;</div><div class="line">        TextView fruitName;</div><div class="line"></div><div class="line">        public ViewHolder(View view) &#123;//子项的布局</div><div class="line">            super(view);</div><div class="line">            fruitView = view;</div><div class="line">            fruitImage = (ImageView) view.findViewById(R.id.fruit_image);</div><div class="line">            fruitName = (TextView) view.findViewById(R.id.fruit_name);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public FruitAdapter(List&lt;Fruit&gt; fruitList) &#123;</div><div class="line">        mFruitList = fruitList;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) &#123;</div><div class="line">        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item, parent, false);</div><div class="line">        final ViewHolder holder = new ViewHolder(view);</div><div class="line">        holder.fruitView.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">            @Override</div><div class="line">            public void onClick(View v) &#123;</div><div class="line">                int position = holder.getAdapterPosition();</div><div class="line">                Fruit fruit = mFruitList.get(position);</div><div class="line">                Toast.makeText(v.getContext(), &quot;you clicked view &quot; + fruit.getName(), Toast.LENGTH_SHORT).show();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        holder.fruitImage.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">            @Override</div><div class="line">            public void onClick(View v) &#123;</div><div class="line">                int position = holder.getAdapterPosition();</div><div class="line">                Fruit fruit = mFruitList.get(position);</div><div class="line">                Toast.makeText(v.getContext(), &quot;you clicked image &quot; + fruit.getName(), Toast.LENGTH_SHORT).show();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        return holder;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onBindViewHolder(ViewHolder holder, int position) &#123;//对子项数据进行赋值</div><div class="line">        Fruit fruit = mFruitList.get(position);</div><div class="line">        holder.fruitImage.setImageResource(fruit.getImageId());</div><div class="line">        holder.fruitName.setText(fruit.getName());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public int getItemCount() &#123;</div><div class="line">        return mFruitList.size();</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    MainActivity类</div><div class="line">    public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">        private List&lt;Fruit&gt; fruitList = new ArrayList&lt;Fruit&gt;();</div><div class="line"></div><div class="line">        @Override</div><div class="line">        protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">            super.onCreate(savedInstanceState);</div><div class="line">            setContentView(R.layout.activity_main);</div><div class="line">            initFruits();//初始化数据 自定义方法</div><div class="line">            RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);</div><div class="line">            LinearLayoutManager layoutManager=new LinearLayoutManager(this);//指定布局方式 可以是横向 竖向 此为竖向</div><div class="line">            recyclerView.setLayoutManager(layoutManager);//启动自定义布局</div><div class="line">            FruitAdapter adapter = new FruitAdapter(fruitList);</div><div class="line">            recyclerView.setAdapter(adapter);</div><div class="line">        &#125;</div></pre></td></tr></table></figure><p></p>
-<p></p><h3>2.实现横向列表（只用加一行代码）</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);</div><div class="line">LinearLayoutManager layoutManager=new LinearLayoutManager(this);//指定布局方式 可以是横向 竖向 此为竖向</div><div class="line">layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);//横向线性布局  默认为竖向</div><div class="line">recyclerView.setLayoutManager(layoutManager);//启动自定义布局</div><div class="line">FruitAdapter adapter = new FruitAdapter(fruitList);</div><div class="line">recyclerView.setAdapter(adapter);</div></pre></td></tr></table></figure><p></p>
-<p></p><h3> 3.实现瀑布流 (只用加一行代码)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);</div><div class="line">LinearLayoutManager layoutManager=new LinearLayoutManager(this);//指定布局方式 可以是横向 竖向 此为竖向</div><div class="line">StaggeredGridLayoutManager layoutManager = new</div><div class="line">                StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);//瀑布流  默认为竖向</div><div class="line">recyclerView.setLayoutManager(layoutManager);//启动自定义布局</div><div class="line">FruitAdapter adapter = new FruitAdapter(fruitList);</div><div class="line">recyclerView.setAdapter(adapter);</div></pre></td></tr></table></figure><p></p>
-<p></p><h3>4.RecycleView的点击事件</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">不同于ListView（setOnItemClickListener） RecycleView没有点击事件</div><div class="line"></div><div class="line">static class ViewHolder extends RecyclerView.ViewHolder &#123;//RecycleView有ViewHolder内部类</div><div class="line">    View fruitView;//保存最外层子布局实例</div><div class="line">    ImageView fruitImage;</div><div class="line">    TextView fruitName;</div><div class="line"></div><div class="line">    public ViewHolder(View view) &#123;//子项的布局</div><div class="line">        super(view);</div><div class="line">        fruitView = view;//保存最外层子布局实例</div><div class="line">        fruitImage = (ImageView) view.findViewById(R.id.fruit_image);</div><div class="line">        fruitName = (TextView) view.findViewById(R.id.fruit_name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public FruitAdapter(List&lt;Fruit&gt; fruitList) &#123;</div><div class="line">    mFruitList = fruitList;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) &#123;</div><div class="line">    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item, parent, false);</div><div class="line">    final ViewHolder holder = new ViewHolder(view);</div><div class="line">    holder.fruitView.setOnClickListener(new View.OnClickListener() &#123;//给RecycleViewS设置点击事件</div><div class="line">        @Override</div><div class="line">        public void onClick(View v) &#123;</div><div class="line">            int position = holder.getAdapterPosition();</div><div class="line">            Fruit fruit = mFruitList.get(position);</div><div class="line">            Toast.makeText(v.getContext(), &quot;you clicked view &quot; + fruit.getName(), Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    holder.fruitImage.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">        @Override</div><div class="line">        public void onClick(View v) &#123;</div><div class="line">            int position = holder.getAdapterPosition();</div><div class="line">            Fruit fruit = mFruitList.get(position);</div><div class="line">            Toast.makeText(v.getContext(), &quot;you clicked image &quot; + fruit.getName(), Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    return holder;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1860,8 +1886,8 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">96</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">97</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1874,7 +1900,7 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -1983,7 +2009,7 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
 
 
   <div class="powered-by">
-    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+    Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
   </div>
 
   <span class="post-meta-divider">|</span>
