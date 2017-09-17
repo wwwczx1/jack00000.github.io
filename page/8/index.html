@@ -95,11 +95,11 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="HEXO">
+<meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/page/8/index.html">
-<meta property="og:site_name" content="HEXO">
+<meta property="og:site_name" content="Hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HEXO">
+<meta name="twitter:title" content="Hexo">
 
 
 
@@ -134,7 +134,7 @@
 
 
 
-  <title>HEXO</title>
+  <title>Hexo</title>
   
 
 
@@ -166,7 +166,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">HEXO</span>
+        <span class="site-title">Hexo</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -302,6 +302,145 @@
   
   
 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/28/nogrok 内网穿透/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/28/nogrok 内网穿透/" itemprop="url">nogrok 内网穿透</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-28T20:13:10+08:00">
+                2017-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/28/nogrok 内网穿透/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/05/28/nogrok 内网穿透/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用Sunny-Ngrok赠送的免费域名进行http服务映射</p>
+<h2>1、首先在本站注册成为会员</h2>
+
+<h2>2、开通隧道</h2><br><img src="http://i4.buimg.com/595109/94fb72aec8843576.png" alt="Markdown"><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">在上图中表单信息解释：</div><div class="line">    隧道名称：可以随便填写，只是为了使用者在往后之后这个隧道是干嘛的</div><div class="line">    前置域名：服务器免费赠送的域名，请不要带上后缀，如果要sunny.ngrok.cc 只需要填写 sunny 即可 ，千万不要填写成sunny.ngrok.cc否则域名会是sunny.ngrok.cc.ngrok.cc</div><div class="line">    本地端口：可以为同一个局域网内任意一台机器进行映射，只需要填对ip和端口就行，例如：<span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span>:<span class="number">80</span></div><div class="line">    http验证用户名：非必填项，在需要的时候填写，否则可以不填</div><div class="line">    http验证密码：非必填项，在需要的时候填写，否则可以不填</div></pre></td></tr></table></figure><br><br><h2>3、在需要映射的机器建立web服务</h2><br>    如果没有启动web服务将会看到下图提示<br><br><h2>4、下载客户端</h2>
+
+<pre><code>根据自己的操作系统需求下载相对于版本
+</code></pre><p></p><h2>5、启动映射服务</h2><br>    Linux或者Mac系统下启动，需要进入到客户端的目录执行以下命令，通过隧道管理找到隧道id，然后执行<br>./sunny clientid 隧道id<p></p>
+<p><img src="http://i4.buimg.com/595109/00b0bb93929f813a.png" alt="Markdown"><br>    看到这样则是成功启动一条隧道，启动多条隧道把多条隧道id使用英文逗号隔开就可以了。例如：<br>  ./sunny clientid c7fb2defb4081919,3e23d14f040b2b12<br>    上面命令就可以启动多条隧道了<br>    <img src="http://i4.buimg.com/595109/eace865f62d8e265.png" alt="Markdown"></p>
+<p></p><h2>6、访问服务</h2><br>    然后通过启动成功界面上的链接访问网站如果显示是内网搭建的web服务里面的内容就说明成功了<p></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
   <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
   
   
@@ -310,13 +449,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/24/二叉平衡树相关算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -442,13 +581,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/22/树莓派.摄像头配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -585,13 +724,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/用网线连接树莓派和pc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -715,151 +854,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/02/微信开发者/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/02/微信开发者/" itemprop="url">微信开发者</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-02T20:13:10+08:00">
-                2017-05-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/02/微信开发者/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/02/微信开发者/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="http://i4.buimg.com/595109/bab9ca2d9d74a63e.png" alt="Markdown"></p>
-<p><img src="http://i4.buimg.com/595109/d63695703d9d7513.png" alt="Markdown"></p>
-<p><img src="http://i4.buimg.com/595109/0fc2ff56892bcf40.png" alt="Markdown"></p>
-<p><img src="http://i4.buimg.com/595109/08c0b7145777d38c.png" alt="Markdown"></p>
-<p><img src="http://i4.buimg.com/595109/7857569099d13713.png" alt="Markdown"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/02/[树莓派]无线网卡配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -1015,16 +1019,151 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/28/【树莓派】电脑显示器当树莓派显示屏/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/02/微信开发者/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/02/微信开发者/" itemprop="url">微信开发者</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-02T20:13:10+08:00">
+                2017-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/02/微信开发者/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/05/02/微信开发者/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://i4.buimg.com/595109/bab9ca2d9d74a63e.png" alt="Markdown"></p>
+<p><img src="http://i4.buimg.com/595109/d63695703d9d7513.png" alt="Markdown"></p>
+<p><img src="http://i4.buimg.com/595109/0fc2ff56892bcf40.png" alt="Markdown"></p>
+<p><img src="http://i4.buimg.com/595109/08c0b7145777d38c.png" alt="Markdown"></p>
+<p><img src="http://i4.buimg.com/595109/7857569099d13713.png" alt="Markdown"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/28/【树莓派】电脑显示器当树莓派显示屏/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -1179,13 +1318,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/E3D插件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -1326,13 +1465,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/31/数据结构上机实验/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -1475,13 +1614,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/24/数据结构上机指导/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -1594,166 +1733,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/22/qqbot/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/22/qqbot/" itemprop="url">qqbot</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-22T20:13:10+08:00">
-                2017-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/22/qqbot/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/03/22/qqbot/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>只有两步，但只能查看信息，搜索信息</h3><p></p>
-<ul>
-<li>pip install qqbot</li>
-<li>qqbot</li>
-<li>扫码</li>
-</ul>
-<p><img src="http://i1.piimg.com/1949/759c16ee4572e6b1.png"></p>
-<p><img src="http://i1.piimg.com/1949/4f4edd8c64d2fac1.png"></p>
-<p></p><h3>SmartqqBot+图灵机器人</h3><p></p>
-<ul>
-<li>python的安装   pip的安装</li>
-<li><a href="https://github.com/jack00000/SmartQQBot" target="_blank" rel="external">下载SmartqqBot源码</a></li>
-<li><a href="http://www.tuling123.com/" target="_blank" rel="external">注册图灵账号</a>并创建机器人获得apikey</li>
-<li>然后开始搞事情</li>
-</ul>
-<p></p><h3>1.python的安装   pip的安装</h3><p></p>
-<ul>
-<li>别忘啦配置路径</li>
-<li><p><a href="http://jingyan.baidu.com/article/7908e85c78c743af491ad261.html" target="_blank" rel="external">python安装</a></p>
-</li>
-<li><p>重点说pip（为安装一些依赖库而生）这个坑<br><a href="https://pypi.python.org/packages/11/b6/abcb525026a4be042b486df43905d6893fb04f05aac21c32c638e939e447/pip-9.0.1.tar.gz#md5=35f01da33009719497f01a4ba69d63c9" target="_blank" rel="external">python官网</a></p>
-</li>
-<li><p>图灵机器人插件配置<br><img src="http://i1.piimg.com/567571/76ca477fc3a35b08.png" alt=""></p>
-</li>
-</ul>
-<p><img src="http://i1.piimg.com/567571/95788377816c2c89.png" alt=""></p>
-<ul>
-<li>运行run.py<br><img src="http://i2.muimg.com/567571/190b1af42c526203.png" alt=""></li>
-</ul>
-<p><img src="http://i2.muimg.com/567571/f2c8ea9c83f421b2.png" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1793,8 +1772,8 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg"
-               alt="DEMO" />
-          <p class="site-author-name" itemprop="name">DEMO</p>
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
           
@@ -1804,7 +1783,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">97</span>
+                <span class="site-state-item-count">98</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -1920,7 +1899,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">DEMO</span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
 
   
 </div>

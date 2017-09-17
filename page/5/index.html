@@ -95,11 +95,11 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="HEXO">
+<meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/page/5/index.html">
-<meta property="og:site_name" content="HEXO">
+<meta property="og:site_name" content="Hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HEXO">
+<meta name="twitter:title" content="Hexo">
 
 
 
@@ -134,7 +134,7 @@
 
 
 
-  <title>HEXO</title>
+  <title>Hexo</title>
   
 
 
@@ -166,7 +166,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">HEXO</span>
+        <span class="site-title">Hexo</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -307,16 +307,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/NetWorktest3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/Androidthreadtest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -326,7 +326,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/02/NetWorktest3/" itemprop="url">networktest3<CODE 2 chaper9></a></h1>
+                <a class="post-title-link" href="/2017/08/02/Androidthreadtest/" itemprop="url">androidthreadtest<CODE 2 chaper9></a></h1>
         
 
         <div class="post-meta">
@@ -357,9 +357,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/02/NetWorktest3/#comments" itemprop="discussionUrl">
+                <a href="/2017/08/02/Androidthreadtest/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/02/NetWorktest3/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/08/02/Androidthreadtest/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -389,12 +389,192 @@
       
         
           
-            <p>优化：（在tese1，2中http请求代码基本相同 但我们每一次发送请求都编写一次代码）将通用的网络操作放到一个类HttpUil</p>
-<p>HttpUil<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpUtil</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sendHttpRequest</span><span class="params">(<span class="keyword">final</span> String address, <span class="keyword">final</span> HttpCallbackListener listener)</span> </span>&#123;</div><div class="line"></div><div class="line">                HttpURLConnection connection = <span class="keyword">null</span>;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    URL url = <span class="keyword">new</span> URL(address);</div><div class="line">                    connection = (HttpURLConnection) url.openConnection();</div><div class="line">                    connection.setRequestMethod(<span class="string">"GET"</span>);</div><div class="line">                    connection.setConnectTimeout(<span class="number">8000</span>);</div><div class="line">                    connection.setReadTimeout(<span class="number">8000</span>);</div><div class="line">                    connection.setDoInput(<span class="keyword">true</span>);</div><div class="line">                    connection.setDoOutput(<span class="keyword">true</span>);</div><div class="line">                    InputStream in = connection.getInputStream();</div><div class="line">                    BufferedReader reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in));</div><div class="line">                    StringBuilder response = <span class="keyword">new</span> StringBuilder();</div><div class="line">                    String line;</div><div class="line">                    <span class="keyword">while</span> ((line = reader.readLine()) != <span class="keyword">null</span>) &#123;</div><div class="line">                        response.append(line);</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">return</span> response.toString();</div><div class="line">                &#125; <span class="keyword">finally</span> &#123;</div><div class="line">                    <span class="keyword">if</span> (connection != <span class="keyword">null</span>) &#123;</div><div class="line">                        connection.disconnect();</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>若需发起请求(sendHttpRequest()内部没有开启线程 调用时可能阻塞主线程)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String address=&quot;http://wwww.baid.com&quot;;</div><div class="line">String response=HttpUtil.sendHttpRequest(address);</div></pre></td></tr></table></figure></p>
-<p>解决方法(Java的回调机制)<br>首先定义接口 HttpCallbackListener<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">HttpCallbackListener</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onFinish</span><span class="params">(String response)</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onError</span><span class="params">(Exception e)</span></span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>修改HttoUtil<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpUtil</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sendHttpRequest</span><span class="params">(<span class="keyword">final</span> String address, <span class="keyword">final</span> HttpCallbackListener listener)</span> </span>&#123;</div><div class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                HttpURLConnection connection = <span class="keyword">null</span>;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    URL url = <span class="keyword">new</span> URL(address);</div><div class="line">                    connection = (HttpURLConnection) url.openConnection();</div><div class="line">                    connection.setRequestMethod(<span class="string">"GET"</span>);</div><div class="line">                    connection.setConnectTimeout(<span class="number">8000</span>);</div><div class="line">                    connection.setReadTimeout(<span class="number">8000</span>);</div><div class="line">                    connection.setDoInput(<span class="keyword">true</span>);</div><div class="line">                    connection.setDoOutput(<span class="keyword">true</span>);</div><div class="line">                    InputStream in = connection.getInputStream();</div><div class="line">                    BufferedReader reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in));</div><div class="line">                    StringBuilder response = <span class="keyword">new</span> StringBuilder();</div><div class="line">                    String line;</div><div class="line">                    <span class="keyword">while</span> ((line = reader.readLine()) != <span class="keyword">null</span>) &#123;</div><div class="line">                        response.append(line);</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">if</span> (listener != <span class="keyword">null</span>) &#123;</div><div class="line">                        <span class="comment">// 回调onFinish()方法</span></div><div class="line">                        listener.onFinish(response.toString());</div><div class="line">                    &#125;</div><div class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">                    <span class="keyword">if</span> (listener != <span class="keyword">null</span>) &#123;</div><div class="line">                        <span class="comment">// 回调onError()方法</span></div><div class="line">                        listener.onError(e);</div><div class="line">                    &#125;</div><div class="line">                &#125; <span class="keyword">finally</span> &#123;</div><div class="line">                    <span class="keyword">if</span> (connection != <span class="keyword">null</span>) &#123;</div><div class="line">                        connection.disconnect();</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;).start();</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line">```    </div><div class="line">传入HttoCallbackListener实例</div><div class="line">```java</div><div class="line">HttpUtil.sendHttpRequest(address,<span class="keyword">new</span> HttpCallbackListener())&#123;</div><div class="line">  <span class="meta">@version</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFinish</span><span class="params">(String response)</span></span>&#123;</div><div class="line">    <span class="comment">//在这里根据返回内容执行具体逻辑</span></div><div class="line">  &#125;</div><div class="line">  <span class="meta">@version</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Exception e)</span></span>&#123;</div><div class="line">    <span class="comment">//在这里对异常进行处理</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>使用HttpURIConnection太复杂  改用Okhttp<br>在HttpUtil内田间sendOkhttpRequest()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sendOkHttpRequest</span><span class="params">(<span class="keyword">final</span> String address, <span class="keyword">final</span> okhttp3.Callback callback)</span> </span>&#123;</div><div class="line">        OkHttpClient client = <span class="keyword">new</span> OkHttpClient();</div><div class="line">        Request request = <span class="keyword">new</span> Request.Builder()</div><div class="line">                .url(address)</div><div class="line">                .build();</div><div class="line">        client.newCall(request).enqueue(callback);</div><div class="line">    &#125;</div><div class="line">```    </div><div class="line"></div><div class="line">```java</div><div class="line">HttpUtil.sendOkHttpRequest(address,<span class="keyword">new</span> HttpCallbackListener())&#123;</div><div class="line">  <span class="meta">@version</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFinish</span><span class="params">(String response)</span></span>&#123;</div><div class="line">    <span class="comment">//在这里根据返回内容执行具体逻辑</span></div><div class="line">    String responseData=response.body().strng();</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@version</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Exception e)</span></span>&#123;</div><div class="line">    <span class="comment">//在这里对异常进行处理</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+            <p></p><h3>学习目的：1.了解android线程的使用 2.了解主线程与子线程区别 3.解析异步处理机制<br>主线程与子线程：所谓主线程，在Windows窗体应用程序中一般指UI线程，这个是程序启动的时候首先创建的线程。而子线程，一般指为了完成某个特殊任务，并行于主线程的其他线程。例如让一个窗体单独开一个线程，去远程数据库中取得数据资料，下载并且保存到本地文件中。<br>所以，主线程和子线程是构建于线程这个通用概念上的人为的习惯称呼，并不是什么官方的固有专用词语。<br>MainActivity（简而言之，为实现某个功能而创建爱的线程是子线程）<p></p>
+<p>1.了解android线程的使用(例：在子线程更新UI)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">          <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">          setContentView(R.layout.activity_main);</div><div class="line">          text = (TextView) findViewById(R.id.text);</div><div class="line">          Button changeText = (Button) findViewById(R.id.change_text);</div><div class="line">          changeText.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      <span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">           <span class="keyword">case</span> R.id.change_text:</div><div class="line">               <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">                   <span class="meta">@Override</span></div><div class="line">                   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                       test.setText(<span class="string">"Nice to meet you"</span>);</div><div class="line">                   &#125;</div><div class="line">               &#125;).start();</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">default</span>:</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>logcat报错（说明不能在子线程更新UI）修改如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> UPDATE_TEXT = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> TextView text;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Handler handler = <span class="keyword">new</span> Handler() &#123;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">            <span class="keyword">switch</span> (msg.what) &#123;</div><div class="line">                <span class="keyword">case</span> UPDATE_TEXT:</div><div class="line">                    <span class="comment">// 在这里可以进行UI操作</span></div><div class="line">                    text.setText(<span class="string">"Nice to meet you"</span>);</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">default</span>:</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        text = (TextView) findViewById(R.id.text);</div><div class="line">        Button changeText = (Button) findViewById(R.id.change_text);</div><div class="line">        changeText.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">            <span class="keyword">case</span> R.id.change_text:</div><div class="line">                <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">                    <span class="meta">@Override</span></div><div class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                        Message message = <span class="keyword">new</span> Message();</div><div class="line">                        message.what = UPDATE_TEXT;</div><div class="line">                        handler.sendMessage(message); <span class="comment">// 将Message对象发送出去</span></div><div class="line">                    &#125;</div><div class="line">                &#125;).start();</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3.解析异步处理机制（Message MessageQueue Looper Handler四个部分）<br>异步处理机制的核心思想：一条Message经过如下转展调用，从子线程进入主线程，从而使不能更新UI变成可以更新UI<br><img src="http://i4.eiimg.com/595109/30b4ad0573b88091.png" alt="Markdown"></p>
+<p>4.使用AsyncTask类（更方便的进行UI操作）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DownloadTask</span> <span class="keyword">extends</span> <span class="title">AsyncTask</span>&lt;<span class="title">Void</span> <span class="title">Integer</span> <span class="title">Boolean</span>&gt;</span>&#123;...&#125;<span class="comment">//</span></div></pre></td></tr></table></figure></p>
+<p>三个参数<br>Params:执行AsyncTask需要传入的参数<br>Progress:后台任务执行时，需要在当前界面显示进度<br>Result:返回值类型</p>
+<p>还需重写四个方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DownloadTask</span> <span class="keyword">extends</span> <span class="title">AsyncTask</span>&lt;<span class="title">Void</span> <span class="title">Integer</span> <span class="title">Boolean</span>&gt;</span>&#123;</div><div class="line">  <span class="meta">@verride</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPreExecute</span><span class="params">()</span></span>&#123;</div><div class="line">    progressDialog.show();<span class="comment">//显示进度对话框</span></div><div class="line">  &#125;</div><div class="line">  <span class="meta">@verride</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> Boolean <span class="title">doInBackground</span><span class="params">(<span class="keyword">void</span>... Params)</span></span>&#123;</div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">      <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</div><div class="line">        <span class="keyword">int</span> downloadPercent=doDownload();<span class="comment">//这是一个虚构的方法</span></div><div class="line">        publishProgress(downloadPercent);</div><div class="line">        <span class="keyword">if</span>(downloadPercent&gt;=<span class="number">100</span>)&#123;</div><div class="line">          <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">      &#125;<span class="keyword">catch</span>(Exception e)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">  <span class="meta">@verride</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onProgressUpdata</span><span class="params">(Integer... values)</span></span>&#123;</div><div class="line">    <span class="comment">//在这里更新下载进度</span></div><div class="line">    progressDialog.setMessage(<span class="string">"Download"</span>+values[<span class="number">0</span>]+<span class="string">"%"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@verride</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPostExecute</span><span class="params">(Boolean result)</span></span>&#123;</div><div class="line">    progressDialog.dismiss();<span class="comment">//关闭进度对话框</span></div><div class="line">    <span class="keyword">if</span>(result)&#123;</div><div class="line">      Toast.makeText(context,<span class="string">"Download Succeeded"</span>,Toast.LENGTH_SHORT).show();</div><div class="line"></div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        Toast.makeText(context,<span class="string">"Download Failed"</span>,Toast.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>想要启动这个任务<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> DownloadTask().execute();</div></pre></td></tr></table></figure></p>
+</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/Networktest2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/02/Networktest2/" itemprop="url">networktest2<CODE 2 chaper9></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-02T20:13:10+08:00">
+                2017-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/02/Networktest2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/02/Networktest2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.搭建Apache服务器</p>
+<ul>
+<li>搜索Apache http srever<br><img src="http://i4.eiimg.com/595109/e2f9f11792e4c50e.png" alt="Markdown"></li>
+<li>一路next 成功标志<br><img src="http://i4.eiimg.com/595109/0965150ee66f1436.png" alt="Markdown"></li>
+<li>在Apache/htdocs下新建html文件</li>
+</ul>
+<p>xml数据格式<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">apps</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">app</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">id</span>&gt;</span>1<span class="tag">&lt;<span class="name">id</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">name</span>&gt;</span>Google Maps<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">app</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">app</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>2<span class="tag">&lt;<span class="name">id</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">name</span>&gt;</span>Chorme<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">     <span class="tag">&lt;/<span class="name">app</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">app</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>3<span class="tag">&lt;<span class="name">id</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">name</span>&gt;</span>Google Play<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">     <span class="tag">&lt;/<span class="name">app</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">apps</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>2.Pull解析方式（解析XML格式数据）（例子结果在log呈现）<br>MainActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sendRequestWithOkHttp</span><span class="params">()</span> </span>&#123;</div><div class="line">       <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">               <span class="keyword">try</span> &#123;</div><div class="line">                   OkHttpClient client = <span class="keyword">new</span> OkHttpClient();</div><div class="line">                   Request request = <span class="keyword">new</span> Request.Builder()</div><div class="line">                           <span class="comment">// 指定访问的服务器地址是电脑本机</span></div><div class="line">                           .url(<span class="string">"http://10.0.2.2/get_data.xml"</span>)<span class="comment">//get_data.xml我们在Apache/htdocs下新建的文件 10.0.2.2对模拟器来说是本机地址</span></div><div class="line">                           .build();</div><div class="line">                   Response response = client.newCall(request).execute();</div><div class="line">                   String responseData = response.body().string();</div><div class="line"></div><div class="line"></div><div class="line">                  parseXMLWithPull(responseData);</div><div class="line"></div><div class="line">               &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">                   e.printStackTrace();</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">       &#125;).start();</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">parseXMLWithPull</span><span class="params">(String xmlData)</span> </span>&#123;</div><div class="line">       <span class="keyword">try</span> &#123;</div><div class="line">           XmlPullParserFactory factory = XmlPullParserFactory.newInstance();</div><div class="line">           XmlPullParser xmlPullParser = factory.newPullParser();</div><div class="line">           xmlPullParser.setInput(<span class="keyword">new</span> StringReader(xmlData));</div><div class="line">           <span class="keyword">int</span> eventType = xmlPullParser.getEventType();</div><div class="line">           String id = <span class="string">""</span>;</div><div class="line">           String name = <span class="string">""</span>;</div><div class="line">           String version = <span class="string">""</span>;</div><div class="line">           <span class="keyword">while</span> (eventType != XmlPullParser.END_DOCUMENT) &#123;</div><div class="line">               String nodeName = xmlPullParser.getName();</div><div class="line">               <span class="keyword">switch</span> (eventType) &#123;</div><div class="line">                   <span class="comment">// 开始解析某个结点</span></div><div class="line">                   <span class="keyword">case</span> XmlPullParser.START_TAG: &#123;</div><div class="line">                       <span class="keyword">if</span> (<span class="string">"id"</span>.equals(nodeName)) &#123;</div><div class="line">                           id = xmlPullParser.nextText();</div><div class="line">                       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"name"</span>.equals(nodeName)) &#123;</div><div class="line">                           name = xmlPullParser.nextText();</div><div class="line">                       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"version"</span>.equals(nodeName)) &#123;</div><div class="line">                           version = xmlPullParser.nextText();</div><div class="line">                       &#125;</div><div class="line">                       <span class="keyword">break</span>;</div><div class="line">                   &#125;</div><div class="line">                   <span class="comment">// 完成解析某个结点</span></div><div class="line">                   <span class="keyword">case</span> XmlPullParser.END_TAG: &#123;</div><div class="line">                       <span class="keyword">if</span> (<span class="string">"app"</span>.equals(nodeName)) &#123;</div><div class="line">                           Log.d(<span class="string">"MainActivity"</span>, <span class="string">"id is "</span> + id);</div><div class="line">                           Log.d(<span class="string">"MainActivity"</span>, <span class="string">"name is "</span> + name);</div><div class="line">                           Log.d(<span class="string">"MainActivity"</span>, <span class="string">"version is "</span> + version);</div><div class="line">                       &#125;</div><div class="line">                       <span class="keyword">break</span>;</div><div class="line">                   &#125;</div><div class="line">                   <span class="keyword">default</span>:</div><div class="line">                       <span class="keyword">break</span>;</div><div class="line">               &#125;</div><div class="line">               eventType = xmlPullParser.next();</div><div class="line">           &#125;</div><div class="line">       &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">           e.printStackTrace();</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
+<p>3.SAX解析方式(解析XML格式数据)（实现解析功能同上）<br>新建类继承DefaultHandler 重写5个方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ContentHandler</span> <span class="keyword">extends</span> <span class="title">DefaultHandler</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String nodeName;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> StringBuilder id;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> StringBuilder name;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> StringBuilder version;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startDocument</span><span class="params">()</span> <span class="keyword">throws</span> SAXException </span>&#123;</div><div class="line">        id = <span class="keyword">new</span> StringBuilder();</div><div class="line">        name = <span class="keyword">new</span> StringBuilder();</div><div class="line">        version = <span class="keyword">new</span> StringBuilder();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startElement</span><span class="params">(String uri, String localName, String qName, Attributes attributes)</span> <span class="keyword">throws</span> SAXException </span>&#123;</div><div class="line">        <span class="comment">// 记录当前结点名</span></div><div class="line">        nodeName = localName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">characters</span><span class="params">(<span class="keyword">char</span>[] ch, <span class="keyword">int</span> start, <span class="keyword">int</span> length)</span> <span class="keyword">throws</span> SAXException </span>&#123;</div><div class="line">        <span class="comment">// 根据当前的结点名判断将内容添加到哪一个StringBuilder对象中</span></div><div class="line">        <span class="keyword">if</span> (<span class="string">"id"</span>.equals(nodeName)) &#123;</div><div class="line">            id.append(ch, start, length);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"name"</span>.equals(nodeName)) &#123;</div><div class="line">            name.append(ch, start, length);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"version"</span>.equals(nodeName)) &#123;</div><div class="line">            version.append(ch, start, length);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">endElement</span><span class="params">(String uri, String localName, String qName)</span> <span class="keyword">throws</span> SAXException </span>&#123;</div><div class="line">        <span class="keyword">if</span> (<span class="string">"app"</span>.equals(localName)) &#123;</div><div class="line">            Log.d(<span class="string">"ContentHandler"</span>, <span class="string">"id is "</span> + id.toString().trim());</div><div class="line">            Log.d(<span class="string">"ContentHandler"</span>, <span class="string">"name is "</span> + name.toString().trim());</div><div class="line">            Log.d(<span class="string">"ContentHandler"</span>, <span class="string">"version is "</span> + version.toString().trim());</div><div class="line">            <span class="comment">// 最后要将StringBuilder清空掉</span></div><div class="line">            id.setLength(<span class="number">0</span>);</div><div class="line">            name.setLength(<span class="number">0</span>);</div><div class="line">            version.setLength(<span class="number">0</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">endDocument</span><span class="params">()</span> <span class="keyword">throws</span> SAXException </span>&#123;</div><div class="line">        <span class="keyword">super</span>.endDocument();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>MainActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sendRequestWithOkHttp</span><span class="params">()</span> </span>&#123;</div><div class="line">       <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">               <span class="keyword">try</span> &#123;</div><div class="line">                   OkHttpClient client = <span class="keyword">new</span> OkHttpClient();</div><div class="line">                   Request request = <span class="keyword">new</span> Request.Builder()</div><div class="line">                           <span class="comment">// 指定访问的服务器地址是电脑本机</span></div><div class="line">                           .url(<span class="string">"http://10.0.2.2/get_data.xml"</span>)<span class="comment">//get_data.xml我们在Apache/htdocs下新建的文件 10.0.2.2对模拟器来说是本机地址</span></div><div class="line">                           .build();</div><div class="line">                   Response response = client.newCall(request).execute();</div><div class="line">                   String responseData = response.body().string();</div><div class="line"></div><div class="line"></div><div class="line">                  parseXMLWithSAX(responseData);</div><div class="line"></div><div class="line">               &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">                   e.printStackTrace();</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">       &#125;).start();</div><div class="line">   &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">parseXMLWithSAX</span><span class="params">(String xmlData)</span> </span>&#123;</div><div class="line">          <span class="keyword">try</span> &#123;</div><div class="line">              SAXParserFactory factory = SAXParserFactory.newInstance();</div><div class="line">              XMLReader xmlReader = factory.newSAXParser().getXMLReader();</div><div class="line">              ContentHandler handler = <span class="keyword">new</span> ContentHandler();</div><div class="line">              <span class="comment">// 将ContentHandler的实例设置到XMLReader中</span></div><div class="line">              xmlReader.setContentHandler(handler);</div><div class="line">              <span class="comment">// 开始执行解析</span></div><div class="line">              xmlReader.parse(<span class="keyword">new</span> InputSource(<span class="keyword">new</span> StringReader(xmlData)));</div><div class="line">          &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">              e.printStackTrace();</div><div class="line">          &#125;</div><div class="line">      &#125;</div></pre></td></tr></table></figure></p>
+<p>4.解析JSON数据格式<br>json数据格式<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;“name”:"Tome","age":20&#125;</div></pre></td></tr></table></figure></p>
+<p>用JSONObject解析<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sendRequestWithOkHttp</span><span class="params">()</span> </span>&#123;</div><div class="line">       <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">               <span class="keyword">try</span> &#123;</div><div class="line">                   OkHttpClient client = <span class="keyword">new</span> OkHttpClient();</div><div class="line">                   Request request = <span class="keyword">new</span> Request.Builder()</div><div class="line">                           <span class="comment">// 指定访问的服务器地址是电脑本机</span></div><div class="line">                           .url(<span class="string">"http://10.0.2.2/get_data.json"</span>)<span class="comment">//get_data.xml我们在Apache/htdocs下新建的文件 10.0.2.2对模拟器来说是本机地址</span></div><div class="line">                           .build();</div><div class="line">                   Response response = client.newCall(request).execute();</div><div class="line">                   String responseData = response.body().string();</div><div class="line"></div><div class="line"></div><div class="line">                  parseJSONWithJSONObject(responseData);</div><div class="line"></div><div class="line">               &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">                   e.printStackTrace();</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">       &#125;).start();</div><div class="line">   &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">parseJSONWithJSONObject</span><span class="params">(String jsonData)</span> </span>&#123;</div><div class="line">          <span class="keyword">try</span> &#123;</div><div class="line">              JSONArray jsonArray = <span class="keyword">new</span> JSONArray(jsonData);</div><div class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; jsonArray.length(); i++) &#123;</div><div class="line">                  JSONObject jsonObject = jsonArray.getJSONObject(i);</div><div class="line">                  String id = jsonObject.getString(<span class="string">"id"</span>);</div><div class="line">                  String name = jsonObject.getString(<span class="string">"name"</span>);</div><div class="line">                  String version = jsonObject.getString(<span class="string">"version"</span>);</div><div class="line">                  Log.d(<span class="string">"MainActivity"</span>, <span class="string">"id is "</span> + id);</div><div class="line">                  Log.d(<span class="string">"MainActivity"</span>, <span class="string">"name is "</span> + name);</div><div class="line">                  Log.d(<span class="string">"MainActivity"</span>, <span class="string">"version is "</span> + version);</div><div class="line">              &#125;</div><div class="line">          &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">              e.printStackTrace();</div><div class="line">          &#125;</div><div class="line">      &#125;</div></pre></td></tr></table></figure></p>
+<p>5.使用GSON解析JSON<br>添加依赖<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.google.code.gson:gson:2.7'</span></div></pre></td></tr></table></figure></p>
+<p>新建App类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String id;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String version;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getId</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(String id)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.id = id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getVersion</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> version;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setVersion</span><span class="params">(String version)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.version = version;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>MainActivity</p>
+<pre><code class="java"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sendRequestWithOkHttp</span><span class="params">()</span> </span>{
+        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() {
+            <span class="meta">@Override</span>
+            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{
+                <span class="keyword">try</span> {
+                    OkHttpClient client = <span class="keyword">new</span> OkHttpClient();
+                    Request request = <span class="keyword">new</span> Request.Builder()
+                            <span class="comment">// 指定访问的服务器地址是电脑本机</span>
+                            .url(<span class="string">"http://10.0.2.2/get_data.json"</span>)
+                            .build();
+                    Response response = client.newCall(request).execute();
+                    String responseData = response.body().string();
+                    parseJSONWithGSON(responseData);
+
+                } <span class="keyword">catch</span> (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+
+    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">parseJSONWithGSON</span><span class="params">(String jsonData)</span> </span>{
+           Gson gson = <span class="keyword">new</span> Gson();
+           List&lt;App&gt; appList = gson.fromJson(jsonData, <span class="keyword">new</span> TypeToken&lt;List&lt;App&gt;&gt;() {}.getType());
+           <span class="keyword">for</span> (App app : appList) {
+               Log.d(<span class="string">"MainActivity"</span>, <span class="string">"id is "</span> + app.getId());
+               Log.d(<span class="string">"MainActivity"</span>, <span class="string">"name is "</span> + app.getName());
+               Log.d(<span class="string">"MainActivity"</span>, <span class="string">"version is "</span> + app.getVersion());
+           }
+       }
+</code></pre>
 
           
         
@@ -446,13 +626,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/01/Networktest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -582,289 +762,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Webviewtest/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/31/Webviewtest/" itemprop="url">webviewtest<CODE 2 chaper9></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
-                2017-07-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/31/Webviewtest/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/31/Webviewtest/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的：1.显示各种网页</h3><br>权限声明<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.INTERNET"</span> /&gt;</div></pre></td></tr></table></figure><p></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        WebView webView = (WebView) findViewById(R.id.web_view);</div><div class="line">        webView.getSettings().setJavaScriptEnabled(<span class="keyword">true</span>);<span class="comment">//支持javas脚本</span></div><div class="line">        webView.setWebViewClient(<span class="keyword">new</span> WebViewClient());<span class="comment">//当网页跳转到另一个网页时  任然在webview显示</span></div><div class="line">        webView.loadUrl(<span class="string">"http://www.baidu.com"</span>);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Notificationtest/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/31/Notificationtest/" itemprop="url">notificationtset<CODE 2 chaper8></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
-                2017-07-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/31/Notificationtest/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/31/Notificationtest/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的:1.发通知（程序不在前台运行，但希望向用户发一些提示信息）</h3><br>NotificationActivity类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NotificationActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.notification_layout);</div><div class="line">        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">        manager.cancel(<span class="number">1</span>);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p>点击事件<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">           <span class="keyword">case</span> R.id.send_notice:</div><div class="line"></div><div class="line">               NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">               Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">                       .setContentTitle(<span class="string">"This is content title"</span>)<span class="comment">//指定标题内容</span></div><div class="line">                       .setContentText(<span class="string">"This is content text"</span>)<span class="comment">//指定正文内容</span></div><div class="line">                       .setWhen(System.currentTimeMillis())<span class="comment">//指定通知被创建时间</span></div><div class="line">                       .setSmallIcon(R.mipmap.ic_launcher)<span class="comment">//设置通知的小图标</span></div><div class="line">                       .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))<span class="comment">//设置通知的大图标</span></div><div class="line"></div><div class="line">                       .setAutoCancel(<span class="keyword">true</span>);<span class="comment">//点击后 通知自动取消</span></div><div class="line">                       .build();</div><div class="line">               manager.notify(<span class="number">1</span>, notification);<span class="comment">//让通知显示</span></div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">default</span>:</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
-<p>设置点击通知点击事件PendingIntent（点击通知调到NotificationAcitity.xml并点击后自动消失）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">           <span class="keyword">case</span> R.id.send_notice:</div><div class="line">               Intent intent=<span class="keyword">new</span> Intent(<span class="keyword">this</span>,NotificationAcitity.class);</div><div class="line">               PendingIntent pi=PendingIntent.getActivity(<span class="keyword">this</span>,<span class="number">0</span>,intent,<span class="number">0</span>);</div><div class="line">               NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">               Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">                       .setContentTitle(<span class="string">"This is content title"</span>)<span class="comment">//指定标题内容</span></div><div class="line">                       .setContentText(<span class="string">"This is content text"</span>)<span class="comment">//指定正文内容</span></div><div class="line">                       .setWhen(System.currentTimeMillis())<span class="comment">//指定通知被创建时间</span></div><div class="line">                       .setSmallIcon(R.mipmap.ic_launcher)<span class="comment">//设置通知的小图标</span></div><div class="line">                       .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))<span class="comment">//设置通知的大图标</span></div><div class="line">                       .setContentIntent(pi);</div><div class="line">                       .setAutoCancel(<span class="keyword">true</span>);<span class="comment">//点击后 通知自动取消</span></div><div class="line">                       .build();</div><div class="line">               manager.notify(<span class="number">1</span>, notification);<span class="comment">//让通知显示</span></div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">default</span>:</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">`</div></pre></td></tr></table></figure></p>
-<p>通知的进阶：通知提示音 灯光 /振动需要申请权限</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setSound(Uri.fromFile(<span class="keyword">new</span> File(<span class="string">"/System/media/audio/ringtone/Luna.ogg"</span>)))</div><div class="line">.bulid();</div></pre></td></tr></table></figure>
-<p>振动<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setVibrate(<span class="keyword">new</span> log[]&#123;<span class="number">0</span>,<span class="number">1000</span>,<span class="number">1000</span>,<span class="number">1000</span>&#125;)震动<span class="number">1</span>秒 静止<span class="number">1</span>秒</div><div class="line">.bulid();</div><div class="line"></div><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.VIBRATE"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<p>灯光<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setLight(Color.GREEN,<span class="number">1000</span>,<span class="number">1000</span>);</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
-<p>直接使用默认设置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setDefaults(NotificationCompat.DEFAULT_ALL)</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
-<p>通知的高级功能 解决超长文字显示不僚的问题  显示超大图片 setStyle()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">.setStyle(<span class="keyword">new</span> NotificationCompat.BigTextStyle().bigText(<span class="string">"fbdvdsjfekfjlsfjskfbjsefbsejfjsjdkfbsdbsdubseufhfusefhuiegeiefjselgbsuohsufbsudfbusfseffusfus"</span>))</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
-<p>显示超大图片<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">.setStyle(<span class="keyword">new</span> NotificationCompat.BigPictureStyle.BigPicture(BitmapFactory.decodeResource(getResources(),R.drawable.big_image)));</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
-<p>设置通知的重要程度setPriority()<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setPriority(NotificationCompat.PRIORITY_MAX)<span class="comment">//最高权限</span></div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Cameraalbumtest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -989,13 +896,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Playaudiotest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -1198,13 +1105,13 @@ protected void onDestroy() {
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Playvideotest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -1327,16 +1234,289 @@ protected void onDestroy() {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/30/Databasetest2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Notificationtest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/31/Notificationtest/" itemprop="url">notificationtset<CODE 2 chaper8></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
+                2017-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/31/Notificationtest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/31/Notificationtest/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的:1.发通知（程序不在前台运行，但希望向用户发一些提示信息）</h3><br>NotificationActivity类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NotificationActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.notification_layout);</div><div class="line">        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">        manager.cancel(<span class="number">1</span>);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p>点击事件<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">           <span class="keyword">case</span> R.id.send_notice:</div><div class="line"></div><div class="line">               NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">               Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">                       .setContentTitle(<span class="string">"This is content title"</span>)<span class="comment">//指定标题内容</span></div><div class="line">                       .setContentText(<span class="string">"This is content text"</span>)<span class="comment">//指定正文内容</span></div><div class="line">                       .setWhen(System.currentTimeMillis())<span class="comment">//指定通知被创建时间</span></div><div class="line">                       .setSmallIcon(R.mipmap.ic_launcher)<span class="comment">//设置通知的小图标</span></div><div class="line">                       .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))<span class="comment">//设置通知的大图标</span></div><div class="line"></div><div class="line">                       .setAutoCancel(<span class="keyword">true</span>);<span class="comment">//点击后 通知自动取消</span></div><div class="line">                       .build();</div><div class="line">               manager.notify(<span class="number">1</span>, notification);<span class="comment">//让通知显示</span></div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">default</span>:</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
+<p>设置点击通知点击事件PendingIntent（点击通知调到NotificationAcitity.xml并点击后自动消失）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">           <span class="keyword">case</span> R.id.send_notice:</div><div class="line">               Intent intent=<span class="keyword">new</span> Intent(<span class="keyword">this</span>,NotificationAcitity.class);</div><div class="line">               PendingIntent pi=PendingIntent.getActivity(<span class="keyword">this</span>,<span class="number">0</span>,intent,<span class="number">0</span>);</div><div class="line">               NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">               Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">                       .setContentTitle(<span class="string">"This is content title"</span>)<span class="comment">//指定标题内容</span></div><div class="line">                       .setContentText(<span class="string">"This is content text"</span>)<span class="comment">//指定正文内容</span></div><div class="line">                       .setWhen(System.currentTimeMillis())<span class="comment">//指定通知被创建时间</span></div><div class="line">                       .setSmallIcon(R.mipmap.ic_launcher)<span class="comment">//设置通知的小图标</span></div><div class="line">                       .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))<span class="comment">//设置通知的大图标</span></div><div class="line">                       .setContentIntent(pi);</div><div class="line">                       .setAutoCancel(<span class="keyword">true</span>);<span class="comment">//点击后 通知自动取消</span></div><div class="line">                       .build();</div><div class="line">               manager.notify(<span class="number">1</span>, notification);<span class="comment">//让通知显示</span></div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">default</span>:</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">`</div></pre></td></tr></table></figure></p>
+<p>通知的进阶：通知提示音 灯光 /振动需要申请权限</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setSound(Uri.fromFile(<span class="keyword">new</span> File(<span class="string">"/System/media/audio/ringtone/Luna.ogg"</span>)))</div><div class="line">.bulid();</div></pre></td></tr></table></figure>
+<p>振动<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setVibrate(<span class="keyword">new</span> log[]&#123;<span class="number">0</span>,<span class="number">1000</span>,<span class="number">1000</span>,<span class="number">1000</span>&#125;)震动<span class="number">1</span>秒 静止<span class="number">1</span>秒</div><div class="line">.bulid();</div><div class="line"></div><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.VIBRATE"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p>灯光<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setLight(Color.GREEN,<span class="number">1000</span>,<span class="number">1000</span>);</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
+<p>直接使用默认设置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setDefaults(NotificationCompat.DEFAULT_ALL)</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
+<p>通知的高级功能 解决超长文字显示不僚的问题  显示超大图片 setStyle()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">.setStyle(<span class="keyword">new</span> NotificationCompat.BigTextStyle().bigText(<span class="string">"fbdvdsjfekfjlsfjskfbjsefbsejfjsjdkfbsdbsdubseufhfusefhuiegeiefjselgbsuohsufbsudfbusfseffusfus"</span>))</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
+<p>显示超大图片<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">.setStyle(<span class="keyword">new</span> NotificationCompat.BigPictureStyle.BigPicture(BitmapFactory.decodeResource(getResources(),R.drawable.big_image)));</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
+<p>设置通知的重要程度setPriority()<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setPriority(NotificationCompat.PRIORITY_MAX)<span class="comment">//最高权限</span></div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Webviewtest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/31/Webviewtest/" itemprop="url">webviewtest<CODE 2 chaper9></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
+                2017-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/31/Webviewtest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/31/Webviewtest/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：1.显示各种网页</h3><br>权限声明<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.INTERNET"</span> /&gt;</div></pre></td></tr></table></figure><p></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        WebView webView = (WebView) findViewById(R.id.web_view);</div><div class="line">        webView.getSettings().setJavaScriptEnabled(<span class="keyword">true</span>);<span class="comment">//支持javas脚本</span></div><div class="line">        webView.setWebViewClient(<span class="keyword">new</span> WebViewClient());<span class="comment">//当网页跳转到另一个网页时  任然在webview显示</span></div><div class="line">        webView.loadUrl(<span class="string">"http://www.baidu.com"</span>);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/30/Databasetest2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -1468,13 +1648,13 @@ protected void onDestroy() {
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/30/Runtimepermissiontest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
+      <meta itemprop="name" content="Hexo">
     </span>
 
     
@@ -1584,141 +1764,6 @@ protected void onDestroy() {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/30/Contactstest/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="DEMO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HEXO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/30/Contactstest/" itemprop="url">contactstest<CODE 2 chaper7></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T13:10:00+08:00">
-                2017-07-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/30/Contactstest/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/30/Contactstest/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3>学习目的:1.读取系统联系人</h3>
-
-
-<p>1.读取系统联系人<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.READ_CONTACTS"</span> /&gt;<span class="comment">//权限</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    ArrayAdapter&lt;String&gt; adapter;</div><div class="line"></div><div class="line">    List&lt;String&gt; contactsList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        ListView contactsView = (ListView) findViewById(R.id.contacts_view);</div><div class="line">        adapter = <span class="keyword">new</span> ArrayAdapter&lt;String&gt;(<span class="keyword">this</span>, android.R.layout. simple_list_item_1, contactsList);</div><div class="line">        contactsView.setAdapter(adapter);</div><div class="line">        <span class="keyword">if</span> (ContextCompat.checkSelfPermission(<span class="keyword">this</span>, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">            ActivityCompat.requestPermissions(<span class="keyword">this</span>, <span class="keyword">new</span> String[]&#123; Manifest.permission.READ_CONTACTS &#125;, <span class="number">1</span>);<span class="comment">//申请权限</span></div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            readContacts();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">readContacts</span><span class="params">()</span> </span>&#123;</div><div class="line">        Cursor cursor = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="comment">// 查询联系人数据</span></div><div class="line">            cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">            <span class="keyword">if</span> (cursor != <span class="keyword">null</span>) &#123;</div><div class="line">                <span class="keyword">while</span> (cursor.moveToNext()) &#123;</div><div class="line">                    <span class="comment">// 获取联系人姓名</span></div><div class="line">                    String displayName = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));</div><div class="line">                    <span class="comment">// 获取联系人手机号</span></div><div class="line">                    String number = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));</div><div class="line">                     <span class="comment">//ContactsContract.CommonDataKinds.Phone类提供的常量就是uri.parse()解析出来的结果</span></div><div class="line">                    contactsList.add(displayName + <span class="string">"\n"</span> + number);</div><div class="line">                &#125;</div><div class="line">                adapter.notifyDataSetChanged();</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; <span class="keyword">finally</span> &#123;</div><div class="line">            <span class="keyword">if</span> (cursor != <span class="keyword">null</span>) &#123;</div><div class="line">                cursor.close();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode, String[] permissions, <span class="keyword">int</span>[] grantResults)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">            <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span> &amp;&amp; grantResults[<span class="number">0</span>] == PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">                    readContacts();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Toast.makeText(<span class="keyword">this</span>, <span class="string">"You denied the permission"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1758,8 +1803,8 @@ protected void onDestroy() {
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg"
-               alt="DEMO" />
-          <p class="site-author-name" itemprop="name">DEMO</p>
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
           
@@ -1769,7 +1814,7 @@ protected void onDestroy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">97</span>
+                <span class="site-state-item-count">98</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -1885,7 +1930,7 @@ protected void onDestroy() {
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">DEMO</span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
 
   
 </div>
