@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            About
           </a>
         </li>
       
@@ -226,7 +226,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -249,7 +249,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            Search
           </a>
         </li>
       
@@ -307,6 +307,291 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/25/BroadCastTest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/25/BroadCastTest/" itemprop="url">BroadCastTest<CODE 2 chaper5></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-25T20:13:10+08:00">
+                2017-07-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/25/BroadCastTest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/25/BroadCastTest/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3>学习目的：1.了解标准广播 有序广播区别(简单，不赘述) 2.接收系统广播 3,发送自定义广播 4.使用本地广播</h3>
+
+<p></p><h3>2.接收系统广播<h3><br>1.动态注册监听网络变化<p></p>
+<ul>
+<li>需要声明权限</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    package=&quot;com.example.broadcasttest&quot;&gt;</div><div class="line"></div><div class="line">    &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>新建NetworkChangeReceiver类      <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line"></div><div class="line">   <span class="keyword">private</span> IntentFilter intentFilter;</div><div class="line">   <span class="keyword">private</span> NetworkChangeReceiver networkChangeReceiver;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        intentFilter = <span class="keyword">new</span> IntentFilter();</div><div class="line">        intentFilter.addAction(<span class="string">"android.net.conn.CONNECTIVITY_CHANGE"</span>);<span class="comment">//当网络发生变化  系统发出值/为android.net.conn.CONNECTIVITY_CHANGE的广播  要监听什么广播就加什么action</span></div><div class="line">        networkChangeReceiver = <span class="keyword">new</span> NetworkChangeReceiver();<span class="comment">//新建NetworkChangeReceiver实例</span></div><div class="line">        registerReceiver(networkChangeReceiver, intentFilter);<span class="comment">//对其进行注册</span></div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        unregisterReceiver(networkChangeReceiver);<span class="comment">//动态注册的的广播接收器一定要取消注册</span></div><div class="line">          &#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NetworkChangeReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line"></div><div class="line">       <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">           Toast.makeText(content,<span class="string">"network changes"</span>,Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p></p><h3>优化（告诉用户有网还是没网）</h3><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NetworkChangeReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">            ConnectivityManager connectionManager = (ConnectivityManager)</div><div class="line">                    getSystemService(Context.CONNECTIVITY_SERVICE);<span class="comment">//ConnectivityManager 系统服务类 专门管理网络getSystemService获得NetworkInfo实例</span></div><div class="line">            NetworkInfo networkInfo = connectionManager.getActiveNetworkInfo();<span class="comment">//</span></div><div class="line">            <span class="keyword">if</span> (networkInfo != <span class="keyword">null</span> &amp;&amp; networkInfo.isAvailable()) &#123;</div><div class="line">                Toast.makeText(context, <span class="string">"network is available"</span>,</div><div class="line">                        Toast.LENGTH_SHORT).show();</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                Toast.makeText(context, <span class="string">"network is unavailable"</span>,</div><div class="line">                        Toast.LENGTH_SHORT).show();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure><p></p>
+<p>2.静态注册监听网路变化<br>直接NEW-other-BoardCastReceriver<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BoardCompelteReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">        Toast.makeText(context, <span class="string">"Board Complete"</span>, Toast.LENGTH_SHORT).show();</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>添加权限(部分自动生成)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;</div><div class="line">    &lt;uses-permission android:name=&quot;android.permission.RECEIVE_BOOT_COMPLETED&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;receiver</div><div class="line">            android:name=&quot;.BootCompleteReceiver&quot;</div><div class="line">            android:enabled=&quot;true&quot;</div><div class="line">            android:exported=&quot;true&quot;&gt;</div><div class="line">            &lt;intent-filter&gt;</div><div class="line">                &lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot; /&gt;//系统启动时会发android.intent.action.BOOT_COMPLETED值得广播</div><div class="line">            &lt;/intent-filter&gt;</div><div class="line">        &lt;/receiver&gt;</div></pre></td></tr></table></figure></p>
+<p></p><h3>3,发送自定义广播</h3><br>1.发送标准广播<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyBroadcastReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">        Toast.makeText(context, <span class="string">"received in MyBroadcastReceiver"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        abortBroadcast();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">添加权限</div><div class="line">```text</div><div class="line">&lt;receiver</div><div class="line">            android:name=<span class="string">".MyBroadcastReceiver"</span></div><div class="line">            android:enabled=<span class="string">"true"</span></div><div class="line">            android:exported=<span class="string">"true"</span>&gt;</div><div class="line">            &lt;intent-filter android:priority=<span class="string">"100"</span>&gt;</div><div class="line">                &lt;action android:name=<span class="string">"com.example.broadcasttest.MY_BROADCAST"</span>/&gt;</div><div class="line">            &lt;/intent-filter&gt;</div><div class="line">        &lt;/receiver&gt;</div><div class="line"></div><div class="line">```     </div><div class="line">按钮启动</div><div class="line">```java</div><div class="line">Button button = (Button) findViewById(R.id.button);</div><div class="line">      button.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">          <span class="meta">@Override</span></div><div class="line">          <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">              Intent intent = <span class="keyword">new</span> Intent(<span class="string">"com.example.broadcasttest.MY_BROADCAST"</span>);</div><div class="line">              sendBroadcast(intent);</div><div class="line">          &#125;</div><div class="line">      &#125;);   </div><div class="line"></div><div class="line">&lt;h3&gt;2.发送有序广播&lt;/h3&gt;</div><div class="line">改一行代码</div><div class="line">```java</div><div class="line">sendOrderedBroadcast(intent,<span class="keyword">null</span>);<span class="comment">//这时广播接收器有先后顺序</span></div></pre></td></tr></table></figure><p></p>
+<p>如何定义先后顺序<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;receiver</div><div class="line">           android:name=<span class="string">".MyBroadcastReceiver"</span></div><div class="line">           android:enabled=<span class="string">"true"</span></div><div class="line">           android:exported=<span class="string">"true"</span>&gt;</div><div class="line">           &lt;intent-filter android:priority=<span class="string">"100"</span>&gt;<span class="comment">//100优先级最高</span></div><div class="line">               &lt;action android:name=<span class="string">"com.example.broadcasttest.MY_BROADCAST"</span>/&gt;</div><div class="line">           &lt;/intent-filter&gt;</div></pre></td></tr></table></figure></p>
+<p>是否允许继续传递<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function">ublic <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">        Toast.makeText(context, <span class="string">"received in MyBroadcastReceiver"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        abortBroadcast();<span class="comment">//表示截断</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p></p><h3>4.使用本地广播</h3><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">ublic <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> IntentFilter intentFilter;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> LocalReceiver localReceiver;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> LocalBroadcastManager localBroadcastManager;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line"></div><div class="line">        localBroadcastManager = LocalBroadcastManager.getInstance(<span class="keyword">this</span>); <span class="comment">// 获取实例</span></div><div class="line">        Button button = (Button) findViewById(R.id.button);</div><div class="line">        button.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                Intent intent = <span class="keyword">new</span> Intent(<span class="string">"com.example.broadcasttest.LOCAL_BROADCAST"</span>);</div><div class="line">                localBroadcastManager.sendBroadcast(intent); <span class="comment">// 发送本地广播</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        intentFilter = <span class="keyword">new</span> IntentFilter();</div><div class="line">        intentFilter.addAction(<span class="string">"com.example.broadcasttest.LOCAL_BROADCAST"</span>);<span class="comment">//当网络发生变化  系统发出值/为android.net.conn.CONNECTIVITY_CHANGE的广播  要监听什么广播就加什么action</span></div><div class="line">        localReceiver = <span class="keyword">new</span> LocalReceiver();<span class="comment">//新建NetworkChangeReceiver实例</span></div><div class="line">        localBroadcastManager.registerReceiver(localReceiver, intentFilter); <span class="comment">// 注册本地广播监听器</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line"></div><div class="line">        localBroadcastManager.unregisterReceiver(localReceiver);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">LocalReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">            Toast.makeText(context, <span class="string">"received local broadcast"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>本地广播的优势</h3><br>不用担心机密数据泄露<br>其他程序将广播发送到我们程序内部<br>比全局广播更高效<p></p>
+</h3></h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/BroadcastBestPractise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/24/BroadcastBestPractise/" itemprop="url">BroadcastBestPractise<CODE 2 chaper5></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-24T20:13:10+08:00">
+                2017-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/24/BroadcastBestPractise/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/24/BroadcastBestPractise/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：实现登陆成功后强制下线功能(关闭所有活动，返回登陆界面)</h3><br><img src="http://i4.piimg.com/595109/e480b1dea9d6959b.png" alt="Markdown"><br>1.新建ActivityCollector类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ActivityCollector</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;Activity&gt; activities = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addActivity</span><span class="params">(Activity activity)</span> </span>&#123;</div><div class="line">        activities.add(activity);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">removeActivity</span><span class="params">(Activity activity)</span> </span>&#123;</div><div class="line">        activities.remove(activity);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">finishAll</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span> (Activity activity : activities) &#123;</div><div class="line">            <span class="keyword">if</span> (!activity.isFinishing()) &#123;</div><div class="line">                activity.finish();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p>2.创建BaseActivity类作为所有活动的父类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ForceOfflineReceiver receiver;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        ActivityCollector.addActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        ActivityCollector.removeActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>3.新建LoginActivity类及其布局(登陆的处理)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span> <span class="keyword">extends</span> <span class="title">BaseActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> EditText accountEdit;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> EditText passwordEdit;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Button login;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_login);</div><div class="line">        accountEdit = (EditText) findViewById(R.id.account);</div><div class="line">        passwordEdit = (EditText) findViewById(R.id.password);</div><div class="line">        login = (Button) findViewById(R.id.login);</div><div class="line">        login.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                String account = accountEdit.getText().toString();</div><div class="line">                String password = passwordEdit.getText().toString();</div><div class="line">                <span class="comment">// 如果账号是admin且密码是123456，就认为登录成功</span></div><div class="line">                <span class="keyword">if</span> (account.equals(<span class="string">"admin"</span>) &amp;&amp; password.equals(<span class="string">"123456"</span>)) &#123;</div><div class="line">                    Intent intent = <span class="keyword">new</span> Intent(LoginActivity.<span class="keyword">this</span>, MainActivity.class);</div><div class="line">                    startActivity(intent);</div><div class="line">                    finish();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Toast.makeText(LoginActivity.<span class="keyword">this</span>, <span class="string">"account or password is invalid"</span>,</div><div class="line">                            Toast.LENGTH_SHORT).show();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p></p><h3>4.修改MainACTIVITY类及其布局</h3><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">BaseActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        Button forceOffline = (Button) findViewById(R.id.force_offline);</div><div class="line">        forceOffline.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                Intent intent = <span class="keyword">new</span> Intent(<span class="string">"com.example.broadcastbestpractice.FORCE_OFFLINE"</span>);</div><div class="line">                sendBroadcast(intent);<span class="comment">//发送com.example.broadcastbestpractice.FORCE_OFFLINE广播 表示强制下线</span></div><div class="line">                <span class="comment">//需要创建广播接收器</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p>在BaseActivity类注册广播接收器<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ForceOfflineReceiver receiver;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        ActivityCollector.addActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onResume();</div><div class="line">        IntentFilter intentFilter = <span class="keyword">new</span> IntentFilter();</div><div class="line">        intentFilter.addAction(<span class="string">"com.example.broadcastbestpractice.FORCE_OFFLINE"</span>);</div><div class="line">        receiver = <span class="keyword">new</span> ForceOfflineReceiver();</div><div class="line">        registerReceiver(receiver, intentFilter);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onPause();</div><div class="line">        <span class="keyword">if</span> (receiver != <span class="keyword">null</span>) &#123;</div><div class="line">            unregisterReceiver(receiver);</div><div class="line">            receiver = <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        ActivityCollector.removeActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">ForceOfflineReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(<span class="keyword">final</span> Context context, Intent intent)</span> </span>&#123;</div><div class="line">            AlertDialog.Builder builder = <span class="keyword">new</span> AlertDialog.Builder(context);<span class="comment">//创建一个对话框</span></div><div class="line">            builder.setTitle(<span class="string">"Warning"</span>);</div><div class="line">            builder.setMessage(<span class="string">"You are forced to be offline. Please try to login again."</span>);</div><div class="line">            builder.setCancelable(<span class="keyword">false</span>);</div><div class="line">            <span class="comment">//注册确定按钮</span></div><div class="line">            builder.setPositiveButton(<span class="string">"OK"</span>, <span class="keyword">new</span> DialogInterface.OnClickListener() &#123;<span class="comment">//给ok按钮设置点击事件</span></div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(DialogInterface dialog, <span class="keyword">int</span> which)</span> </span>&#123;</div><div class="line">                    ActivityCollector.finishAll(); <span class="comment">// 销毁所有活动</span></div><div class="line">                    Intent intent = <span class="keyword">new</span> Intent(context, LoginActivity.class);</div><div class="line">                    context.startActivity(intent); <span class="comment">// 重新启动LoginActivity</span></div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">            builder.show();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>将LoginActivity作为主界面<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line">&lt;activity android:name=<span class="string">".LoginActivity"</span>&gt;</div><div class="line">            &lt;intent-filter&gt;</div><div class="line">                &lt;action android:name=<span class="string">"android.intent.action.MAIN"</span> /&gt;</div><div class="line">                &lt;category android:name=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</div><div class="line">            &lt;/intent-filter&gt;</div><div class="line">        &lt;/activity&gt;</div><div class="line">```    </div><div class="line"></div><div class="line">完工!</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">chaper6 实现记住密码功能</div><div class="line">```java</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span> <span class="keyword">extends</span> <span class="title">BaseActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> SharedPreferences pref;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> SharedPreferences.Editor editor;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> EditText accountEdit;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> EditText passwordEdit;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Button login;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> CheckBox rememberPass;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_login);</div><div class="line">        pref = PreferenceManager.getDefaultSharedPreferences(<span class="keyword">this</span>);</div><div class="line">        accountEdit = (EditText) findViewById(R.id.account);</div><div class="line">        passwordEdit = (EditText) findViewById(R.id.password);</div><div class="line">        rememberPass = (CheckBox) findViewById(R.id.remember_pass);</div><div class="line">        login = (Button) findViewById(R.id.login);</div><div class="line">        <span class="keyword">boolean</span> isRemember = pref.getBoolean(<span class="string">"remember_password"</span>, <span class="keyword">false</span>);</div><div class="line">        <span class="keyword">if</span> (isRemember) &#123;</div><div class="line">            <span class="comment">// 将账号和密码都设置到文本框中</span></div><div class="line">            String account = pref.getString(<span class="string">"account"</span>, <span class="string">""</span>);</div><div class="line">            String password = pref.getString(<span class="string">"password"</span>, <span class="string">""</span>);</div><div class="line">            accountEdit.setText(account);</div><div class="line">            passwordEdit.setText(password);</div><div class="line">            rememberPass.setChecked(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">        login.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                String account = accountEdit.getText().toString();</div><div class="line">                String password = passwordEdit.getText().toString();</div><div class="line">                <span class="comment">// 如果账号是admin且密码是123456，就认为登录成功</span></div><div class="line">                <span class="keyword">if</span> (account.equals(<span class="string">"admin"</span>) &amp;&amp; password.equals(<span class="string">"123456"</span>)) &#123;</div><div class="line">                    editor = pref.edit();</div><div class="line">                    <span class="keyword">if</span> (rememberPass.isChecked()) &#123; <span class="comment">// 检查复选框是否被选中</span></div><div class="line">                        editor.putBoolean(<span class="string">"remember_password"</span>, <span class="keyword">true</span>);</div><div class="line">                        editor.putString(<span class="string">"account"</span>, account);</div><div class="line">                        editor.putString(<span class="string">"password"</span>, password);</div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                        editor.clear();</div><div class="line">                    &#125;</div><div class="line">                    editor.apply();</div><div class="line">                    Intent intent = <span class="keyword">new</span> Intent(LoginActivity.<span class="keyword">this</span>, MainActivity.class);</div><div class="line">                    startActivity(intent);</div><div class="line">                    finish();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Toast.makeText(LoginActivity.<span class="keyword">this</span>, <span class="string">"account or password is invalid"</span>,</div><div class="line">                            Toast.LENGTH_SHORT).show();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/FragmentBestPractise/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -336,7 +621,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-24T20:13:10+08:00">
                 2017-07-24
@@ -480,7 +765,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-23T20:13:10+08:00">
                 2017-07-23
@@ -647,7 +932,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-22T20:13:10+08:00">
                 2017-07-22
@@ -824,7 +1109,7 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T20:13:10+08:00">
                 2017-07-21
@@ -932,7 +1217,7 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/build.gradle文件详解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/logcat及log/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -951,7 +1236,7 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/20/build.gradle文件详解/" itemprop="url">build.gradle文件详解<CODE 2 chaper2></a></h1>
+                <a class="post-title-link" href="/2017/07/20/logcat及log/" itemprop="url">logcat及log<CODE 2 chaper2></a></h1>
         
 
         <div class="post-meta">
@@ -961,7 +1246,7 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
                 2017-07-20
@@ -982,9 +1267,9 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/20/build.gradle文件详解/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/20/logcat及log/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/20/build.gradle文件详解/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/20/logcat及log/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1014,8 +1299,8 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
       
         
           
-            <p></p><h3>build.gradle(项目目录下)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()//代码托管仓库，声明后可引用jcenter上的开源项目</div><div class="line">    &#125;</div><div class="line">    dependencies &#123;</div><div class="line">        classpath &apos;com.android.tools.build:gradle:2.2.0&apos;//“依赖”文件使用classpath声明一个gradle插件  声明的原因：让gradle知道构建的是Android java 还是</div><div class="line">c++                                                     //com.android.tools.build:gradle:2.2.0说明构建的是android项目</div><div class="line">        // NOTE: Do not place your application dependencies here; they belong</div><div class="line">        // in the individual module build.gradle files</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">allprojects &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()//代码托管仓库，声明后可引用jcenter上的开源项目</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">task clean(type: Delete) &#123;</div><div class="line">    delete rootProject.buildDir</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p></p><h3>build.gradle(项目目录下)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;com.android.application&apos;//应用一个插件 两个值可选  应用程序模块 （可直接运行）   com.android.library库模块（作为代码库依附别的库运行）</div><div class="line"></div><div class="line">android &#123;</div><div class="line">    compileSdkVersion 24  //编译所用sdk版本</div><div class="line">    buildToolsVersion &quot;24.0.2&quot;//构建工具版本</div><div class="line">    defaultConfig &#123;//细节配置</div><div class="line">        applicationId &quot;com.example.helloworld&quot;//项目包名</div><div class="line">        minSdkVersion 15//最低sdk版本</div><div class="line">        targetSdkVersion 24//充分测试的sdk版本</div><div class="line">        versionCode 1//项目版本号</div><div class="line">        versionName &quot;1.0&quot;//项目版本名</div><div class="line">    &#125;</div><div class="line">    buildTypes &#123;//生成安装文件的相关配置</div><div class="line">        release &#123;//release指定生产正式版安装文件的配置    debug闭包指定生成测试版安装文件的配置</div><div class="line">            minifyEnabled false//指定是否对项目的代码进行混淆</div><div class="line">            proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;//proguardFiles指定混淆的规则文件  //proguard-android.txt通用混淆规则  //proguard-rules.pro自定义混淆规则</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">dependencies &#123;//指定项目的所有依赖文件</div><div class="line">    compile fileTree(include: [&apos;*.jar&apos;], dir: &apos;libs&apos;)//本地依赖声明</div><div class="line">    compile &apos;com.android.support:appcompat-v7:24.2.1&apos;//远程依赖声明</div><div class="line">    testCompile &apos;junit:junit:4.12&apos;//声明测试用例库</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+            <p></p><h3>log</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">log.v()//verbose 琐碎日志</div><div class="line">log.d()//debug调试信息</div><div class="line">log.i()//比较重要的数据 用户数据</div><div class="line">log.w()//warn</div><div class="line">log.e()//error</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>logcat and 过滤器</h3><br><img src="http://img.027cgb.cn/20170721/20177216711775731906.png"><br><img src="http://img.027cgb.cn/20170721/20177217341775731906.png"><p></p>
 
           
         
@@ -1093,7 +1378,7 @@ private List&lt;Msg&gt; msgList = new ArrayList&lt;Msg&gt;();
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
                 2017-07-20
@@ -1253,7 +1538,7 @@ public class SecondActivity extends BaseActivity {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/logcat及log/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/build.gradle文件详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -1272,7 +1557,7 @@ public class SecondActivity extends BaseActivity {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/20/logcat及log/" itemprop="url">logcat及log<CODE 2 chaper2></a></h1>
+                <a class="post-title-link" href="/2017/07/20/build.gradle文件详解/" itemprop="url">build.gradle文件详解<CODE 2 chaper2></a></h1>
         
 
         <div class="post-meta">
@@ -1282,7 +1567,7 @@ public class SecondActivity extends BaseActivity {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
                 2017-07-20
@@ -1303,9 +1588,9 @@ public class SecondActivity extends BaseActivity {
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/20/logcat及log/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/20/build.gradle文件详解/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/20/logcat及log/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/20/build.gradle文件详解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1335,8 +1620,8 @@ public class SecondActivity extends BaseActivity {
       
         
           
-            <p></p><h3>log</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">log.v()//verbose 琐碎日志</div><div class="line">log.d()//debug调试信息</div><div class="line">log.i()//比较重要的数据 用户数据</div><div class="line">log.w()//warn</div><div class="line">log.e()//error</div></pre></td></tr></table></figure><p></p>
-<p></p><h3>logcat and 过滤器</h3><br><img src="http://img.027cgb.cn/20170721/20177216711775731906.png"><br><img src="http://img.027cgb.cn/20170721/20177217341775731906.png"><p></p>
+            <p></p><h3>build.gradle(项目目录下)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()//代码托管仓库，声明后可引用jcenter上的开源项目</div><div class="line">    &#125;</div><div class="line">    dependencies &#123;</div><div class="line">        classpath &apos;com.android.tools.build:gradle:2.2.0&apos;//“依赖”文件使用classpath声明一个gradle插件  声明的原因：让gradle知道构建的是Android java 还是</div><div class="line">c++                                                     //com.android.tools.build:gradle:2.2.0说明构建的是android项目</div><div class="line">        // NOTE: Do not place your application dependencies here; they belong</div><div class="line">        // in the individual module build.gradle files</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">allprojects &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()//代码托管仓库，声明后可引用jcenter上的开源项目</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">task clean(type: Delete) &#123;</div><div class="line">    delete rootProject.buildDir</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>build.gradle(项目目录下)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;com.android.application&apos;//应用一个插件 两个值可选  应用程序模块 （可直接运行）   com.android.library库模块（作为代码库依附别的库运行）</div><div class="line"></div><div class="line">android &#123;</div><div class="line">    compileSdkVersion 24  //编译所用sdk版本</div><div class="line">    buildToolsVersion &quot;24.0.2&quot;//构建工具版本</div><div class="line">    defaultConfig &#123;//细节配置</div><div class="line">        applicationId &quot;com.example.helloworld&quot;//项目包名</div><div class="line">        minSdkVersion 15//最低sdk版本</div><div class="line">        targetSdkVersion 24//充分测试的sdk版本</div><div class="line">        versionCode 1//项目版本号</div><div class="line">        versionName &quot;1.0&quot;//项目版本名</div><div class="line">    &#125;</div><div class="line">    buildTypes &#123;//生成安装文件的相关配置</div><div class="line">        release &#123;//release指定生产正式版安装文件的配置    debug闭包指定生成测试版安装文件的配置</div><div class="line">            minifyEnabled false//指定是否对项目的代码进行混淆</div><div class="line">            proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;//proguardFiles指定混淆的规则文件  //proguard-android.txt通用混淆规则  //proguard-rules.pro自定义混淆规则</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">dependencies &#123;//指定项目的所有依赖文件</div><div class="line">    compile fileTree(include: [&apos;*.jar&apos;], dir: &apos;libs&apos;)//本地依赖声明</div><div class="line">    compile &apos;com.android.support:appcompat-v7:24.2.1&apos;//远程依赖声明</div><div class="line">    testCompile &apos;junit:junit:4.12&apos;//声明测试用例库</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
 
           
         
@@ -1414,7 +1699,7 @@ public class SecondActivity extends BaseActivity {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
                 2017-07-20
@@ -1508,284 +1793,11 @@ public class SecondActivity extends BaseActivity {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/ANdriod sdk 更新问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/18/ANdriod sdk 更新问题/" itemprop="url">Andriod sdk 更新问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T20:13:10+08:00">
-                2017-06-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/06/18/ANdriod sdk 更新问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/18/ANdriod sdk 更新问题/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3>问题描述</h3>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">使用SDK Manager更新时出现问题</div><div class="line">Failed to fetch URL https:<span class="comment">//dl-ssl.google.com/android/repository/repository-6.xml, reason: Connection to https://dl-ssl.google.com refused</span></div><div class="line">Failed to fetch URL http:<span class="comment">//dl-ssl.google.com/android/repository/addons_list-1.xml, reason: Connection to http://dl-ssl.google.com refused</span></div><div class="line">Failed to fetch URL https:<span class="comment">//dl-ssl.google.com/android/repository/addons_list-1.xml, reason: hostname in certificate didn't match: &lt;dl-ssl.google.com&gt; != &lt;www.google.com&gt;</span></div><div class="line">更新ADT时无法解析https:<span class="comment">//dl-ssl.google.com/android/eclipse</span></div></pre></td></tr></table></figure>
-<h3>解决办法</h3>
-
-<p>由于某些众所周知又无法理解的原因，我们大陆使用Google的服务会出现种种问题，譬如Android开发也会出现阻碍。不过首先要说明的是一般情况下使用SDK Manager更新或者更新Eclipse的ADT插件是没有问题的，我以前也能正常更新，但是昨天不知道节点抽什么风，压根无法连接服务器，出现了上边的种种问题，下面说一下如果网络抽风的话应该如何解决问题。</p>
-<p>第一种方法一劳永逸，直接配置VPN，但是现在想找个速度快又稳定还免费的VPN实在不易，尤其是更新SDK，以几kb/s的速度一个文件需要400多分钟，所以也就放弃了VPN。</p>
-<p>另一种方法是使用http协议而不是https协议，因为https协议进行了加密处理，大陆因为无法审查，直接封死，而http协议则进行过滤处理，如果不访问乱七八糟的东西，更新个SDK还是没问题的。<br>在SDK Manager下Tools-&gt;Options打开了SDK Manager的Settings，选中“Force https://… sources to be fetched using <a href="http://…”，强制使用http协议。" target="_blank" rel="external">http://…”，强制使用http协议。</a><br>而在更新ADT插件的时候则使用网址<a href="http://dl-ssl.google.com/android/eclipse，而不是https://dl-ssl.google.com/android/eclipse，这个在官方开发文档里也有介绍。" target="_blank" rel="external">http://dl-ssl.google.com/android/eclipse，而不是https://dl-ssl.google.com/android/eclipse，这个在官方开发文档里也有介绍。</a><br>但是昨天的情况就是使用http协议也无法访问。</p>
-<p><img src="http://d1.freep.cn/3tb_170617121117nuh3585966.png"></p>
-<p>再说一个比较麻烦的方法，就是直接打开<br><a href="https://dl-ssl.google.com/android/repository/addons_list.xml" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/addons_list.xml</a><br><a href="https://dl-ssl.google.com/android/repository/repository.xml" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/repository.xml</a><br><a href="https://dl-ssl.google.com/android/repository/addon.xml" target="_blank" rel="external">https://dl-ssl.google.com/android/repository/addon.xml</a><br>这几个文件，找到你要下载的文件名，直接用迅雷下载，ADT可以直接在官网下载ADT包进行安装。具体方法自己搜索。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/配置变量时  系统 用户变量的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="url">配置变量时  系统 用户变量的区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T20:13:10+08:00">
-                2017-06-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/06/18/配置变量时  系统 用户变量的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>我们在Java运行环境或Android开发环境时，经常要配置环境变量，如图所示，<br><img src="http://d1.freep.cn/3tb_170617122931qa32585966.png"></p>
-<p>这里有administrator的用户变量(U)，和系统变量（S），<br>那麽，它们之间有什么区别呢？<br>简单的说，一个是当前用户使用，你用其它用户登陆，这个环境变量就不起作用了。<br>系统变量，是对所有用户都可使用的。<br>简单的说：<br>系统变量：不管以哪个用户名登陆到计算机都能使用；<br>用户变量：只能以设置变量时的用户名登陆才能使用。</p>
-<p>如果我们在自己的电脑上运行程序，用户只有一个，看不出系统变量和用户变量的区别，但是，<br>如果一台电脑有多个用户，就能看出用户变量和系统变量的区别了~~<br>PS：我们在配置的时候，一般都是配置系统变量（S），</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1831,8 +1843,8 @@ public class SecondActivity extends BaseActivity {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">100</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">102</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1842,8 +1854,8 @@ public class SecondActivity extends BaseActivity {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">categories</span>
               </a>
             </div>
           
@@ -1854,7 +1866,7 @@ public class SecondActivity extends BaseActivity {
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -1963,7 +1975,7 @@ public class SecondActivity extends BaseActivity {
 
 
   <div class="powered-by">
-    Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
   </div>
 
   <span class="post-meta-divider">|</span>
