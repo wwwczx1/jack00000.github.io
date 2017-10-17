@@ -307,6 +307,147 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/18/github+hexo建站/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/18/github+hexo建站/" itemprop="url">github+hexo建站</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-18T20:13:10+08:00">
+                2016-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/12/18/github+hexo建站/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/12/18/github+hexo建站/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p></p><h3>  1.  安装nodo.js ,  git，学习markdown语言</h3><br><a href="http://jingyan.baidu.com/article/b0b63dbfca599a4a483070a5.html" target="_blank" rel="external">如何安装nodo.js</a>       <a href="http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html" target="_blank" rel="external">如何安装git</a><br><a href="https://zhidao.baidu.com/question/1766196940543047940.html" target="_blank" rel="external">什么是markdown</a><br><a href="http://jingyan.baidu.com/article/ce43664927411a3773afd30f.html" target="_blank" rel="external">如何在github上建立仓库</a>(注意：仓库名一定要是     你的github用户名.github.io    )<br><a href="http://blog.csdn.net/binyao02123202/article/details/20130891" target="_blank" rel="external">如何使本地仓库与github的仓库建立关联</a><br><img src="http://img.027cgb.cn/20170711/20177119681775731906.png"><p></p>
+<p>你要知道git的基本使用如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//先cd你的仓库，然后</div><div class="line">git add .//添加你的修改</div><div class="line">git commit -m&quot;注释&quot;// -m可以不用写注释</div><div class="line">git push//提交</div></pre></td></tr></table></figure></p>
+<p></p><h3>2.安装HEXO</h3><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g    <span class="comment">//cmd中输入</span></div></pre></td></tr></table></figure><p></p>
+<p><img src="http://img.027cgb.cn/20170711/20177112501775731906.png"></p>
+<p></p><h3>3.hexo 命令</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//打开一个文件夹</div><div class="line">hexo init blog//创建一个博客文件</div><div class="line">cd blog//打开博客文件</div><div class="line">npm install//生成node_modules依赖文件</div><div class="line">hexo server//部署到本地服务器</div><div class="line">hexo g//生成静态文件（上传到gihub的你建的仓库就可以用啦）</div><div class="line">hexo d//一键部署到服务器（前提在_config.yml中配置delopy）</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>4.theme的转换</h3><br><a href="https://github.com/search?utf8=%E2%9C%93&amp;q=hexo+theme" target="_blank" rel="external">在github上搜索hexo theme</a><br>将下载好的theme文件放在theme目录之下<br>在配置文件config.yml找到theme变量<br>将变量的值landspace改为刚下载的theme的文件名，如果这步出错，首先怀疑是不是theme出啦问题。<br>（一定要记住保存，再打开git bash 搞事情）<br>hexo g生成静态文件到public<br>把pulic的文件传到github.io仓库就行<p></p>
+<p></p><h3>5.使用markdown写博文</h3><br><a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="external">介绍一款不错的markdown在线编辑器cmd markdown</a><br><a href="http://sspai.com/27792" target="_blank" rel="external">几种流行的客户端</a><br>（注意：写博文，文件名一定要是xxxx.md,不然hexo g不能识别你写的文件）<br>markdown语言很简单，简单来说，就是不用鼠标就能完成简单排版的语言<p></p>
+<p></p><h3>6.一键部署到github</h3><br>在config.yml末尾处配置deploy<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/jack00000/jack00000.github.io.git</div><div class="line">  branch: master</div><div class="line">  message: blog</div></pre></td></tr></table></figure><p></p>
+<p>  在git bash中输入命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
+<p>打开xxxx.github.io看下成功没。（注意：由于版本原因，type：github报错的话改成github）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/17/Valine -- 一款极简的评论系统/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -635,7 +776,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">102</span>
+                <span class="site-state-item-count">103</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
