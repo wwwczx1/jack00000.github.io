@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            About
           </a>
         </li>
       
@@ -226,7 +226,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -249,7 +249,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            Search
           </a>
         </li>
       
@@ -336,7 +336,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T20:13:10+08:00">
                 2017-08-15
@@ -463,6 +463,142 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/1.CODE 2 chaper13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/15/1.CODE 2 chaper13/" itemprop="url">高级技巧<CODE 2 chaper13></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T20:13:10+08:00">
+                2017-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/15/1.CODE 2 chaper13/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/15/1.CODE 2 chaper13/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：1.定制自己的日志工具 2.调试android程序<p></p>
+<p>新建LogUitl类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LogUitl</span></span>&#123;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VERBOSE=<span class="number">1</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEBUG=<span class="number">2</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> INFO=<span class="number">3</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WARN=<span class="number">4</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> VERROR=<span class="number">5</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> NOTHING=<span class="number">1</span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> level=VERBOSE;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">v</span><span class="params">(String tag,String msg)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(level&lt;=VERBOSE)&#123;</div><div class="line">      Log.v(tag,msg);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">d</span><span class="params">(String tag,String msg)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(level&lt;=DEBUG)&#123;</div><div class="line">      Log.d(tag,msg);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">i</span> <span class="params">(String tag,String msg)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(level&lt;=INFO)&#123;</div><div class="line">      Log.i(tag,msg);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">w</span><span class="params">(String tag,String msg)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(level&lt;=WARN)&#123;</div><div class="line">      Log.w(tag,msg);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">e</span><span class="params">(String tag,String msg)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(level&lt;=ERROR)&#123;</div><div class="line">      Log.e(tag,msg);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用 如打印WARN级别的日志<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LogUitl.w(<span class="string">"TAG"</span>,<span class="string">"warn log"</span>);</div></pre></td></tr></table></figure></p>
+<p>2.调试android程序</p>
+<p>3.创建定时任务  Alarm机制<br>如：设置一个任务10s后执行<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">long</span> triggerAtTime=SystemClock.elapsedRealtime()+<span class="number">10</span>*<span class="number">1000</span>;</div><div class="line">manager.set(AlarmManager.ELAPSED_REALLTIME_WAKEUP,triggerAtTime,pendingIntent);</div></pre></td></tr></table></figure></p>
+<p>ELAPSED_REALLTIME_WAKEUP四种模式的其中一种</p>
+</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/Coolweather3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -492,7 +628,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-14T20:13:10+08:00">
                 2017-08-14
@@ -631,7 +767,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-14T20:13:10+08:00">
                 2017-08-14
@@ -765,7 +901,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-13T20:13:10+08:00">
                 2017-08-13
@@ -886,142 +1022,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/Materialtest6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/11/Materialtest6/" itemprop="url">materialtest6(最佳UI体验)<CODE 2 chaper12></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T20:13:10+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/11/Materialtest6/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/11/Materialtest6/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的：3.可折叠的标题栏(逻辑编写) 4.充分利用系统状态栏空间（上拉时背景图与状态栏融合）<br>FruitActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String FRUIT_NAME = <span class="string">"fruit_name"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String FRUIT_IMAGE_ID = <span class="string">"fruit_image_id"</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_fruit);</div><div class="line">        Intent intent = getIntent();</div><div class="line">        String fruitName = intent.getStringExtra(FRUIT_NAME);</div><div class="line">        <span class="keyword">int</span> fruitImageId = intent.getIntExtra(FRUIT_IMAGE_ID, <span class="number">0</span>);</div><div class="line">        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);</div><div class="line">        CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);</div><div class="line">        ImageView fruitImageView = (ImageView) findViewById(R.id.fruit_image_view);</div><div class="line">        TextView fruitContentText = (TextView) findViewById(R.id.fruit_content_text);</div><div class="line">        setSupportActionBar(toolbar);</div><div class="line">        ActionBar actionBar = getSupportActionBar();</div><div class="line">        <span class="keyword">if</span> (actionBar != <span class="keyword">null</span>) &#123;</div><div class="line">            actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">        collapsingToolbar.setTitle(fruitName);</div><div class="line">        Glide.with(<span class="keyword">this</span>).load(fruitImageId).into(fruitImageView);</div><div class="line">        String fruitContent = generateFruitContent(fruitName);</div><div class="line">        fruitContentText.setText(fruitContent);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">generateFruitContent</span><span class="params">(String fruitName)</span> </span>&#123;</div><div class="line">        StringBuilder fruitContent = <span class="keyword">new</span> StringBuilder();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">500</span>; i++) &#123;</div><div class="line">            fruitContent.append(fruitName);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> fruitContent.toString();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onOptionsItemSelected</span><span class="params">(MenuItem item)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (item.getItemId()) &#123;</div><div class="line">            <span class="keyword">case</span> android.R.id.home:</div><div class="line">                finish();</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.onOptionsItemSelected(item);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p>FruitAdapter<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitAdapter</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">Adapter</span>&lt;<span class="title">FruitAdapter</span>.<span class="title">ViewHolder</span>&gt;</span>&#123;</div><div class="line"></div><div class="line">  <span class="comment">//...</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> ViewHolder <span class="title">onCreateViewHolder</span><span class="params">(ViewGroup parent, <span class="keyword">int</span> viewType)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (mContext == <span class="keyword">null</span>) &#123;</div><div class="line">            mContext = parent.getContext();</div><div class="line">        &#125;</div><div class="line">        View view = LayoutInflater.from(mContext).inflate(R.layout.fruit_item, parent, <span class="keyword">false</span>);</div><div class="line">        <span class="keyword">final</span> ViewHolder holder = <span class="keyword">new</span> ViewHolder(view);</div><div class="line">        holder.cardView.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                <span class="keyword">int</span> position = holder.getAdapterPosition();</div><div class="line">                Fruit fruit = mFruitList.get(position);</div><div class="line">                Intent intent = <span class="keyword">new</span> Intent(mContext, FruitActivity.class);</div><div class="line">                intent.putExtra(FruitActivity.FRUIT_NAME, fruit.getName());</div><div class="line">                intent.putExtra(FruitActivity.FRUIT_IMAGE_ID, fruit.getImageId());</div><div class="line">                mContext.startActivity(intent);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">return</span> holder;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><img src="http://i2.bvimg.com/595109/9969140c788f23de.png" alt="Markdown"><br><img src="http://i2.bvimg.com/595109/979fb8917ee7e4f0.png" alt="Markdown"><br><img src="http://i2.bvimg.com/595109/694b5a2a6b82b311.png" alt="Markdown"><br><img src="http://i2.bvimg.com/595109/429607e5ed515c13.png" alt="Markdown"></p>
-<p>充分利用系统状态栏空间（上拉时背景图与状态栏融合）<br>activity_fruit<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.CoordinatorLayout</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span>//上拉时背景图与状态栏融合 还需设置主题透明</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">android.support.design.widget.AppBarLayout</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/appBar"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"250dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span>//上拉时背景图与状态栏融合 还需设置主题透明</div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">android.support.design.widget.CollapsingToolbarLayout</span></span></div><div class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/collapsing_toolbar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:theme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>//上拉时背景图与状态栏融合 还需设置主题透明</span></div><div class="line"><span class="tag">            <span class="attr">app:contentScrim</span>=<span class="string">"?attr/colorPrimary"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:layout_scrollFlags</span>=<span class="string">"scroll|exitUntilCollapsed"</span>&gt;</span></div><div class="line"></div><div class="line">            <span class="tag">&lt;<span class="name">ImageView</span></span></div><div class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/fruit_image_view"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:scaleType</span>=<span class="string">"centerCrop"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">                <span class="attr">app:layout_collapseMode</span>=<span class="string">"parallax"</span> /&gt;</span></div><div class="line"></div><div class="line">          //...</div><div class="line"><span class="tag">&lt;/<span class="name">android.support.design.widget.CoordinatorLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>还需设置主题透明 创建New-&gt;Directory-&gt;values-v21-&gt;New-&gt;Values resource file-&gt;style.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- Base application theme. --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="xml">        <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/colorPrimary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/colorPrimaryDark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>@color/colorAccent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"FruitActivityTheme"</span> <span class="attr">parent</span>=<span class="string">"AppTheme"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>AndroidMaifest.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span></span></div><div class="line"><span class="tag">            <span class="attr">android:name</span>=<span class="string">".FruitActivity"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:theme</span>=<span class="string">"@style/FruitActivityTheme"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div></pre></td></tr></table></figure></p>
-</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/Materialtest5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1051,7 +1051,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T20:13:10+08:00">
                 2017-08-11
@@ -1178,7 +1178,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/10/Materialtest3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/Materialtest6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -1197,7 +1197,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/10/Materialtest3/" itemprop="url">materialtest3(最佳UI体验)<CODE 2 chaper11></a></h1>
+                <a class="post-title-link" href="/2017/08/11/Materialtest6/" itemprop="url">materialtest6(最佳UI体验)<CODE 2 chaper12></a></h1>
         
 
         <div class="post-meta">
@@ -1207,10 +1207,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-10T20:13:10+08:00">
-                2017-08-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T20:13:10+08:00">
+                2017-08-11
               </time>
             
 
@@ -1228,9 +1228,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/10/Materialtest3/#comments" itemprop="discussionUrl">
+                <a href="/2017/08/11/Materialtest6/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/10/Materialtest3/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/08/11/Materialtest6/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1260,11 +1260,12 @@
       
         
           
-            <p></p><h3>学习目的：1.悬浮按钮（FloatingAcgtionButton有投影）和可交互提示(Snackbar更先进的提示工具)<p></p>
-<p>FloatingAcgtionButton(Design support的一个控件)</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.FloatingActionButton</span></span></div><div class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/fab"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_gravity</span>=<span class="string">"bottom|end"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_margin</span>=<span class="string">"16dp"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:src</span>=<span class="string">"@drawable/ic_done"</span></span></div><div class="line"><span class="tag">            <span class="attr">app</span>：<span class="attr">elevation</span>=<span class="string">"8dp"</span> /&gt;</span>//指定悬浮高度 高度越大投影效果小</div></pre></td></tr></table></figure>
-<p><img src="http://i4.bvimg.com/595109/64a2bf8fb9d555c8.png" alt="Markdown"></p>
-<p>FloatingActionButton的点击事件<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);</div><div class="line">        fab.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span> </span>&#123;</div><div class="line"></div><div class="line">                                Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"Data restored"</span>, Toast.LENGTH_SHORT).show();</div><div class="line"></div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">```        </div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">Snackbar更先进的提示工具（Design support）(用户接到提示可以进行（按钮形式）逻辑操作  toast不行)</div><div class="line">```java</div><div class="line">FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);</div><div class="line">        fab.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">                Snackbar.make(view, <span class="string">"Data deleted"</span>, Snackbar.LENGTH_SHORT)</div><div class="line">                        .setAction(<span class="string">"Undo"</span>, <span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">                            <span class="meta">@Override</span></div><div class="line">                            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                                Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"Data restored"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                            &#125;</div><div class="line">                        &#125;)</div><div class="line">                        .show();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">```        </div><div class="line"></div><div class="line">如此提示会遮挡FloatingActionButton</div><div class="line"></div><div class="line">解决方法Coordinatorlayout(将FrameLayout替换成Coordinatorlayout</div><div class="line">activity_main</div><div class="line">```xml</div><div class="line">&lt;android.support.design.widget.CoordinatorLayout</div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"match_parent"</span>&gt;</div><div class="line"></div><div class="line">        &lt;android.support.design.widget.AppBarLayout</div><div class="line">            android:layout_width=<span class="string">"match_parent"</span></div><div class="line">            android:layout_height=<span class="string">"wrap_content"</span>&gt;</div><div class="line"></div><div class="line">            &lt;android.support.v7.widget.Toolbar</div><div class="line">                android:id=<span class="string">"@+id/toolbar"</span></div><div class="line">                android:layout_width=<span class="string">"match_parent"</span></div><div class="line">                android:layout_height=<span class="string">"?attr/actionBarSize"</span></div><div class="line">                android:background=<span class="string">"?attr/colorPrimary"</span></div><div class="line">                android:theme=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span></div><div class="line">                app:popupTheme=<span class="string">"@style/ThemeOverlay.AppCompat.Light"</span></div><div class="line">                app:layout_scrollFlags=<span class="string">"scroll|enterAlways|snap"</span> /&gt;</div><div class="line">        &lt;/android.support.design.widget.AppBarLayout&gt;</div><div class="line"></div><div class="line">        &lt;android.support.v4.widget.SwipeRefreshLayout</div><div class="line">            android:id=<span class="string">"@+id/swipe_refresh"</span></div><div class="line">            android:layout_width=<span class="string">"match_parent"</span></div><div class="line">            android:layout_height=<span class="string">"match_parent"</span></div><div class="line">            app:layout_behavior=<span class="string">"@string/appbar_scrolling_view_behavior"</span>&gt;</div><div class="line"></div><div class="line">            &lt;android.support.v7.widget.RecyclerView</div><div class="line">                android:id=<span class="string">"@+id/recycler_view"</span></div><div class="line">                android:layout_width=<span class="string">"match_parent"</span></div><div class="line">                android:layout_height=<span class="string">"match_parent"</span> /&gt;</div><div class="line">        &lt;/android.support.v4.widget.SwipeRefreshLayout&gt;</div><div class="line"></div><div class="line">        &lt;android.support.design.widget.FloatingActionButton</div><div class="line">            android:id=<span class="string">"@+id/fab"</span></div><div class="line">            android:layout_width=<span class="string">"wrap_content"</span></div><div class="line">            android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">            android:layout_gravity=<span class="string">"bottom|end"</span></div><div class="line">            android:layout_margin=<span class="string">"16dp"</span></div><div class="line">            android:src=<span class="string">"@drawable/ic_done"</span> /&gt;</div><div class="line">    &lt;/android.support.design.widget.CoordinatorLayout&gt;</div></pre></td></tr></table></figure></p>
+            <p></p><h3>学习目的：3.可折叠的标题栏(逻辑编写) 4.充分利用系统状态栏空间（上拉时背景图与状态栏融合）<br>FruitActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String FRUIT_NAME = <span class="string">"fruit_name"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String FRUIT_IMAGE_ID = <span class="string">"fruit_image_id"</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_fruit);</div><div class="line">        Intent intent = getIntent();</div><div class="line">        String fruitName = intent.getStringExtra(FRUIT_NAME);</div><div class="line">        <span class="keyword">int</span> fruitImageId = intent.getIntExtra(FRUIT_IMAGE_ID, <span class="number">0</span>);</div><div class="line">        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);</div><div class="line">        CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);</div><div class="line">        ImageView fruitImageView = (ImageView) findViewById(R.id.fruit_image_view);</div><div class="line">        TextView fruitContentText = (TextView) findViewById(R.id.fruit_content_text);</div><div class="line">        setSupportActionBar(toolbar);</div><div class="line">        ActionBar actionBar = getSupportActionBar();</div><div class="line">        <span class="keyword">if</span> (actionBar != <span class="keyword">null</span>) &#123;</div><div class="line">            actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">        collapsingToolbar.setTitle(fruitName);</div><div class="line">        Glide.with(<span class="keyword">this</span>).load(fruitImageId).into(fruitImageView);</div><div class="line">        String fruitContent = generateFruitContent(fruitName);</div><div class="line">        fruitContentText.setText(fruitContent);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">generateFruitContent</span><span class="params">(String fruitName)</span> </span>&#123;</div><div class="line">        StringBuilder fruitContent = <span class="keyword">new</span> StringBuilder();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">500</span>; i++) &#123;</div><div class="line">            fruitContent.append(fruitName);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> fruitContent.toString();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onOptionsItemSelected</span><span class="params">(MenuItem item)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (item.getItemId()) &#123;</div><div class="line">            <span class="keyword">case</span> android.R.id.home:</div><div class="line">                finish();</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.onOptionsItemSelected(item);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p>FruitAdapter<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitAdapter</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">Adapter</span>&lt;<span class="title">FruitAdapter</span>.<span class="title">ViewHolder</span>&gt;</span>&#123;</div><div class="line"></div><div class="line">  <span class="comment">//...</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> ViewHolder <span class="title">onCreateViewHolder</span><span class="params">(ViewGroup parent, <span class="keyword">int</span> viewType)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (mContext == <span class="keyword">null</span>) &#123;</div><div class="line">            mContext = parent.getContext();</div><div class="line">        &#125;</div><div class="line">        View view = LayoutInflater.from(mContext).inflate(R.layout.fruit_item, parent, <span class="keyword">false</span>);</div><div class="line">        <span class="keyword">final</span> ViewHolder holder = <span class="keyword">new</span> ViewHolder(view);</div><div class="line">        holder.cardView.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                <span class="keyword">int</span> position = holder.getAdapterPosition();</div><div class="line">                Fruit fruit = mFruitList.get(position);</div><div class="line">                Intent intent = <span class="keyword">new</span> Intent(mContext, FruitActivity.class);</div><div class="line">                intent.putExtra(FruitActivity.FRUIT_NAME, fruit.getName());</div><div class="line">                intent.putExtra(FruitActivity.FRUIT_IMAGE_ID, fruit.getImageId());</div><div class="line">                mContext.startActivity(intent);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">return</span> holder;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://i2.bvimg.com/595109/9969140c788f23de.png" alt="Markdown"><br><img src="http://i2.bvimg.com/595109/979fb8917ee7e4f0.png" alt="Markdown"><br><img src="http://i2.bvimg.com/595109/694b5a2a6b82b311.png" alt="Markdown"><br><img src="http://i2.bvimg.com/595109/429607e5ed515c13.png" alt="Markdown"></p>
+<p>充分利用系统状态栏空间（上拉时背景图与状态栏融合）<br>activity_fruit<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.CoordinatorLayout</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span>//上拉时背景图与状态栏融合 还需设置主题透明</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">android.support.design.widget.AppBarLayout</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/appBar"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"250dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span>//上拉时背景图与状态栏融合 还需设置主题透明</div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">android.support.design.widget.CollapsingToolbarLayout</span></span></div><div class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/collapsing_toolbar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:theme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>//上拉时背景图与状态栏融合 还需设置主题透明</span></div><div class="line"><span class="tag">            <span class="attr">app:contentScrim</span>=<span class="string">"?attr/colorPrimary"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:layout_scrollFlags</span>=<span class="string">"scroll|exitUntilCollapsed"</span>&gt;</span></div><div class="line"></div><div class="line">            <span class="tag">&lt;<span class="name">ImageView</span></span></div><div class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/fruit_image_view"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:scaleType</span>=<span class="string">"centerCrop"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">                <span class="attr">app:layout_collapseMode</span>=<span class="string">"parallax"</span> /&gt;</span></div><div class="line"></div><div class="line">          //...</div><div class="line"><span class="tag">&lt;/<span class="name">android.support.design.widget.CoordinatorLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>还需设置主题透明 创建New-&gt;Directory-&gt;values-v21-&gt;New-&gt;Values resource file-&gt;style.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- Base application theme. --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="xml">        <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/colorPrimary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/colorPrimaryDark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>@color/colorAccent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"FruitActivityTheme"</span> <span class="attr">parent</span>=<span class="string">"AppTheme"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>AndroidMaifest.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span></span></div><div class="line"><span class="tag">            <span class="attr">android:name</span>=<span class="string">".FruitActivity"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:theme</span>=<span class="string">"@style/FruitActivityTheme"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div></pre></td></tr></table></figure></p>
 </h3>
           
         
@@ -1342,7 +1343,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-10T20:13:10+08:00">
                 2017-08-10
@@ -1450,6 +1451,141 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/10/Materialtest3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/10/Materialtest3/" itemprop="url">materialtest3(最佳UI体验)<CODE 2 chaper11></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-10T20:13:10+08:00">
+                2017-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/10/Materialtest3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/10/Materialtest3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：1.悬浮按钮（FloatingAcgtionButton有投影）和可交互提示(Snackbar更先进的提示工具)<p></p>
+<p>FloatingAcgtionButton(Design support的一个控件)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.FloatingActionButton</span></span></div><div class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/fab"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_gravity</span>=<span class="string">"bottom|end"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_margin</span>=<span class="string">"16dp"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:src</span>=<span class="string">"@drawable/ic_done"</span></span></div><div class="line"><span class="tag">            <span class="attr">app</span>：<span class="attr">elevation</span>=<span class="string">"8dp"</span> /&gt;</span>//指定悬浮高度 高度越大投影效果小</div></pre></td></tr></table></figure>
+<p><img src="http://i4.bvimg.com/595109/64a2bf8fb9d555c8.png" alt="Markdown"></p>
+<p>FloatingActionButton的点击事件<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);</div><div class="line">        fab.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span> </span>&#123;</div><div class="line"></div><div class="line">                                Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"Data restored"</span>, Toast.LENGTH_SHORT).show();</div><div class="line"></div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">```        </div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">Snackbar更先进的提示工具（Design support）(用户接到提示可以进行（按钮形式）逻辑操作  toast不行)</div><div class="line">```java</div><div class="line">FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);</div><div class="line">        fab.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">                Snackbar.make(view, <span class="string">"Data deleted"</span>, Snackbar.LENGTH_SHORT)</div><div class="line">                        .setAction(<span class="string">"Undo"</span>, <span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">                            <span class="meta">@Override</span></div><div class="line">                            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                                Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"Data restored"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                            &#125;</div><div class="line">                        &#125;)</div><div class="line">                        .show();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">```        </div><div class="line"></div><div class="line">如此提示会遮挡FloatingActionButton</div><div class="line"></div><div class="line">解决方法Coordinatorlayout(将FrameLayout替换成Coordinatorlayout</div><div class="line">activity_main</div><div class="line">```xml</div><div class="line">&lt;android.support.design.widget.CoordinatorLayout</div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"match_parent"</span>&gt;</div><div class="line"></div><div class="line">        &lt;android.support.design.widget.AppBarLayout</div><div class="line">            android:layout_width=<span class="string">"match_parent"</span></div><div class="line">            android:layout_height=<span class="string">"wrap_content"</span>&gt;</div><div class="line"></div><div class="line">            &lt;android.support.v7.widget.Toolbar</div><div class="line">                android:id=<span class="string">"@+id/toolbar"</span></div><div class="line">                android:layout_width=<span class="string">"match_parent"</span></div><div class="line">                android:layout_height=<span class="string">"?attr/actionBarSize"</span></div><div class="line">                android:background=<span class="string">"?attr/colorPrimary"</span></div><div class="line">                android:theme=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span></div><div class="line">                app:popupTheme=<span class="string">"@style/ThemeOverlay.AppCompat.Light"</span></div><div class="line">                app:layout_scrollFlags=<span class="string">"scroll|enterAlways|snap"</span> /&gt;</div><div class="line">        &lt;/android.support.design.widget.AppBarLayout&gt;</div><div class="line"></div><div class="line">        &lt;android.support.v4.widget.SwipeRefreshLayout</div><div class="line">            android:id=<span class="string">"@+id/swipe_refresh"</span></div><div class="line">            android:layout_width=<span class="string">"match_parent"</span></div><div class="line">            android:layout_height=<span class="string">"match_parent"</span></div><div class="line">            app:layout_behavior=<span class="string">"@string/appbar_scrolling_view_behavior"</span>&gt;</div><div class="line"></div><div class="line">            &lt;android.support.v7.widget.RecyclerView</div><div class="line">                android:id=<span class="string">"@+id/recycler_view"</span></div><div class="line">                android:layout_width=<span class="string">"match_parent"</span></div><div class="line">                android:layout_height=<span class="string">"match_parent"</span> /&gt;</div><div class="line">        &lt;/android.support.v4.widget.SwipeRefreshLayout&gt;</div><div class="line"></div><div class="line">        &lt;android.support.design.widget.FloatingActionButton</div><div class="line">            android:id=<span class="string">"@+id/fab"</span></div><div class="line">            android:layout_width=<span class="string">"wrap_content"</span></div><div class="line">            android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">            android:layout_gravity=<span class="string">"bottom|end"</span></div><div class="line">            android:layout_margin=<span class="string">"16dp"</span></div><div class="line">            android:src=<span class="string">"@drawable/ic_done"</span> /&gt;</div><div class="line">    &lt;/android.support.design.widget.CoordinatorLayout&gt;</div></pre></td></tr></table></figure></p>
+</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/09/Materialtest2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1479,7 +1615,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-09T20:13:10+08:00">
                 2017-08-09
@@ -1575,148 +1711,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/08/Materialtest/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/08/Materialtest/" itemprop="url">materialtest(最佳UI体验)<CODE 2 chaper12></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-08T20:13:10+08:00">
-                2017-08-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/08/Materialtest/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/08/Materialtest/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3>学习目的：1.什么是Materrial Design  2.Toolbar与Actionbar（已淘汰）  (Materrial控件)  3.app命名空间</h3>
-
-<p>1.什么是Materrial Design:Google推出的全新界面语言</p>
-<p>2.Toolbar与Actionbar（已淘汰）  (Materrial控件)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:theme=<span class="string">"@style/AppTheme"</span>&gt;</div></pre></td></tr></table></figure></p>
-<p>res/values/styles.xml<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;style name=<span class="string">"AppTheme"</span> parent=<span class="string">"Theme.AppCompat.Light.DarkActionBar"</span>&gt;<span class="comment">//默认使用Actionbar</span></div><div class="line">        &lt;!-- Customize your theme here. --&gt;</div><div class="line">        &lt;item name="colorPrimary"&gt;@color/colorPrimary&lt;/item&gt;</div><div class="line">        &lt;item name="colorPrimaryDark"&gt;@color/colorPrimaryDark&lt;/item&gt;</div><div class="line">        &lt;item name="colorAccent"&gt;@color/colorAccent&lt;/item&gt;</div><div class="line">    &lt;/style&gt;</div><div class="line">```    </div><div class="line">禁用Actionbar</div><div class="line">```java</div><div class="line">name=<span class="string">"AppTheme"</span> parent=<span class="string">"Theme.AppCompat.Light.NoActionBar</span></div></pre></td></tr></table></figure></p>
-<p>用Toolbar替代Actionbar<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;android.support.v7.widget.Toolbar</div><div class="line">                android:id=<span class="string">"@+id/toolbar"</span></div><div class="line">                android:layout_width=<span class="string">"match_parent"</span></div><div class="line">                android:layout_height=<span class="string">"?attr/actionBarSize"</span></div><div class="line">                android:background=<span class="string">"?attr/colorPrimary"</span></div><div class="line">                android:theme=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span></div><div class="line">                app:popupTheme=<span class="string">"@style/ThemeOverlay.AppCompat.Light"</span></div><div class="line">                app:layout_scrollFlags=<span class="string">"scroll|enterAlways|snap"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<p><img src="http://i4.bvimg.com/595109/97171dbb977c9a04.png" alt="Markdown"></p>
-<p>3.创建mene文件夹 新建toolbar.xml<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</div><div class="line">&lt;menu xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    xmlns:app=<span class="string">"http://schemas.android.com/apk/res-auto"</span>&gt;</div><div class="line">    &lt;item</div><div class="line">        android:id=<span class="string">"@+id/backup"</span></div><div class="line">        android:icon=<span class="string">"@drawable/ic_backup"</span></div><div class="line">        android:title=<span class="string">"Backup"</span></div><div class="line">        app:showAsAction=<span class="string">"always"</span>/&gt;</div><div class="line">    &lt;item</div><div class="line">        android:id=<span class="string">"@+id/delete"</span></div><div class="line">        android:icon=<span class="string">"@drawable/ic_delete"</span></div><div class="line">        android:title=<span class="string">"Delete"</span></div><div class="line">        app:showAsAction=<span class="string">"ifRoom"</span>/&gt;</div><div class="line">    &lt;item</div><div class="line">        android:id=<span class="string">"@+id/settings"</span></div><div class="line">        android:icon=<span class="string">"@drawable/ic_settings"</span></div><div class="line">        android:title=<span class="string">"Settings"</span></div><div class="line">        app:showAsAction=<span class="string">"never"</span>/&gt;</div><div class="line">&lt;/menu&gt;</div></pre></td></tr></table></figure></p>
-<p><img src="http://i4.bvimg.com/595109/831131cba95e2fba.png" alt="Markdown"><br>app:showAsAction指定显示位置  never永远在菜单栏   ifRoom屏幕空间足够则显示在Toolbar中 always永远显示在Toolbar中</p>
-<p>4.滑动菜单<br>DrawerLayout(一种布局：能放两个直接子控件  一个子控件显示主屏幕内容  另一个子控件是滑动菜单显示内容)<br>activity_main<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;android.support.v4.widget.DrawerLayout</div><div class="line">    xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    xmlns:app=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">    android:id=<span class="string">"@+id/drawer_layout"</span></div><div class="line">    android:layout_width=<span class="string">"match_parent"</span></div><div class="line">    android:layout_height=<span class="string">"match_parent"</span>&gt;</div><div class="line"></div><div class="line">    &lt;FrameLayout</div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"match_parent"</span>&gt;</div><div class="line"></div><div class="line"></div><div class="line">            &lt;android.support.v7.widget.Toolbar</div><div class="line">                android:id=<span class="string">"@+id/toolbar"</span></div><div class="line">                android:layout_width=<span class="string">"match_parent"</span></div><div class="line">                android:layout_height=<span class="string">"?attr/actionBarSize"</span></div><div class="line">                android:background=<span class="string">"?attr/colorPrimary"</span></div><div class="line">                android:theme=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span></div><div class="line">                app:popupTheme=<span class="string">"@style/ThemeOverlay.AppCompat.Light"</span></div><div class="line">                app:layout_scrollFlags=<span class="string">"scroll|enterAlways|snap"</span> /&gt;</div><div class="line">      &lt;/FrameLayout&gt;</div><div class="line"></div><div class="line">      &lt;TextView</div><div class="line">             android:layout_width=<span class="string">"match_parent"</span></div><div class="line">             android:layout_height=<span class="string">"match_parent"</span></div><div class="line">             android:layout_gravity=<span class="string">"start"</span></div><div class="line">             android:text=<span class="string">"This is name"</span></div><div class="line">             android:testSize=<span class="string">"30sp"</span></div><div class="line">             android:background=<span class="string">"#FFF"</span>/&gt;</div><div class="line">&lt;/android.support.v4.widget.DrawerLayout&gt;</div></pre></td></tr></table></figure></p>
-<p><img src="http://i1.bvimg.com/595109/9f81ff22678cbc9e.png" alt="Markdown"></p>
-<p>防止用户不知道左边可以滑动（设置导航栏）<br>MainActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> DrawerLayout mDrawerLayout;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);</div><div class="line">        setSupportActionBar(toolbar);</div><div class="line">        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);</div><div class="line">        NavigationView navView = (NavigationView) findViewById(R.id.nav_view);</div><div class="line">        ActionBar actionBar = getSupportActionBar();</div><div class="line">        <span class="keyword">if</span> (actionBar != <span class="keyword">null</span>) &#123;</div><div class="line">            actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</div><div class="line">            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"><span class="comment">//...</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onOptionsItemSelected</span><span class="params">(MenuItem item)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (item.getItemId()) &#123;</div><div class="line">            <span class="keyword">case</span> android.R.id.home:</div><div class="line">                mDrawerLayout.openDrawer(GravityCompat.START);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="comment">//...</span></div><div class="line">            <span class="keyword">default</span>:</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1767,8 +1761,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">104</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1779,7 +1773,7 @@
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-name">categories</span>
               </a>
             </div>
           
@@ -1790,7 +1784,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -1899,7 +1893,7 @@
 
 
   <div class="powered-by">
-    Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
   </div>
 
   <span class="post-meta-divider">|</span>

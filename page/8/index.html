@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            About
           </a>
         </li>
       
@@ -226,7 +226,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -249,7 +249,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            Search
           </a>
         </li>
       
@@ -307,6 +307,138 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/build.gradle文件详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/20/build.gradle文件详解/" itemprop="url">build.gradle文件详解<CODE 2 chaper2></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
+                2017-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/20/build.gradle文件详解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/20/build.gradle文件详解/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>build.gradle(项目目录下)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()//代码托管仓库，声明后可引用jcenter上的开源项目</div><div class="line">    &#125;</div><div class="line">    dependencies &#123;</div><div class="line">        classpath &apos;com.android.tools.build:gradle:2.2.0&apos;//“依赖”文件使用classpath声明一个gradle插件  声明的原因：让gradle知道构建的是Android java 还是</div><div class="line">c++                                                     //com.android.tools.build:gradle:2.2.0说明构建的是android项目</div><div class="line">        // NOTE: Do not place your application dependencies here; they belong</div><div class="line">        // in the individual module build.gradle files</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">allprojects &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()//代码托管仓库，声明后可引用jcenter上的开源项目</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">task clean(type: Delete) &#123;</div><div class="line">    delete rootProject.buildDir</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>build.gradle(项目目录下)</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;com.android.application&apos;//应用一个插件 两个值可选  应用程序模块 （可直接运行）   com.android.library库模块（作为代码库依附别的库运行）</div><div class="line"></div><div class="line">android &#123;</div><div class="line">    compileSdkVersion 24  //编译所用sdk版本</div><div class="line">    buildToolsVersion &quot;24.0.2&quot;//构建工具版本</div><div class="line">    defaultConfig &#123;//细节配置</div><div class="line">        applicationId &quot;com.example.helloworld&quot;//项目包名</div><div class="line">        minSdkVersion 15//最低sdk版本</div><div class="line">        targetSdkVersion 24//充分测试的sdk版本</div><div class="line">        versionCode 1//项目版本号</div><div class="line">        versionName &quot;1.0&quot;//项目版本名</div><div class="line">    &#125;</div><div class="line">    buildTypes &#123;//生成安装文件的相关配置</div><div class="line">        release &#123;//release指定生产正式版安装文件的配置    debug闭包指定生成测试版安装文件的配置</div><div class="line">            minifyEnabled false//指定是否对项目的代码进行混淆</div><div class="line">            proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;//proguardFiles指定混淆的规则文件  //proguard-android.txt通用混淆规则  //proguard-rules.pro自定义混淆规则</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">dependencies &#123;//指定项目的所有依赖文件</div><div class="line">    compile fileTree(include: [&apos;*.jar&apos;], dir: &apos;libs&apos;)//本地依赖声明</div><div class="line">    compile &apos;com.android.support:appcompat-v7:24.2.1&apos;//远程依赖声明</div><div class="line">    testCompile &apos;junit:junit:4.12&apos;//声明测试用例库</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/ListView/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -336,7 +468,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
                 2017-07-20
@@ -443,139 +575,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/配置变量时  系统 用户变量的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="url">配置变量时  系统 用户变量的区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T20:13:10+08:00">
-                2017-06-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/06/18/配置变量时  系统 用户变量的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>我们在Java运行环境或Android开发环境时，经常要配置环境变量，如图所示，<br><img src="http://d1.freep.cn/3tb_170617122931qa32585966.png"></p>
-<p>这里有administrator的用户变量(U)，和系统变量（S），<br>那麽，它们之间有什么区别呢？<br>简单的说，一个是当前用户使用，你用其它用户登陆，这个环境变量就不起作用了。<br>系统变量，是对所有用户都可使用的。<br>简单的说：<br>系统变量：不管以哪个用户名登陆到计算机都能使用；<br>用户变量：只能以设置变量时的用户名登陆才能使用。</p>
-<p>如果我们在自己的电脑上运行程序，用户只有一个，看不出系统变量和用户变量的区别，但是，<br>如果一台电脑有多个用户，就能看出用户变量和系统变量的区别了~~<br>PS：我们在配置的时候，一般都是配置系统变量（S），</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/ANdriod sdk 更新问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -605,7 +604,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T20:13:10+08:00">
                 2017-06-18
@@ -716,6 +715,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/配置变量时  系统 用户变量的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="url">配置变量时  系统 用户变量的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T20:13:10+08:00">
+                2017-06-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/18/配置变量时  系统 用户变量的区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/06/18/配置变量时  系统 用户变量的区别/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我们在Java运行环境或Android开发环境时，经常要配置环境变量，如图所示，<br><img src="http://d1.freep.cn/3tb_170617122931qa32585966.png"></p>
+<p>这里有administrator的用户变量(U)，和系统变量（S），<br>那麽，它们之间有什么区别呢？<br>简单的说，一个是当前用户使用，你用其它用户登陆，这个环境变量就不起作用了。<br>系统变量，是对所有用户都可使用的。<br>简单的说：<br>系统变量：不管以哪个用户名登陆到计算机都能使用；<br>用户变量：只能以设置变量时的用户名登陆才能使用。</p>
+<p>如果我们在自己的电脑上运行程序，用户只有一个，看不出系统变量和用户变量的区别，但是，<br>如果一台电脑有多个用户，就能看出用户变量和系统变量的区别了~~<br>PS：我们在配置的时候，一般都是配置系统变量（S），</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/14/JDK SDK配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -745,7 +877,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-14T20:13:10+08:00">
                 2017-06-14
@@ -891,7 +1023,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-04T20:13:10+08:00">
                 2017-06-04
@@ -1029,7 +1161,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-28T20:13:10+08:00">
                 2017-05-28
@@ -1168,7 +1300,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-24T18:00:00+08:00">
                 2017-05-24
@@ -1300,7 +1432,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-22T20:13:10+08:00">
                 2017-05-22
@@ -1443,7 +1575,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-06T20:13:10+08:00">
                 2017-05-06
@@ -1534,141 +1666,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/02/微信开发者/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/02/微信开发者/" itemprop="url">微信开发者</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-02T20:13:10+08:00">
-                2017-05-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/02/微信开发者/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/02/微信开发者/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="http://i4.buimg.com/595109/bab9ca2d9d74a63e.png" alt="Markdown"></p>
-<p><img src="http://i4.buimg.com/595109/d63695703d9d7513.png" alt="Markdown"></p>
-<p><img src="http://i4.buimg.com/595109/0fc2ff56892bcf40.png" alt="Markdown"></p>
-<p><img src="http://i4.buimg.com/595109/08c0b7145777d38c.png" alt="Markdown"></p>
-<p><img src="http://i4.buimg.com/595109/7857569099d13713.png" alt="Markdown"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1719,8 +1716,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">103</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">104</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1731,7 +1728,7 @@
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-name">categories</span>
               </a>
             </div>
           
@@ -1742,7 +1739,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -1851,7 +1848,7 @@
 
 
   <div class="powered-by">
-    Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
   </div>
 
   <span class="post-meta-divider">|</span>
