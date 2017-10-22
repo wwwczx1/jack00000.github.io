@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            About
           </a>
         </li>
       
@@ -226,7 +226,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -249,7 +249,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            Search
           </a>
         </li>
       
@@ -307,6 +307,195 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/ActivityText/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/20/ActivityText/" itemprop="url">ActivityText<CODE 2 chaper2></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
+                2017-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/20/ActivityText/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/20/ActivityText/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3>学习目的：1.了解standard启动模式 2.singleTop启动模式 3.singleTask启动模式 4.singleInstance启动模式<br>5.实用技巧：知晓当前活动 随时退出程序 启动活动最佳写法</h3>
+
+
+<p></p><h3>standard启动模式</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Android是利用返回栈来管理活动的！</div><div class="line">在standard模式下，每启用一个新活动就会在返回栈入栈并置于栈顶。如：</div><div class="line">button1.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">            @Override</div><div class="line">            public void onClick(View v) &#123;</div><div class="line">Intent intent = new Intent(FirstActivity.this, SecondActivity.class);</div><div class="line">startActivity(intent);</div><div class="line">&#125;</div><div class="line">按三次返回键才能退出！</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>singleTop启动模式</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">当栈顶是该活动不创建新实例（与standard的不同之处）</div><div class="line">android:launchMode=&quot;singleTop&quot;//需要在活动先声明</div><div class="line"></div><div class="line">代码同上</div><div class="line">仅一次back可退出程序</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>singleTask启动模式</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">解决重复创建栈顶活动的问题！使某个活动在上下文之存在一个实例。</div><div class="line">android:launchMode=&quot;singleTask&quot;//需要在活动先声明</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>singleInstance启动模式</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">启用一个新的返回栈管理这个活动，解决共享活动实例的问题！</div><div class="line">android:launchMode=&quot;singleInstance&quot;//需要在活动先声明</div></pre></td></tr></table></figure><p></p>
+<p><img src="http://i2.tiimg.com/595109/f9bcece3e67deff6.png" alt="Markdown"><br><img src="http://i2.tiimg.com/595109/637e7ddfe3d6e7c7.png" alt="Markdown"><br><img src="http://i2.tiimg.com/595109/6eaebe571f0f124b.png" alt="Markdown"><br><img src="http://i2.tiimg.com/595109/eef8749d34f27304.png" alt="Markdown"><br><img src="http://i2.tiimg.com/595109/9ccd294fcd557c76.png" alt="Markdown"></p>
+<p></p><h3>知晓当前活动</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public class BaseActivity extends AppCompatActivity &#123;//无需注册，TM就是个java类</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        Log.d(&quot;BaseActivity&quot;, getClass().getSimpleName());</div><div class="line">        //需要让BaseActivity成为所有类的父类，因其继承AppCompatActivity,所以其他类功能不变</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>随时退出程序(思路：创建一个集合类对所有活动进行管理)</h3><p></p>
+<pre><code class="Android">public class ActivityCollector {
+
+    public static List&lt;Activity&gt; activities = new ArrayList&lt;&gt;();//用List存储活动
+
+    public static void addActivity(Activity activity) {//添加活动
+        activities.add(activity);
+    }
+
+    public static void removeActivity(Activity activity) {//不多说，看来add remove finish方法都写好啦
+        activities.remove(activity);
+    }
+
+    public static void finishAll() {
+        for (Activity activity : activities) {//销毁全部活动
+            if (!activity.isFinishing()) {
+                activity.finish();
+            }
+        }
+    }
+
+}
+
+随时退出举例：
+Button button3 = (Button) findViewById(R.id.button_3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ActivityCollector.finishAll();}}
+</code></pre>
+<p></p><h3>启动活动最佳写法</h3><p></p>
+<pre><code class="Android">为了解决 如secondActivity不是你开发的，但你需要知道启动这个活动需要传递那些数据 等问题
+原写法：
+Intent intent = new Intent(FristActivity.this, SecondActivity.class);
+        intent.putExtra(&quot;param1&quot;, data1);
+        intent.putExtra(&quot;param2&quot;, data2);
+        startActivity(intent);
+改进写法：
+public class SecondActivity extends BaseActivity {
+
+    public static void actionStart(Context context, String data1, String data2) {
+        Intent intent = new Intent(context, SecondActivity.class);
+        intent.putExtra(&quot;param1&quot;, data1);//intent传递的数据
+        intent.putExtra(&quot;param2&quot;, data2);
+        context.startActivity(intent);//context 上下文
+    }
+  }
+只需一行代码启动SecondActivity
+ SecondActivity.actionStart(FirstActivity.this, &quot;data1&quot;, &quot;data2&quot;);
+</code></pre>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/build.gradle文件详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -336,7 +525,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
                 2017-07-20
@@ -439,6 +628,142 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/ListView/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/20/ListView/" itemprop="url">ListView<CODE 2 chaper3></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
+                2017-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/20/ListView/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/20/ListView/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：1.了解ListView（列表）的用法 2.定制listview的界面(自定义适配器) 3.提升ListView的运行效率<br>4.ListView的点击事件<p></p>
+<p></p><h3>ListView（列表）的用法</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">ListView需要大量数据  来源数据库 或自定义</div><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    private String[] data=&#123;&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;,&quot;b&quot;,&quot;c&quot;&#125;;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        ArraryAdapter&lt;String&gt;adapter = new ArraryAdapter(MainActivity.this, R.layout.fruit_item, data);//第一个参数 上下文  布局ID 数据名//ArraryAdapter数组适配器</div><div class="line">        ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">        listView.setAdapter(adapter);//启动适配器</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">```    </div><div class="line"></div><div class="line">&lt;h3&gt;定制listview的界面&lt;/h3&gt;</div><div class="line"></div><div class="line">&lt;img src=&apos;http://img.027cgb.cn/20170722/20177222181775731906.png&apos; /&gt;</div><div class="line"></div><div class="line">```Android</div><div class="line">如：列表每一项包含图片及文字</div><div class="line">详解每一步：</div><div class="line">1.两个布局activity_main 及fruit_item(简单，不赘述)</div><div class="line"></div><div class="line">2.fruit类（简单，不赘述）</div><div class="line">public class Fruit &#123;</div><div class="line"></div><div class="line">    private String name;</div><div class="line"></div><div class="line">    private int imageId;</div><div class="line"></div><div class="line">    public Fruit(String name, int imageId) &#123;</div><div class="line">        this.name = name;</div><div class="line">        this.imageId = imageId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public String getName() &#123;</div><div class="line">        return name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public int getImageId() &#123;</div><div class="line">        return imageId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">3.FruitAdaper类</div><div class="line">public class FruitAdapter extends ArrayAdapter&lt;Fruit&gt; &#123;//继承ArrayAdaper 从而使之能调用适配器需要的函数 //泛型为fruit类</div><div class="line"></div><div class="line">    private int resourceId;</div><div class="line"></div><div class="line">    public FruitAdapter(Context context, int textViewResourceId, List&lt;Fruit&gt; objects) &#123;//上下文 布局id 列表对象</div><div class="line">        super(context, textViewResourceId, objects);//调用父类构造函数   及FruitAdapter()等同于ArrayAdaper()</div><div class="line">        resourceId = textViewResourceId;//之所以另定义一个变量来获得textViewResourceId,是怕使用过程中将之改变</div><div class="line">    &#125;</div><div class="line">//  重写getView方法(获取到视图类对象的指针，并转换成CAdaptoneViewView   的指针)</div><div class="line">  public View getView(int position, View convertView, ViewGroup parent) &#123;/ /每个子项滚动到屏幕内都会被调用</div><div class="line">        Fruit fruit = getItem(position); // 获取当前项的Fruit实例</div><div class="line">        View view=layoutInflater.from(getContext()).inflate(resourceId,parent,false);//为子项加载我们传入的布局</div><div class="line">        ImageView fruitImage=(ImageView)view.findViewById(R.id.fruit_image);//ImageView内部类</div><div class="line">        TextView fruitName=(TextView)view.findViewById(R.id.fruit_name);//TextView内部类</div><div class="line">        fruitImage.setImageResouceId(fruit.getImageId());</div><div class="line">        fruitName.setText(fruit.getName());</div><div class="line">        return view;</div><div class="line">    &#125;</div></pre></td></tr></table></figure><p></p>
+<p><img src="http://i4.piimg.com/595109/3e87d1af99d7521b.png" alt="Markdown"></p>
+<p>4.MianActivity类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    private List&lt;Fruit&gt; fruitList = new ArrayList&lt;Fruit&gt;();//用ArrayList（）方法声明一个fruitList列表 指定泛型为Fruit</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        initFruits(); // 初始化水果数据</div><div class="line">        FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);//第一个参数 传入水果对象  布局ID 水果列表</div><div class="line">        ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">        listView.setAdapter(adapter);//启动适配器</div><div class="line">        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;//给listview设置监听器</div><div class="line">            @Override</div><div class="line">            public void onItemClick(AdapterView&lt;?&gt; parent, View view,</div><div class="line">                                    int position, long id) &#123;</div><div class="line">                Fruit fruit = fruitList.get(position);</div><div class="line">                Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();//设置逻辑</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private void initFruits() &#123;</div><div class="line">            for (int i = 0; i &lt; 2; i++) &#123;//循环两次是出于谨慎</div><div class="line">                Fruit apple = new Fruit(&quot;Apple&quot;, R.drawable.apple_pic);</div><div class="line">                fruitList.add(apple);</div><div class="line">                Fruit banana = new Fruit(&quot;Banana&quot;, R.drawable.banana_pic);</div><div class="line">                fruitList.add(banana);</div><div class="line">                Fruit orange = new Fruit(&quot;Orange&quot;, R.drawable.orange_pic);</div><div class="line">                fruitList.add(orange);</div><div class="line">                Fruit watermelon = new Fruit(&quot;Watermelon&quot;, R.drawable.watermelon_pic);</div><div class="line">                fruitList.add(watermelon);</div><div class="line">                Fruit pear = new Fruit(&quot;Pear&quot;, R.drawable.pear_pic);</div><div class="line">                fruitList.add(pear);</div><div class="line">                Fruit grape = new Fruit(&quot;Grape&quot;, R.drawable.grape_pic);</div><div class="line">                fruitList.add(grape);</div><div class="line">                Fruit pineapple = new Fruit(&quot;Pineapple&quot;, R.drawable.pineapple_pic);</div><div class="line">                fruitList.add(pineapple);</div><div class="line">                Fruit strawberry = new Fruit(&quot;Strawberry&quot;, R.drawable.strawberry_pic);</div><div class="line">                fruitList.add(strawberry);</div><div class="line">                Fruit cherry = new Fruit(&quot;Cherry&quot;, R.drawable.cherry_pic);</div><div class="line">                fruitList.add(cherry);</div><div class="line">                Fruit mango = new Fruit(&quot;Mango&quot;, R.drawable.mango_pic);</div><div class="line">                fruitList.add(mango);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure></p>
+<p></p><h3>3.ListView的优化</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">需要优化的点：1.getView每一次滑动都要将布局重载！（效率低）</div><div class="line">2.每次getView（）都会通过findViewById获取一次控件实例</div><div class="line">优化思路 使用convertView参数（布局缓存重用） 新建viewHolder集合类</div><div class="line">优化后代码：</div><div class="line">public View getView(int position, View convertView, ViewGroup parent) &#123;//每个子项滚动到屏幕内都会被调用</div><div class="line">       Fruit fruit = getItem(position); // 获取当前项的Fruit实例</div><div class="line">       View view;</div><div class="line">       ViewHolder viewHolder;</div><div class="line">       if (convertView == null) &#123;</div><div class="line">           view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);</div><div class="line">           viewHolder = new ViewHolder();</div><div class="line">           viewHolder.fruitImage = (ImageView) view.findViewById (R.id.fruit_image);</div><div class="line">           viewHolder.fruitName = (TextView) view.findViewById (R.id.fruit_name);</div><div class="line">           view.setTag(viewHolder); // 将ViewHolder存储在View中</div><div class="line">       &#125; else &#123;</div><div class="line">           view = convertView;</div><div class="line">           viewHolder = (ViewHolder) view.getTag(); // 重新获取ViewHolder</div><div class="line">       &#125;</div><div class="line">       viewHolder.fruitImage.setImageResource(fruit.getImageId());</div><div class="line">       viewHolder.fruitName.setText(fruit.getName());</div><div class="line">       return view;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   class ViewHolder &#123;</div><div class="line"></div><div class="line">       ImageView fruitImage;</div><div class="line"></div><div class="line">       TextView fruitName;</div><div class="line"></div><div class="line">   &#125;</div></pre></td></tr></table></figure><p></p>
+<p>   </p><h3>4.ListView的点击事件</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">简单，不赘述。</div><div class="line">   protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">           super.onCreate(savedInstanceState);</div><div class="line">           setContentView(R.layout.activity_main);</div><div class="line">           initFruits(); // 初始化水果数据</div><div class="line">           FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);//第一个参数 传入水果对象  布局ID 水果列表</div><div class="line">           ListView listView = (ListView) findViewById(R.id.list_view);//导入布局id</div><div class="line">           listView.setAdapter(adapter);//启动适配器</div><div class="line">           listView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;//给listview设置监听器</div><div class="line">               @Override</div><div class="line">               public void onItemClick(AdapterView&lt;?&gt; parent, View view,</div><div class="line">                                       int position, long id) &#123;</div><div class="line">                   Fruit fruit = fruitList.get(position);</div><div class="line">                   Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();//设置逻辑</div><div class="line">               &#125;</div><div class="line">           &#125;);</div><div class="line">       &#125;</div></pre></td></tr></table></figure><p></p>
+</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/20/logcat及log/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -468,7 +793,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T20:13:10+08:00">
                 2017-07-20
@@ -600,7 +925,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T20:13:10+08:00">
                 2017-06-18
@@ -740,7 +1065,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T20:13:10+08:00">
                 2017-06-18
@@ -873,7 +1198,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-14T20:13:10+08:00">
                 2017-06-14
@@ -1019,7 +1344,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-04T20:13:10+08:00">
                 2017-06-04
@@ -1157,7 +1482,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-28T20:13:10+08:00">
                 2017-05-28
@@ -1296,7 +1621,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-24T18:00:00+08:00">
                 2017-05-24
@@ -1386,282 +1711,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/22/树莓派.摄像头配置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/22/树莓派.摄像头配置/" itemprop="url">树莓派摄像头配置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-22T20:13:10+08:00">
-                2017-05-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/22/树莓派.摄像头配置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/22/树莓派.摄像头配置/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2>1. 安装</h2><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt install motion</div></pre></td></tr></table></figure><br><br><h2>2. 配置</h2>
-
-<p></p><h3>备份配置文件</h3><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cp /etc/motion/motion.conf /etc/motion/motion.conf.bak</div></pre></td></tr></table></figure><p></p>
-<p></p><h3>打开配置文档</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/motion/motion.conf</div></pre></td></tr></table></figure><p></p>
-<p></p><h3>更改文档中以下内容</h3><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">width <span class="number">640</span>      <span class="comment">#图像的宽</span></div><div class="line">height <span class="number">480</span>     <span class="comment">#图像的高</span></div><div class="line">target_dir /home/pi/motion-images   <span class="comment">#图片保存的路径</span></div><div class="line">stream_localhost off                <span class="comment">#允许通过网页查看摄像头</span></div><div class="line">stream_auth_method <span class="number">2</span>                <span class="comment">#开启密码认证</span></div><div class="line">stream_authentication 用户名:密码     <span class="comment">#网页查看摄像头的用户名和密码</span></div></pre></td></tr></table></figure><p></p>
-<p></p><h3>官方详细配置说明：<a href="http://lavrsen.dk/foswiki/bin/view/Motion/ConfigFileOptions" target="_blank" rel="external">http://lavrsen.dk/foswiki/bin/view/Motion/ConfigFileOptions</a></h3><p></p>
-<p></p><h2>3. 运行</h2><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo motion</div></pre></td></tr></table></figure><p></p>
-<p><img src="http://i1.piimg.com/588926/165e01c1189cc312.png" alt=""></p>
-<p><img src="http://i1.piimg.com/588926/5ba72204cccc1955.png" alt=""></p>
-<p><img src="http://i4.buimg.com/588926/a282b03a96ca8bae.png" alt=""></p>
-<p><img src="http://i2.muimg.com/588926/de59d0127dadfcac.png" alt=""></p>
-<p><img src="http://i1.piimg.com/588926/2a446249211b8ef6.png" alt=""></p>
-<p><img src="http://i1.piimg.com/595109/5276628649a38f44.png" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/用网线连接树莓派和pc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/06/用网线连接树莓派和pc/" itemprop="url">树莓派实现无线中继路由</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-06T20:13:10+08:00">
-                2017-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/06/用网线连接树莓派和pc/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/06/用网线连接树莓派和pc/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><a href="https://jingyan.baidu.com/article/915fc414f047f851394b20df.html" target="_blank" rel="external">设置PC端ip</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1712,8 +1761,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">104</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">106</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1723,8 +1772,8 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
               </a>
             </div>
           
@@ -1735,7 +1784,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -1844,7 +1893,7 @@
 
 
   <div class="powered-by">
-    Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
   </div>
 
   <span class="post-meta-divider">|</span>

@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            About
           </a>
         </li>
       
@@ -226,7 +226,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -249,7 +249,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            Search
           </a>
         </li>
       
@@ -307,6 +307,417 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/22/树莓派.摄像头配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/22/树莓派.摄像头配置/" itemprop="url">树莓派摄像头配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-22T20:13:10+08:00">
+                2017-05-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/22/树莓派.摄像头配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/05/22/树莓派.摄像头配置/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2>1. 安装</h2><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt install motion</div></pre></td></tr></table></figure><br><br><h2>2. 配置</h2>
+
+<p></p><h3>备份配置文件</h3><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cp /etc/motion/motion.conf /etc/motion/motion.conf.bak</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>打开配置文档</h3><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/motion/motion.conf</div></pre></td></tr></table></figure><p></p>
+<p></p><h3>更改文档中以下内容</h3><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">width <span class="number">640</span>      <span class="comment">#图像的宽</span></div><div class="line">height <span class="number">480</span>     <span class="comment">#图像的高</span></div><div class="line">target_dir /home/pi/motion-images   <span class="comment">#图片保存的路径</span></div><div class="line">stream_localhost off                <span class="comment">#允许通过网页查看摄像头</span></div><div class="line">stream_auth_method <span class="number">2</span>                <span class="comment">#开启密码认证</span></div><div class="line">stream_authentication 用户名:密码     <span class="comment">#网页查看摄像头的用户名和密码</span></div></pre></td></tr></table></figure><p></p>
+<p></p><h3>官方详细配置说明：<a href="http://lavrsen.dk/foswiki/bin/view/Motion/ConfigFileOptions" target="_blank" rel="external">http://lavrsen.dk/foswiki/bin/view/Motion/ConfigFileOptions</a></h3><p></p>
+<p></p><h2>3. 运行</h2><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo motion</div></pre></td></tr></table></figure><p></p>
+<p><img src="http://i1.piimg.com/588926/165e01c1189cc312.png" alt=""></p>
+<p><img src="http://i1.piimg.com/588926/5ba72204cccc1955.png" alt=""></p>
+<p><img src="http://i4.buimg.com/588926/a282b03a96ca8bae.png" alt=""></p>
+<p><img src="http://i2.muimg.com/588926/de59d0127dadfcac.png" alt=""></p>
+<p><img src="http://i1.piimg.com/588926/2a446249211b8ef6.png" alt=""></p>
+<p><img src="http://i1.piimg.com/595109/5276628649a38f44.png" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/用网线连接树莓派和pc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/06/用网线连接树莓派和pc/" itemprop="url">树莓派实现无线中继路由</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-06T20:13:10+08:00">
+                2017-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/06/用网线连接树莓派和pc/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/05/06/用网线连接树莓派和pc/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><a href="https://jingyan.baidu.com/article/915fc414f047f851394b20df.html" target="_blank" rel="external">设置PC端ip</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/02/微信开发者/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/02/微信开发者/" itemprop="url">微信开发者</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-02T20:13:10+08:00">
+                2017-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/02/微信开发者/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/05/02/微信开发者/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://i4.buimg.com/595109/bab9ca2d9d74a63e.png" alt="Markdown"></p>
+<p><img src="http://i4.buimg.com/595109/d63695703d9d7513.png" alt="Markdown"></p>
+<p><img src="http://i4.buimg.com/595109/0fc2ff56892bcf40.png" alt="Markdown"></p>
+<p><img src="http://i4.buimg.com/595109/08c0b7145777d38c.png" alt="Markdown"></p>
+<p><img src="http://i4.buimg.com/595109/7857569099d13713.png" alt="Markdown"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/02/[树莓派]无线网卡配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -336,7 +747,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-02T20:13:10+08:00">
                 2017-05-02
@@ -472,141 +883,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/02/微信开发者/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/02/微信开发者/" itemprop="url">微信开发者</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-02T20:13:10+08:00">
-                2017-05-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/02/微信开发者/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/02/微信开发者/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="http://i4.buimg.com/595109/bab9ca2d9d74a63e.png" alt="Markdown"></p>
-<p><img src="http://i4.buimg.com/595109/d63695703d9d7513.png" alt="Markdown"></p>
-<p><img src="http://i4.buimg.com/595109/0fc2ff56892bcf40.png" alt="Markdown"></p>
-<p><img src="http://i4.buimg.com/595109/08c0b7145777d38c.png" alt="Markdown"></p>
-<p><img src="http://i4.buimg.com/595109/7857569099d13713.png" alt="Markdown"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/28/【树莓派】电脑显示器当树莓派显示屏/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -636,7 +912,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-28T20:13:10+08:00">
                 2017-04-28
@@ -797,7 +1073,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-04T20:13:10+08:00">
                 2017-04-04
@@ -944,7 +1220,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-31T20:13:10+08:00">
                 2017-03-31
@@ -1093,7 +1369,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-24T20:13:10+08:00">
                 2017-03-24
@@ -1228,7 +1504,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-22T20:13:10+08:00">
                 2017-03-22
@@ -1388,7 +1664,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-20T20:13:10+08:00">
                 2017-03-20
@@ -1485,301 +1761,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/网络问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/11/网络问题/" itemprop="url">网络问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-11T20:13:10+08:00">
-                2017-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/11/网络问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/03/11/网络问题/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3>未识别的网络 已连接</h3>
-
-<ul>
-<li>重启一下网卡</li>
-<li><img src="http://i1.piimg.com/567571/b95efdac391e9bb6.png" alt=""></li>
-<li>点禁用</li>
-</ul>
-<p></p><h3>网络受限 已连接</h3><p></p>
-<ul>
-<li>右键打开网络共享中心</li>
-<li><img src="http://p1.bpimg.com/567571/25e1701a8be95a98.png" alt=""></li>
-<li><img src="http://p1.bpimg.com/567571/7e57adede7c0ccd0.png" alt=""></li>
-</ul>
-<p></p><h3>无intenet 安全</h3><p></p>
-<ul>
-<li>开始-运行-输入”netsh winsock reset”,然后重启系统</li>
-<li>确认可行</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/10/守望先锋/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/10/守望先锋/" itemprop="url">守望先锋专题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-10T15:00:00+08:00">
-                2017-03-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/10/守望先锋/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/03/10/守望先锋/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="http://pan.baidu.com/s/1skUoumx" target="_blank" rel="external"><img src="http://p1.bqimg.com/567571/7bcd8ffe9fa167ea.jpg" alt=""></a></p>
-<p></p><h3>Computer games<h3><br>Our topic is computer games.we have three parts to share with you .<br>First,i will told you the best computer game –overwatch<br>And then,miss xu will teach you to how to make a computer games.<br>At last,miss Li will show you the the most successful gaming platform-steam.<p></p>
-<p>Part one:overwatch</p>
-<p>First,the company which made it,Blizzard.<br>Many people think that Blizzard is like a CG company more than games company.and say that blizard company make CG by heart,make games by feet.their 3d models about buildings and heroes is one of the best in the word.<br>For example,you can see .this two pictures are real place.and up two pictures are blizzaid model builded for overwatch.<br>In overwatch,the places we are palying are designed based on our real life palce.like yiliaosi, king rote,66 rote and so on.so blizzaid is not only a games company and also the CG company.that’s blizzaid.</p>
-<p>Second ,let me make a simple introduce about blizzaid games.<br>World of Warcraft (WOW) i think that everyone have seen the movie about it.<br>Diablo<br>StarCraft<br>Storm hero<br>Hearth Stone</p>
-<p>What is overwatch?<br>In future world,Overwatch is group name .we have different group like smart machine,black feet and so on.different hero belong to difference group .</p>
-<p>Overwatch:<br>Represent hero :wenshidun flash faji and so on,<br>In the future,overwatch is made for end the country war,there are doctor,Soldiers ,scientists and so on.but after the war,the group is broken because people don’t need them.<br>Until,the smart robots ouni update his system and not fellow human any more.the new war is coming. people need overwatch,the world need more hero,so overwatch heroes get together again.</p>
-<p>Black feet:<br>Represent hero :death ,black flower<br>Black feet is also the enemy to overwatch.;their Faith are different,overwatch think the world need save,but black feet think the world need rebuild.they all fight for their faith.black feet want kill the key man so that it can rebuild the world quickly,on the anther hand ,overwatch protect the people that black feet want to kill.</p>
-<p>Smart machine:<br>Attractive robot,they update their system by themselve.and think that human would be dangrous if they do noting changed.and save human only one way –Launching the war,And they did it.</p>
-<p>The hero story: crazy rabbit<br>Crazy rabbit is doctor who want to build something with human soul.at first,the king of country interested  and support the rabbit do his research.until the rabbit failed many times and start use human body do his research ,the people of the country are worried about it .the king realized it and decided to push the rabbit out of his country.<br>In doctor rabbit,even using human body ,he still can make the thing made by part of death body alive.<br>In this time, evil angel coming.and take what doctor rabbit want –the soul.finally,the doctor rabbit finish his research and create a monster–the pig.</p>
-<p>The new hero aolisha<br>The genius girl yifei update the old robot system and give it a new name.<br>The story happen in lubini.one day,unkown enemy attract the airport,and the defined robot can stop them.after that ,people don’t thrust that robot and don’t use them.until The genius girl yifei rebuild it.the new robot has been given a heart by yifei and that make it more powerful.</p>
-<p><img src="http://p1.bqimg.com/567571/c5472cf025bb488c.jpg" alt=""></p>
-<p><img src="http://p1.bqimg.com/567571/40dc37c1fc94d6be.jpg" alt=""></p>
-<p><img src="http://i1.piimg.com/567571/9e2503e0cee51bd2.jpg" alt=""></p>
-<p><img src="http://p1.bqimg.com/567571/dd9eeeaba2ce6193.jpg" alt=""></p>
-<p><img src="http://i1.piimg.com/567571/542c1a183b8d8152.jpg" alt=""></p>
-<p><img src="http://p1.bqimg.com/567571/fdfae40e2babfb5b.jpg" alt=""></p>
-</h3></h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1830,8 +1811,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">104</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">106</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1841,8 +1822,8 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
               </a>
             </div>
           
@@ -1853,7 +1834,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -1962,7 +1943,7 @@
 
 
   <div class="powered-by">
-    Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
   </div>
 
   <span class="post-meta-divider">|</span>

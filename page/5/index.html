@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            About
           </a>
         </li>
       
@@ -226,7 +226,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -249,7 +249,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            Search
           </a>
         </li>
       
@@ -307,6 +307,279 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/10/Materialtest3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/10/Materialtest3/" itemprop="url">materialtest3(最佳UI体验)<CODE 2 chaper11></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-10T20:13:10+08:00">
+                2017-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/10/Materialtest3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/10/Materialtest3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：1.悬浮按钮（FloatingAcgtionButton有投影）和可交互提示(Snackbar更先进的提示工具)<p></p>
+<p>FloatingAcgtionButton(Design support的一个控件)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.FloatingActionButton</span></span></div><div class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/fab"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_gravity</span>=<span class="string">"bottom|end"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_margin</span>=<span class="string">"16dp"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:src</span>=<span class="string">"@drawable/ic_done"</span></span></div><div class="line"><span class="tag">            <span class="attr">app</span>：<span class="attr">elevation</span>=<span class="string">"8dp"</span> /&gt;</span>//指定悬浮高度 高度越大投影效果小</div></pre></td></tr></table></figure>
+<p><img src="http://i4.bvimg.com/595109/64a2bf8fb9d555c8.png" alt="Markdown"></p>
+<p>FloatingActionButton的点击事件<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);</div><div class="line">        fab.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span> </span>&#123;</div><div class="line"></div><div class="line">                                Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"Data restored"</span>, Toast.LENGTH_SHORT).show();</div><div class="line"></div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">```        </div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">Snackbar更先进的提示工具（Design support）(用户接到提示可以进行（按钮形式）逻辑操作  toast不行)</div><div class="line">```java</div><div class="line">FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);</div><div class="line">        fab.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">                Snackbar.make(view, <span class="string">"Data deleted"</span>, Snackbar.LENGTH_SHORT)</div><div class="line">                        .setAction(<span class="string">"Undo"</span>, <span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">                            <span class="meta">@Override</span></div><div class="line">                            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">                                Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"Data restored"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                            &#125;</div><div class="line">                        &#125;)</div><div class="line">                        .show();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">```        </div><div class="line"></div><div class="line">如此提示会遮挡FloatingActionButton</div><div class="line"></div><div class="line">解决方法Coordinatorlayout(将FrameLayout替换成Coordinatorlayout</div><div class="line">activity_main</div><div class="line">```xml</div><div class="line">&lt;android.support.design.widget.CoordinatorLayout</div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"match_parent"</span>&gt;</div><div class="line"></div><div class="line">        &lt;android.support.design.widget.AppBarLayout</div><div class="line">            android:layout_width=<span class="string">"match_parent"</span></div><div class="line">            android:layout_height=<span class="string">"wrap_content"</span>&gt;</div><div class="line"></div><div class="line">            &lt;android.support.v7.widget.Toolbar</div><div class="line">                android:id=<span class="string">"@+id/toolbar"</span></div><div class="line">                android:layout_width=<span class="string">"match_parent"</span></div><div class="line">                android:layout_height=<span class="string">"?attr/actionBarSize"</span></div><div class="line">                android:background=<span class="string">"?attr/colorPrimary"</span></div><div class="line">                android:theme=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span></div><div class="line">                app:popupTheme=<span class="string">"@style/ThemeOverlay.AppCompat.Light"</span></div><div class="line">                app:layout_scrollFlags=<span class="string">"scroll|enterAlways|snap"</span> /&gt;</div><div class="line">        &lt;/android.support.design.widget.AppBarLayout&gt;</div><div class="line"></div><div class="line">        &lt;android.support.v4.widget.SwipeRefreshLayout</div><div class="line">            android:id=<span class="string">"@+id/swipe_refresh"</span></div><div class="line">            android:layout_width=<span class="string">"match_parent"</span></div><div class="line">            android:layout_height=<span class="string">"match_parent"</span></div><div class="line">            app:layout_behavior=<span class="string">"@string/appbar_scrolling_view_behavior"</span>&gt;</div><div class="line"></div><div class="line">            &lt;android.support.v7.widget.RecyclerView</div><div class="line">                android:id=<span class="string">"@+id/recycler_view"</span></div><div class="line">                android:layout_width=<span class="string">"match_parent"</span></div><div class="line">                android:layout_height=<span class="string">"match_parent"</span> /&gt;</div><div class="line">        &lt;/android.support.v4.widget.SwipeRefreshLayout&gt;</div><div class="line"></div><div class="line">        &lt;android.support.design.widget.FloatingActionButton</div><div class="line">            android:id=<span class="string">"@+id/fab"</span></div><div class="line">            android:layout_width=<span class="string">"wrap_content"</span></div><div class="line">            android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">            android:layout_gravity=<span class="string">"bottom|end"</span></div><div class="line">            android:layout_margin=<span class="string">"16dp"</span></div><div class="line">            android:src=<span class="string">"@drawable/ic_done"</span> /&gt;</div><div class="line">    &lt;/android.support.design.widget.CoordinatorLayout&gt;</div></pre></td></tr></table></figure></p>
+</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/09/Materialtest2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/09/Materialtest2/" itemprop="url">materialtest2(最佳UI体验)<CODE 2 chaper12></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-09T20:13:10+08:00">
+                2017-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/09/Materialtest2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/09/Materialtest2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h3>学习目的：1.NavigationView  2.nav_head.xml(放置头像 邮箱 用户名)  3.使用NavigationView<p></p>
+<p>1.NavigationView</p>
+<p>添加依赖<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:design:24.2.1'</span><span class="comment">//Design supprot</span></div><div class="line">    compile <span class="string">'de.hdodenhof:circleimageview:2.1.0'</span><span class="comment">//开源项目  轻松实现图片圆形化</span></div><div class="line">```    </div><div class="line"></div><div class="line">在menu下创建nav_menu.xml</div><div class="line">```java</div><div class="line">?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</div><div class="line">&lt;menu xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</div><div class="line">    &lt;group android:checkableBehavior=<span class="string">"single"</span>&gt;</div><div class="line">        &lt;item</div><div class="line">            android:id=<span class="string">"@+id/nav_call"</span></div><div class="line">            android:icon=<span class="string">"@drawable/nav_call"</span></div><div class="line">            android:title=<span class="string">"Call"</span> /&gt;</div><div class="line">        &lt;item</div><div class="line">            android:id=<span class="string">"@+id/nav_friends"</span></div><div class="line">            android:icon=<span class="string">"@drawable/nav_friends"</span></div><div class="line">            android:title=<span class="string">"Friends"</span> /&gt;</div><div class="line">        &lt;item</div><div class="line">            android:id=<span class="string">"@+id/nav_location"</span></div><div class="line">            android:icon=<span class="string">"@drawable/nav_location"</span></div><div class="line">            android:title=<span class="string">"Location"</span> /&gt;</div><div class="line">        &lt;item</div><div class="line">            android:id=<span class="string">"@+id/nav_mail"</span></div><div class="line">            android:icon=<span class="string">"@drawable/nav_mail"</span></div><div class="line">            android:title=<span class="string">"Mail"</span> /&gt;</div><div class="line">        &lt;item</div><div class="line">            android:id=<span class="string">"@+id/nav_task"</span></div><div class="line">            android:icon=<span class="string">"@drawable/nav_task"</span></div><div class="line">            android:title=<span class="string">"Tasks"</span> /&gt;</div><div class="line">    &lt;/group&gt;</div><div class="line">&lt;/menu&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="http://i1.bvimg.com/595109/29a53cd5eab026d1.png" alt="Markdown"></p>
+<p>3.nav_head.xml(放置头像 邮箱 用户名)<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"180dp"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:background</span>=<span class="string">"?attr/colorPrimary"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:padding</span>=<span class="string">"10dp"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">de.hdodenhof.circleimageview.CircleImageView</span>//图片圆形化控件</span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/icon_image"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"70dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"70dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_centerInParent</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:src</span>=<span class="string">"@drawable/nav_icon"</span> /&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/username"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_alignParentBottom</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"tonygreendev@gmail.com"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#FFF"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"14sp"</span> /&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/mail"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_above</span>=<span class="string">"@id/username"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"Tony Green"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#FFF"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"14sp"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><img src="http://i1.bvimg.com/595109/aaf19dc895ab43bc.png" alt="Markdown"></p>
+<p>使用NavigationView<br>activity_maind的TextView替换成<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;android.support.design.widget.NavigationView</div><div class="line">        android:id=<span class="string">"@+id/nav_view"</span></div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"match_parent"</span></div><div class="line">        android:layout_gravity=<span class="string">"start"</span></div><div class="line">        app:headerLayout=<span class="string">"@layout/nav_header"</span></div><div class="line">        app:menu=<span class="string">"@menu/nav_menu"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p>设置点击事件<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> DrawerLayout mDrawerLayout;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);</div><div class="line">        setSupportActionBar(toolbar);</div><div class="line">        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);</div><div class="line">        NavigationView navView = (NavigationView) findViewById(R.id.nav_view);</div><div class="line">        ActionBar actionBar = getSupportActionBar();</div><div class="line">        <span class="keyword">if</span> (actionBar != <span class="keyword">null</span>) &#123;</div><div class="line">            actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</div><div class="line">            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);</div><div class="line">        &#125;</div><div class="line">        navView.setCheckedItem(R.id.nav_call);</div><div class="line">         navView.setNavigationItemSelectedListener(<span class="keyword">new</span> NavigationView.OnNavigationItemSelectedListener() &#123;</div><div class="line">             <span class="meta">@Override</span></div><div class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onNavigationItemSelected</span><span class="params">(MenuItem item)</span> </span>&#123;</div><div class="line">                 mDrawerLayout.closeDrawers();</div><div class="line">                 <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">             &#125;</div><div class="line">         &#125;);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/08/Materialtest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -336,7 +609,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-08T20:13:10+08:00">
                 2017-08-08
@@ -449,139 +722,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/07/Lbstest2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/07/Lbstest2/" itemprop="url">lbstest2<CODE 2 chaper11></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-07T20:13:10+08:00">
-                2017-08-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/07/Lbstest2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/07/Lbstest2/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>androidMainifest<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">package</span>=<span class="string">"com.example.lbstest"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_COARSE_LOCATION"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_FINE_LOCATION"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_WIFI_STATE"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_NETWORK_STATE"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.CHANGE_WIFI_STATE"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.READ_PHONE_STATE"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.INTERNET"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.MOUNT_UNMOUNT_FILESYSTEMS"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.WAKE_LOCK"</span>/&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">application</span></span></div><div class="line"><span class="tag">        <span class="attr">android:allowBackup</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:icon</span>=<span class="string">"@mipmap/ic_launcher"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:supportsRtl</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:theme</span>=<span class="string">"@style/AppTheme"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line"><span class="tag">            <span class="attr">android:name</span>=<span class="string">"com.baidu.lbsapi.API_KEY"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:value</span>=<span class="string">"i6VD2fHKM3msMfZtIOXAhFSzDiYGFIwL"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".MainActivity"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">service</span> <span class="attr">android:name</span>=<span class="string">"com.baidu.location.f"</span> <span class="attr">android:enabled</span>=<span class="string">"true"</span> <span class="attr">android:process</span>=<span class="string">":remote"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">service</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>MainActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> LocationClient mLocationClient;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> TextView positionText;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> MapView mapView;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> BaiduMap baiduMap;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> isFirstLocate = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        mLocationClient = <span class="keyword">new</span> LocationClient(getApplicationContext());</div><div class="line">        mLocationClient.registerLocationListener(<span class="keyword">new</span> MyLocationListener());</div><div class="line">        SDKInitializer.initialize(getApplicationContext());</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        mapView = (MapView) findViewById(R.id.bmapView);</div><div class="line">        baiduMap = mapView.getMap();</div><div class="line">        baiduMap.setMyLocationEnabled(<span class="keyword">true</span>);</div><div class="line">        positionText = (TextView) findViewById(R.id.position_text_view);</div><div class="line">        List&lt;String&gt; permissionList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">        <span class="keyword">if</span> (ContextCompat.checkSelfPermission(MainActivity.<span class="keyword">this</span>, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">            permissionList.add(Manifest.permission.ACCESS_FINE_LOCATION);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (ContextCompat.checkSelfPermission(MainActivity.<span class="keyword">this</span>, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">            permissionList.add(Manifest.permission.READ_PHONE_STATE);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (ContextCompat.checkSelfPermission(MainActivity.<span class="keyword">this</span>, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">            permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (!permissionList.isEmpty()) &#123;</div><div class="line">            String [] permissions = permissionList.toArray(<span class="keyword">new</span> String[permissionList.size()]);</div><div class="line">            ActivityCompat.requestPermissions(MainActivity.<span class="keyword">this</span>, permissions, <span class="number">1</span>);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            requestLocation();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">navigateTo</span><span class="params">(BDLocation location)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (isFirstLocate) &#123;</div><div class="line">            Toast.makeText(<span class="keyword">this</span>, <span class="string">"nav to "</span> + location.getAddrStr(), Toast.LENGTH_SHORT).show();</div><div class="line">            LatLng ll = <span class="keyword">new</span> LatLng(location.getLatitude(), location.getLongitude());</div><div class="line">            MapStatusUpdate update = MapStatusUpdateFactory.newLatLng(ll);</div><div class="line">            baiduMap.animateMapStatus(update);</div><div class="line">            update = MapStatusUpdateFactory.zoomTo(<span class="number">16f</span>);</div><div class="line">            baiduMap.animateMapStatus(update);</div><div class="line">            isFirstLocate = <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">        MyLocationData.Builder locationBuilder = <span class="keyword">new</span> MyLocationData.</div><div class="line">                Builder();</div><div class="line">        locationBuilder.latitude(location.getLatitude());</div><div class="line">        locationBuilder.longitude(location.getLongitude());</div><div class="line">        MyLocationData locationData = locationBuilder.build();</div><div class="line">        baiduMap.setMyLocationData(locationData);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">requestLocation</span><span class="params">()</span> </span>&#123;</div><div class="line">        initLocation();</div><div class="line">        mLocationClient.start();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initLocation</span><span class="params">()</span></span>&#123;</div><div class="line">        LocationClientOption option = <span class="keyword">new</span> LocationClientOption();</div><div class="line">        option.setScanSpan(<span class="number">5000</span>);</div><div class="line">        option.setIsNeedAddress(<span class="keyword">true</span>);</div><div class="line">        mLocationClient.setLocOption(option);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onResume();</div><div class="line">        mapView.onResume();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onPause();</div><div class="line">        mapView.onPause();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        mLocationClient.stop();</div><div class="line">        mapView.onDestroy();</div><div class="line">        baiduMap.setMyLocationEnabled(<span class="keyword">false</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode, String[] permissions, <span class="keyword">int</span>[] grantResults)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">            <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span>) &#123;</div><div class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> result : grantResults) &#123;</div><div class="line">                        <span class="keyword">if</span> (result != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">                            Toast.makeText(<span class="keyword">this</span>, <span class="string">"必须同意所有权限才能使用本程序"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                            finish();</div><div class="line">                            <span class="keyword">return</span>;</div><div class="line">                        &#125;</div><div class="line">                    &#125;</div><div class="line">                    requestLocation();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Toast.makeText(<span class="keyword">this</span>, <span class="string">"发生未知错误"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                    finish();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyLocationListener</span> <span class="keyword">implements</span> <span class="title">BDLocationListener</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceiveLocation</span><span class="params">(BDLocation location)</span> </span>&#123;</div><div class="line"><span class="comment">//            StringBuilder currentPosition = new StringBuilder();</span></div><div class="line"><span class="comment">//            currentPosition.append("纬度：").append(location.getLatitude()).append("\n");</span></div><div class="line"><span class="comment">//            currentPosition.append("经线：").append(location.getLongitude()).append("\n");</span></div><div class="line"><span class="comment">//            currentPosition.append("国家：").append(location.getCountry()).append("\n");</span></div><div class="line"><span class="comment">//            currentPosition.append("省：").append(location.getProvince()).append("\n");</span></div><div class="line"><span class="comment">//            currentPosition.append("市：").append(location.getCity()).append("\n");</span></div><div class="line"><span class="comment">//            currentPosition.append("区：").append(location.getDistrict()).append("\n");</span></div><div class="line"><span class="comment">//            currentPosition.append("街道：").append(location.getStreet()).append("\n");</span></div><div class="line"><span class="comment">//            currentPosition.append("定位方式：");</span></div><div class="line"><span class="comment">//            if (location.getLocType() == BDLocation.TypeGpsLocation) &#123;</span></div><div class="line"><span class="comment">//                currentPosition.append("GPS");</span></div><div class="line"><span class="comment">//            &#125; else if (location.getLocType() == BDLocation.TypeNetWorkLocation) &#123;</span></div><div class="line"><span class="comment">//                currentPosition.append("网络");</span></div><div class="line"><span class="comment">//            &#125;</span></div><div class="line"><span class="comment">//            positionText.setText(currentPosition);</span></div><div class="line">            <span class="keyword">if</span> (location.getLocType() == BDLocation.TypeGpsLocation</div><div class="line">                    || location.getLocType() == BDLocation.TypeNetWorkLocation) &#123;</div><div class="line">                navigateTo(location);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>布局<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;LinearLayout xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    android:orientation=<span class="string">"vertical"</span></div><div class="line">    android:layout_width=<span class="string">"match_parent"</span></div><div class="line">    android:layout_height=<span class="string">"match_parent"</span> &gt;</div><div class="line"></div><div class="line">    &lt;TextView</div><div class="line">        android:id=<span class="string">"@+id/position_text_view"</span></div><div class="line">        android:layout_width=<span class="string">"wrap_content"</span></div><div class="line">        android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">        android:visibility=<span class="string">"gone"</span> /&gt;</div><div class="line"></div><div class="line">    &lt;com.baidu.mapapi.map.MapView</div><div class="line">        android:id=<span class="string">"@+id/bmapView"</span></div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"match_parent"</span></div><div class="line">        android:clickable=<span class="string">"true"</span> /&gt;</div><div class="line"></div><div class="line">&lt;/LinearLayout&gt;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/07/Lbstest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -611,7 +751,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-07T20:13:10+08:00">
                 2017-08-07
@@ -726,6 +866,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/07/Lbstest2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/07/Lbstest2/" itemprop="url">lbstest2<CODE 2 chaper11></a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-07T20:13:10+08:00">
+                2017-08-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/07/Lbstest2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/07/Lbstest2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>androidMainifest<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">package</span>=<span class="string">"com.example.lbstest"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_COARSE_LOCATION"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_FINE_LOCATION"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_WIFI_STATE"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_NETWORK_STATE"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.CHANGE_WIFI_STATE"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.READ_PHONE_STATE"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.INTERNET"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.MOUNT_UNMOUNT_FILESYSTEMS"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.WAKE_LOCK"</span>/&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">application</span></span></div><div class="line"><span class="tag">        <span class="attr">android:allowBackup</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:icon</span>=<span class="string">"@mipmap/ic_launcher"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:supportsRtl</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:theme</span>=<span class="string">"@style/AppTheme"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line"><span class="tag">            <span class="attr">android:name</span>=<span class="string">"com.baidu.lbsapi.API_KEY"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:value</span>=<span class="string">"i6VD2fHKM3msMfZtIOXAhFSzDiYGFIwL"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".MainActivity"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">service</span> <span class="attr">android:name</span>=<span class="string">"com.baidu.location.f"</span> <span class="attr">android:enabled</span>=<span class="string">"true"</span> <span class="attr">android:process</span>=<span class="string">":remote"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">service</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>MainActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> LocationClient mLocationClient;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> TextView positionText;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> MapView mapView;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> BaiduMap baiduMap;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> isFirstLocate = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        mLocationClient = <span class="keyword">new</span> LocationClient(getApplicationContext());</div><div class="line">        mLocationClient.registerLocationListener(<span class="keyword">new</span> MyLocationListener());</div><div class="line">        SDKInitializer.initialize(getApplicationContext());</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        mapView = (MapView) findViewById(R.id.bmapView);</div><div class="line">        baiduMap = mapView.getMap();</div><div class="line">        baiduMap.setMyLocationEnabled(<span class="keyword">true</span>);</div><div class="line">        positionText = (TextView) findViewById(R.id.position_text_view);</div><div class="line">        List&lt;String&gt; permissionList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">        <span class="keyword">if</span> (ContextCompat.checkSelfPermission(MainActivity.<span class="keyword">this</span>, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">            permissionList.add(Manifest.permission.ACCESS_FINE_LOCATION);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (ContextCompat.checkSelfPermission(MainActivity.<span class="keyword">this</span>, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">            permissionList.add(Manifest.permission.READ_PHONE_STATE);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (ContextCompat.checkSelfPermission(MainActivity.<span class="keyword">this</span>, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">            permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (!permissionList.isEmpty()) &#123;</div><div class="line">            String [] permissions = permissionList.toArray(<span class="keyword">new</span> String[permissionList.size()]);</div><div class="line">            ActivityCompat.requestPermissions(MainActivity.<span class="keyword">this</span>, permissions, <span class="number">1</span>);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            requestLocation();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">navigateTo</span><span class="params">(BDLocation location)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (isFirstLocate) &#123;</div><div class="line">            Toast.makeText(<span class="keyword">this</span>, <span class="string">"nav to "</span> + location.getAddrStr(), Toast.LENGTH_SHORT).show();</div><div class="line">            LatLng ll = <span class="keyword">new</span> LatLng(location.getLatitude(), location.getLongitude());</div><div class="line">            MapStatusUpdate update = MapStatusUpdateFactory.newLatLng(ll);</div><div class="line">            baiduMap.animateMapStatus(update);</div><div class="line">            update = MapStatusUpdateFactory.zoomTo(<span class="number">16f</span>);</div><div class="line">            baiduMap.animateMapStatus(update);</div><div class="line">            isFirstLocate = <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">        MyLocationData.Builder locationBuilder = <span class="keyword">new</span> MyLocationData.</div><div class="line">                Builder();</div><div class="line">        locationBuilder.latitude(location.getLatitude());</div><div class="line">        locationBuilder.longitude(location.getLongitude());</div><div class="line">        MyLocationData locationData = locationBuilder.build();</div><div class="line">        baiduMap.setMyLocationData(locationData);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">requestLocation</span><span class="params">()</span> </span>&#123;</div><div class="line">        initLocation();</div><div class="line">        mLocationClient.start();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initLocation</span><span class="params">()</span></span>&#123;</div><div class="line">        LocationClientOption option = <span class="keyword">new</span> LocationClientOption();</div><div class="line">        option.setScanSpan(<span class="number">5000</span>);</div><div class="line">        option.setIsNeedAddress(<span class="keyword">true</span>);</div><div class="line">        mLocationClient.setLocOption(option);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onResume();</div><div class="line">        mapView.onResume();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onPause();</div><div class="line">        mapView.onPause();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        mLocationClient.stop();</div><div class="line">        mapView.onDestroy();</div><div class="line">        baiduMap.setMyLocationEnabled(<span class="keyword">false</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode, String[] permissions, <span class="keyword">int</span>[] grantResults)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">            <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span>) &#123;</div><div class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> result : grantResults) &#123;</div><div class="line">                        <span class="keyword">if</span> (result != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line">                            Toast.makeText(<span class="keyword">this</span>, <span class="string">"必须同意所有权限才能使用本程序"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                            finish();</div><div class="line">                            <span class="keyword">return</span>;</div><div class="line">                        &#125;</div><div class="line">                    &#125;</div><div class="line">                    requestLocation();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    Toast.makeText(<span class="keyword">this</span>, <span class="string">"发生未知错误"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                    finish();</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyLocationListener</span> <span class="keyword">implements</span> <span class="title">BDLocationListener</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceiveLocation</span><span class="params">(BDLocation location)</span> </span>&#123;</div><div class="line"><span class="comment">//            StringBuilder currentPosition = new StringBuilder();</span></div><div class="line"><span class="comment">//            currentPosition.append("纬度：").append(location.getLatitude()).append("\n");</span></div><div class="line"><span class="comment">//            currentPosition.append("经线：").append(location.getLongitude()).append("\n");</span></div><div class="line"><span class="comment">//            currentPosition.append("国家：").append(location.getCountry()).append("\n");</span></div><div class="line"><span class="comment">//            currentPosition.append("省：").append(location.getProvince()).append("\n");</span></div><div class="line"><span class="comment">//            currentPosition.append("市：").append(location.getCity()).append("\n");</span></div><div class="line"><span class="comment">//            currentPosition.append("区：").append(location.getDistrict()).append("\n");</span></div><div class="line"><span class="comment">//            currentPosition.append("街道：").append(location.getStreet()).append("\n");</span></div><div class="line"><span class="comment">//            currentPosition.append("定位方式：");</span></div><div class="line"><span class="comment">//            if (location.getLocType() == BDLocation.TypeGpsLocation) &#123;</span></div><div class="line"><span class="comment">//                currentPosition.append("GPS");</span></div><div class="line"><span class="comment">//            &#125; else if (location.getLocType() == BDLocation.TypeNetWorkLocation) &#123;</span></div><div class="line"><span class="comment">//                currentPosition.append("网络");</span></div><div class="line"><span class="comment">//            &#125;</span></div><div class="line"><span class="comment">//            positionText.setText(currentPosition);</span></div><div class="line">            <span class="keyword">if</span> (location.getLocType() == BDLocation.TypeGpsLocation</div><div class="line">                    || location.getLocType() == BDLocation.TypeNetWorkLocation) &#123;</div><div class="line">                navigateTo(location);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>布局<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;LinearLayout xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    android:orientation=<span class="string">"vertical"</span></div><div class="line">    android:layout_width=<span class="string">"match_parent"</span></div><div class="line">    android:layout_height=<span class="string">"match_parent"</span> &gt;</div><div class="line"></div><div class="line">    &lt;TextView</div><div class="line">        android:id=<span class="string">"@+id/position_text_view"</span></div><div class="line">        android:layout_width=<span class="string">"wrap_content"</span></div><div class="line">        android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">        android:visibility=<span class="string">"gone"</span> /&gt;</div><div class="line"></div><div class="line">    &lt;com.baidu.mapapi.map.MapView</div><div class="line">        android:id=<span class="string">"@+id/bmapView"</span></div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"match_parent"</span></div><div class="line">        android:clickable=<span class="string">"true"</span> /&gt;</div><div class="line"></div><div class="line">&lt;/LinearLayout&gt;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/04/Servicebestpractice/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -755,7 +1028,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-04T20:13:10+08:00">
                 2017-08-04
@@ -898,7 +1171,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-04T20:13:10+08:00">
                 2017-08-04
@@ -1058,281 +1331,6 @@ public void onClick(View v) {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/Androidthreadtest/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/02/Androidthreadtest/" itemprop="url">androidthreadtest<CODE 2 chaper9></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-02T20:13:10+08:00">
-                2017-08-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/02/Androidthreadtest/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/02/Androidthreadtest/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p></p><h3>学习目的：1.了解android线程的使用 2.了解主线程与子线程区别 3.解析异步处理机制<br>主线程与子线程：所谓主线程，在Windows窗体应用程序中一般指UI线程，这个是程序启动的时候首先创建的线程。而子线程，一般指为了完成某个特殊任务，并行于主线程的其他线程。例如让一个窗体单独开一个线程，去远程数据库中取得数据资料，下载并且保存到本地文件中。<br>所以，主线程和子线程是构建于线程这个通用概念上的人为的习惯称呼，并不是什么官方的固有专用词语。<br>MainActivity（简而言之，为实现某个功能而创建爱的线程是子线程）<p></p>
-<p>1.了解android线程的使用(例：在子线程更新UI)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">          <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">          setContentView(R.layout.activity_main);</div><div class="line">          text = (TextView) findViewById(R.id.text);</div><div class="line">          Button changeText = (Button) findViewById(R.id.change_text);</div><div class="line">          changeText.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      <span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">           <span class="keyword">case</span> R.id.change_text:</div><div class="line">               <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">                   <span class="meta">@Override</span></div><div class="line">                   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                       test.setText(<span class="string">"Nice to meet you"</span>);</div><div class="line">                   &#125;</div><div class="line">               &#125;).start();</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">default</span>:</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>logcat报错（说明不能在子线程更新UI）修改如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> UPDATE_TEXT = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> TextView text;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Handler handler = <span class="keyword">new</span> Handler() &#123;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">            <span class="keyword">switch</span> (msg.what) &#123;</div><div class="line">                <span class="keyword">case</span> UPDATE_TEXT:</div><div class="line">                    <span class="comment">// 在这里可以进行UI操作</span></div><div class="line">                    text.setText(<span class="string">"Nice to meet you"</span>);</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">default</span>:</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        text = (TextView) findViewById(R.id.text);</div><div class="line">        Button changeText = (Button) findViewById(R.id.change_text);</div><div class="line">        changeText.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">            <span class="keyword">case</span> R.id.change_text:</div><div class="line">                <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">                    <span class="meta">@Override</span></div><div class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                        Message message = <span class="keyword">new</span> Message();</div><div class="line">                        message.what = UPDATE_TEXT;</div><div class="line">                        handler.sendMessage(message); <span class="comment">// 将Message对象发送出去</span></div><div class="line">                    &#125;</div><div class="line">                &#125;).start();</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>3.解析异步处理机制（Message MessageQueue Looper Handler四个部分）<br>异步处理机制的核心思想：一条Message经过如下转展调用，从子线程进入主线程，从而使不能更新UI变成可以更新UI<br><img src="http://i4.eiimg.com/595109/30b4ad0573b88091.png" alt="Markdown"></p>
-<p>4.使用AsyncTask类（更方便的进行UI操作）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DownloadTask</span> <span class="keyword">extends</span> <span class="title">AsyncTask</span>&lt;<span class="title">Void</span> <span class="title">Integer</span> <span class="title">Boolean</span>&gt;</span>&#123;...&#125;<span class="comment">//</span></div></pre></td></tr></table></figure></p>
-<p>三个参数<br>Params:执行AsyncTask需要传入的参数<br>Progress:后台任务执行时，需要在当前界面显示进度<br>Result:返回值类型</p>
-<p>还需重写四个方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DownloadTask</span> <span class="keyword">extends</span> <span class="title">AsyncTask</span>&lt;<span class="title">Void</span> <span class="title">Integer</span> <span class="title">Boolean</span>&gt;</span>&#123;</div><div class="line">  <span class="meta">@verride</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPreExecute</span><span class="params">()</span></span>&#123;</div><div class="line">    progressDialog.show();<span class="comment">//显示进度对话框</span></div><div class="line">  &#125;</div><div class="line">  <span class="meta">@verride</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> Boolean <span class="title">doInBackground</span><span class="params">(<span class="keyword">void</span>... Params)</span></span>&#123;</div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">      <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</div><div class="line">        <span class="keyword">int</span> downloadPercent=doDownload();<span class="comment">//这是一个虚构的方法</span></div><div class="line">        publishProgress(downloadPercent);</div><div class="line">        <span class="keyword">if</span>(downloadPercent&gt;=<span class="number">100</span>)&#123;</div><div class="line">          <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">      &#125;<span class="keyword">catch</span>(Exception e)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">  <span class="meta">@verride</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onProgressUpdata</span><span class="params">(Integer... values)</span></span>&#123;</div><div class="line">    <span class="comment">//在这里更新下载进度</span></div><div class="line">    progressDialog.setMessage(<span class="string">"Download"</span>+values[<span class="number">0</span>]+<span class="string">"%"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@verride</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPostExecute</span><span class="params">(Boolean result)</span></span>&#123;</div><div class="line">    progressDialog.dismiss();<span class="comment">//关闭进度对话框</span></div><div class="line">    <span class="keyword">if</span>(result)&#123;</div><div class="line">      Toast.makeText(context,<span class="string">"Download Succeeded"</span>,Toast.LENGTH_SHORT).show();</div><div class="line"></div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        Toast.makeText(context,<span class="string">"Download Failed"</span>,Toast.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>想要启动这个任务<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> DownloadTask().execute();</div></pre></td></tr></table></figure></p>
-</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/NetWorktest3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.bvimg.com/595109/95646d6c227af9a1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/02/NetWorktest3/" itemprop="url">networktest3<CODE 2 chaper9></a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-02T20:13:10+08:00">
-                2017-08-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/02/NetWorktest3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/02/NetWorktest3/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>优化：（在tese1，2中http请求代码基本相同 但我们每一次发送请求都编写一次代码）将通用的网络操作放到一个类HttpUil</p>
-<p>HttpUil<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpUtil</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sendHttpRequest</span><span class="params">(<span class="keyword">final</span> String address, <span class="keyword">final</span> HttpCallbackListener listener)</span> </span>&#123;</div><div class="line"></div><div class="line">                HttpURLConnection connection = <span class="keyword">null</span>;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    URL url = <span class="keyword">new</span> URL(address);</div><div class="line">                    connection = (HttpURLConnection) url.openConnection();</div><div class="line">                    connection.setRequestMethod(<span class="string">"GET"</span>);</div><div class="line">                    connection.setConnectTimeout(<span class="number">8000</span>);</div><div class="line">                    connection.setReadTimeout(<span class="number">8000</span>);</div><div class="line">                    connection.setDoInput(<span class="keyword">true</span>);</div><div class="line">                    connection.setDoOutput(<span class="keyword">true</span>);</div><div class="line">                    InputStream in = connection.getInputStream();</div><div class="line">                    BufferedReader reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in));</div><div class="line">                    StringBuilder response = <span class="keyword">new</span> StringBuilder();</div><div class="line">                    String line;</div><div class="line">                    <span class="keyword">while</span> ((line = reader.readLine()) != <span class="keyword">null</span>) &#123;</div><div class="line">                        response.append(line);</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">return</span> response.toString();</div><div class="line">                &#125; <span class="keyword">finally</span> &#123;</div><div class="line">                    <span class="keyword">if</span> (connection != <span class="keyword">null</span>) &#123;</div><div class="line">                        connection.disconnect();</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>若需发起请求(sendHttpRequest()内部没有开启线程 调用时可能阻塞主线程)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String address=&quot;http://wwww.baid.com&quot;;</div><div class="line">String response=HttpUtil.sendHttpRequest(address);</div></pre></td></tr></table></figure></p>
-<p>解决方法(Java的回调机制)<br>首先定义接口 HttpCallbackListener<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">HttpCallbackListener</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onFinish</span><span class="params">(String response)</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onError</span><span class="params">(Exception e)</span></span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>修改HttoUtil<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpUtil</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sendHttpRequest</span><span class="params">(<span class="keyword">final</span> String address, <span class="keyword">final</span> HttpCallbackListener listener)</span> </span>&#123;</div><div class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                HttpURLConnection connection = <span class="keyword">null</span>;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    URL url = <span class="keyword">new</span> URL(address);</div><div class="line">                    connection = (HttpURLConnection) url.openConnection();</div><div class="line">                    connection.setRequestMethod(<span class="string">"GET"</span>);</div><div class="line">                    connection.setConnectTimeout(<span class="number">8000</span>);</div><div class="line">                    connection.setReadTimeout(<span class="number">8000</span>);</div><div class="line">                    connection.setDoInput(<span class="keyword">true</span>);</div><div class="line">                    connection.setDoOutput(<span class="keyword">true</span>);</div><div class="line">                    InputStream in = connection.getInputStream();</div><div class="line">                    BufferedReader reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in));</div><div class="line">                    StringBuilder response = <span class="keyword">new</span> StringBuilder();</div><div class="line">                    String line;</div><div class="line">                    <span class="keyword">while</span> ((line = reader.readLine()) != <span class="keyword">null</span>) &#123;</div><div class="line">                        response.append(line);</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">if</span> (listener != <span class="keyword">null</span>) &#123;</div><div class="line">                        <span class="comment">// 回调onFinish()方法</span></div><div class="line">                        listener.onFinish(response.toString());</div><div class="line">                    &#125;</div><div class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">                    <span class="keyword">if</span> (listener != <span class="keyword">null</span>) &#123;</div><div class="line">                        <span class="comment">// 回调onError()方法</span></div><div class="line">                        listener.onError(e);</div><div class="line">                    &#125;</div><div class="line">                &#125; <span class="keyword">finally</span> &#123;</div><div class="line">                    <span class="keyword">if</span> (connection != <span class="keyword">null</span>) &#123;</div><div class="line">                        connection.disconnect();</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;).start();</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line">```    </div><div class="line">传入HttoCallbackListener实例</div><div class="line">```java</div><div class="line">HttpUtil.sendHttpRequest(address,<span class="keyword">new</span> HttpCallbackListener())&#123;</div><div class="line">  <span class="meta">@version</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFinish</span><span class="params">(String response)</span></span>&#123;</div><div class="line">    <span class="comment">//在这里根据返回内容执行具体逻辑</span></div><div class="line">  &#125;</div><div class="line">  <span class="meta">@version</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Exception e)</span></span>&#123;</div><div class="line">    <span class="comment">//在这里对异常进行处理</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>使用HttpURIConnection太复杂  改用Okhttp<br>在HttpUtil内田间sendOkhttpRequest()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sendOkHttpRequest</span><span class="params">(<span class="keyword">final</span> String address, <span class="keyword">final</span> okhttp3.Callback callback)</span> </span>&#123;</div><div class="line">        OkHttpClient client = <span class="keyword">new</span> OkHttpClient();</div><div class="line">        Request request = <span class="keyword">new</span> Request.Builder()</div><div class="line">                .url(address)</div><div class="line">                .build();</div><div class="line">        client.newCall(request).enqueue(callback);</div><div class="line">    &#125;</div><div class="line">```    </div><div class="line"></div><div class="line">```java</div><div class="line">HttpUtil.sendOkHttpRequest(address,<span class="keyword">new</span> HttpCallbackListener())&#123;</div><div class="line">  <span class="meta">@version</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFinish</span><span class="params">(String response)</span></span>&#123;</div><div class="line">    <span class="comment">//在这里根据返回内容执行具体逻辑</span></div><div class="line">    String responseData=response.body().strng();</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@version</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Exception e)</span></span>&#123;</div><div class="line">    <span class="comment">//在这里对异常进行处理</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/Networktest2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1362,7 +1360,7 @@ public void onClick(View v) {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-02T20:13:10+08:00">
                 2017-08-02
@@ -1510,7 +1508,7 @@ public void onClick(View v) {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/01/Networktest/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/Androidthreadtest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -1529,7 +1527,7 @@ public void onClick(View v) {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/01/Networktest/" itemprop="url">networktest<CODE 2 chaper9></a></h1>
+                <a class="post-title-link" href="/2017/08/02/Androidthreadtest/" itemprop="url">androidthreadtest<CODE 2 chaper9></a></h1>
         
 
         <div class="post-meta">
@@ -1539,10 +1537,10 @@ public void onClick(View v) {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-01T20:13:10+08:00">
-                2017-08-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-02T20:13:10+08:00">
+                2017-08-02
               </time>
             
 
@@ -1560,9 +1558,9 @@ public void onClick(View v) {
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/01/Networktest/#comments" itemprop="discussionUrl">
+                <a href="/2017/08/02/Androidthreadtest/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/01/Networktest/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/08/02/Androidthreadtest/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1592,15 +1590,15 @@ public void onClick(View v) {
       
         
           
-            <p></p><h3>学习目的：1.使用HTTP访问网络 2.使用HttpURIConnection<p></p>
-<h2 id="1-使用HTTP访问网络"><a href="#1-使用HTTP访问网络" class="headerlink" title="1.使用HTTP访问网络"></a>1.使用HTTP访问网络</h2><p>工作原理：客户端向服务器发出HTTP请求 服务器接收到请求返回数据 客户端解析处理</p>
-<p>2.使用HttpURIConnection（本例获取的是html代码）</p>
-<p>布局<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;Button</div><div class="line">        android:id=<span class="string">"@+id/send_request"</span></div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">        android:text=<span class="string">"Send Request"</span> /&gt;</div><div class="line"></div><div class="line">    &lt;ScrollView<span class="comment">//滚动查看界面显示不了的内容</span></div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"match_parent"</span> &gt;</div><div class="line"></div><div class="line">        &lt;TextView</div><div class="line">            android:id=<span class="string">"@+id/response_text"</span></div><div class="line">            android:layout_width=<span class="string">"match_parent"</span></div><div class="line">            android:layout_height=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">    &lt;/ScrollView&gt;</div></pre></td></tr></table></figure></p>
-<p>MainActivity类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">if</span> (v.getId() == R.id.send_request) &#123;</div><div class="line">         sendRequestWithHttpURLConnection();</div><div class="line"></div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sendRequestWithHttpURLConnection</span><span class="params">()</span> </span>&#123;</div><div class="line">       <span class="comment">// 开启线程来发起网络请求</span></div><div class="line">       <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">               HttpURLConnection connection = <span class="keyword">null</span>;</div><div class="line">               BufferedReader reader = <span class="keyword">null</span>;</div><div class="line">               <span class="keyword">try</span> &#123;</div><div class="line">                   URL url = <span class="keyword">new</span> URL(<span class="string">"http://www.baidu.com"</span>);</div><div class="line">                   connection = (HttpURLConnection) url.openConnection();</div><div class="line">                   connection.setRequestMethod(<span class="string">"GET"</span>);</div><div class="line">                   connection.setConnectTimeout(<span class="number">8000</span>);</div><div class="line">                   connection.setReadTimeout(<span class="number">8000</span>);</div><div class="line">                   InputStream in = connection.getInputStream();</div><div class="line">                   <span class="comment">// 下面对获取到的输入流进行读取</span></div><div class="line">                   reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in));</div><div class="line">                   StringBuilder response = <span class="keyword">new</span> StringBuilder();</div><div class="line">                   String line;</div><div class="line">                   <span class="keyword">while</span> ((line = reader.readLine()) != <span class="keyword">null</span>) &#123;</div><div class="line">                       response.append(line);</div><div class="line">                   &#125;</div><div class="line">                   showResponse(response.toString());</div><div class="line">               &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">                   e.printStackTrace();</div><div class="line">               &#125; <span class="keyword">finally</span> &#123;</div><div class="line">                   <span class="keyword">if</span> (reader != <span class="keyword">null</span>) &#123;</div><div class="line">                       <span class="keyword">try</span> &#123;</div><div class="line">                           reader.close();</div><div class="line">                       &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">                           e.printStackTrace();</div><div class="line">                       &#125;</div><div class="line">                   &#125;</div><div class="line">                   <span class="keyword">if</span> (connection != <span class="keyword">null</span>) &#123;</div><div class="line">                       connection.disconnect();</div><div class="line">                   &#125;</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">       &#125;).start();</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
-<p>添加权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.INTERNET"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<p> 3.提交数据给服务器（如：提交用户名和密码）数据用&amp;隔开<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">connection.setRequestMethod(<span class="string">"POST"</span>);</div><div class="line">DataOutPutStream out=<span class="keyword">new</span> DataOutPutStream(connection.getOutPutStream());</div><div class="line">out.writeBytes(<span class="string">"username=admin&amp;password=123456789"</span>);</div></pre></td></tr></table></figure></p>
-<p>4.使用Okhttp<br>添加依赖<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">    <span class="function">compile <span class="title">fileTree</span><span class="params">(dir: <span class="string">'libs'</span>, include: [<span class="string">'*.jar'</span>])</span></span></div><div class="line"><span class="function">    testCompile 'junit:junit:4.12'</span></div><div class="line"><span class="function">    compile 'com.android.support:appcompat-v7:24.2.1'</span></div><div class="line"><span class="function">    compile 'com.squareup.okhttp3:okhttp:3.4.1'<span class="comment">//自动下载两个库Okhttp库 Okio库</span></span></div><div class="line"><span class="function"></span></div><div class="line"><span class="function">&#125;</span></div></pre></td></tr></table></figure></p>
-<p>用Okhttp重写http的例子<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">if</span> (v.getId() == R.id.send_request) &#123;</div><div class="line"><span class="comment">//            sendRequestWithHttpURLConnection();</span></div><div class="line">           sendRequestWithOkHttp();</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sendRequestWithOkHttp</span><span class="params">()</span> </span>&#123;</div><div class="line">       <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">               <span class="keyword">try</span> &#123;</div><div class="line">                   OkHttpClient client = <span class="keyword">new</span> OkHttpClient();</div><div class="line">                   Request request = <span class="keyword">new</span> Request.Builder()</div><div class="line"></div><div class="line">                           .url(<span class="string">"http://www.baidu.com"</span>)</div><div class="line">                           .build();</div><div class="line">                   Response response = client.newCall(request).execute();</div><div class="line">                   String responseData = response.body().string();</div><div class="line"></div><div class="line">                  showResponse(responseData);</div><div class="line">               &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">                   e.printStackTrace();</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">       &#125;).start();</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">showResponse</span><span class="params">(<span class="keyword">final</span> String response)</span> </span>&#123;</div><div class="line">        runOnUiThread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                <span class="comment">// 在这里进行UI操作，将结果显示到界面上</span></div><div class="line">                responseText.setText(response);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+            <p></p><h3>学习目的：1.了解android线程的使用 2.了解主线程与子线程区别 3.解析异步处理机制<br>主线程与子线程：所谓主线程，在Windows窗体应用程序中一般指UI线程，这个是程序启动的时候首先创建的线程。而子线程，一般指为了完成某个特殊任务，并行于主线程的其他线程。例如让一个窗体单独开一个线程，去远程数据库中取得数据资料，下载并且保存到本地文件中。<br>所以，主线程和子线程是构建于线程这个通用概念上的人为的习惯称呼，并不是什么官方的固有专用词语。<br>MainActivity（简而言之，为实现某个功能而创建爱的线程是子线程）<p></p>
+<p>1.了解android线程的使用(例：在子线程更新UI)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">          <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">          setContentView(R.layout.activity_main);</div><div class="line">          text = (TextView) findViewById(R.id.text);</div><div class="line">          Button changeText = (Button) findViewById(R.id.change_text);</div><div class="line">          changeText.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      <span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">           <span class="keyword">case</span> R.id.change_text:</div><div class="line">               <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">                   <span class="meta">@Override</span></div><div class="line">                   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                       test.setText(<span class="string">"Nice to meet you"</span>);</div><div class="line">                   &#125;</div><div class="line">               &#125;).start();</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">default</span>:</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>logcat报错（说明不能在子线程更新UI）修改如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> UPDATE_TEXT = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> TextView text;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Handler handler = <span class="keyword">new</span> Handler() &#123;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">            <span class="keyword">switch</span> (msg.what) &#123;</div><div class="line">                <span class="keyword">case</span> UPDATE_TEXT:</div><div class="line">                    <span class="comment">// 在这里可以进行UI操作</span></div><div class="line">                    text.setText(<span class="string">"Nice to meet you"</span>);</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">default</span>:</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        text = (TextView) findViewById(R.id.text);</div><div class="line">        Button changeText = (Button) findViewById(R.id.change_text);</div><div class="line">        changeText.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">            <span class="keyword">case</span> R.id.change_text:</div><div class="line">                <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">                    <span class="meta">@Override</span></div><div class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                        Message message = <span class="keyword">new</span> Message();</div><div class="line">                        message.what = UPDATE_TEXT;</div><div class="line">                        handler.sendMessage(message); <span class="comment">// 将Message对象发送出去</span></div><div class="line">                    &#125;</div><div class="line">                &#125;).start();</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3.解析异步处理机制（Message MessageQueue Looper Handler四个部分）<br>异步处理机制的核心思想：一条Message经过如下转展调用，从子线程进入主线程，从而使不能更新UI变成可以更新UI<br><img src="http://i4.eiimg.com/595109/30b4ad0573b88091.png" alt="Markdown"></p>
+<p>4.使用AsyncTask类（更方便的进行UI操作）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DownloadTask</span> <span class="keyword">extends</span> <span class="title">AsyncTask</span>&lt;<span class="title">Void</span> <span class="title">Integer</span> <span class="title">Boolean</span>&gt;</span>&#123;...&#125;<span class="comment">//</span></div></pre></td></tr></table></figure></p>
+<p>三个参数<br>Params:执行AsyncTask需要传入的参数<br>Progress:后台任务执行时，需要在当前界面显示进度<br>Result:返回值类型</p>
+<p>还需重写四个方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DownloadTask</span> <span class="keyword">extends</span> <span class="title">AsyncTask</span>&lt;<span class="title">Void</span> <span class="title">Integer</span> <span class="title">Boolean</span>&gt;</span>&#123;</div><div class="line">  <span class="meta">@verride</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPreExecute</span><span class="params">()</span></span>&#123;</div><div class="line">    progressDialog.show();<span class="comment">//显示进度对话框</span></div><div class="line">  &#125;</div><div class="line">  <span class="meta">@verride</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> Boolean <span class="title">doInBackground</span><span class="params">(<span class="keyword">void</span>... Params)</span></span>&#123;</div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">      <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</div><div class="line">        <span class="keyword">int</span> downloadPercent=doDownload();<span class="comment">//这是一个虚构的方法</span></div><div class="line">        publishProgress(downloadPercent);</div><div class="line">        <span class="keyword">if</span>(downloadPercent&gt;=<span class="number">100</span>)&#123;</div><div class="line">          <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">      &#125;<span class="keyword">catch</span>(Exception e)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">  <span class="meta">@verride</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onProgressUpdata</span><span class="params">(Integer... values)</span></span>&#123;</div><div class="line">    <span class="comment">//在这里更新下载进度</span></div><div class="line">    progressDialog.setMessage(<span class="string">"Download"</span>+values[<span class="number">0</span>]+<span class="string">"%"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@verride</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPostExecute</span><span class="params">(Boolean result)</span></span>&#123;</div><div class="line">    progressDialog.dismiss();<span class="comment">//关闭进度对话框</span></div><div class="line">    <span class="keyword">if</span>(result)&#123;</div><div class="line">      Toast.makeText(context,<span class="string">"Download Succeeded"</span>,Toast.LENGTH_SHORT).show();</div><div class="line"></div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        Toast.makeText(context,<span class="string">"Download Failed"</span>,Toast.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>想要启动这个任务<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> DownloadTask().execute();</div></pre></td></tr></table></figure></p>
 </h3>
           
         
@@ -1649,7 +1647,7 @@ public void onClick(View v) {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Notificationtest/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/NetWorktest3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -1668,7 +1666,7 @@ public void onClick(View v) {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/31/Notificationtest/" itemprop="url">notificationtset<CODE 2 chaper8></a></h1>
+                <a class="post-title-link" href="/2017/08/02/NetWorktest3/" itemprop="url">networktest3<CODE 2 chaper9></a></h1>
         
 
         <div class="post-meta">
@@ -1678,10 +1676,10 @@ public void onClick(View v) {
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T13:10:00+08:00">
-                2017-07-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-02T20:13:10+08:00">
+                2017-08-02
               </time>
             
 
@@ -1699,9 +1697,9 @@ public void onClick(View v) {
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/31/Notificationtest/#comments" itemprop="discussionUrl">
+                <a href="/2017/08/02/NetWorktest3/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/31/Notificationtest/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/08/02/NetWorktest3/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1731,17 +1729,12 @@ public void onClick(View v) {
       
         
           
-            <p></p><h3>学习目的:1.发通知（程序不在前台运行，但希望向用户发一些提示信息）</h3><br>NotificationActivity类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NotificationActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.notification_layout);</div><div class="line">        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">        manager.cancel(<span class="number">1</span>);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p>点击事件<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">           <span class="keyword">case</span> R.id.send_notice:</div><div class="line"></div><div class="line">               NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">               Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">                       .setContentTitle(<span class="string">"This is content title"</span>)<span class="comment">//指定标题内容</span></div><div class="line">                       .setContentText(<span class="string">"This is content text"</span>)<span class="comment">//指定正文内容</span></div><div class="line">                       .setWhen(System.currentTimeMillis())<span class="comment">//指定通知被创建时间</span></div><div class="line">                       .setSmallIcon(R.mipmap.ic_launcher)<span class="comment">//设置通知的小图标</span></div><div class="line">                       .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))<span class="comment">//设置通知的大图标</span></div><div class="line"></div><div class="line">                       .setAutoCancel(<span class="keyword">true</span>);<span class="comment">//点击后 通知自动取消</span></div><div class="line">                       .build();</div><div class="line">               manager.notify(<span class="number">1</span>, notification);<span class="comment">//让通知显示</span></div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">default</span>:</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
-<p>设置点击通知点击事件PendingIntent（点击通知调到NotificationAcitity.xml并点击后自动消失）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       <span class="keyword">switch</span> (v.getId()) &#123;</div><div class="line">           <span class="keyword">case</span> R.id.send_notice:</div><div class="line">               Intent intent=<span class="keyword">new</span> Intent(<span class="keyword">this</span>,NotificationAcitity.class);</div><div class="line">               PendingIntent pi=PendingIntent.getActivity(<span class="keyword">this</span>,<span class="number">0</span>,intent,<span class="number">0</span>);</div><div class="line">               NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);</div><div class="line">               Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">                       .setContentTitle(<span class="string">"This is content title"</span>)<span class="comment">//指定标题内容</span></div><div class="line">                       .setContentText(<span class="string">"This is content text"</span>)<span class="comment">//指定正文内容</span></div><div class="line">                       .setWhen(System.currentTimeMillis())<span class="comment">//指定通知被创建时间</span></div><div class="line">                       .setSmallIcon(R.mipmap.ic_launcher)<span class="comment">//设置通知的小图标</span></div><div class="line">                       .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))<span class="comment">//设置通知的大图标</span></div><div class="line">                       .setContentIntent(pi);</div><div class="line">                       .setAutoCancel(<span class="keyword">true</span>);<span class="comment">//点击后 通知自动取消</span></div><div class="line">                       .build();</div><div class="line">               manager.notify(<span class="number">1</span>, notification);<span class="comment">//让通知显示</span></div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">default</span>:</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">`</div></pre></td></tr></table></figure></p>
-<p>通知的进阶：通知提示音 灯光 /振动需要申请权限</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setSound(Uri.fromFile(<span class="keyword">new</span> File(<span class="string">"/System/media/audio/ringtone/Luna.ogg"</span>)))</div><div class="line">.bulid();</div></pre></td></tr></table></figure>
-<p>振动<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setVibrate(<span class="keyword">new</span> log[]&#123;<span class="number">0</span>,<span class="number">1000</span>,<span class="number">1000</span>,<span class="number">1000</span>&#125;)震动<span class="number">1</span>秒 静止<span class="number">1</span>秒</div><div class="line">.bulid();</div><div class="line"></div><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.VIBRATE"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<p>灯光<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setLight(Color.GREEN,<span class="number">1000</span>,<span class="number">1000</span>);</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
-<p>直接使用默认设置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setDefaults(NotificationCompat.DEFAULT_ALL)</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
-<p>通知的高级功能 解决超长文字显示不僚的问题  显示超大图片 setStyle()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">.setStyle(<span class="keyword">new</span> NotificationCompat.BigTextStyle().bigText(<span class="string">"fbdvdsjfekfjlsfjskfbjsefbsejfjsjdkfbsdbsdubseufhfusefhuiegeiefjselgbsuohsufbsudfbusfseffusfus"</span>))</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
-<p>显示超大图片<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">.setStyle(<span class="keyword">new</span> NotificationCompat.BigPictureStyle.BigPicture(BitmapFactory.decodeResource(getResources(),R.drawable.big_image)));</div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
-<p>设置通知的重要程度setPriority()<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Notification notification = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>)</div><div class="line">setPriority(NotificationCompat.PRIORITY_MAX)<span class="comment">//最高权限</span></div><div class="line">.bulid();</div></pre></td></tr></table></figure></p>
+            <p>优化：（在tese1，2中http请求代码基本相同 但我们每一次发送请求都编写一次代码）将通用的网络操作放到一个类HttpUil</p>
+<p>HttpUil<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpUtil</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sendHttpRequest</span><span class="params">(<span class="keyword">final</span> String address, <span class="keyword">final</span> HttpCallbackListener listener)</span> </span>&#123;</div><div class="line"></div><div class="line">                HttpURLConnection connection = <span class="keyword">null</span>;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    URL url = <span class="keyword">new</span> URL(address);</div><div class="line">                    connection = (HttpURLConnection) url.openConnection();</div><div class="line">                    connection.setRequestMethod(<span class="string">"GET"</span>);</div><div class="line">                    connection.setConnectTimeout(<span class="number">8000</span>);</div><div class="line">                    connection.setReadTimeout(<span class="number">8000</span>);</div><div class="line">                    connection.setDoInput(<span class="keyword">true</span>);</div><div class="line">                    connection.setDoOutput(<span class="keyword">true</span>);</div><div class="line">                    InputStream in = connection.getInputStream();</div><div class="line">                    BufferedReader reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in));</div><div class="line">                    StringBuilder response = <span class="keyword">new</span> StringBuilder();</div><div class="line">                    String line;</div><div class="line">                    <span class="keyword">while</span> ((line = reader.readLine()) != <span class="keyword">null</span>) &#123;</div><div class="line">                        response.append(line);</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">return</span> response.toString();</div><div class="line">                &#125; <span class="keyword">finally</span> &#123;</div><div class="line">                    <span class="keyword">if</span> (connection != <span class="keyword">null</span>) &#123;</div><div class="line">                        connection.disconnect();</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>若需发起请求(sendHttpRequest()内部没有开启线程 调用时可能阻塞主线程)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String address=&quot;http://wwww.baid.com&quot;;</div><div class="line">String response=HttpUtil.sendHttpRequest(address);</div></pre></td></tr></table></figure></p>
+<p>解决方法(Java的回调机制)<br>首先定义接口 HttpCallbackListener<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">HttpCallbackListener</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onFinish</span><span class="params">(String response)</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onError</span><span class="params">(Exception e)</span></span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>修改HttoUtil<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpUtil</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sendHttpRequest</span><span class="params">(<span class="keyword">final</span> String address, <span class="keyword">final</span> HttpCallbackListener listener)</span> </span>&#123;</div><div class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                HttpURLConnection connection = <span class="keyword">null</span>;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    URL url = <span class="keyword">new</span> URL(address);</div><div class="line">                    connection = (HttpURLConnection) url.openConnection();</div><div class="line">                    connection.setRequestMethod(<span class="string">"GET"</span>);</div><div class="line">                    connection.setConnectTimeout(<span class="number">8000</span>);</div><div class="line">                    connection.setReadTimeout(<span class="number">8000</span>);</div><div class="line">                    connection.setDoInput(<span class="keyword">true</span>);</div><div class="line">                    connection.setDoOutput(<span class="keyword">true</span>);</div><div class="line">                    InputStream in = connection.getInputStream();</div><div class="line">                    BufferedReader reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in));</div><div class="line">                    StringBuilder response = <span class="keyword">new</span> StringBuilder();</div><div class="line">                    String line;</div><div class="line">                    <span class="keyword">while</span> ((line = reader.readLine()) != <span class="keyword">null</span>) &#123;</div><div class="line">                        response.append(line);</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">if</span> (listener != <span class="keyword">null</span>) &#123;</div><div class="line">                        <span class="comment">// 回调onFinish()方法</span></div><div class="line">                        listener.onFinish(response.toString());</div><div class="line">                    &#125;</div><div class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">                    <span class="keyword">if</span> (listener != <span class="keyword">null</span>) &#123;</div><div class="line">                        <span class="comment">// 回调onError()方法</span></div><div class="line">                        listener.onError(e);</div><div class="line">                    &#125;</div><div class="line">                &#125; <span class="keyword">finally</span> &#123;</div><div class="line">                    <span class="keyword">if</span> (connection != <span class="keyword">null</span>) &#123;</div><div class="line">                        connection.disconnect();</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;).start();</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line">```    </div><div class="line">传入HttoCallbackListener实例</div><div class="line">```java</div><div class="line">HttpUtil.sendHttpRequest(address,<span class="keyword">new</span> HttpCallbackListener())&#123;</div><div class="line">  <span class="meta">@version</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFinish</span><span class="params">(String response)</span></span>&#123;</div><div class="line">    <span class="comment">//在这里根据返回内容执行具体逻辑</span></div><div class="line">  &#125;</div><div class="line">  <span class="meta">@version</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Exception e)</span></span>&#123;</div><div class="line">    <span class="comment">//在这里对异常进行处理</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用HttpURIConnection太复杂  改用Okhttp<br>在HttpUtil内田间sendOkhttpRequest()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sendOkHttpRequest</span><span class="params">(<span class="keyword">final</span> String address, <span class="keyword">final</span> okhttp3.Callback callback)</span> </span>&#123;</div><div class="line">        OkHttpClient client = <span class="keyword">new</span> OkHttpClient();</div><div class="line">        Request request = <span class="keyword">new</span> Request.Builder()</div><div class="line">                .url(address)</div><div class="line">                .build();</div><div class="line">        client.newCall(request).enqueue(callback);</div><div class="line">    &#125;</div><div class="line">```    </div><div class="line"></div><div class="line">```java</div><div class="line">HttpUtil.sendOkHttpRequest(address,<span class="keyword">new</span> HttpCallbackListener())&#123;</div><div class="line">  <span class="meta">@version</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFinish</span><span class="params">(String response)</span></span>&#123;</div><div class="line">    <span class="comment">//在这里根据返回内容执行具体逻辑</span></div><div class="line">    String responseData=response.body().strng();</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@version</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Exception e)</span></span>&#123;</div><div class="line">    <span class="comment">//在这里对异常进行处理</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
           
         
@@ -1827,8 +1820,8 @@ public void onClick(View v) {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">104</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">106</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1838,8 +1831,8 @@ public void onClick(View v) {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
               </a>
             </div>
           
@@ -1850,7 +1843,7 @@ public void onClick(View v) {
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -1959,7 +1952,7 @@ public void onClick(View v) {
 
 
   <div class="powered-by">
-    Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+    Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
   </div>
 
   <span class="post-meta-divider">|</span>
